@@ -55,6 +55,7 @@ Both were imported on 2026-10-22, from the same archives as KairoMSX's (the hash
 
 | Change | File | What and why |
 | --- | --- | --- |
+| `hatari-fdc-motor` | `hatari/src/fdc.c`, `includes/fdc.h` | Adds `FDC_MotorIsOn()`, the WD1772's motor-on status bit, which Hatari keeps to itself. KairoST runs a game's boot at full speed until its first floppy load is over: the motor has run and stopped. |
 | `hatari-restart` | `hatari/src/cpu/memory.c`, `hatari/src/debug/symbols.c` | Clears two pointers Hatari's teardown leaves set: `IOmemory`, which points into the ROM memory `memory_uninit` frees, and the debugger's symbol lists, which `Symbols_FreeAll` frees. Hatari tears down only when its process exits; KairoST runs one machine after another in its process, and the next machine's setup read them. |
 | `hatari-snapshot-failed` | `hatari/src/memorySnapShot.c`, `includes/memorySnapShot.h` | Adds `MemorySnapShot_Failed()`, whether the last save or restore failed, which Hatari otherwise keeps to itself. Hatari does both at the end of a CPU instruction, after the request returns. |
 | `sdl-android-sources` | `sdl2/CMakeLists.txt` | Leaves SDL's bridge to its own Java classes (`src/core/android`) out of Android builds with `SDL_KAIRO_NO_JAVA`, and adds the NDK's `cpufeatures` only to 32-bit ARM builds, the only ones whose code calls it. |

@@ -39,6 +39,10 @@ int KairoSt_SampleRate(void);
 /* Takes up to max_frames interleaved stereo frames produced so far. */
 uint32_t KairoSt_ReadAudio(int16_t *stereo, uint32_t max_frames);
 
+/* Whether the machine is booting: from the start until the first floppy load is over, or until
+ * the player presses a key, joystick control or mouse button. The host runs it at full speed. */
+bool KairoSt_Booting(void);
+
 /* A key by its ST keyboard scan code (1 to 0x72). */
 void KairoSt_Key(int scancode, bool down);
 /* A control of the joystick in port 1, in KairoSt_JoystickControl order. */

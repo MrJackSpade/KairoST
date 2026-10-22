@@ -7,7 +7,8 @@ import org.json.JSONArray
 
 /**
  * KairoST's catalog records beyond the common fields: the machine a game starts on (`machine`,
- * by Hatari's name for it), its memory, monitor and system software.
+ * by Hatari's name for it), its memory, monitor and system software, and the second disk it
+ * starts with in drive B (media role `floppyB`).
  */
 object StCatalog : LayeredGameCatalog.Schema {
     override val platform = "atarist"
@@ -50,9 +51,9 @@ object StCatalog : LayeredGameCatalog.Schema {
     val options = listOf(machine, memory, monitor, system)
 
     override val fields: Map<String, Set<String>?> = mapOf(MachineOption.SECTION to options.map { it.id }.toSet())
-    override val singleMediaRoles = emptySet<String>()
+    override val singleMediaRoles = setOf("floppyB")
 
-    override fun validMedia(role: String, contentId: String) = false
+    override fun validMedia(role: String, contentId: String) = role == "floppyB" && contentId.startsWith("sha256-fd-v1:")
 
     override fun validField(field: String, value: Any): Boolean =
         field == MachineOption.SECTION && MachineOption.validSection(options, value)

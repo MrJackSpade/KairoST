@@ -654,6 +654,13 @@ void	FDC_MemorySnapShot_Capture(bool bSave)
  * Change the color of the drive's led color in the statusbar, depending
  * on the state of the busy bit in STR
  */
+/* KairoST: whether the motor-on status bit is set. */
+bool	FDC_MotorIsOn ( void )
+{
+	return ( FDC.STR & FDC_STR_BIT_MOTOR_ON ) != 0;
+}
+
+
 void	FDC_Drive_Set_BusyLed ( uint8_t STR )
 {
 //fprintf ( stderr ,"fdc led %d %x\n" , FDC.DriveSelSignal , STR );

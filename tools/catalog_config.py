@@ -1,5 +1,6 @@
-"""KairoST's catalog settings: Atari ST floppy disk media, artwork references and the platform's
-slugs."""
+"""KairoST's catalog settings: Atari ST floppy disk media, artwork references, the platform's
+slugs and the machine a disk's name asks for."""
+import re
 import sys
 from pathlib import Path
 
@@ -37,6 +38,28 @@ MACHINE_OPTIONS = {
     "tos": {"emutos", "tos"},
 }
 
-# Disk sets (shared/tools/disk_sets.py): a game starts from its first disk; other disks are swapped in the game.
+_STE = re.compile(r"\(STE\)|\[STE\]")
+_FALCON = re.compile(r"\[Falcon only\]|\(Falcon\)", re.I)
+_MONO = re.compile(r"\[monochrome\]|\[mono\]", re.I)
+_MEMORY = re.compile(r"\[([124])\s*MB\]", re.I)
+
+
+def MACHINE(name, set_name, content_id):
+    """The machine a disk's TOSEC name asks for: "(STE)" an STE, "[Falcon only]" a Falcon (with
+    4 MB, its usual memory), "[monochrome]" the mono monitor, "[2Mb]" or "[4MB]" that much memory."""
+    settings = {}
+    if _FALCON.search(name):
+        settings.update(machine="falcon", memory="4096")
+    elif _STE.search(name):
+        settings["machine"] = "ste"
+    if _MONO.search(name):
+        settings["monitor"] = "mono"
+    memory = _MEMORY.search(name)
+    if memory and memory.group(1) != "1":
+        settings["memory"] = str(int(memory.group(1)) * 1024)
+    return settings
+
+
+# Disk sets (shared/tools/disk_sets.py): a game boots from its first floppy, with its second in drive B.
 BOOT_KINDS = ["fd"]
-COMPANION = {}
+COMPANION = {"fd": ("fd", "floppyB", False)}

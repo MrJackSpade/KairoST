@@ -78,6 +78,21 @@ static bool fatal_exit_set;
 /* A Main_ErrorExit left Hatari's state half torn down: no machine can run in this process again. */
 static bool hatari_broken;
 
+/* The boot (KairoSt_Booting), which the host runs at full speed: with a disk in drive A, from the
+ * start until the drive's first load is over (its motor runs, then stops), or until the player
+ * presses something. */
+static enum { BOOT_OVER, BOOT_WAITING, BOOT_LOADING } boot;
+
+static void update_boot(void)
+{
+	if (boot == BOOT_OVER)
+		return;
+	if (FDC_MotorIsOn())
+		boot = BOOT_LOADING;
+	else if (boot == BOOT_LOADING)
+		boot = BOOT_OVER;
+}
+
 /* The joystick in port 1 is Hatari's keyboard-emulated joystick (--joy1 keys), with its default
  * keys: KairoSt_Joystick presses them through Hatari's own keyboard joystick handler. */
 static const int joystick_keys[KAIRO_ST_JOYSTICK_CONTROLS] = { SDLK_UP, SDLK_DOWN, SDLK_LEFT, SDLK_RIGHT, SDLK_RCTRL };
@@ -139,6 +154,7 @@ void Main_WaitOnVbl(void)
 {
 	if (bQuitProgram)
 		return;
+	update_boot();
 	KairoStHost_Vbl();
 }
 
@@ -338,6 +354,7 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 	Configuration_Apply(true);
 
 	ok = Main_Init();
+	boot = ConfigureParams.DiskImage.szDiskFileName[0][0] ? BOOT_WAITING : BOOT_OVER;
 	if (ok)
 	{
 		Main_UnPauseEmulation();
@@ -370,15 +387,25 @@ double KairoSt_FrameSeconds(void)
 		* (double)nVBLSlowdown / 1e6;
 }
 
+bool KairoSt_Booting(void)
+{
+	return boot != BOOT_OVER;
+}
+
 void KairoSt_Key(int scancode, bool down)
 {
+	if (down)
+		boot = BOOT_OVER;
 	IKBD_PressSTKey((uint8_t)scancode, down);
 }
 
 void KairoSt_Joystick(int control, bool down)
 {
 	if (down)
+	{
+		boot = BOOT_OVER;
 		Joy_KeyDown(joystick_keys[control], 0);
+	}
 	else
 		Joy_KeyUp(joystick_keys[control], 0);
 }
@@ -397,7 +424,10 @@ void KairoSt_MouseButton(int button, bool down)
 {
 	int *state = button == 1 ? &Keyboard.bLButtonDown : &Keyboard.bRButtonDown;
 	if (down)
+	{
+		boot = BOOT_OVER;
 		*state |= BUTTON_MOUSE;
+	}
 	else
 		*state &= ~BUTTON_MOUSE;
 }
@@ -417,6 +447,7 @@ void KairoSt_RequestSave(const char *file)
 
 void KairoSt_RequestRestore(const char *file)
 {
+	boot = BOOT_OVER;
 	MemorySnapShot_Restore(file, false);
 }
 

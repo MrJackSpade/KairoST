@@ -152,6 +152,8 @@ bool StMachine::run_frame(std::string &error) {
     return true;
 }
 
+bool StMachine::booting() const { return KairoSt_Booting(); }
+
 double StMachine::frame_seconds() const { return KairoSt_FrameSeconds(); }
 
 const uint8_t *StMachine::frame(uint32_t &width, uint32_t &height) {

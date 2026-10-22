@@ -41,6 +41,21 @@ HATARI_RESTART = [
      '\tCpuSymbolsList = DspSymbolsList = NULL;\t/* KairoST: a later machine loads its own */\n}\n'),
 ]
 
+# The WD1772's motor-on status bit: set when a command starts and cleared after the drive has
+# idled for nine revolutions. KairoST runs a game's boot at full speed until its first floppy
+# load is over (kairo/main.c), and reads it each frame; Hatari keeps it to itself.
+HATARI_FDC_MOTOR = [
+    ('hatari/src/includes/fdc.h',
+     'extern void\tFDC_Drive_Set_BusyLed ( uint8_t SR );\n',
+     'extern void\tFDC_Drive_Set_BusyLed ( uint8_t SR );\n'
+     'extern bool\tFDC_MotorIsOn ( void );\t/* KairoST: the motor-on status bit */\n'),
+    ('hatari/src/fdc.c',
+     'void\tFDC_Drive_Set_BusyLed ( uint8_t STR )\n{\n',
+     '/* KairoST: whether the motor-on status bit is set. */\n'
+     'bool\tFDC_MotorIsOn ( void )\n{\n\treturn ( FDC.STR & FDC_STR_BIT_MOTOR_ON ) != 0;\n}\n\n\n'
+     'void\tFDC_Drive_Set_BusyLed ( uint8_t STR )\n{\n'),
+]
+
 # SDL's Android sources: its bridge to its own Java classes, left out with SDL_KAIRO_NO_JAVA (see
 # SDL_NO_JAVA), and the NDK's cpufeatures, which SDL only calls for 32-bit ARM's NEON check
 # (src/cpuinfo/SDL_cpuinfo.c), so arm64 builds leave it out.
@@ -119,6 +134,7 @@ SDL_NO_JAVA = [
 ]
 
 PATCHES = {
+    'hatari-fdc-motor': HATARI_FDC_MOTOR,
     'hatari-restart': HATARI_RESTART,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
     'sdl-android-sources': SDL_ANDROID_SOURCES,

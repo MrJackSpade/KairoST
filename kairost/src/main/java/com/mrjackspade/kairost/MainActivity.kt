@@ -11,13 +11,14 @@ import com.mrjackspade.kairo.frontend.LibraryStrings
 import com.mrjackspade.kairo.frontend.MachineActivity
 import com.mrjackspade.kairo.frontend.MachineFirstRun
 import com.mrjackspade.kairo.frontend.NativeMachine
+import com.mrjackspade.kairo.frontend.mediaFor
 
 import java.io.File
 import java.util.concurrent.atomic.AtomicBoolean
 
 /** KairoST: the Atari ST on Hatari, in the shared Kairo frontend. */
 class MainActivity : MachineActivity<DiskImageEntry>() {
-    override val identity = Identity("KAIROST", 0xff27E89C.toInt(), "KairoST", "Atari ST", "kairost",
+    override val identity = Identity("KAIROST", 0xff02FA9E.toInt(), "KairoST", "Atari ST", "kairost",
         LibraryStrings("KAIROST", "KairoST"),
         "KairoST uses Hatari's Atari ST emulation and the EmuTOS system software. Source and provenance: " +
             "github.com/MrJackSpade/KairoST.",
@@ -70,8 +71,11 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         if (options[StCatalog.system.id] == StCatalog.OWN_TOS) {
             check(File(tosDirectory, tos.name).isFile) { "This game starts on your TOS image: import tos.img in Menu > Machine" }
         }
+        val second = game.mediaId("floppyB")?.let { id ->
+            mediaFor(id, entry, libraryEntries) ?: error("The second disk this game needs is not in the library")
+        }
         // In the core's drive order (st_core.cpp): drive A, drive B.
-        val media = listOf(entry, null)
+        val media = listOf(entry, second)
         val images = media.map { image -> image?.let { this.images.prepare(it, cancelled, progress).absolutePath } }
         check(bridge.start(tosDirectory.absolutePath, home.absolutePath, images, options)) { "Another machine is still running" }
         awaitRunning()

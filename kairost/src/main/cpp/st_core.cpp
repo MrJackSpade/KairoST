@@ -28,6 +28,7 @@ public:
     explicit StCore(std::unique_ptr<StMachine> machine) : machine_(std::move(machine)) {}
 
     bool run_frame() override { return machine_->run_frame(error_); }
+    bool booting() override { return machine_->booting(); }
     std::string error() override { return error_; }
     const uint8_t *frame(uint32_t &width, uint32_t &height) override { return machine_->frame(width, height); }
     double frame_seconds() override { return machine_->frame_seconds(); }

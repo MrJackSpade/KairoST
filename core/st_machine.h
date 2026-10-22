@@ -44,6 +44,8 @@ public:
     static std::unique_ptr<StMachine> create(const Config &config, std::string &error);
     ~StMachine();
 
+    // Whether the guest is booting (KairoSt_Booting), which the host runs at full speed.
+    bool booting() const;
     // Runs one guest video frame; false with error set when the machine stops.
     bool run_frame(std::string &error);
     // The guest time the last frame lasted.

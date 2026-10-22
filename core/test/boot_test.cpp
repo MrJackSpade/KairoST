@@ -5,7 +5,8 @@
 // Runs the machine for <seconds> of guest time, writing a frame every five seconds to
 // <work folder>/frame-<run>-<seconds>s.bmp and the last to <work folder>/frame-<run>.bmp, and reports the frame size and how much sound it made. With
 // <runs> above 1 it starts a new machine after each, in the same process, as the app does for the
-// next game. <keys> is a list of "frame:scancode" presses (comma separated), each held for five
+// next game. It reports when the boot ends (StMachine::booting) and writes that frame to
+// <work folder>/frame-<run>-booted.bmp. <keys> is a list of "frame:scancode" presses (comma separated), each held for five
 // frames.
 
 #include <algorithm>
@@ -95,6 +96,7 @@ int main(int argc, char **argv) {
         }
         double elapsed = 0;
         long frames = 0;
+        bool booting = machine->booting();
         uint64_t samples = 0;
         int64_t loudest = 0;
         while (elapsed < seconds) {
@@ -105,6 +107,13 @@ int main(int argc, char **argv) {
             if (!machine->run_frame(error)) {
                 std::fprintf(stderr, "run %d: stopped after %ld frames: %s\n", run, frames, error.c_str());
                 return 1;
+            }
+            if (booting && !machine->booting()) {
+                booting = false;
+                std::printf("run %d: boot over after %ld frames (%.1f s)\n", run, frames, elapsed);
+                uint32_t width, height;
+                const uint8_t *rgba = machine->frame(width, height);
+                write_bmp(config.home + "/frame-" + std::to_string(run) + "-booted.bmp", rgba, width, height);
             }
             const double before = elapsed;
             elapsed += machine->frame_seconds();
