@@ -32,6 +32,10 @@ struct Config {
     int memory_kib = 1024;
     // The monitor, by Hatari's name for it: mono, rgb, vga or tv.
     std::string monitor = "rgb";
+    // EmuTOS's country, by Hatari's code for it: its language, keyboard layout and, on an ST or
+    // STE, its refresh rate (us is 60 Hz NTSC, every other country 50 Hz PAL). A TT or Falcon
+    // takes it as its NVRAM language and layout. A player's own TOS keeps its own.
+    std::string country = "uk";
     // The image in each drive; "" for an empty one.
     std::string floppy[kDrives];
     // The audio sample rate.

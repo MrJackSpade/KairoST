@@ -7,7 +7,7 @@ import org.json.JSONArray
 
 /**
  * KairoST's catalog records beyond the common fields: the machine a game starts on (`machine`,
- * by Hatari's name for it), its memory, monitor and system software, and the second disk it
+ * by Hatari's name for it), its memory, monitor, region and system software, and the second disk it
  * starts with in drive B (media role `floppyB`).
  */
 object StCatalog : LayeredGameCatalog.Schema {
@@ -40,6 +40,14 @@ object StCatalog : LayeredGameCatalog.Schema {
         ChoiceOption("rgb", "Color"),
         ChoiceOption("mono", "Monochrome")), "rgb")
 
+    /**
+     * EmuTOS's country (Hatari's code for it): Europe is the UK, at 50 Hz like most ST games
+     * expect; USA runs at 60 Hz. A player's own TOS keeps its own.
+     */
+    val region = MachineOption("region", "Region", listOf(
+        ChoiceOption("uk", "Europe (50 Hz)"),
+        ChoiceOption("us", "USA (60 Hz)")), "uk")
+
     const val EMUTOS = "emutos"
     const val OWN_TOS = "tos"
 
@@ -48,7 +56,7 @@ object StCatalog : LayeredGameCatalog.Schema {
         ChoiceOption(EMUTOS, "EmuTOS"),
         ChoiceOption(OWN_TOS, "Your TOS image")), EMUTOS)
 
-    val options = listOf(machine, memory, monitor, system)
+    val options = listOf(machine, memory, monitor, region, system)
 
     override val fields: Map<String, Set<String>?> = mapOf(MachineOption.SECTION to options.map { it.id }.toSet())
     override val singleMediaRoles = setOf("floppyB")

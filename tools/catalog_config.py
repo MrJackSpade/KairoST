@@ -35,6 +35,7 @@ MACHINE_OPTIONS = {
     "machine": {"st", "megast", "ste", "megaste", "tt", "falcon"},
     "memory": {"512", "1024", "2048", "4096"},
     "monitor": {"rgb", "mono"},
+    "region": {"uk", "us"},
     "tos": {"emutos", "tos"},
 }
 

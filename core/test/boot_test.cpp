@@ -1,6 +1,6 @@
 // Boots an ST on the host and runs it for a while without Android.
 //
-// Usage: boot_test <tos image> <work folder> <seconds> [machine [floppy image [runs [keys]]]]
+// Usage: boot_test <tos image> <work folder> <seconds> [machine [floppy image [runs [keys [country]]]]]
 //
 // Runs the machine for <seconds> of guest time, writing a frame every five seconds to
 // <work folder>/frame-<run>-<seconds>s.bmp and the last to <work folder>/frame-<run>.bmp, and reports the frame size and how much sound it made. With
@@ -74,7 +74,7 @@ std::vector<Press> parse_keys(const std::string &text) {
 
 int main(int argc, char **argv) {
     if (argc < 4) {
-        std::fprintf(stderr, "usage: boot_test <tos image> <work folder> <seconds> [machine [floppy [runs [keys]]]]\n");
+        std::fprintf(stderr, "usage: boot_test <tos image> <work folder> <seconds> [machine [floppy [runs [keys [country]]]]]\n");
         return 2;
     }
     kairost::Config config;
@@ -84,7 +84,8 @@ int main(int argc, char **argv) {
     if (argc > 4) config.machine = argv[4];
     if (argc > 5) config.floppy[kairost::kDriveA] = argv[5];
     const int runs = argc > 6 ? std::atoi(argv[6]) : 1;
-    const std::vector<Press> presses = argc > 7 ? parse_keys(argv[7]) : std::vector<Press>{};
+    const std::vector<Press> presses = argc > 7 && *argv[7] ? parse_keys(argv[7]) : std::vector<Press>{};
+    if (argc > 8) config.country = argv[8];
 
     std::vector<int16_t> audio(48000 * 2);
     for (int run = 0; run < runs; ++run) {
