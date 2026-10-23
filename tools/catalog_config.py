@@ -31,7 +31,9 @@ def kind(name):
 MEDIA = content_ids.Media(kind, content_ids.same_file, LIMITS.__getitem__, 1)
 
 MOBYGAMES = "atarist"
-SCANS = {}
+# The standard set: TOSEC 2012-04-23's Games folder (its [ST], [STX] and Public Domain sets).
+# Its other folders (applications, demos, compilations, coverdisks and so on) are not catalogued.
+SCANS = {"atarist": (".downloads/scan/atarist.json", ("atarist",))}
 
 # The settings a game can ask for, as StCatalog's options name them.
 MACHINE_OPTIONS = {
