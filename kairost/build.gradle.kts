@@ -16,3 +16,7 @@ val stageEmutos = tasks.register<Copy>("stageEmutos") {
 }
 android.sourceSets.getByName("main").assets.srcDir(emutosAssets)
 tasks.named("preBuild") { dependsOn(stageEmutos) }
+
+dependencies {
+    testImplementation("junit:junit:4.13.2")
+}

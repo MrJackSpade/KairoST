@@ -51,10 +51,10 @@ object StCatalog : LayeredGameCatalog.Schema {
     const val EMUTOS = "emutos"
     const val OWN_TOS = "tos"
 
-    /** EmuTOS comes with the app; the player's own TOS image is the firmware file tos.img. */
+    /** EmuTOS comes with the app; the player's own TOS is the one imported for the game's model (StTos). */
     val system = MachineOption("tos", "System", listOf(
         ChoiceOption(EMUTOS, "EmuTOS"),
-        ChoiceOption(OWN_TOS, "Your TOS image")), EMUTOS)
+        ChoiceOption(OWN_TOS, "Your TOS")), EMUTOS)
 
     val options = listOf(machine, memory, monitor, region, system)
 

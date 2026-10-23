@@ -54,4 +54,4 @@ The shared RetroArch Slang shader runtime uses librashader under its GPL-3.0-onl
 
 ## Firmware and games
 
-Apart from EmuTOS, KairoST does not include Atari ST system firmware (TOS), operating systems, or games. Users supply any TOS image and games they need; the app copies an imported TOS image to its private storage.
+Apart from EmuTOS, KairoST does not include Atari ST system firmware (TOS), operating systems, or games. Users supply any TOS images and games they need; the app copies an imported TOS image to its private storage, one for each model.

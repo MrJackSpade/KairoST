@@ -68,17 +68,26 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override val mediaSlots = listOf(MediaSlot<DiskImageEntry>("Drive A", ::isFloppy), MediaSlot("Drive B", ::isFloppy))
 
     private val tosDirectory by lazy { File(filesDir, "tos") }
-    private val tos = FirmwareSet.Part("tos.img", "TOS image",
-        "tos.img · your ST's own TOS, for the games EmuTOS cannot run", setOf("tos.img", "tos.rom"), false,
-        sizes = setOf(192L * 1024, 256L * 1024, 512L * 1024))
-    override val firmwareSets by lazy { listOf("TOS" to FirmwareSet(tosDirectory, listOf(tos))) }
+
+    /** The player's TOS for each model, by the version its header names (StTos). */
+    private val tosParts = StTos.Model.entries.associateWith { model ->
+        FirmwareSet.Part(model.file, "TOS for the ${model.label}", "${model.file} · ${model.description}",
+            setOf(model.file), false, sizes = setOf(model.bytes), identifies = { header -> StTos.rank(header, model) })
+    }
+    override val firmwareSets by lazy { listOf("TOS" to FirmwareSet(tosDirectory, tosParts.values.toList())) }
 
     override fun startGame(entry: DiskImageEntry, game: CatalogGame, cancelled: AtomicBoolean,
                            progress: (String) -> Unit) {
         val home = prepareHome(progress)
-        val options = optionValues(game)
+        val options = optionValues(game).toMutableMap()
+        // The player's TOS is the one for the game's model; the core gets its file (st_core.cpp).
         if (options[StCatalog.system.id] == StCatalog.OWN_TOS) {
-            check(File(tosDirectory, tos.name).isFile) { "This game starts on your TOS image: import tos.img in Menu > Machine" }
+            val model = StTos.forMachine(options.getValue(StCatalog.machine.id))
+            val part = tosParts.getValue(model)
+            check(File(tosDirectory, part.name).isFile) {
+                "This game starts on your own TOS: import ${part.label} in Menu › Machine"
+            }
+            options[StCatalog.system.id] = part.name
         }
         // A program runs from its folder, as drive C, with the drives empty.
         val program = entry.takeUnless(::isFloppy)?.let { this.images.prepare(it, cancelled, progress).absolutePath }

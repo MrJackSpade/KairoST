@@ -94,7 +94,9 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     // After the drives: a program, which runs from its folder (MainActivity.startGame).
     if (int(launch.media.size()) > kairost::kDrives) config.program = launch.media[kairost::kDrives];
     // The settings StCatalog's options name; every launch passes them.
-    config.tos = launch.settings.at("tos") == "tos" ? launch.firmware + "/tos.img" : launch.home + "/emutos/etos1024k.img";
+    // "emutos", or the file of the player's TOS for the game's model (MainActivity.startGame).
+    const std::string &tos = launch.settings.at("tos");
+    config.tos = tos == "emutos" ? launch.home + "/emutos/etos1024k.img" : launch.firmware + "/" + tos;
     config.machine = launch.settings.at("machine");
     config.memory_kib = std::stoi(launch.settings.at("memory"));
     config.monitor = launch.settings.at("monitor");

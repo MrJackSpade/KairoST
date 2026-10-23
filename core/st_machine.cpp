@@ -110,6 +110,9 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
         "--drive-led", "off",
         "--frameskips", "0",
         "--fast-forward", "off",
+        // Hatari's TOS patches for a faster boot: no memory test, and on TOS 1.00 to 2.05 no
+        // wait for hard disks on the DMA bus (there are none). Games see the same machine.
+        "--fast-boot", "on",
         "--confirm-quit", "off",
         "--mousewarp", "off",
         "--natfeats", "off",
