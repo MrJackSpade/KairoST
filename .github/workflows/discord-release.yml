@@ -19,7 +19,7 @@ jobs:
   announce:
     runs-on: ubuntu-24.04
     steps:
-      - uses: MrJackSpade/Kairo/.github/actions/discord-release@262a2e9862975fc3bef258d63892188956fa4ed9
+      - uses: MrJackSpade/Kairo/.github/actions/discord-release@34294ac5878c7d7f59397ce2d804f799a3461ebc
         with:
           webhook: ${{ secrets.KAIRO_DISCORD_WEBHOOK }}
           tag: ${{ github.event.release.tag_name || inputs.tag }}

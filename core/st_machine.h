@@ -38,6 +38,9 @@ struct Config {
     std::string country = "uk";
     // The image in each drive; "" for an empty one.
     std::string floppy[kDrives];
+    // A program to start, "" for none: its folder becomes drive C (Hatari's GEMDOS hard disk),
+    // the machine boots from it, and TOS starts the program (Hatari's autostart).
+    std::string program;
     // The audio sample rate.
     int sample_rate = 48000;
 };

@@ -91,6 +91,8 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     config.home = launch.home + "/hatari";
     for (int drive = 0; drive < kairost::kDrives; ++drive)
         if (int(launch.media.size()) > drive) config.floppy[drive] = launch.media[drive];
+    // After the drives: a program, which runs from its folder (MainActivity.startGame).
+    if (int(launch.media.size()) > kairost::kDrives) config.program = launch.media[kairost::kDrives];
     // The settings StCatalog's options name; every launch passes them.
     config.tos = launch.settings.at("tos") == "tos" ? launch.firmware + "/tos.img" : launch.home + "/emutos/etos1024k.img";
     config.machine = launch.settings.at("machine");

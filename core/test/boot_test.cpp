@@ -10,6 +10,7 @@
 // frames.
 
 #include <algorithm>
+#include <cctype>
 #include <cstdio>
 #include <cstdlib>
 #include <fstream>
@@ -82,7 +83,16 @@ int main(int argc, char **argv) {
     config.home = argv[2];
     const double seconds = std::atof(argv[3]);
     if (argc > 4) config.machine = argv[4];
-    if (argc > 5) config.floppy[kairost::kDriveA] = argv[5];
+    // A program (.prg, .tos, ...) runs from its folder instead of a floppy.
+    if (argc > 5) {
+        std::string media = argv[5];
+        std::string extension = media.substr(media.find_last_of('.') + 1);
+        for (char &c : extension) c = char(std::tolower(static_cast<unsigned char>(c)));
+        if (extension == "prg" || extension == "tos" || extension == "ttp" || extension == "app" || extension == "gtp")
+            config.program = media;
+        else
+            config.floppy[kairost::kDriveA] = media;
+    }
     const int runs = argc > 6 ? std::atoi(argv[6]) : 1;
     const std::vector<Press> presses = argc > 7 && *argv[7] ? parse_keys(argv[7]) : std::vector<Press>{};
     if (argc > 8) config.country = argv[8];

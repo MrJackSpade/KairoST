@@ -62,6 +62,7 @@
 #include "utils.h"
 
 #include "hatari-glue.h"
+#include "inffile.h"
 
 #include "falcon/dsp.h"
 #include "falcon/videl.h"
@@ -78,15 +79,26 @@ static bool fatal_exit_set;
 /* A Main_ErrorExit left Hatari's state half torn down: no machine can run in this process again. */
 static bool hatari_broken;
 
-/* The boot (KairoSt_Booting), which the host runs at full speed: with a disk in drive A, from the
- * start until the drive's first load is over (its motor runs, then stops), or until the player
- * presses something. */
+/* The boot (KairoSt_Booting), which the host runs at full speed, from the start until the player
+ * presses something or: with a disk in drive A, until the drive's first load is over (its motor
+ * runs, then stops); for a program, until TOS has read the autostart file that starts it (it then
+ * loads from drive C at once). */
 static enum { BOOT_OVER, BOOT_WAITING, BOOT_LOADING } boot;
+static bool boot_program;
 
 static void update_boot(void)
 {
 	if (boot == BOOT_OVER)
 		return;
+	if (boot_program)
+	{
+		/* The virtual DESKTOP.INF is open from TOS's boot until TOS has read it. */
+		if (INF_Overriding(AUTOSTART_FOPEN))
+			boot = BOOT_LOADING;
+		else if (boot == BOOT_LOADING)
+			boot = BOOT_OVER;
+		return;
+	}
 	if (FDC_MotorIsOn())
 		boot = BOOT_LOADING;
 	else if (boot == BOOT_LOADING)
@@ -207,6 +219,69 @@ static void Main_Init_HW(void)
 	Video_InitTimings();
 }
 
+/* A disk that does not boot is opened from the desktop, by its program: when drive A's disk does
+ * not boot and its top folder has exactly one program, it starts the way the player would start
+ * it, through Hatari's autostart (--auto). Disks with several programs, or none, open on the
+ * desktop. Only images Hatari keeps as plain sectors (ST, MSA, DIM) are read; STX images are
+ * originals, which boot themselves. */
+static void autostart_floppy_program(void)
+{
+	static const char *const programs[] = { "PRG", "TOS", "APP", "TTP", "GTP" };
+	const EMULATION_DRIVE *drive = &EmulationDrives[0];
+	const uint8_t *disk = drive->pBuffer;
+	int size = drive->nImageBytes;
+	int sector, reserved, fats, entries, fat_sectors, root, i, found = 0;
+	uint16_t checksum = 0;
+	char name[16] = "";
+
+	if (!drive->bDiskInserted || !disk || size < 512
+	    || !(drive->ImageType == FLOPPY_IMAGE_TYPE_ST || drive->ImageType == FLOPPY_IMAGE_TYPE_MSA
+	         || drive->ImageType == FLOPPY_IMAGE_TYPE_DIM))
+		return;
+	/* An executable boot sector's big-endian words add up to 0x1234. */
+	for (i = 0; i < 512; i += 2)
+		checksum += (uint16_t)(disk[i] << 8 | disk[i + 1]);
+	if (checksum == 0x1234)
+		return;
+
+	sector = disk[11] | disk[12] << 8;
+	reserved = disk[14] | disk[15] << 8;
+	fats = disk[16];
+	entries = disk[17] | disk[18] << 8;
+	fat_sectors = disk[22] | disk[23] << 8;
+	if (sector != 512 || reserved < 1 || fats < 1 || entries < 1)
+		return;		/* not a TOS file system */
+	root = (reserved + fats * fat_sectors) * sector;
+	for (i = 0; i < entries && root + i * 32 + 32 <= size; i++)
+	{
+		const uint8_t *entry = disk + root + i * 32;
+		char base[9], ext[4];
+		int b, e, p;
+
+		if (entry[0] == 0)
+			break;
+		if (entry[0] == 0xE5 || entry[11] & 0x18)	/* deleted, volume label or folder */
+			continue;
+		memcpy(base, entry, 8); base[8] = '\0';
+		memcpy(ext, entry + 8, 3); ext[3] = '\0';
+		for (b = 7; b >= 0 && base[b] == ' '; b--) base[b] = '\0';
+		for (e = 2; e >= 0 && ext[e] == ' '; e--) ext[e] = '\0';
+		for (p = 0; p < ARRAY_SIZE(programs); p++)
+		{
+			if (strcmp(ext, programs[p]) == 0)
+			{
+				if (++found == 1)
+					snprintf(name, sizeof(name), "A:\\%s.%s", base, ext);
+			}
+		}
+	}
+	if (found == 1)
+	{
+		Log_Printf(LOG_INFO, "Drive A's disk does not boot; starting its program %s\n", name);
+		INF_SetAutoStart(name, 0);
+	}
+}
+
 /* Hatari's Main_Init, without its window title and options dialog: a TOS image that does not
  * load is an error. */
 static bool Main_Init(void)
@@ -242,6 +317,9 @@ static bool Main_Init(void)
 
 	DSP_Init();
 	Floppy_Init();
+	/* A program's own game (KairoSt_Run's program argument) starts from drive C instead. */
+	if (!ConfigureParams.HardDisk.bBootFromHardDisk)
+		autostart_floppy_program();
 	M68000_Init();
 	Audio_Init();
 	Keymap_Init();
@@ -339,6 +417,8 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 	Paths_Init(argv[0]);
 	Main_Init_HW();
 	Configuration_SetDefault();
+	/* A previous machine's autostart program must not start in this one. */
+	INF_Reset();
 	/* KairoST's options are the whole configuration: no configuration file is read. */
 	if (!Opt_ParseParameters(argc, argv))
 	{
@@ -354,7 +434,12 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 	Configuration_Apply(true);
 
 	ok = Main_Init();
-	boot = ConfigureParams.DiskImage.szDiskFileName[0][0] ? BOOT_WAITING : BOOT_OVER;
+	boot_program = ConfigureParams.HardDisk.bBootFromHardDisk;
+	boot = boot_program || ConfigureParams.DiskImage.szDiskFileName[0][0] ? BOOT_WAITING : BOOT_OVER;
+	/* Hatari autostarts only on TOS 1.04 and later (inffile.c); before, a program waits on the
+	 * desktop, so there is no boot to run through. */
+	if (boot_program && bUseTos && TosVersion < 0x0104)
+		boot = BOOT_OVER;
 	if (ok)
 	{
 		Main_UnPauseEmulation();

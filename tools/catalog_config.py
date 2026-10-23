@@ -14,15 +14,18 @@ PLATFORMS = ("atarist",)
 ARTWORK_CODE = 83
 ARTWORK = References("KairoST", (ARTWORK_CODE,))
 
-# The floppy images Hatari reads (MainActivity's DiskImageLibrary formats).
+# The floppy images Hatari reads and the programs it starts from their folder (MainActivity's
+# DiskImageLibrary formats).
 DISK = {".st", ".msa", ".stx", ".dim"}
-LIMITS = {"fd": 16 * 1024**2}
+PROGRAM = {".prg", ".tos", ".ttp", ".app", ".gtp"}
+LIMITS = {"fd": 16 * 1024**2, "prg": 16 * 1024**2}
 
 KINDS = set(LIMITS)
 
 
 def kind(name):
-    return "fd" if Path(name).suffix.lower() in DISK else None
+    suffix = Path(name).suffix.lower()
+    return "fd" if suffix in DISK else "prg" if suffix in PROGRAM else None
 
 
 MEDIA = content_ids.Media(kind, content_ids.same_file, LIMITS.__getitem__, 1)

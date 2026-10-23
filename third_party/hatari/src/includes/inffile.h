@@ -18,6 +18,7 @@ extern bool INF_SetResolution(const char *resolution, int opt_id);
 extern void INF_SetVdiMode(int vdi_res);
 extern int INF_ValidateAutoStart(const char **val, const char **err);
 extern void INF_CreateOverride(void);
+extern void INF_Reset(void);	/* KairoST: forgets the autostart program and resolution */
 extern bool INF_Overriding(autostart_t t);
 extern FILE *INF_OpenOverride(const char *filename);
 extern bool INF_CloseOverride(FILE *fp);

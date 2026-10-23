@@ -1,6 +1,7 @@
 <!-- kairo:discord -->
 <p align="center">
   <a href="https://discord.gg/ZkYQ3bPTTq"><img src="https://raw.githubusercontent.com/MrJackSpade/Kairo/main/docs/assets/discord-banner.svg" alt="Join the Kairo Discord" width="49%"></a>
+  <a href="https://play.google.com/store/apps/details?id=com.loxifi.kairost"><img src="https://raw.githubusercontent.com/MrJackSpade/Kairo/main/docs/assets/donate-banner.svg" alt="Donate: buying KairoST on Google Play is the donation; it adds no features" width="49%"></a>
 </p>
 <!-- /kairo:discord -->
 
@@ -27,7 +28,7 @@
 
 ## Status
 
-Early development. There is no release yet. Games start on [EmuTOS](https://emutos.sourceforge.io/), the free TOS replacement that comes with the app, or on a TOS image dumped from your own machine.
+Early development. There is no release yet. Games start on [EmuTOS](https://emutos.sourceforge.io/), the free TOS replacement that comes with the app, or on a TOS image dumped from your own machine. A game can be a floppy disk image (`.st`, `.msa`, `.stx`, `.dim`) or a program (`.prg`, `.tos` and the like) in its own folder, loose or in a ZIP or 7z archive; a program runs from its folder as the ST's hard disk. A floppy that does not boot by itself starts its program, when it has just one.
 
 ## Games and firmware
 

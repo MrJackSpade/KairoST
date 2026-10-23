@@ -119,6 +119,9 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     };
     if (!config.floppy[kDriveA].empty()) args.insert(args.end(), {"--disk-a", config.floppy[kDriveA]});
     if (!config.floppy[kDriveB].empty()) args.insert(args.end(), {"--disk-b", config.floppy[kDriveB]});
+    // Hatari's last argument: a program, whose folder it mounts as drive C and boots from, and
+    // which it starts.
+    if (!config.program.empty()) args.push_back(config.program);
 
     auto impl = std::make_unique<Impl>();
     for (int drive = 0; drive < kDrives; ++drive) impl->floppy[drive] = config.floppy[drive];

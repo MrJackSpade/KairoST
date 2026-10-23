@@ -35,6 +35,19 @@ HATARI_RESTART = [
      '\tif (STmem_size <= 0x800000 && ROMmemory) {\n\t\tfree(ROMmemory);\n\t}\n\tROMmemory = NULL;\n',
      '\tif (STmem_size <= 0x800000 && ROMmemory) {\n\t\tfree(ROMmemory);\n\t}\n\tROMmemory = NULL;\n'
      '\tIOmemory = NULL;\t/* KairoST: it points into ROMmemory */\n'),
+    # The INF override (autostart program and resolution) is set from the options and never
+    # cleared: a later machine would autostart the previous one's program.
+    ('hatari/src/includes/inffile.h',
+     'extern void INF_CreateOverride(void);\n',
+     'extern void INF_CreateOverride(void);\n'
+     'extern void INF_Reset(void);\t/* KairoST: forgets the autostart program and resolution */\n'),
+    ('hatari/src/inffile.c',
+     'void INF_CreateOverride(void)\n{\n',
+     '/* KairoST: forgets the autostart program and resolution, before a new machine sets its own. */\n'
+     'void INF_Reset(void)\n{\n\tINF_CloseOverride(TosOverride.file);\n\tfree(TosOverride.prgname);\n'
+     '\tTosOverride.prgname = NULL;\n\tTosOverride.prgname_id = 0;\n\tTosOverride.reso = RES_UNSET;\n'
+     '\tTosOverride.reso_id = 0;\n\tTosOverride.reso_str = NULL;\n}\n\n'
+     'void INF_CreateOverride(void)\n{\n'),
     ('hatari/src/debug/symbols.c',
      'void Symbols_FreeAll(void)\n{\n\tsymbol_list_free(CpuSymbolsList);\n\tsymbol_list_free(DspSymbolsList);\n}\n',
      'void Symbols_FreeAll(void)\n{\n\tsymbol_list_free(CpuSymbolsList);\n\tsymbol_list_free(DspSymbolsList);\n'
