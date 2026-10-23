@@ -43,6 +43,14 @@ class StTosTest {
         assertNull(StTos.rank(withCountry(0x0206, 3), StTos.Model.ST))
     }
 
+    @Test fun describesImages() {
+        assertEquals("TOS 1.04 (UK)", StTos.describe(withCountry(0x0104, 3)))
+        assertEquals("TOS 1.62 (Germany)", StTos.describe(withCountry(0x0162, 1)))
+        assertEquals("TOS 4.04", StTos.describe(withCountry(0x0404, 0x7f)))
+        assertEquals("EmuTOS", StTos.describe(header(0x602e, 0x0206, emutos = true)))
+        assertEquals("Unknown image", StTos.describe(header(0xfa52, 0x235f)))
+    }
+
     @Test fun machinesTakeTheirModel() {
         assertEquals(StTos.Model.ST, StTos.forMachine("megast"))
         assertEquals(StTos.Model.STE, StTos.forMachine("megaste"))

@@ -51,10 +51,22 @@ object StCatalog : LayeredGameCatalog.Schema {
     const val EMUTOS = "emutos"
     const val OWN_TOS = "tos"
 
-    /** EmuTOS comes with the app; the player's own TOS is the one imported for the game's model (StTos). */
-    val system = MachineOption("tos", "System", listOf(
+    /** The choices every game has: EmuTOS, which comes with the app, or the player's TOS for its model (StTos). */
+    val fixedSystems = listOf(
         ChoiceOption(EMUTOS, "EmuTOS"),
-        ChoiceOption(OWN_TOS, "Your TOS")), EMUTOS)
+        ChoiceOption(OWN_TOS, "Your TOS for its model"))
+
+    /**
+     * The system software a game starts: [fixedSystems], or one TOS image of the player's by name
+     * (TosLibrary, "tos:<hash>"), which [images] lists; [actions] add more.
+     */
+    fun system(images: () -> List<ChoiceOption> = { emptyList() },
+               actions: (select: (String) -> Unit) -> List<com.mrjackspade.kairo.frontend.SettingsRow> = { emptyList() }) =
+        MachineOption("tos", "System", { fixedSystems + images() }, EMUTOS,
+            accepts = { value -> value == EMUTOS || value == OWN_TOS || TosLibrary.ID.matches(value) }, actions = actions)
+
+    /** The System option as the catalog reads it; MainActivity lists the player's images too. */
+    val system = system()
 
     val options = listOf(machine, memory, monitor, region, system)
 

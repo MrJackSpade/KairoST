@@ -37,6 +37,42 @@ object StTos {
         return (if (country == 0 || country == 3 || country == 0x7f) 0x10000 else 0) + version
     }
 
+    /** How much of an image [model], [version] and [describe] read. */
+    const val HEADER_BYTES = 256
+
+    /** The first [HEADER_BYTES] of [input], fewer when it is shorter. */
+    fun readHeader(input: java.io.InputStream): ByteArray {
+        val bytes = ByteArray(HEADER_BYTES)
+        var count = 0
+        while (count < bytes.size) {
+            val read = input.read(bytes, count, bytes.size - count)
+            if (read < 0) break
+            count += read
+        }
+        return bytes.copyOf(count)
+    }
+
+    /** The version a TOS header names, such as 0x0104; 0 when it is not a TOS header. */
+    fun version(header: ByteArray): Int =
+        if (header.size < 4 || header[0] != 0x60.toByte()) 0
+        else (header[2].toInt() and 0xff) shl 8 or (header[3].toInt() and 0xff)
+
+    /** The countries TOS names in its header (0x1d, shifted left one bit). */
+    private val countries = listOf("US", "Germany", "France", "UK", "Spain", "Italy", "Sweden",
+        "Switzerland, French", "Switzerland, German", "Turkey", "Finland", "Norway", "Denmark",
+        "Saudi Arabia", "Netherlands", "Czech Republic", "Hungary")
+
+    /** A name for an image, from its header: "TOS 1.04 (UK)", "TOS 4.04", "EmuTOS". */
+    fun describe(header: ByteArray): String {
+        if (header.size >= 0x30 && String(header, 0x2c, 4, Charsets.ISO_8859_1) == "ETOS") return "EmuTOS"
+        val version = version(header)
+        if (version == 0 || header.size < 0x1e) return "Unknown image"
+        val name = "TOS %x.%02x".format(version shr 8, version and 0xff)
+        // 0x7f: a multi-language TOS, which takes its language from NVRAM.
+        val country = (header[0x1d].toInt() and 0xff) shr 1
+        return countries.getOrNull(country)?.let { "$name ($it)" } ?: name
+    }
+
     /** The model of TOS a machine (StCatalog.machine) starts. */
     fun forMachine(machine: String): Model = when (machine) {
         "st", "megast" -> Model.ST

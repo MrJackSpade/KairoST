@@ -1,16 +1,21 @@
 package com.mrjackspade.kairost
 
+import android.content.Intent
+import android.os.Bundle
 import com.mrjackspade.kairo.frontend.CatalogGame
+import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.ControllerGuestSpec
 import com.mrjackspade.kairo.frontend.ControllerLayout
 import com.mrjackspade.kairo.frontend.DiskImageEntry
 import com.mrjackspade.kairo.frontend.DiskImageLibrary
+import com.mrjackspade.kairo.frontend.DocumentPicker
 import com.mrjackspade.kairo.frontend.FirmwareSet
 import com.mrjackspade.kairo.frontend.LayeredGameCatalog
 import com.mrjackspade.kairo.frontend.LibraryStrings
 import com.mrjackspade.kairo.frontend.MachineActivity
 import com.mrjackspade.kairo.frontend.MachineFirstRun
 import com.mrjackspade.kairo.frontend.NativeMachine
+import com.mrjackspade.kairo.frontend.SettingsRow
 import com.mrjackspade.kairo.frontend.mediaFor
 
 import java.io.File
@@ -60,7 +65,10 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override fun createCatalog() = LayeredGameCatalog(this, StCatalog)
     override fun createLibrary(catalog: LayeredGameCatalog) = images
 
-    override val machineOptions = StCatalog.options
+    // System lists the player's TOS images too, and imports more (StCatalog.system).
+    override val machineOptions = StCatalog.options.map { option ->
+        if (option.id == StCatalog.system.id) StCatalog.system(::tosChoices, ::tosActions) else option
+    }
     override val mediaPageTitle = "Disks"
     private fun isFloppy(entry: DiskImageEntry) = entry.mediaLabel == "Floppy disk"
 
@@ -76,18 +84,68 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     }
     override val firmwareSets by lazy { listOf("TOS" to FirmwareSet(tosDirectory, tosParts.values.toList())) }
 
+    /** Every TOS image the player has given the app, which a game can start on by name. */
+    private val tosLibrary by lazy { TosLibrary(tosDirectory) }
+
+    private fun tosChoices() = tosLibrary.images().map { ChoiceOption(it.id, it.label) }
+
+    /** The game (or all games) whose System an import picks, waiting for the picker's result. */
+    private var tosImportPicks: ((String) -> Unit)? = null
+
+    private fun tosActions(select: (String) -> Unit) = listOf(
+        SettingsRow.action("tos-import", "Import a TOS image…") {
+            tosImportPicks = select
+            DocumentPicker.open(this, TOS_IMPORT_REQUEST, failed = ::toast)
+        })
+
+    override fun handleProductResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
+        if (requestCode != TOS_IMPORT_REQUEST) return super.handleProductResult(requestCode, resultCode, data)
+        val select = tosImportPicks ?: return true
+        tosImportPicks = null
+        val uri = DocumentPicker.selectedUri(resultCode, data) ?: return true
+        Thread {
+            val result = runCatching {
+                (contentResolver.openInputStream(uri) ?: error("Could not open that file")).use(tosLibrary::add)
+            }
+            runOnUiThread {
+                result.onSuccess { image ->
+                    select(image.id)
+                    toast("${image.label} imported and chosen")
+                }.onFailure { error -> toast("TOS import failed: ${error.message ?: error.javaClass.simpleName}") }
+            }
+        }.apply { name = "KairoST-tos-import"; start() }
+        return true
+    }
+
+    /** The model rows join the library, so a game that picked one keeps it when the row changes. */
+    override fun firmwareImported() = tosLibrary.mirrorRows()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Rows imported before the library kept them; a game's settings list them from the start.
+        Thread { tosLibrary.mirrorRows() }.apply { name = "KairoST-tos-library"; start() }
+    }
+
     override fun startGame(entry: DiskImageEntry, game: CatalogGame, cancelled: AtomicBoolean,
                            progress: (String) -> Unit) {
         val home = prepareHome(progress)
         val options = optionValues(game).toMutableMap()
-        // The player's TOS is the one for the game's model; the core gets its file (st_core.cpp).
-        if (options[StCatalog.system.id] == StCatalog.OWN_TOS) {
+        // The core gets the file of the player's TOS (st_core.cpp): the one for the game's model,
+        // or the image the game names.
+        tosLibrary.mirrorRows()
+        val system = options.getValue(StCatalog.system.id)
+        if (system == StCatalog.OWN_TOS) {
             val model = StTos.forMachine(options.getValue(StCatalog.machine.id))
             val part = tosParts.getValue(model)
             check(File(tosDirectory, part.name).isFile) {
                 "This game starts on your own TOS: import ${part.label} in Menu › Machine"
             }
             options[StCatalog.system.id] = part.name
+        } else if (system != StCatalog.EMUTOS) {
+            val file = checkNotNull(tosLibrary.file(system)) {
+                "This game's TOS image is no longer in the app: choose or import another in Game settings › System"
+            }
+            options[StCatalog.system.id] = file.relativeTo(tosDirectory).path
         }
         // A program runs from its folder, as drive C, with the drives empty.
         val program = entry.takeUnless(::isFloppy)?.let { this.images.prepare(it, cancelled, progress).absolutePath }
@@ -125,6 +183,8 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     private companion object {
         /** EmuTOS for every ST, STE, TT and Falcon, in every language (third_party/emutos-1024k). */
         const val EMUTOS_IMAGE = "etos1024k.img"
+        /** The picker of a TOS image for a game's System (tosActions). */
+        const val TOS_IMPORT_REQUEST = FIRST_PRODUCT_REQUEST
     }
 
     override fun stateError(code: Int) = when (code) {

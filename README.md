@@ -32,7 +32,7 @@ Early development. There is no release yet. Games start on [EmuTOS](https://emut
 
 ## Games and firmware
 
-Games and TOS images are not supplied. EmuTOS runs most ST games without any firmware from you; a few need the original TOS. KairoST keeps one TOS for each model (ST, STE, TT, Falcon) and recognizes TOS images by the version in their header, so "Import all from a folder" in Menu › Machine finds them under any name; when a folder holds several for a model, it takes an English one, the latest. A game set to "Your TOS" starts on the one for its model.
+Games and TOS images are not supplied. EmuTOS runs most ST games without any firmware from you; a few need the original TOS. KairoST keeps one TOS for each model (ST, STE, TT, Falcon) and recognizes TOS images by the version in their header, so "Import all from a folder" in Menu › Machine finds them under any name; when a folder holds several for a model, it takes an English one, the latest. A game set to "Your TOS for its model" starts on the one for its model. A game can also start on one TOS image by name: its System setting lists every TOS image the app has been given, and imports another.
 
 ## Documentation
 
