@@ -1,0 +1,11 @@
+{
+ "schemaVersion": 1,
+ "files": {
+  "bios/tos104uk.img": "C:\\Users\\Service Account\\Kairo\\KairoST\\bios\\retrobios\\tos104uk.img",
+  "bios/tos206uk.img": "C:\\Users\\Service Account\\Kairo\\KairoST\\bios\\retrobios\\tos206uk.img",
+  "bios/tos306uk.img": "C:\\Users\\Service Account\\Kairo\\KairoST\\bios\\retrobios\\tos306uk.img",
+  "bios/tos404.img": "C:\\Users\\Service Account\\Kairo\\KairoST\\bios\\retrobios\\tos404.img",
+  "games/GOAL.MSA": "C:\\Users\\Service Account\\Kairo\\KairoST\\roms\\GOAL.MSA",
+  "games/OOZE.MSA": "C:\\Users\\Service Account\\Kairo\\KairoST\\roms\\OOZE.MSA"
+ }
+}
