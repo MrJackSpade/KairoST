@@ -24,15 +24,48 @@
 
 # KairoST
 
-**Play your own Atari ST games on Android phones and handhelds.** KairoST is an Android emulator for the Atari ST, STE, TT and Falcon, built on the [Kairo shared frontend](https://github.com/MrJackSpade/Kairo): the same game library, controller and touch controls, on-screen keyboard, and per-game settings as [Kairo98](https://github.com/MrJackSpade/Kairo98) and [KairoDos](https://github.com/MrJackSpade/KairoDos). It runs a pinned copy of [Hatari](https://www.hatari-emu.org/). It is an independent project, not an official Hatari release.
+**Play your own Atari ST games on Android phones and handhelds.** KairoST is an Android emulator for the Atari ST, STE, TT and Falcon, built on the [Kairo shared frontend](https://github.com/MrJackSpade/Kairo): the same game library with artwork, controller and touch controls, on-screen keyboard, save states, and per-game settings as [Kairo98](https://github.com/MrJackSpade/Kairo98) and [KairoDos](https://github.com/MrJackSpade/KairoDos). It runs a pinned copy of [Hatari](https://www.hatari-emu.org/). It is an independent project, not an official Hatari release.
 
-## Status
+## Download
 
-Early development. There is no release yet. Games start on [EmuTOS](https://emutos.sourceforge.io/), the free TOS replacement that comes with the app, or on a TOS image dumped from your own machine. A game can be a floppy disk image (`.st`, `.msa`, `.stx`, `.dim`) or a program (`.prg`, `.tos` and the like) in its own folder, loose or in a ZIP or 7z archive; a program runs from its folder as the ST's hard disk. A floppy that does not boot by itself starts its program, when it has just one.
+<!-- kairo:download -->
+- **[GitHub Releases](https://github.com/MrJackSpade/KairoST/releases)** (free): install the APK yourself. The larger `-with-images` APK also bundles catalog artwork.
 
-## Games and firmware
+Requires an ARM64 device running Android 8.0 or newer.
+<!-- /kairo:download -->
 
-Games and TOS images are not supplied. EmuTOS runs most ST games without any firmware from you; a few need the original TOS. KairoST keeps one TOS for each model (ST, STE, TT, Falcon) and recognizes TOS images by the version in their header, so "Import all from a folder" in Menu › Machine finds them under any name; when a folder holds several for a model, it takes an English one, the latest. A game set to "Your TOS for its model" starts on the one for its model. A game can also start on one TOS image by name: its System setting lists every TOS image the app has been given, and imports another.
+## Quick start
+
+1. Install KairoST from [GitHub Releases](https://github.com/MrJackSpade/KairoST/releases).
+2. Open KairoST and choose the folder that holds your Atari ST games. You can change it later in **Menu › Manage library**.
+3. Select a game and tap **Play**. Games start on EmuTOS, which comes with the app; a few need the original TOS (see [Firmware](#firmware)).
+
+Games and TOS images are not supplied.
+
+## Supported formats
+
+| Type | Formats |
+| --- | --- |
+| Floppies | ST, MSA, STX, DIM |
+| Programs | PRG, TOS, TTP, APP, GTP, in the game's own folder |
+| Archives | Any of the above inside ZIP or 7z archives |
+
+A program runs from its folder as the ST's hard disk. A floppy that does not boot by itself starts its program, when it has just one. A game's disks show as one library entry, and **Menu › Disks** changes them during play.
+
+## Firmware
+
+KairoST comes with [EmuTOS](https://emutos.sourceforge.io/), the free TOS replacement, which runs most ST games without any firmware from you. For the few that need the original TOS, import TOS images dumped from your own machine in **Menu › Machine**: **Import all from a folder…** recognizes TOS images by the version in their header, under any name, and keeps one for each model (ST, STE, TT, Falcon); when a folder holds several for a model, it takes the latest English one.
+
+## Machine settings
+
+**Menu › Machine** sets these for all games; each game can override them in its **Game settings**, and the catalog sets them for games that need something else.
+
+- **Machine:** Atari ST (the default), Mega ST, STE, Mega STE, TT or Falcon.
+- **Memory:** 512 KB to 4 MB (1 MB by default).
+- **Monitor:** color (the default) or monochrome.
+- **Region:** Europe, 50 Hz (the default), or USA, 60 Hz.
+- **System:** EmuTOS (the default), your TOS for the game's model, or any one of the TOS images you have imported.
+- **Skip memory check** (on by default): starts games without TOS's memory test.
 
 ## Documentation
 
@@ -62,9 +95,7 @@ Build the app, and optionally install it, with the shared build script:
 shared\tools\build.ps1 -Install <adb serial>
 ```
 
-The host boot test runs the machine without Android: build `core/` with CMake for the host, then run `boot_test <TOS image> <work folder> <seconds> [machine [floppy image [runs [keys]]]]`. EmuTOS is in `third_party/emutos-1024k/etos1024k.img`.
-
-The CPU emulation Hatari generates at build time is kept in `core/generated/cpu/`; after a Hatari update, regenerate it with `tools/generate_cpu.py <host C compiler>`.
+Host tests, generated code and UI tests: see [development](docs/development.md).
 
 ## License
 
