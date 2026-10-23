@@ -101,6 +101,12 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     config.memory_kib = std::stoi(launch.settings.at("memory"));
     config.monitor = launch.settings.at("monitor");
     config.country = launch.settings.at("region");
+    const std::string &skip = launch.settings.at("skipMemoryCheck");
+    if (skip != "on" && skip != "off") {
+        error = "Skip memory check is \"" + skip + "\", not on or off";
+        return nullptr;
+    }
+    config.skip_memory_check = skip == "on";
     auto machine = StMachine::create(config, error);
     if (!machine) return nullptr;
     return std::make_unique<StCore>(std::move(machine));

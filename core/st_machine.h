@@ -43,6 +43,9 @@ struct Config {
     std::string program;
     // The audio sample rate.
     int sample_rate = 48000;
+    // Hatari's TOS patches for a faster boot: no memory test, and on TOS 1.00 to 2.05 no wait
+    // for hard disks on the DMA bus (there are none). Games see the same machine.
+    bool skip_memory_check = true;
 };
 
 class StMachine {

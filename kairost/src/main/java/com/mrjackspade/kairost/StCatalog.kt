@@ -68,7 +68,8 @@ object StCatalog : LayeredGameCatalog.Schema {
     /** The System option as the catalog reads it; MainActivity lists the player's images too. */
     val system = system()
 
-    val options = listOf(machine, memory, monitor, region, system)
+    val skipMemoryCheck = MachineOption.skipMemoryCheck()
+    val options = listOf(machine, memory, monitor, region, system, skipMemoryCheck)
 
     override val fields: Map<String, Set<String>?> = mapOf(MachineOption.SECTION to options.map { it.id }.toSet())
     override val singleMediaRoles = setOf("floppyB")

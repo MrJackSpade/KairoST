@@ -243,25 +243,27 @@ object StKeys {
         else defaults().filterNot { it.input.startsWith("virtual:ls") || it.input.startsWith("virtual:rs") }
 
     /**
-     * ST games read the joystick in port 1, the mouse in port 0, or the keyboard: the D-pad and A
-     * are the joystick, the left stick moves the mouse with L1 and R1 its buttons, B, X and Y are
-     * Space, Return and Esc, Start is F1 (many games' start or pause), Select is Help, and the
-     * right stick is the cursor keys.
+     * ST games read the joystick in port 1, the mouse in port 0, or the keyboard: the D-pad is the
+     * joystick and the cursor keys, A and B are Return and Space, X is fire, Y is Esc, the left
+     * stick moves the mouse with L1 and R1 its buttons, Start is F1 (many games' start or pause),
+     * Select is Help, L2 and R2 are F2 and Undo, and the right stick is the cursor keys.
      */
     fun defaults() = listOf(
-        ControllerBinding("virtual:a", joystick = "button1"),
+        ControllerBinding("virtual:a", listOf(RETURN)),
         ControllerBinding("virtual:b", listOf(SPACE)),
-        ControllerBinding("virtual:x", listOf(RETURN)),
+        ControllerBinding("virtual:x", joystick = "button1"),
         ControllerBinding("virtual:y", listOf(ESC)),
         ControllerBinding("virtual:l1", mouse = "leftButton"),
         ControllerBinding("virtual:r1", mouse = "rightButton"),
+        ControllerBinding("virtual:l2", listOf(function(2))),
+        ControllerBinding("virtual:r2", listOf(UNDO)),
         ControllerBinding("virtual:start", listOf(function(1))),
         ControllerBinding("virtual:select", listOf(HELP)),
         ControllerBinding("virtual:menu", action = "menu"),
-        ControllerBinding("virtual:up", joystick = "up"),
-        ControllerBinding("virtual:down", joystick = "down"),
-        ControllerBinding("virtual:left", joystick = "left"),
-        ControllerBinding("virtual:right", joystick = "right"),
+        ControllerBinding("virtual:up", listOf(UP), joystick = "up"),
+        ControllerBinding("virtual:down", listOf(DOWN), joystick = "down"),
+        ControllerBinding("virtual:left", listOf(LEFT), joystick = "left"),
+        ControllerBinding("virtual:right", listOf(RIGHT), joystick = "right"),
         ControllerBinding("virtual:lsup", mouse = "moveUp"),
         ControllerBinding("virtual:lsdown", mouse = "moveDown"),
         ControllerBinding("virtual:lsleft", mouse = "moveLeft"),
