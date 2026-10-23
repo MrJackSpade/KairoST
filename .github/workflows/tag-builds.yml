@@ -22,16 +22,10 @@ jobs:
       contents: write
       actions: write
     # Pinned to the shared commit this repository's shared submodule names.
-    uses: MrJackSpade/Kairo/.github/workflows/app-release.yml@7e7ff3cf4fbd4dd8c3d05f6e8420368a2f3ff263
+    uses: MrJackSpade/Kairo/.github/workflows/app-release.yml@9c1b49f6dca382dabb5b8c584dbd093a039dc2ef
     with:
       module: kairost
       name: KairoST
       package: com.loxifi.kairost
       version: ${{ inputs.version || '0.1.0-ci' }}
-      checks: |
-        python3 shared/tools/app_catalog.py . --check
-        python3 shared/tools/fetch_artwork.py . --check
-        python3 shared/tools/docs.py . --check
-        python3 tools/local_patches.py --check
-        python3 tools/notices.py --check
     secrets: inherit
