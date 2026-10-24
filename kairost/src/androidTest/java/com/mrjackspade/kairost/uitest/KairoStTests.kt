@@ -4,6 +4,7 @@ import android.os.SystemClock
 import com.mrjackspade.kairo.uitest.AppUnderTest
 import com.mrjackspade.kairo.uitest.AppUnderTest.BiosFile
 import com.mrjackspade.kairo.uitest.AppUnderTest.MediaSwap
+import com.mrjackspade.kairo.frontend.GuestInputRecord
 import com.mrjackspade.kairo.uitest.By
 import com.mrjackspade.kairo.uitest.KairoUiTest
 import com.mrjackspade.kairo.uitest.suites.ControllerTests
@@ -32,14 +33,14 @@ object KairoStApp : AppUnderTest() {
     override val biosTitle = "Atari ST BIOS"
     override val biosFiles = listOf(BiosFile("tos-st.img", false), BiosFile("tos-ste.img", false),
         BiosFile("tos-tt.img", false), BiosFile("tos-falcon.img", false))
-    override val bootGame = "GOAL"
+    override val bootGame = "Goal!"
     override val bootGameFile = "games/GOAL.MSA"
     override val otherGame = "OOZE"
-    override val searchTerm = "GOAL"
+    override val searchTerm = "Goal"
     override val arrowKeys = listOf(StKeys.UP, StKeys.DOWN, StKeys.LEFT, StKeys.RIGHT)
     override val returnKey = StKeys.RETURN
     override val spaceKey = StKeys.SPACE
-    override val mediaSwap = MediaSwap("GOAL", "Drive B", "OOZE")
+    override val mediaSwap = MediaSwap("Goal!", "Drive B", "OOZE")
 }
 
 class KairoStFirstRunTests : FirstRunTests() { override val app = KairoStApp }
@@ -76,10 +77,11 @@ class StTests : KairoUiTest() {
         for (key in keys.all().take(5)) {
             val code = key.key()!!.toInt()
             val mark = driver.inputMark()
-            val start = SystemClock.elapsedRealtime()
             key.tap()
-            driver.waitForInput("key $code", mark) { events -> events.any { it.kind == "key" && it.code == code && it.down } }
-            val millis = SystemClock.elapsedRealtime() - start
+            val pressed = { event: GuestInputRecord.Event -> event.kind == "key" && event.code == code && event.down }
+            driver.waitForInput("key $code", mark) { events -> events.any(pressed) }
+            // From the finger going down to the key reaching the game, as the app saw both.
+            val millis = driver.inputDelayAfterTouch(mark, pressed)
             driver.log.step("delay", "key $code reached the game after $millis ms")
             expect.that("key $code reached the game within 500 ms", millis < 500) { "$millis ms" }
         }

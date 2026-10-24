@@ -1,1 +1,1 @@
-{"coreVersion":3,"games":{},"nameIndex":{"games":{},"names":{},"schemaVersion":1},"schemaVersion":1}
+{"coreVersion":3,"games":{"sha256-fd-v1:5c07a228c27168296213858070757f50c58b8ec477f2fbebc93ffa5f9b7d3df7":{"game":"atarist:local-5c07a228c2","machine":{"tos":"tos"}}},"nameIndex":{"games":{"atarist:local-5c07a228c2":{"title":"Goal!"}},"names":{"goal":"atarist:local-5c07a228c2"},"schemaVersion":1},"schemaVersion":1}

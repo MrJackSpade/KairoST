@@ -1,4 +1,16 @@
 {
- "games": {},
+ "games": {
+  "atarist:local-5c07a228c2": {
+   "contentIds": [
+    "sha256-fd-v1:5c07a228c27168296213858070757f50c58b8ec477f2fbebc93ffa5f9b7d3df7"
+   ],
+   "diskMachine": {
+    "sha256-fd-v1:5c07a228c27168296213858070757f50c58b8ec477f2fbebc93ffa5f9b7d3df7": {
+     "tos": "tos"
+    }
+   },
+   "title": "Goal!"
+  }
+ },
  "schemaVersion": 1
 }
