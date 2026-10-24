@@ -1,0 +1,3225 @@
+{
+ "images": {
+  "art/catalog/moby/1112/screenshot-015fad0a5ad2.webp": {
+   "game": "atarist:moby-1112",
+   "sha256": "0f1266255cb43ca4d2031fcb4b21a3f1c22ebebadf459b53ef085f0cb9fe84a1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15676444-uridium-atari-st-crossing-part-of-the-level-network.png"
+  },
+  "art/catalog/moby/111899/screenshot-c4f4a6816206.webp": {
+   "game": "atarist:moby-111899",
+   "sha256": "88a7088743a47a0e0c52083601732e4bba7be44a504f7dca3fed0f92f1085422",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16452721-make-a-break-atari-st-game-over.png"
+  },
+  "art/catalog/moby/111900/screenshot-3620f6d0aa04.webp": {
+   "game": "atarist:moby-111900",
+   "sha256": "ca2aa76200df6a34a90d2ee60ded8e9c38af52264e0971b49abc474b8a8b7756",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16452751-football-genius-atari-st-this-is-going-my-way.png"
+  },
+  "art/catalog/moby/111919/screenshot-62b1a47dbdd5.webp": {
+   "game": "atarist:moby-111919",
+   "sha256": "541c209d1c6b626e9741e37026c6588fd8f4161b964ec720a683a821229f3887",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16453354-chessnut-atari-st-oh-no-the-computer-took-one-of-my-pieces.png"
+  },
+  "art/catalog/moby/111920/screenshot-f1f825f60680.webp": {
+   "game": "atarist:moby-111920",
+   "sha256": "a1e7aced5fe9e149e91dc5e4dc99fdb829a910c327b323166fa306a0f9487126",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16453339-international-cricket-atari-st-this-doesnt-look-good.png"
+  },
+  "art/catalog/moby/111961/screenshot-f30a154efcca.webp": {
+   "game": "atarist:moby-111961",
+   "sha256": "2e9970a67eddfe875c28eb46da6379a748cd30c790097a81770e8b0139222eb9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16454695-exodus-atari-st-three-enemy-fliers-and-a-missile-they-really-got.png"
+  },
+  "art/catalog/moby/111966/screenshot-f324a76bb588.webp": {
+   "game": "atarist:moby-111966",
+   "sha256": "2e18c467a7b77547d1eba655fa032ce320b675a5e916986de6de9c03427e2e12",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8806429-football-magic-atari-st-info-about-a-specific-player.jpg"
+  },
+  "art/catalog/moby/111968/screenshot-cfe4e99db926.webp": {
+   "game": "atarist:moby-111968",
+   "sha256": "c1d83077eafb1046fc5dfec83c242bee7f7486c90e307f6fa18b0754dc7f3765",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16454734-decoder-atari-st-that-didnt-work-out.png"
+  },
+  "art/catalog/moby/111970/screenshot-eac5bda4e77b.webp": {
+   "game": "atarist:moby-111970",
+   "sha256": "5666abce9fea44979f798a4f6484829c4551bf3a0d4a8c4840de65049e2f979a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16454827-gilberts-challenge-atari-st-the-high-score-table-is-pretty-empty.png"
+  },
+  "art/catalog/moby/111975/screenshot-7d5c19ae70f6.webp": {
+   "game": "atarist:moby-111975",
+   "sha256": "7f4a499e264b89b955cf494213e4a3685c9a1c14680c0ffcc133939775df7b4f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16454611-st-aggravation-atari-st-a-bit-into-a-two-player-game-red-green.png"
+  },
+  "art/catalog/moby/11255/screenshot-d8abe5b7b695.webp": {
+   "game": "atarist:moby-11255",
+   "sha256": "95975148b08774a95964a665da37ca161bc16a82eea9cdd545a0ad6d2b092253",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15893966-jinks-atari-st-game-over.png"
+  },
+  "art/catalog/moby/116594/screenshot-3a4e394ef2a9.webp": {
+   "game": "atarist:moby-116594",
+   "sha256": "98cdc7b84f4c4dd9f60ce465a59e58d95ef1842a0c04c206f21ec2aee9adc44b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16892790-f1-gp-circuits-atari-st-digitized-image-at-the-end-of-a-race.png"
+  },
+  "art/catalog/moby/11756/screenshot-ac5422a0c1c7.webp": {
+   "game": "atarist:moby-11756",
+   "sha256": "d74e77f255c2d6d4509e8b9d14a02274b0c4addbcd5970228f018962a62216f2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15723965-fighting-for-rome-atari-st-initial-formation.png"
+  },
+  "art/catalog/moby/118874/box-ddee54757b13.webp": {
+   "game": "atarist:moby-118874",
+   "sha256": "534ae03448e072469d9870d7e41f9880ce464af0fd706c518a6437a176d9a99c",
+   "sourceUrl": "https://cdn.mobygames.com/covers/3031098-spellbound-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/121170/box-345b6a87d652.webp": {
+   "game": "atarist:moby-121170",
+   "sha256": "5a4a3509b6370d7ce37ca98370e7f2ffa4d6bc0f8b760fcde14cbd5c32b91b45",
+   "sourceUrl": "https://cdn.mobygames.com/covers/7528358-rocket-ranger-extended-collectors-edition-dos-front-cover.jpg"
+  },
+  "art/catalog/moby/12286/box-a9e277d3bfad.webp": {
+   "game": "atarist:moby-12286",
+   "sha256": "7006e0e9ca01f16bea0be72ea3e08f64e0ae37c788f2a954289d667e55938d8b",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4164854-gateway-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/12286/screenshot-662c31598c32.webp": {
+   "game": "atarist:moby-12286",
+   "sha256": "c5b8ba38f7986188dbf3913843d36ff65927175b0f1d2ffc5dcca5c5b84902c4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15661489-gateway-atari-st-setting-the-pictures-location.png"
+  },
+  "art/catalog/moby/12504/box-83ef525f2f93.webp": {
+   "game": "atarist:moby-12504",
+   "sha256": "4327f8fda2deaec309afbb5491147a08b4e441bed4d2c6f6936b70aab5176f7d",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4111449-falcon-operation-counterstrike-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/12594/screenshot-3113b78711b3.webp": {
+   "game": "atarist:moby-12594",
+   "sha256": "04a095074dfd6c1e7a2e9651ba5e09ce18cd066122eb3f0e726a32d68c39e6ad",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15935156-brian-cloughs-football-fortunes-atari-st-league-table.png"
+  },
+  "art/catalog/moby/12601/screenshot-f0d3840c5283.webp": {
+   "game": "atarist:moby-12601",
+   "sha256": "aa42b12e49141db583a3195e461c31c1f0ed9e8bfebcda8a8b46b7945888ff76",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15927904-hollywood-poker-atari-st-she-lost-a-bit-of-her-clothing.png"
+  },
+  "art/catalog/moby/12662/screenshot-95a105be40ca.webp": {
+   "game": "atarist:moby-12662",
+   "sha256": "48c494bd018ed38d71013a98ce760260ca03e623368fbff9d9396a421e35aaa6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16025523-sporting-triangles-atari-st-candidates-come-from-a-range-of-spor.png"
+  },
+  "art/catalog/moby/130107/box-332e9b69152d.webp": {
+   "game": "atarist:moby-130107",
+   "sha256": "b22cfd666d4738f6417140f51dfe81468f6ad3b469261535e83de4c2b6b4e498",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10189174-escape-2042-the-truth-defenders-windows-front-cover.png"
+  },
+  "art/catalog/moby/13071/box-f5ab8e77591c.webp": {
+   "game": "atarist:moby-13071",
+   "sha256": "b2c2d9f8c7aae2d836dbb2462af33e03cab93cf1718406332fa57484ffd2f42f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6815110-sensible-soccer-european-champions-9293-edition-atari-st-front-c.jpg"
+  },
+  "art/catalog/moby/13071/screenshot-f16c1af820c3.webp": {
+   "game": "atarist:moby-13071",
+   "sha256": "8228d95d931ab49c067d1aa2e37e5018179cf6a7fe53f306db9bc4df1dfb8a3f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8373453-sensible-soccer-european-champions-9293-edition-atari-st-corner-.png"
+  },
+  "art/catalog/moby/1311/screenshot-94ce84e67713.webp": {
+   "game": "atarist:moby-1311",
+   "sha256": "168ca90be8fc98f0e6a0bd5942ea205c451277c294f363cf199a5b885c5e629e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16030002-revelation-atari-st-the-next-section-is-to-find-the-gold-as-soon.png"
+  },
+  "art/catalog/moby/13151/box-a015670278fb.webp": {
+   "game": "atarist:moby-13151",
+   "sha256": "83c4f67c5843fb0580225201c650bc82db9897748bb0b04673784387b7e19710",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6794315-bolo-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/13151/screenshot-6f662027d99a.webp": {
+   "game": "atarist:moby-13151",
+   "sha256": "b9a56d8ce096daeb3dc039733cfccc4fab1199b539563461b7c838fcbbf45f0f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15687928-bolo-atari-st-get-in.png"
+  },
+  "art/catalog/moby/136016/screenshot-6c2bce45a6dd.webp": {
+   "game": "atarist:moby-136016",
+   "sha256": "964a07c1446116072cb2e5eef8a059dfab94a3c745866402f0c58b2731469590",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16578701-iceblox-plus-atari-st-level-2.png"
+  },
+  "art/catalog/moby/136018/screenshot-ec2528381f90.webp": {
+   "game": "atarist:moby-136018",
+   "sha256": "77bc81837704a696f7f803d9a21dd40a15c2c1435bd62a0fb7aee74e9da4ab83",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16575936-bridge-50-atari-st-playing-cards.png"
+  },
+  "art/catalog/moby/1364/box-86492f7735ad.webp": {
+   "game": "atarist:moby-1364",
+   "sha256": "f11e510a56c4e4b9e1cceb996e207b369d3e824485ec27d4e50b96e917313115",
+   "sourceUrl": "https://cdn.mobygames.com/covers/3995542-moonmist-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/1364/screenshot-6698726fa398.webp": {
+   "game": "atarist:moby-1364",
+   "sha256": "a636f88fca823f4df454f944de9e063d2fbeb061ef20aeaddd0fc9bb77c2838b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2080444-moonmist-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/1372/box-3bcf31d855e5.webp": {
+   "game": "atarist:moby-1372",
+   "sha256": "e4b104dc1346694da2033b8105e2da532a7d781c35950c375821835d919333b5",
+   "sourceUrl": "https://cdn.mobygames.com/covers/96037-brimstone-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/1372/screenshot-2b71b2e75ac0.webp": {
+   "game": "atarist:moby-1372",
+   "sha256": "5067ceb26b8d9b877509f21f1006d017e686156ce1ff4d22b503c4eea13bd263",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1361986-brimstone-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/13750/box-9639919837dd.webp": {
+   "game": "atarist:moby-13750",
+   "sha256": "6dc979ae9cdc50b8f7cac7615c8c783327852518a8046df5712fdc37c42f5ba2",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4768914-ranx-the-video-game-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/13750/screenshot-e623763c7951.webp": {
+   "game": "atarist:moby-13750",
+   "sha256": "d368156f524ec23a46c19eef156d6a6f3433ed58bc19b566d7da317617a7d4cc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16003919-ranx-the-video-game-atari-st-a-prostitute.png"
+  },
+  "art/catalog/moby/1376/box-2b01afe2366e.webp": {
+   "game": "atarist:moby-1376",
+   "sha256": "2807888addf1266863e7919787a3d1d396b924df5ac07170d27d9546c3d81427",
+   "sourceUrl": "https://cdn.mobygames.com/covers/3951853-essex-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/1376/screenshot-3affa91c2043.webp": {
+   "game": "atarist:moby-1376",
+   "sha256": "a9f9b8aa722b318034328666ef945e8fc17a2aab39de7636a7b193c988613d8f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1223773-essex-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/13821/box-5d143558a0bd.webp": {
+   "game": "atarist:moby-13821",
+   "sha256": "f651edcdac54ad5aa51fde84c5923d487e4b73d40184b76a4fe9aadd28266e56",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6785454-international-rugby-challenge-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/139439/box-bab7095967fd.webp": {
+   "game": "atarist:moby-139439",
+   "sha256": "f2a387295ca5dfccdfaca49fcd3957cd5caa3cb06e5b743fda822bee15cfb93b",
+   "sourceUrl": "https://cdn.mobygames.com/covers/8694376-crown-of-creation-3d-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/140432/screenshot-071387c84c33.webp": {
+   "game": "atarist:moby-140432",
+   "sha256": "db3db78a04a7ecf4765d80dcb26a6a28191456de5229f873478fd1f177b6bd41",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/19680359-hibernated-1-this-place-is-death-atari-st-game-start.png"
+  },
+  "art/catalog/moby/1412/box-c78c57dec0cd.webp": {
+   "game": "atarist:moby-1412",
+   "sha256": "b9829b0b1e9901d2f34fff1180fb487baebf82ac67f2631638218607fc9c31ae",
+   "sourceUrl": "https://cdn.mobygames.com/covers/16162118-moonwalker-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/1412/screenshot-6f266fb695bc.webp": {
+   "game": "atarist:moby-1412",
+   "sha256": "78c89780d54903429b1aad07439e7f723448ad9cfd0e71c4e22acc83c5ae6e2e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/7728109-moonwalker-atari-st-found-a-part-of-the-costume.png"
+  },
+  "art/catalog/moby/14395/box-8ebfcaf06550.webp": {
+   "game": "atarist:moby-14395",
+   "sha256": "d302829bce1f6133f29651d450d8b6def1946e1b639c091dd4b131220aa3d455",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9812412-power-up-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/14414/screenshot-1380804be438.webp": {
+   "game": "atarist:moby-14414",
+   "sha256": "523f7f207d9572661e39c531c86015a6c7b0a083139e119faecbdf8661d58dd9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15828959-super-huey-uh-ix-atari-st-waiting-for-engine-to-warm-up.png"
+  },
+  "art/catalog/moby/1451/screenshot-54ceec4b7041.webp": {
+   "game": "atarist:moby-1451",
+   "sha256": "f3a1f433f11236abd3a19ce4df2ff85112dd5f8df4a1cf4fb9c43edfe9c2a634",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15981968-gold-of-the-americas-the-conquest-of-the-new-world-atari-st-econ.png"
+  },
+  "art/catalog/moby/145781/box-f5bf7a9b602a.webp": {
+   "game": "atarist:moby-145781",
+   "sha256": "429bb869275661f6fce55935ff22a043317dce234c5a44f47c0dd1d8283ea8b3",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9186494-the-curse-of-rabenstein-dos-front-cover.png"
+  },
+  "art/catalog/moby/145781/screenshot-5a56e6b986d5.webp": {
+   "game": "atarist:moby-145781",
+   "sha256": "f0efc1fafd50a61010cf6cd9722a392f2b02508d1b9a901c9e7b177f148d5a2f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16786084-the-curse-of-rabenstein-atari-st-checking-out-my-inventory-at-th.png"
+  },
+  "art/catalog/moby/146750/screenshot-ef70b15ca9d1.webp": {
+   "game": "atarist:moby-146750",
+   "sha256": "15af4a54a54c8834bc4ddec96deed14ee06c3690208744b611547f1747d35115",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16593829-mission-mouse-atari-st-hickory-dickory-dock.png"
+  },
+  "art/catalog/moby/14745/screenshot-7e833e7eee6c.webp": {
+   "game": "atarist:moby-14745",
+   "sha256": "bc291dee322b1801c1cc5bf11f2df53a582176c31d6d76ebc9e95809999d7763",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/4743675-jet-set-willy-atari-st-its-my-worst-nightmare-room.png"
+  },
+  "art/catalog/moby/14746/screenshot-0c7148712657.webp": {
+   "game": "atarist:moby-14746",
+   "sha256": "da0bd752bee7ce501419ba065cedda985206ac9a717b45afb12343d150789f55",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15916403-revenge-of-the-mutant-camels-atari-st-thats-what-i-call-a-weapon.png"
+  },
+  "art/catalog/moby/147552/box-e7d21243e377.webp": {
+   "game": "atarist:moby-147552",
+   "sha256": "8025623a18977b2461cac50719db324868a5ddfd1c7672621f54df8b3991db98",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10778908-the-curse-of-rabenstein-collectors-edition-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/14820/box-c34d1c281268.webp": {
+   "game": "atarist:moby-14820",
+   "sha256": "1a57eb5b2fe5a8f475cee28a18f804cb23b1836eaaea4439bb783af1525a781a",
+   "sourceUrl": "https://cdn.mobygames.com/covers/1204147-president-elect-1988-edition-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/14820/screenshot-29e3c0124e01.webp": {
+   "game": "atarist:moby-14820",
+   "sha256": "6e4d822a2df97e26204d653a4473c43ef1ebf0a0e4ac485bfa899fd8c6b749e7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15847272-president-elect-1988-edition-atari-st-which-states-will-vote-for.png"
+  },
+  "art/catalog/moby/148390/screenshot-2a1e7bc63894.webp": {
+   "game": "atarist:moby-148390",
+   "sha256": "6a0dfa5f807cb242ae25aef12481af7722c321937d4b622b05b180ff5340569f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16735043-santa-paravia-and-fiumaccio-atari-st-your-fiefdom.png"
+  },
+  "art/catalog/moby/149367/screenshot-1fbf601e6489.webp": {
+   "game": "atarist:moby-149367",
+   "sha256": "362775f96a44e2d5d5e0b4a6c5356ce08b62eea46f2df8da08e252d1dfff07aa",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16715843-hypnotic-land-atari-st-level-2-brief-two-bins-and-voracious-octo.png"
+  },
+  "art/catalog/moby/14946/box-3161dd8157fc.webp": {
+   "game": "atarist:moby-14946",
+   "sha256": "5bdc808b64bf0a06be97ee98d8bbf41f2ddfab9233beee3f3f4f2d9dc1c5d2b9",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10055047-league-challenge-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/150454/screenshot-fdc4feeeee91.webp": {
+   "game": "atarist:moby-150454",
+   "sha256": "154ba45040c127e6c7670406525fac1f5adbfc4d5d84c2e46800f0eed6aec7c1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/17991389-necron-aptor-quest-atari-st-no-guard-here.png"
+  },
+  "art/catalog/moby/15107/box-22d6d8b264a3.webp": {
+   "game": "atarist:moby-15107",
+   "sha256": "115e0248168ab57a311ec0cf751b24bdf1eac5dfa4fa1d7b25d3ffd873841be8",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4112180-table-tennis-simulation-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/15107/screenshot-caf8d688b944.webp": {
+   "game": "atarist:moby-15107",
+   "sha256": "0c05d6b80e18734b21d7ad08e36d9fb92965645fc5f226ca339d92a01950624b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15920176-table-tennis-simulation-atari-st-who-is-playing-against-who.png"
+  },
+  "art/catalog/moby/151988/screenshot-554867110145.webp": {
+   "game": "atarist:moby-151988",
+   "sha256": "d5fc5ea038a79605d495554fd13d6862668c9c69e4460b8a2fdf7346d0366579",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/19689718-the-queens-footsteps-atari-st-game-start.png"
+  },
+  "art/catalog/moby/1526/box-fd021c388b69.webp": {
+   "game": "atarist:moby-1526",
+   "sha256": "c5daf7ab83e3d6cd5d2e4575b7ad97470f267ff405bf64b9d21895e34d948f28",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4136361-forbidden-quest-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/1526/screenshot-2fab0cd20ccc.webp": {
+   "game": "atarist:moby-1526",
+   "sha256": "253040162873236bb77d2e5f2a70ac3ea69f7c0abe1ed5191b6884870daf133c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15643577-forbidden-quest-atari-st-high-resolution-title-screen.png"
+  },
+  "art/catalog/moby/15278/screenshot-c452b65ff0b4.webp": {
+   "game": "atarist:moby-15278",
+   "sha256": "40ec6a7596eb0fe7bd4d7480e734b0fd0b34a1dc60bf6a8819b912f8f0073331",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15672155-fourfit-atari-st-in-a-bit-of-trouble.png"
+  },
+  "art/catalog/moby/154785/box-2e03029a4873.webp": {
+   "game": "atarist:moby-154785",
+   "sha256": "4fe9ae52f093d094dc2a2aafb9d1bd630feca72a2a24b9466cd9e4fa5412e8ce",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9624576-tristam-island-linux-front-cover.png"
+  },
+  "art/catalog/moby/154785/screenshot-6c8c3b25975b.webp": {
+   "game": "atarist:moby-154785",
+   "sha256": "412d978826c87b392fe96557c3faa18ec430456c2c0af3fab54a94cab2cb8a7a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16875511-tristam-island-atari-st-game-start.png"
+  },
+  "art/catalog/moby/16070/screenshot-f8bbd78fd409.webp": {
+   "game": "atarist:moby-16070",
+   "sha256": "cc72e6222063e9c118921abf4a8c566a91e61a66d224e6a3f856dd0261e3d194",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15920305-beyond-the-tesseract-atari-st-introduction.png"
+  },
+  "art/catalog/moby/16110/screenshot-ec833b8fddb7.webp": {
+   "game": "atarist:moby-16110",
+   "sha256": "96be026363a43da3de8c6f6dfb8e021af9d557057150b1f7057733300b38bf1b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15707194-kenny-dalglish-soccer-match-atari-st-whats-the-keeper-doing-down.png"
+  },
+  "art/catalog/moby/16112/box-a8ea763d21e3.webp": {
+   "game": "atarist:moby-16112",
+   "sha256": "151a670ea5a4903f0a117c859eebbb70bae7831b79386d6267d940cb40867214",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9796975-soldier-of-light-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/16112/screenshot-1cbdd040f12d.webp": {
+   "game": "atarist:moby-16112",
+   "sha256": "6b88d03df22e9871ead3cc062c31ebf0d4b6b61ce7f816619a7bef50ba475419",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8940900-soldier-of-light-atari-st-the-enemy-soldiers-occupied-some-kind-.png"
+  },
+  "art/catalog/moby/16144/screenshot-844389610ca2.webp": {
+   "game": "atarist:moby-16144",
+   "sha256": "ffb99e63a7e5aa8ed85da4de4659813265dcc3b903e36e012fee98a087b28b2e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9362574-wacky-races-atari-st-that-was-close-but-i-didnt-manage-to-finish.png"
+  },
+  "art/catalog/moby/16249/screenshot-5ac071d95e54.webp": {
+   "game": "atarist:194524",
+   "sha256": "d520c14f6162e19bfe4a4025972b7429e209eaa200582f5aa2991f9908d9d2a3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16059142-towers-lord-baniffs-deceit-atari-st-maybe-this-way.png"
+  },
+  "art/catalog/moby/16309/screenshot-bc43edb87990.webp": {
+   "game": "atarist:moby-16309",
+   "sha256": "ffadcc2f0530128a1b2d5a14bafc614a2c562fd81beba78a83105f29f7a75fc4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15686719-fire-force-atari-st-he-cant-see-me-when-i-hide-behind-the-truck.png"
+  },
+  "art/catalog/moby/164307/box-e4ee44ecc662.webp": {
+   "game": "atarist:moby-164307",
+   "sha256": "fa939c65b3cb743d133c948a1a13ac5c5131c4a57c8ccf4dbba2c5ee55efa94c",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9926895-power-up-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/164680/box-b53c211a596d.webp": {
+   "game": "atarist:moby-164680",
+   "sha256": "a6dd6007e8fcf55128b7b0afbb8b5c41580fba5108463f0e42dbd700ee462a63",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10006273-action-st-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/16567/screenshot-c02f81e27cf8.webp": {
+   "game": "atarist:moby-16567",
+   "sha256": "a96088148ca8945fa77d8de54e146774b1c23c2ae0cef326b877bae95512f748",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15671714-war-machine-atari-st-climbing-a-ladder.png"
+  },
+  "art/catalog/moby/16593/box-eeb2c6007014.webp": {
+   "game": "atarist:moby-16593",
+   "sha256": "227e64944d94551eef8deef23d844c5be8fb3c9a8fce9930ca055b60e7cbc550",
+   "sourceUrl": "https://cdn.mobygames.com/covers/61428-conqueror-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/16593/screenshot-7152f81bb5a7.webp": {
+   "game": "atarist:moby-16593",
+   "sha256": "2f06ba4b5d4601b869c580e1052db7b1e62eba53bbab7f45297becce9b9749fd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15732429-conqueror-atari-st-command-mode.png"
+  },
+  "art/catalog/moby/16606/box-454e4318462c.webp": {
+   "game": "atarist:moby-16606",
+   "sha256": "ea26ca4be255c3c77755fe59d7bac6162d7c9b98bb674041bee5db57bd328447",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4751978-photon-storm-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/16606/screenshot-cf84a150c64f.webp": {
+   "game": "atarist:moby-16606",
+   "sha256": "97792595b2ab70814a5fb25078fa0a1fbb321c9576eb98b5c43aefe835b49b6a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/4663717-photon-storm-atari-st-enemies-closing-in-fast.png"
+  },
+  "art/catalog/moby/16609/screenshot-42464dca74c9.webp": {
+   "game": "atarist:moby-16609",
+   "sha256": "fe78698945c18c820625e0f1ec7b1ad81c1fc3eae44dd0404bc37a8e17f0faf5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15843488-robin-hood-legend-quest-atari-st-chased-by-a-ball-of-metal.png"
+  },
+  "art/catalog/moby/16611/screenshot-1d3d87885013.webp": {
+   "game": "atarist:moby-16611",
+   "sha256": "53b7541b21f32ab514ac777f1dee3a0c8973da1bf918bbc42047e81375c659c9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15958326-kwik-snax-atari-st-up-in-the-clouds.png"
+  },
+  "art/catalog/moby/16636/screenshot-2497fb38b139.webp": {
+   "game": "atarist:moby-16636",
+   "sha256": "8a277a62adb82ff252e739d059c313c82b70dc2bf6ca252af031243c1bd3c115",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15756402-jocky-wilsons-compendium-of-darts-atari-st-your-opponent-plays.png"
+  },
+  "art/catalog/moby/16711/screenshot-59127a66bddc.webp": {
+   "game": "atarist:moby-16711",
+   "sha256": "b527129de275f6c578c064184c373b88d56d448ef8b1c4f64db916f71d605347",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15798142-ruff-and-reddy-in-the-space-adventure-atari-st-use-the-switch.png"
+  },
+  "art/catalog/moby/17073/screenshot-146827a8cfc1.webp": {
+   "game": "atarist:moby-17073",
+   "sha256": "166474e73971ef35a46117050f2da97538cdf0b33b9a761da6daa1368a77ad75",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15933763-breach-atari-st-title-screen.png"
+  },
+  "art/catalog/moby/17371/screenshot-b56928ff6542.webp": {
+   "game": "atarist:moby-17371",
+   "sha256": "e6cb1c7b5ab39b7f65a01f0b22d1552970c6890480114ffa242da93e3dd216ea",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16444325-tournament-tennis-atari-st-a-net-ball.png"
+  },
+  "art/catalog/moby/174360/box-c8bb575c386f.webp": {
+   "game": "atarist:moby-174360",
+   "sha256": "aae9539e0bda3b2043c4204a3d944f4bed90ba472f8d894a1725c0a5612c60c6",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10486149-pit-fighter-super-space-invaders-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/176892/box-8ebb4829f2ef.webp": {
+   "game": "atarist:moby-176892",
+   "sha256": "1fced18e257358785a674b811c611e8d8f9fb6895a5875fbe03605f37eefb248",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10484617-5-star-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/17868/screenshot-3fe2299e266d.webp": {
+   "game": "atarist:moby-17868",
+   "sha256": "4f9868caac16b2c0518fcaeb854afd670b833bf3f545ca7c718e3957b2be0447",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16013580-radio-controlled-racer-atari-st-very-spaced-out-field-already.png"
+  },
+  "art/catalog/moby/1789/screenshot-0403e35d35e4.webp": {
+   "game": "atarist:moby-1789",
+   "sha256": "1b5a8ae2a183dd3def8232bbe9582182648c7be095d718ed371f28149b4fcb13",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9717956-angband-atari-st-character-creation.png"
+  },
+  "art/catalog/moby/17898/screenshot-b7698eae70c0.webp": {
+   "game": "atarist:moby-17898",
+   "sha256": "d5962c7fa6e93003b64fcab3b81954df6be224f6b2e6178c4f5a21bece005a48",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15961121-spike-in-transilvania-atari-st-inside-the-inn.png"
+  },
+  "art/catalog/moby/1796/screenshot-3243911a3f0d.webp": {
+   "game": "atarist:moby-1796",
+   "sha256": "8faaaf55e0451e06992370de552c1c3c296a7d7e0bcb5b9059227cf1bf1fec75",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15906055-larn-atari-st-making-a-deposit-at-the-bank.png"
+  },
+  "art/catalog/moby/17975/screenshot-c2dd9eb51f82.webp": {
+   "game": "atarist:moby-17975",
+   "sha256": "8ca118011fc7a9b3bb8e2a656fdab61b5bd8a390cbde85af6c5f21a9c79cba0e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15934975-bombx-atari-st-level-two.png"
+  },
+  "art/catalog/moby/18008/screenshot-0a98f2106913.webp": {
+   "game": "atarist:moby-18008",
+   "sha256": "94a69376ff00c7b5c984c83d4b315e48d1874f10c7db875837fc3eb73a64984b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15987354-kenny-dalglish-soccer-manager-atari-st-match-results.png"
+  },
+  "art/catalog/moby/181422/screenshot-ab1385642482.webp": {
+   "game": "atarist:moby-181422",
+   "sha256": "475834631b9506837423f6b6092f6b3059ee56e052c677bf0566f1f9dfe12498",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15845261-super-grid-runner-atari-st-nice-in-game-graphics.png"
+  },
+  "art/catalog/moby/18184/screenshot-120fe6b9c6f4.webp": {
+   "game": "atarist:moby-18184",
+   "sha256": "c8bd43d2dedc87a2e8be83e185e22bc055d4197c6e16a8c9a10c292bf3229374",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15738063-mindbender-atari-st-the-first-round-proper.png"
+  },
+  "art/catalog/moby/183605/screenshot-087c6b2a137f.webp": {
+   "game": "atarist:moby-183605",
+   "sha256": "4c6c8edc819e3060b00ffd4686f909c4fe0cbfe63aeff2754de011fc5e3226af",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16908881-fourmi-story-atari-st-a-hobbit-house-no-one-seems-to-be-home-tho.png"
+  },
+  "art/catalog/moby/18564/screenshot-7e618452c646.webp": {
+   "game": "atarist:moby-18564",
+   "sha256": "dbc417b5725faa00041d6b189dbd893f69afcc2f19e2ab67fa3247f12ca120d3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15984010-hong-kong-phooey-no1-super-guy-atari-st-on-a-barrel.png"
+  },
+  "art/catalog/moby/1868/screenshot-79df0fc20a13.webp": {
+   "game": "atarist:moby-1868",
+   "sha256": "cb81614f3c0f5dc60731daad178deee80c34f811347a75c24702e111f5c66f04",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15787374-shadow-sorcerer-atari-st-stats.png"
+  },
+  "art/catalog/moby/18810/screenshot-0fc6a0c05ec6.webp": {
+   "game": "atarist:moby-18810",
+   "sha256": "a3677c8ff0504b77bf80e58b55c07e1a0c08573b751e545eeec854264baf3e81",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15748947-the-famous-five-five-on-a-treasure-island-atari-st-the-kirrin-co.png"
+  },
+  "art/catalog/moby/188308/screenshot-05147ea74b53.webp": {
+   "game": "atarist:moby-188308",
+   "sha256": "46845f40a93ffe760cfb2f65eb8cfccf100b712635fa2b72bdc051d91dcb449f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/19717145-tenebra-atari-st-level-3-hires.png"
+  },
+  "art/catalog/moby/190081/screenshot-9d085158e662.webp": {
+   "game": "atarist:moby-190081",
+   "sha256": "c4636b10e9fb842bc37283f3f2c964b8e40eab3afff1eafe1d0ffc89062740ac",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16909988-wizard-royal-atari-st-high-score-list.png"
+  },
+  "art/catalog/moby/192/screenshot-bee691723ae8.webp": {
+   "game": "atarist:moby-192",
+   "sha256": "da5f4d9c38039f19555ab07326599a3ed8b73610ef36ae1f4c2df13551a728cb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15891891-skyfox-ii-the-cygnus-conflict-atari-st-someone-is-trying-to-shoo.png"
+  },
+  "art/catalog/moby/19280/screenshot-b5e6cec865fa.webp": {
+   "game": "atarist:moby-19280",
+   "sha256": "270752c4d0e8e4572ef4cf878dbbe3690f0be5d37c361dfb9685d252ee0980ab",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15642602-football-director-atari-st-who-shall-we-scout.png"
+  },
+  "art/catalog/moby/19389/box-4aa0bbc63bf2.webp": {
+   "game": "atarist:moby-19389",
+   "sha256": "96ea5a3fba209f851679ad05fb65506a1970acd5658dfd5f002456d4d762b227",
+   "sourceUrl": "https://cdn.mobygames.com/covers/20331201-c64-classix-linux-front-cover.png"
+  },
+  "art/catalog/moby/1941/screenshot-8c0847508dcc.webp": {
+   "game": "atarist:moby-1941",
+   "sha256": "8a6072180187e0123e42406ec8f30d0d3303ec30594780f477e3c6b29180dd54",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1169171-grand-prix-master-atari-st-go-full-speed-here.png"
+  },
+  "art/catalog/moby/196791/screenshot-94ccd6cf821a.webp": {
+   "game": "atarist:moby-196791",
+   "sha256": "1055a51401cf4b372e1350fc1098dfe331439cbf7ae0a36c3ee82c850533b65c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16914801-das-grosse-deutsche-ballerspiel-atari-st-these-enemies-are-harml.png"
+  },
+  "art/catalog/moby/201941/screenshot-cd620623aeec.webp": {
+   "game": "atarist:moby-201941",
+   "sha256": "c25bced3a11130c1e8f86c8b1a173f113c7caf866b78620908c7daf474ebbc85",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/6733740-karate-master-atari-st-red-wins.png"
+  },
+  "art/catalog/moby/20249/screenshot-9a2e8c70fd1e.webp": {
+   "game": "atarist:moby-20249",
+   "sha256": "a0660295fbca0e52e22c46bec47e816982bb8fc41641f8b2f6431ad3072fabd0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15817145-sol-negro-atari-st-too-bad-for-me.png"
+  },
+  "art/catalog/moby/20399/screenshot-74cf3bb0b21e.webp": {
+   "game": "atarist:moby-20399",
+   "sha256": "fa5b5a432e0ff13dba8c44e9ce2d56d1d596b562bbaa73d2b062e73236d9116e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/7870299-la-corona-magica-atari-st-attacked-by-several-guys.png"
+  },
+  "art/catalog/moby/20401/screenshot-aff23ead9412.webp": {
+   "game": "atarist:moby-20401",
+   "sha256": "613321b825bec8082e8974d6e4d1dbb65fa9ce8a21ae50974946a778de062156",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15682020-free-climbing-atari-st-and-fallen-off-them.png"
+  },
+  "art/catalog/moby/20485/box-9f322961406d.webp": {
+   "game": "atarist:moby-20485",
+   "sha256": "e03f21fa85eb51fffc595797edbcffae1b239f58b5b99e116437e1c6f512ae6a",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6806571-10-great-games-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/20655/screenshot-b84467483cac.webp": {
+   "game": "atarist:moby-20655",
+   "sha256": "80ec6e02d9b49e4c85de1c8b58bcbc5e03075ad6ad37c09798d0bb03203b8dd5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8888041-mindfighter-atari-st-parkland.png"
+  },
+  "art/catalog/moby/20709/screenshot-bc5c7a4cd000.webp": {
+   "game": "atarist:moby-20709",
+   "sha256": "0bd443c3a98a8c349f677702efc2118f24151a736f92b150955f8226a24c74e9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2023301-mega-sports-atari-st-gymnastics-summer-games.png"
+  },
+  "art/catalog/moby/2073/screenshot-d80c9ff5949b.webp": {
+   "game": "atarist:moby-2073",
+   "sha256": "e2684d6d08b606174bb1935aa87512d346d56a91c1c3ff308583eb63cf976456",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16216824-the-four-crystals-of-trazere-atari-st-visiting-a-town.png"
+  },
+  "art/catalog/moby/21388/screenshot-aa51c66c2448.webp": {
+   "game": "atarist:moby-21388",
+   "sha256": "53ae866c2dcfd84137d2fe0411a5d7e0e598dc63118f219e370000f4e04f190c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15646879-frost-byte-atari-st-get-the-crystal.png"
+  },
+  "art/catalog/moby/214019/screenshot-d743fb5c98b5.webp": {
+   "game": "atarist:moby-214019",
+   "sha256": "a62f7381f35ec638f91821fc155c72ef47604352f22f157a9dd6d0a5148eaded",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/18070749-crossland-atari-st-shoot-enough-fuji-symbols-and-you-get-to-play.png"
+  },
+  "art/catalog/moby/221159/screenshot-6c1cd7b9bc38.webp": {
+   "game": "atarist:moby-221159",
+   "sha256": "a92da6973cde6e768bb7b8ab807e6a61dbaf1c05c1856d5a759029af3e7ef243",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/18474895-maxi-bourse-international-atari-st-some-news.png"
+  },
+  "art/catalog/moby/22128/screenshot-7b5c06fd18ed.webp": {
+   "game": "atarist:moby-22128",
+   "sha256": "1735d91b2db330617cdb2e81c952c19dc22b290a32d153e006f8935e3c125bcc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1137487-schoolyard-slaughter-atari-st-a-boy-runs-for-his-life.png"
+  },
+  "art/catalog/moby/222925/box-ce1c1b93b6e9.webp": {
+   "game": "atarist:moby-222925",
+   "sha256": "81391238e4f16ef056fec042b861ca6d80592ffe8875808f3f1a4adc70abe743",
+   "sourceUrl": "https://cdn.mobygames.com/covers/18586098-hk-electronics-software-5-ar-jubileum-amiga-front-cover.jpg"
+  },
+  "art/catalog/moby/22346/screenshot-157bf3f34e0f.webp": {
+   "game": "atarist:moby-22346",
+   "sha256": "2560c3d54553cb8296190a88f2b4de3c8286562d974232ad23a36c6d4a73c30b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8060542-hack-atari-st-very-bad.png"
+  },
+  "art/catalog/moby/2362/box-3a1d99d68668.webp": {
+   "game": "atarist:moby-2362",
+   "sha256": "67302b58ad27da878800cca64417d722fed638de51ac963bc97625159061957c",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4892348-the-third-courier-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/2362/screenshot-8a72cea4febd.webp": {
+   "game": "atarist:moby-2362",
+   "sha256": "f856d9d42c32f721b7b6884af3908fe6b537b6df5de9872e6d30d80945bf46f7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15922408-the-third-courier-atari-st-a-shop.png"
+  },
+  "art/catalog/moby/23715/screenshot-68cf564ecd46.webp": {
+   "game": "atarist:moby-23715",
+   "sha256": "1990dca6eced89933eeb857a416563ba4d7abf3109fffb1b0359c76d4b78b7b3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16196694-fun-school-4-for-5-to-7-year-olds-atari-st-using-maths-to-repair.png"
+  },
+  "art/catalog/moby/23813/screenshot-e7ae9fe88ecf.webp": {
+   "game": "atarist:moby-23813",
+   "sha256": "76cfb982760f88cf7fdf53a8d7d46077694ec6b3bca333791c845462348b3a32",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2860897-voodoo-girl-queen-of-the-darned-atari-st-getting-my-mission.png"
+  },
+  "art/catalog/moby/23962/box-d38f9e2339ed.webp": {
+   "game": "atarist:moby-23962",
+   "sha256": "8563cd9126a5373363be6e0e38983e7b275a1179ee53c6a10c6a146ad4d884eb",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6239425-proflight-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/23962/screenshot-3b84771d5f73.webp": {
+   "game": "atarist:moby-23962",
+   "sha256": "b1e33a01a33c63e53d4f8f232049100345ef8098e26d79d75fe1fe5201b7dc6f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15768474-proflight-atari-st-high-up.png"
+  },
+  "art/catalog/moby/23968/box-dc6cc18406ad.webp": {
+   "game": "atarist:moby-23968",
+   "sha256": "dde02d0e570113f04bf447ae7c4de58671db5099134957291baffd133452c45f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4489686-hawaiian-odyssey-scenery-adventure-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/24003/box-8ba53b9064ee.webp": {
+   "game": "atarist:moby-24003",
+   "sha256": "ac1ab35da097372263383ea227d0da9708f57b7dc28e3463198b5bebfe5846bb",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4468703-scenery-disk-western-european-tour-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/24061/screenshot-6b027c47f494.webp": {
+   "game": "atarist:moby-24061",
+   "sha256": "aab52725934a586ef1c10bdbee6f7f774d5302951110316fc2b63f274fbed55f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15776566-pacman-for-gem-atari-st-an-alternative-tileset-is-available.png"
+  },
+  "art/catalog/moby/24265/screenshot-3c07d8271efc.webp": {
+   "game": "atarist:moby-24265",
+   "sha256": "486f1adf7119a4e163e5253c9eea17794a17a682fae81dfcbc20b19de778f396",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15779872-mc-coy-atari-st-a-level-sprawling-with-viruses.png"
+  },
+  "art/catalog/moby/24274/box-1b82a81093b1.webp": {
+   "game": "atarist:moby-24274",
+   "sha256": "1476afbda9642a9a6239080f907c192bfb02cc473b2692a0347e4c7658b2e147",
+   "sourceUrl": "https://cdn.mobygames.com/covers/7071333-fun-school-3-for-the-under-5s-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/24274/screenshot-08eedd470be3.webp": {
+   "game": "atarist:moby-24274",
+   "sha256": "ec88306bcd0daae637569ffc9134ccec30ad1e79527f938a0a06f111455f2e4c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16197087-fun-school-3-for-the-under-5s-atari-st-hmm-lets-see-what-does-a-.png"
+  },
+  "art/catalog/moby/24379/box-8eee508e8d17.webp": {
+   "game": "atarist:moby-24379",
+   "sha256": "f8c1cb9e7994d85b92b751eb0d74e3b6e84c2921b05ec023b3f68aa91badbb4e",
+   "sourceUrl": "https://cdn.mobygames.com/covers/7073126-fun-school-3-for-5-to-7-year-olds-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/24385/screenshot-23e7b8c6d7bd.webp": {
+   "game": "atarist:moby-24385",
+   "sha256": "d140aafa055360d8dc9c95b3f468ec734fabfb70a0db1e1b7b51d432f36483bf",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16393703-moria-atari-st-vendor-st-monochrome.png"
+  },
+  "art/catalog/moby/24529/screenshot-d8a9b9008360.webp": {
+   "game": "atarist:moby-24529",
+   "sha256": "cf7afe3057e7e3c0ab855374bb4a8d580063cd4fb6bb89f74fd25af837a95eb5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16620903-asteroids-for-gem-atari-st-game-over.png"
+  },
+  "art/catalog/moby/24731/screenshot-ff1523217150.webp": {
+   "game": "atarist:moby-24731",
+   "sha256": "cbbf05d58512c716e48f20f34f12759c5af137ac4ef51435e3f3394922a710a5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15777157-wacky-darts-atari-st-the-opposing-players-turns-are-viewed-from-.png"
+  },
+  "art/catalog/moby/25325/box-7eccfbaa1a96.webp": {
+   "game": "atarist:moby-25325",
+   "sha256": "14ea7b338ce2c65ddd343d7229b0d7d4e0e1962834939b0f139e1fae42f8b95a",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6759728-premier-collection-iii-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/25352/box-07bca5c8cc44.webp": {
+   "game": "atarist:moby-25352",
+   "sha256": "6f7263cc4fe259e0c7fa12d8bb437f70639f2f186023cc389b285da954454b05",
+   "sourceUrl": "https://cdn.mobygames.com/covers/611231-the-top-league-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/25411/screenshot-f541983c1a9c.webp": {
+   "game": "atarist:moby-25411",
+   "sha256": "76d46881ddfc8378e790246361eeb191e43c3a1c848e9d224b953933397e6739",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16484305-reederei-atari-st-ship-market.png"
+  },
+  "art/catalog/moby/25746/box-43fdadd71aa7.webp": {
+   "game": "atarist:moby-25746",
+   "sha256": "d1122f9b3be36f0c7c9263a1f350fc32d1cfddfc4fe7e0c9cc707b7dd180e45b",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6759725-triad-volume-2-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/25748/box-131be827d7f3.webp": {
+   "game": "atarist:moby-25748",
+   "sha256": "0b76cdbe9a2c31e3a1d0f2ef1d180163d2dfa0fd387b66bbe45bd414f0a91d25",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4244202-triad-volume-1-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/25888/screenshot-9b1a2a7b03df.webp": {
+   "game": "atarist:moby-25888",
+   "sha256": "56c3612cb7d632eee93ff9071330c2df2996d0f91f19be05e2870355ba29385e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15788700-barbarian-ii-atari-st-stalked-by-a-bugbear.png"
+  },
+  "art/catalog/moby/26731/screenshot-4afc7c002a67.webp": {
+   "game": "atarist:moby-26731",
+   "sha256": "f3dcbc64ad9e466139a5728846720ded092c786f223fa662deea509cae580902",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15839569-flunky-atari-st-a-toy-boat.png"
+  },
+  "art/catalog/moby/27134/screenshot-11e04411f74b.webp": {
+   "game": "atarist:moby-27134",
+   "sha256": "e06dd968005e5dd740109a2cab167ffe49c9967b35a13a94cb584c9bcfb867bc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15943673-rainbow-warrior-atari-st-breaking-bricks-with-bubbles.png"
+  },
+  "art/catalog/moby/27353/screenshot-74c73e7da19c.webp": {
+   "game": "atarist:moby-27353",
+   "sha256": "9c95ba261d35616d9c9d19139d4b61f552d348b37f91c24e441d62c295503c8c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15639897-trump-castle-the-ultimate-casino-gambling-simulation-atari-st-le.png"
+  },
+  "art/catalog/moby/2796/screenshot-4002727309ca.webp": {
+   "game": "atarist:moby-2796",
+   "sha256": "315ecbc8b34b9ec313af09f6798d12dd9a11ad2c7fc5fa70fc456ad82ea4f594",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2113245-myth-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/28051/screenshot-d424705ce15f.webp": {
+   "game": "atarist:moby-28051",
+   "sha256": "a29f3c214eb2ca22c17dbcfaf553069eb75c7996154ad23b8d0fe1a834c586e9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16791025-mike-reads-computer-pop-quiz-atari-st-the-computers-team-answers.png"
+  },
+  "art/catalog/moby/28094/screenshot-23b58e3706e7.webp": {
+   "game": "atarist:moby-28094",
+   "sha256": "d2bffb340ee6e9a895209a30d89fd866efd66ccdf911279ec49423b84f8b5e33",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16553355-mavis-beacon-teaches-typing-atari-st-title-screen.png"
+  },
+  "art/catalog/moby/28316/screenshot-f0fc48d2b96f.webp": {
+   "game": "atarist:moby-28316",
+   "sha256": "5b6eff483c8ad6d959417943f047273e83bef859fd799ec1b00dc80799b3b56f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15927669-gnome-ranger-atari-st-lost-in-the-mist.png"
+  },
+  "art/catalog/moby/28474/screenshot-e6e76e1e783c.webp": {
+   "game": "atarist:moby-28474",
+   "sha256": "4ea337ae43ae27519584d7504722b210113f45a8c679d909b665ae53aa6b2d17",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15855251-klomanager-spul-mir-das-lied-vom-kot-atari-st-all-lavs-have-enou.png"
+  },
+  "art/catalog/moby/28698/screenshot-e534c429ee36.webp": {
+   "game": "atarist:moby-28698",
+   "sha256": "191db041a76b5450c2fe8756e3e5dd65da56e9657217c1140bcc07a9884177c8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15897432-titanic-blinky-atari-st-ghosts-melt-in-the-water.png"
+  },
+  "art/catalog/moby/2914/screenshot-824219def10b.webp": {
+   "game": "atarist:moby-2914",
+   "sha256": "ffbb0408f6eb6fd524a3e8aca3554132d1991fc4df1f951395e28295c1a63564",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15724160-cohort-ii-atari-st-one-of-the-option-pages.png"
+  },
+  "art/catalog/moby/29289/screenshot-696f436dabf8.webp": {
+   "game": "atarist:moby-29289",
+   "sha256": "3ea452ea14febc01f283e4354e8c8fda0b8ed736eb2f03e9e9cdb0e0cc96c266",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3344331-i-play-3-d-soccer-atari-st-goal.png"
+  },
+  "art/catalog/moby/29526/box-f596d331586c.webp": {
+   "game": "atarist:moby-29526",
+   "sha256": "736bb2d764f5c2423256fabd39cbb4f8aa871df15ea5859111c659f6f1c8d461",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4269165-checkmate-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/29526/screenshot-2a9b22c284ce.webp": {
+   "game": "atarist:moby-29526",
+   "sha256": "e51a5e0bc89f9f57c3657d3b615eeb4b90b5db503f652c9048b77327f1af7fee",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9054087-checkmate-atari-st-board-in-2d-colour-monitor.png"
+  },
+  "art/catalog/moby/29551/box-c7e482090e70.webp": {
+   "game": "atarist:moby-29551",
+   "sha256": "40ce8cc16b7d0d6d43df0839b05e2331ffdcf19ec728e98fec88ca5b8ef1b319",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6756395-dungeons-amethysts-alchemists-n-everythin-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/29551/screenshot-66ee2ee3d182.webp": {
+   "game": "atarist:moby-29551",
+   "sha256": "17a30c89ca4123964c5c24addbc48975a701fa01fc83631f26aaf2f990de1ae2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16534596-dungeons-amethysts-alchemists-n-everythin-atari-st-a-locked-door.png"
+  },
+  "art/catalog/moby/29953/screenshot-50e37abbe909.webp": {
+   "game": "atarist:moby-29953",
+   "sha256": "fa60dfbf6791ddf83610223d2e684373dbd5913e6e247dade9a287bdf14237f8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8901306-final-legacy-atari-st-sea-fight-a-ship-is-attacking-with-a-missi.png"
+  },
+  "art/catalog/moby/30162/screenshot-93059210b524.webp": {
+   "game": "atarist:moby-30162",
+   "sha256": "c0e6ddc2dbdf6a6fac7776ba8c6987f88b61914f09f021c6d5104ac3ade30c13",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15846939-zork-atari-st-i-hope-im-not-spoiling-anything-for-anyone-here.png"
+  },
+  "art/catalog/moby/30356/screenshot-fb102035b1a0.webp": {
+   "game": "atarist:moby-30356",
+   "sha256": "c0ebdf57b3f7d742d9236857fcc10dae7f4ed98438c510ad928acd34ad37fec5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15868149-cybernetix-atari-st-pick-up-the-blue-crystal-to-the-left.png"
+  },
+  "art/catalog/moby/3066/box-471e0cc161dc.webp": {
+   "game": "atarist:moby-3066",
+   "sha256": "fb7bee7ca8b0b29dec17b8a3f16d9a61a0316823199f2a298a0058f97ca72cca",
+   "sourceUrl": "https://cdn.mobygames.com/covers/5098467-spacewrecked-14-billion-light-years-from-earth-atari-st-front-co.jpg"
+  },
+  "art/catalog/moby/3066/screenshot-5cc7d5abde9b.webp": {
+   "game": "atarist:moby-3066",
+   "sha256": "cf46f2477781474588684fa2b4863744c1d73dc0695b6d485f3c52b3d03e07f2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15682107-spacewrecked-14-billion-light-years-from-earth-atari-st-checking.png"
+  },
+  "art/catalog/moby/3138/screenshot-02fc8f74b604.webp": {
+   "game": "atarist:moby-3138",
+   "sha256": "49e3ce6115c094c0a74a9e729db2550eff7c54e44a8d8e20b9b36fc6dfa5ba74",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1849263-dizzy-prince-of-the-yolkfolk-atari-st-inside-the-dark-castle.png"
+  },
+  "art/catalog/moby/3140/screenshot-1ee1d06b8c78.webp": {
+   "game": "atarist:moby-3140",
+   "sha256": "be64382a24d5a654fca2b66fdc6753ae83a8d9c4a6a6cdcc317c4f5b49a7a060",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/601774-spellbound-dizzy-atari-st-be-careful-of-these-killer-bees.png"
+  },
+  "art/catalog/moby/3143/screenshot-a7ffee378734.webp": {
+   "game": "atarist:moby-3143",
+   "sha256": "f0166e22562d44f8c5dc19114ed3c2ad89ad6e6858b420762a737110a84dd07d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1447434-crystal-kingdom-dizzy-atari-st-talking-to-a-dolphin.png"
+  },
+  "art/catalog/moby/31728/screenshot-913e8707b7b9.webp": {
+   "game": "atarist:moby-31728",
+   "sha256": "e4c33571e978edc11f1539da6ebc67132a63500476204db1eefd402de6f10816",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15905683-electric-crayon-deluxe-teenage-mutant-ninja-turtles-world-tour-a.png"
+  },
+  "art/catalog/moby/31738/screenshot-6986ca911a80.webp": {
+   "game": "atarist:moby-31738",
+   "sha256": "a11db81512e52ee6dc82d8c8a37219b95cdcdd8e44626ae768fd9e26c0402889",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15825641-ripcord-atari-st-on-target-with-open-chute.png"
+  },
+  "art/catalog/moby/31750/screenshot-13f9e2bfbb13.webp": {
+   "game": "atarist:moby-31750",
+   "sha256": "328cfe68f3ebe11856304ea73bfd2c4e2712ee2a2597b0218f31ad80f42d5dfe",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15847095-dungeon-atari-st-a-typical-village.png"
+  },
+  "art/catalog/moby/31800/screenshot-19e49d85769f.webp": {
+   "game": "atarist:moby-31800",
+   "sha256": "17bd6b883b99e58300d27412a249302995232867728ce62b7ea4f63a4da4083d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15849558-bounty-hunter-atari-st-you-were-no-invited-to-the-funeral.png"
+  },
+  "art/catalog/moby/31897/screenshot-ab754c7bcd5d.webp": {
+   "game": "atarist:moby-31897",
+   "sha256": "2a52da04e0f2e4405a2271dc0f883aea0400fd24cfc5e269929bd7bf32f59773",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16053358-billy-boy-atari-st-the-second-level-is-a-mine.png"
+  },
+  "art/catalog/moby/31898/screenshot-dd2bf47beed5.webp": {
+   "game": "atarist:moby-31898",
+   "sha256": "a1be68d30bc0272afd85ee3c2d7f48a7993bf6bf3d17dee05a96d1cc19c2c396",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15827117-goin-down-with-the-captain-atari-st-two-crabs-are-approaching.png"
+  },
+  "art/catalog/moby/31901/screenshot-654238e3fc47.webp": {
+   "game": "atarist:moby-31901",
+   "sha256": "aaf69b8a1075e084a8df22c82b97e8d85f452324a44f9482864cf48471937e63",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15880367-trader-2-atari-st-everytime-you-travel-between-cities-you-get-to.png"
+  },
+  "art/catalog/moby/32268/screenshot-5a359802aeb7.webp": {
+   "game": "atarist:moby-32268",
+   "sha256": "a4fb28b4a7162190f33ac55b96210bad01c0e0fa0c8f9d629096cf3eebde3435",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15757020-peking-20-atari-st-using-the-find-matches-function.png"
+  },
+  "art/catalog/moby/32269/screenshot-5f57a3b3af4e.webp": {
+   "game": "atarist:moby-32269",
+   "sha256": "b9fcc15995ade3b2c18d66c920893a18572d674373b1f4e30b56e550e0e55d43",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15756948-peking-30-atari-st-the-high-resolution-tileset.png"
+  },
+  "art/catalog/moby/32491/box-92fbce988d13.webp": {
+   "game": "atarist:moby-32491",
+   "sha256": "9ec3177d0c7355f620139a75ec1b54680e4ee6fd06bd62e2875dd08e9d7178d8",
+   "sourceUrl": "https://cdn.mobygames.com/covers/5978412-superfly-jaguar-front-cover.jpg"
+  },
+  "art/catalog/moby/32491/screenshot-7e10f62977c3.webp": {
+   "game": "atarist:moby-32491",
+   "sha256": "f8c1271c64d7a3f72ce7e05ac84dad17ef45e6d4cc570634276b0fad156ca169",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15868182-superfly-atari-st-in-hunter-mode-pick-up-more-stars.png"
+  },
+  "art/catalog/moby/32508/screenshot-4277df339448.webp": {
+   "game": "atarist:moby-32508",
+   "sha256": "877d0e469b87a6ff60f504dbeb156bd955d98a27670879d702f350369562219d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15923257-elite-the-new-kind-atari-st-the-long-range-chart.png"
+  },
+  "art/catalog/moby/32655/screenshot-6aed94cdabb3.webp": {
+   "game": "atarist:moby-32655",
+   "sha256": "fbcf5885e907ffe1626112f3cfa346baa3dd50759ce300721943ff8ab9e2fe1d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15888076-santafly-atari-st-they-certainly-dont-stand-up-to-their-helper-n.png"
+  },
+  "art/catalog/moby/32713/screenshot-4d6112fa228a.webp": {
+   "game": "atarist:moby-32713",
+   "sha256": "be18daa7cf15819b0e0626e65380f8067593baa35064184a601d6fc290481dff",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884797-godpey-atari-st-a-double-line-thats-a-lot-of-points.png"
+  },
+  "art/catalog/moby/33020/box-2887784abd54.webp": {
+   "game": "atarist:moby-33020",
+   "sha256": "779fa31fa5a17efd6111c6b3ae0caf3997a48c9fb3643b9891aeb42b7839ec8f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/455313-thalion-the-first-year-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/33022/screenshot-a5ba1a8e4a8d.webp": {
+   "game": "atarist:moby-33022",
+   "sha256": "de3527df3a0e4292282d728d4d9de6b6d8e9c5881663794bbe7813c65f76f1d7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15837505-dalx-atari-st-picture-of-first-girlfriend.png"
+  },
+  "art/catalog/moby/33142/screenshot-80cd80859f2b.webp": {
+   "game": "atarist:moby-33142",
+   "sha256": "0561d8a16f18285e2f82c331ab5a070b314a082e8fef51963cd0e369687dfeb2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16059316-trifide-atari-st-you-were-killed.png"
+  },
+  "art/catalog/moby/33383/screenshot-cd15dfeee580.webp": {
+   "game": "atarist:moby-33383",
+   "sha256": "71dfd9b393e3e376308f703451ca6c023d0a57c375c2fdb5ae423201565a82e0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15674239-turn-it-atari-st-making-progress.png"
+  },
+  "art/catalog/moby/33595/screenshot-9aaf1e305d71.webp": {
+   "game": "atarist:219028",
+   "sha256": "5ebd4f63b8c0fdb4dfab7cca5fc5a6d6a68c10f778770ca865d3565df3909cc1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15906094-onyx-atari-st-got-him.png"
+  },
+  "art/catalog/moby/33596/screenshot-80623c173c8a.webp": {
+   "game": "atarist:moby-33596",
+   "sha256": "940754c0d2e36fa1efbb191df5d6e2feb1634a48b48f98641b18bef1ce8db93b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15906076-exterminate-atari-st-tougher-enemies-awaits-the-player-further-i.png"
+  },
+  "art/catalog/moby/33640/screenshot-82d59d7887d9.webp": {
+   "game": "atarist:moby-33640",
+   "sha256": "0086e0d36dc06ff0ab40820fa27f9b1f8a5cf00a0afb7f4e8737f87a3eec7c1b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15839116-castle-frankenstein-atari-st-teleporting.png"
+  },
+  "art/catalog/moby/33656/screenshot-5ccf45c7f7dd.webp": {
+   "game": "atarist:moby-33656",
+   "sha256": "75224bc2e5cb147e34572b7f226e2fe596cc50119978b254fbf7c9bff569fbed",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15839053-colony-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/33692/screenshot-16bd51fcd380.webp": {
+   "game": "atarist:moby-33692",
+   "sha256": "a04e1f51d2a25269871336008a84b5983492c2f3f9de1e59d3eeeb66b445e7da",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15922909-douglas-rockmoor-atari-st-end-of-first-level.png"
+  },
+  "art/catalog/moby/33693/screenshot-e6588f007362.webp": {
+   "game": "atarist:moby-33693",
+   "sha256": "b6b3e4e903a19a207a97074fce0c110b9a74158eba211230f16030d6b5dfc809",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15899449-douglas-rockmoor-2-atari-st-this-is-going-to-be-tricky.png"
+  },
+  "art/catalog/moby/33705/screenshot-2e9780b91476.webp": {
+   "game": "atarist:moby-33705",
+   "sha256": "d28e1c54a20cb7e2386d27dd2a6dcc3e5bb8561f6d6ce1ae3abffb999ebd2727",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15812456-aerial-combat-st-atari-st-futuristic-background-and-a-mid-air-co.png"
+  },
+  "art/catalog/moby/33706/screenshot-97f3fedbe250.webp": {
+   "game": "atarist:moby-33706",
+   "sha256": "82a81fc52b9051652004d18e0835d8e6ce0426715108e954cdef5ee93d2a7737",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15923248-aerial-combat-2-atari-st-the-see-scenario.png"
+  },
+  "art/catalog/moby/33707/screenshot-584611f6bcd0.webp": {
+   "game": "atarist:moby-33707",
+   "sha256": "761ef7d4a37178954c7b22c209062f43000331bb14e9873849b66c39f9d47712",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16046926-aerial-kombat-3-the-final-encounter-atari-st-the-helicopter-scen.png"
+  },
+  "art/catalog/moby/33708/screenshot-555d002bee3f.webp": {
+   "game": "atarist:moby-33708",
+   "sha256": "868ae62e85d19161093fbf5e5ea7bdb3443831f856c9862032ff320cecf67419",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15922882-air-to-air-combat-atari-st-player-one-bites-the-dust.png"
+  },
+  "art/catalog/moby/33709/screenshot-7e5dfe84858b.webp": {
+   "game": "atarist:moby-33709",
+   "sha256": "d9f5806a628a7fef6a8d01f800d53e44348ceb4456adb8644215e6459a9396d7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15922948-zerphod-atari-st-one-of-the-monsters-got-me.png"
+  },
+  "art/catalog/moby/33710/screenshot-cb4f4851c09c.webp": {
+   "game": "atarist:moby-33710",
+   "sha256": "cf3a34aa5b458dfe1e93bed7d144e8bf0a6266ca3f4fc9bc7bdb7e0af55154a9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15923032-goldrush-atari-st-the-droid-got-me.png"
+  },
+  "art/catalog/moby/33748/screenshot-087b2c12d71d.webp": {
+   "game": "atarist:moby-33748",
+   "sha256": "bb88a3a459ef659109349830862ef14384ea9d5ac70c7cc6e5b48bdc0ce03ae9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15998865-plax-atax-atari-st-level-complete-computing-level-bonus.png"
+  },
+  "art/catalog/moby/33749/screenshot-8654e1b384eb.webp": {
+   "game": "atarist:moby-33749",
+   "sha256": "b6d1205467f69a4ada36975845abe235bd0bda73b412d0540fce6da1b685fc7f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15923146-byte-man-atari-st-level-one.png"
+  },
+  "art/catalog/moby/33762/screenshot-11e7a72f6264.webp": {
+   "game": "atarist:moby-33762",
+   "sha256": "581c2a72f757a9c417c11d3ed43985e2997a82c082c8f0d7bc6b4cb8ea00e463",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15923059-bridge-it-atari-st-human-victory.png"
+  },
+  "art/catalog/moby/33763/screenshot-21bcd24ff3ee.webp": {
+   "game": "atarist:moby-33763",
+   "sha256": "0cebcdc91236743cf035cfda480ef3e8568f1753ac68d512b5feb73883fb3d60",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15923272-cyber-snake-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/33776/screenshot-708e8ebd961d.webp": {
+   "game": "atarist:moby-33776",
+   "sha256": "55c8c3285b746a123b6521ad4313ff16dd0398852dbb5d70b165c7e0c2c930e7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15901642-autorama-atari-st-two-flags.png"
+  },
+  "art/catalog/moby/33777/screenshot-acfaa21556c8.webp": {
+   "game": "atarist:moby-33777",
+   "sha256": "30c40e17295be1933fdae396f96a89da2c8b9977a5b79e841774fd824be476f3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15707479-the-blag-atari-st-a-map-over-the-village-area.png"
+  },
+  "art/catalog/moby/33778/screenshot-da091812b67e.webp": {
+   "game": "atarist:moby-33778",
+   "sha256": "239bd192ed00cceced090526e2125c44f42bc9785d78d4554a5f390233754581",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15899128-runaway-atari-st-one-life-less.png"
+  },
+  "art/catalog/moby/33787/screenshot-aaebf2e044a2.webp": {
+   "game": "atarist:moby-33787",
+   "sha256": "cf632c434a45ef5aee64e4ea6f67985f75cb71689e0595b764cc33c92d896ad1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15901246-crystal-caverns-atari-st-green-caves.png"
+  },
+  "art/catalog/moby/33873/screenshot-6d26585607a7.webp": {
+   "game": "atarist:moby-33873",
+   "sha256": "5a237c912afafbf375841dca43c56a0fefa33f59b600b5f15f11a065580eeea9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15899221-ace-invaders-atari-st-the-got-me.png"
+  },
+  "art/catalog/moby/33874/screenshot-7896e7b8a4dd.webp": {
+   "game": "atarist:moby-33874",
+   "sha256": "22eab42e9bac435c0138e117fe9cc4e1b274b22f5bad504079b4353c90a67e01",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15901639-annihilator-atari-st-killed-some-aliens.png"
+  },
+  "art/catalog/moby/33905/screenshot-d9bd49ec584d.webp": {
+   "game": "atarist:moby-33905",
+   "sha256": "ca801708601bb83aa6d8dd126015cce31138d8cbcb9c9d99c807e1b0a1d25d28",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15918769-rockfall-special-edition-atari-st-traped-on-the-second-level.png"
+  },
+  "art/catalog/moby/33906/screenshot-f852af630d16.webp": {
+   "game": "atarist:moby-33906",
+   "sha256": "f513989409e6a78506115f0df07b1e5fe04fbd4ae978f2f8ed7415fb022012ef",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16032322-rockfall-2-the-perils-of-spud-atari-st-level-00-complete.png"
+  },
+  "art/catalog/moby/33907/screenshot-fe5bc2772c74.webp": {
+   "game": "atarist:moby-33907",
+   "sha256": "aabb3fe6a7f66eb18d604ffd916407f89f49fac8a834018c2ac8dac464145993",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15899341-rockfall-3-atari-st-game-over.png"
+  },
+  "art/catalog/moby/34634/screenshot-99278f8865cf.webp": {
+   "game": "atarist:moby-34634",
+   "sha256": "62706d8d8b429b264c503b5e9f7cce479e0ff607011d8217037b1e38339d1cf5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15895448-picrossst-atari-st-making-a.png"
+  },
+  "art/catalog/moby/34651/screenshot-9a94b5b04427.webp": {
+   "game": "atarist:moby-34651",
+   "sha256": "30366f3823fe4c76c2f51e6075154ef37e891eb4272242a3810b49be05817ef0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15927666-picrossst-ac-2008-edition-atari-st-all-done.png"
+  },
+  "art/catalog/moby/35343/screenshot-a9864886378e.webp": {
+   "game": "atarist:moby-35343",
+   "sha256": "d16440bdecdf8a4b81ef9c060dab1404105fb0314e186f4a88838983db35de96",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15879887-escapade-atari-st-going-for-the-blue-key.png"
+  },
+  "art/catalog/moby/35478/screenshot-b6e496247741.webp": {
+   "game": "atarist:moby-35478",
+   "sha256": "09a40cbaf1a9c179ca7000aadef73dd2ed4ce20c8fa5e372686e8abcfbb229ef",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15997416-pacman-on-es-atari-st-a-green-level.png"
+  },
+  "art/catalog/moby/35480/screenshot-d2912a8a01b9.webp": {
+   "game": "atarist:moby-35480",
+   "sha256": "f5a0e6a19d08a418c6ca592dd7447965ae89736d8e6ac8fef0e7e63e1dddcd71",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16036177-sam-in-monsters-garden-atari-st-the-games-two-monster-types.png"
+  },
+  "art/catalog/moby/35482/screenshot-808eb9f859dc.webp": {
+   "game": "atarist:moby-35482",
+   "sha256": "24f805420a2bc3db3be1d670d96dbe0112b6ea06c25fd5941872082bf97b2a75",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15961237-maelstrom-atari-st-asteroids.png"
+  },
+  "art/catalog/moby/35483/screenshot-23c69db8f213.webp": {
+   "game": "atarist:moby-35483",
+   "sha256": "d1d2e8c29917b8e7034b1fd8ab3ebe9f9551184f723f512ecc903e837e7707c2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15962240-twot-tot-and-the-mansion-of-madness-atari-st-another-clue-maybe.png"
+  },
+  "art/catalog/moby/35760/screenshot-0bb26b9a2186.webp": {
+   "game": "atarist:moby-35760",
+   "sha256": "4971602c0dffe218e811b012dff687816da984fd184a28592303b1fa58df0ac6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15934378-color-clash-atari-st-stage-5-dont-eat-the-grey-block.png"
+  },
+  "art/catalog/moby/35946/screenshot-81ac607a813b.webp": {
+   "game": "atarist:moby-35946",
+   "sha256": "96a7820445ff44951b653e03c7acf3888f52889883722dd063faf53a0f77f093",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15916094-minos-atari-st-the-door-to-freedom.png"
+  },
+  "art/catalog/moby/35947/screenshot-14a38a1dfcdd.webp": {
+   "game": "atarist:moby-35947",
+   "sha256": "72275b0031c1003c7bdd9ef02aaadb174b30af5d7f8484fb51eb3904eca706fd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15914960-bombs-away-atari-st-found-the-exit.png"
+  },
+  "art/catalog/moby/35948/screenshot-672fc526cb27.webp": {
+   "game": "atarist:moby-35948",
+   "sha256": "2409b0cd8936765e7d79015214ea5ea3546a0364812fab70fc676ceac8f37d70",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16387757-aliens-atari-st-enemies-coming-from-the-right.png"
+  },
+  "art/catalog/moby/35951/screenshot-884f403b5c0c.webp": {
+   "game": "atarist:moby-35951",
+   "sha256": "33ca5f01562f7544af347f8d1d656f91e0b08c9bdece4e3494404a26d5715405",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15916118-the-pairs-are-gone-atari-st-high-score-table.png"
+  },
+  "art/catalog/moby/35952/screenshot-d47dc8904a8b.webp": {
+   "game": "atarist:moby-35952",
+   "sha256": "6ea8605eaf3119dd2a63dcf51bb7bbdbe3e07a6e7a36f5332d7db8d889209acc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15910867-manga-puzzle-atari-st-first-puzzle.png"
+  },
+  "art/catalog/moby/36008/screenshot-e6602dbc21c1.webp": {
+   "game": "atarist:moby-36008",
+   "sha256": "13853b0823c5c2c876241e92dcdddb3fba2471fa6ab7d5a066e7daffabf3b89c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15959074-parabellum-atari-st-second-level-its-a-bit-trickier.png"
+  },
+  "art/catalog/moby/36009/screenshot-4103295ec531.webp": {
+   "game": "atarist:moby-36009",
+   "sha256": "5f5cefc640a53d7955497f775ca625591ccd84d723386872edf59debd41d7880",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15959314-psicotic-atari-st-two-blue-enemies.png"
+  },
+  "art/catalog/moby/36010/screenshot-a35406252066.webp": {
+   "game": "atarist:moby-36010",
+   "sha256": "80c433d3db4ae5a5c229ba06158ac8541d7de43ee87c646f4d5adbe7bee7b705",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16039501-seventh-heaven-atari-st-the-nurses-office.png"
+  },
+  "art/catalog/moby/36012/screenshot-5d59b49a7e50.webp": {
+   "game": "atarist:moby-36012",
+   "sha256": "af27469a46d61a0b1d9e9de487a2f3453ed1a0f6753265022ef1a860a880be0a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15994339-mr-dig-atari-st-trying-to-kill-a-monster-with-an-apple.png"
+  },
+  "art/catalog/moby/36070/screenshot-8981062a1430.webp": {
+   "game": "atarist:moby-36070",
+   "sha256": "cccf47a64c7128eb8d2b98384cf1e32528d14cfd1254351bbb8ba54bbd27f798",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15894111-island-strike-the-ultimate-conflict-atari-st-soldiers-tents-and-.png"
+  },
+  "art/catalog/moby/36071/screenshot-e4eb5c97f787.webp": {
+   "game": "atarist:moby-36071",
+   "sha256": "a38cc07ed5639db23837c624ada8890ce4ffe7042f243e6704c31e78ccc68bc7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15893545-phantom-zone-atari-st-outside.png"
+  },
+  "art/catalog/moby/36072/screenshot-7374d67c9c4b.webp": {
+   "game": "atarist:moby-36072",
+   "sha256": "a6399acc27c2f4b9b40e555be504b604c9e8533c5ad6ca8d0553cd96872204fc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16035022-safe-as-houses-atari-st-time-to-pay-tax.png"
+  },
+  "art/catalog/moby/36073/screenshot-418e6826a9d7.webp": {
+   "game": "atarist:moby-36073",
+   "sha256": "fa5d04a3891e63b770c4e7662f1d7bc7d98984453dde1bf1f4972636f199da48",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16003422-tank-battle-atari-st-a-blue-level.png"
+  },
+  "art/catalog/moby/36074/screenshot-c2ba4f7fb3e7.webp": {
+   "game": "atarist:moby-36074",
+   "sha256": "e901fd0dae487272afd9ee61cada05b75bbd21b5790a7bbfddccf51e2bce1c86",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15894418-trolls-atari-st-positions-of-traps-is-marked-with-skull-and-bone.png"
+  },
+  "art/catalog/moby/36216/screenshot-bae267cb6516.webp": {
+   "game": "atarist:moby-36216",
+   "sha256": "2c7dcf60c37c365dd8ca9e681a863eaf2034369673feb32bca0cc457227330e9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15879923-escape-atari-st-a-locked-door-blocks-my-way.png"
+  },
+  "art/catalog/moby/36217/screenshot-b21d6ac6ab5c.webp": {
+   "game": "atarist:moby-36217",
+   "sha256": "9f9a4f6e70e4231cbed1d8cf40afc9c00773c30849f5d3a7d89ee59a8496ea4d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15900865-st-checkers-atari-st-the-computer-won.png"
+  },
+  "art/catalog/moby/36219/screenshot-8829fe523870.webp": {
+   "game": "atarist:moby-36219",
+   "sha256": "5bd7cb5b184e23b266a84f23d17fa94f0205945236c3b010e480c1daa60dd9a4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15901423-windowball-atari-st-playing-a-catch-game-medium-resolution.png"
+  },
+  "art/catalog/moby/36221/screenshot-71964ab4b994.webp": {
+   "game": "atarist:moby-36221",
+   "sha256": "bffc52465d3522b88327ba73982eaf03f08fc5cc7685692243cb3a8225ea43e0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15836299-black-jack-plus-3-atari-st-this-hand-doesnt-look-good.png"
+  },
+  "art/catalog/moby/36222/screenshot-f6a0610e5045.webp": {
+   "game": "atarist:moby-36222",
+   "sha256": "0954650a2719d143555d040bfea68d91b8222c2dc107c5dc94a8fa16e83fc5a8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15836977-illusion-atari-st-the-ibm-level.png"
+  },
+  "art/catalog/moby/36324/screenshot-398065474915.webp": {
+   "game": "atarist:moby-36324",
+   "sha256": "3ce75e9b789cdeba3a950fc8cadc392e621a0a1f9ebfe9ea70dfd374612a01fd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15722823-crazy-cubes-atari-st-game-over.png"
+  },
+  "art/catalog/moby/36327/screenshot-54e1e97a5445.webp": {
+   "game": "atarist:moby-36327",
+   "sha256": "b812f418417ac21390eb847f2a22950afea85f9e3f43cd913e5d8ee5ca86f789",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15893788-thriller-atari-st-the-exit-is-open.png"
+  },
+  "art/catalog/moby/36328/screenshot-87a9f62eb421.webp": {
+   "game": "atarist:moby-36328",
+   "sha256": "4ef0d982f7d1406d2f388e9de4cf5a0277e2bef59a660283e4b93057194322f4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15894264-railway-motion-atari-st-the-high-score-list.png"
+  },
+  "art/catalog/moby/36621/screenshot-e62a4dbd978f.webp": {
+   "game": "atarist:moby-36621",
+   "sha256": "ef7fb7dd28dde4347e6ed740424ea3ebd47de2db3540bc66b239b688eaeb4d7e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16051618-avina-blue-atari-st-crashed-into-a-building.png"
+  },
+  "art/catalog/moby/36623/screenshot-89ebbf91548e.webp": {
+   "game": "atarist:moby-36623",
+   "sha256": "888940263f4adfc03df1ed4dea2942596fe9fe0ae226c965615cc52ae2f4c0d0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15963158-casino-roulette-atari-st-its-number-16.png"
+  },
+  "art/catalog/moby/36624/screenshot-52bc78fe28cf.webp": {
+   "game": "atarist:moby-36624",
+   "sha256": "51b32dbd9aafec1cc666ef953a4fc17095a32abd4752800243b557af1cacf6ff",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15947801-atari-master-mind-atari-st-game-over-one-more-try.png"
+  },
+  "art/catalog/moby/36625/screenshot-4a74b00512b6.webp": {
+   "game": "atarist:moby-36625",
+   "sha256": "a6fce1249e4b2067752c49348a51f473d931c1ae857dd6283a1e98a1ad2f0852",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15898239-dallas-atari-st-bobs-situation-looks-grim.png"
+  },
+  "art/catalog/moby/36626/screenshot-fb5ee9039922.webp": {
+   "game": "atarist:moby-36626",
+   "sha256": "049eb7af4d11fbb5bf656aae1cf88bef18189b6c390e20c47d035092eec7ac19",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15947867-fighting-sail-atari-st-game-over.png"
+  },
+  "art/catalog/moby/36627/screenshot-8cb6303077e3.webp": {
+   "game": "atarist:moby-36627",
+   "sha256": "0190a3e20c53635f47f031fbdea2c0e0c279db6537af7f1cee8830df1e2aa179",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948101-poker-night-atari-st-what-am-i-going-to-do-now.png"
+  },
+  "art/catalog/moby/36628/screenshot-5e88a700fae8.webp": {
+   "game": "atarist:moby-36628",
+   "sha256": "18eee59fa002fad050cd5664f2b2384a4917f43cd186f0485c0f26e81ff93b2e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15947939-roulette-atari-st-the-ball-is-spinning.png"
+  },
+  "art/catalog/moby/36629/screenshot-985b047eda06.webp": {
+   "game": "atarist:moby-36629",
+   "sha256": "e00c043ea422551fb6c0da2cbcbb27bbeb3d4e6e27fd53e979d4cec2a892079f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948230-rabbit-jump-atari-st-got-bonus-for-clearing-a-row.png"
+  },
+  "art/catalog/moby/36630/screenshot-ea76bc0d4231.webp": {
+   "game": "atarist:moby-36630",
+   "sha256": "64d8e5a8a52d6a846f4c952fa3f1a3ba937016647113175c2e9c6d1b8d40cf4d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948185-querg-draughts-atari-st-trying-to-make-an-illegal-move.png"
+  },
+  "art/catalog/moby/36631/screenshot-31cb7a5bfa0f.webp": {
+   "game": "atarist:moby-36631",
+   "sha256": "45ffdacf1a2581ceb70cd2daa2909165ef103f91b819ec7cac7de38486aaf939",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15864562-dynabusters-atari-st-found-a-bomb-power-up.png"
+  },
+  "art/catalog/moby/36632/screenshot-0af23e3246bb.webp": {
+   "game": "atarist:moby-36632",
+   "sha256": "b55660b655c5994da055ab3544882f66052e904248a3cbaace4cb595b587010a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15837700-caesar-atari-st-corn-sales.png"
+  },
+  "art/catalog/moby/36633/screenshot-590474ad1133.webp": {
+   "game": "atarist:moby-36633",
+   "sha256": "8b766eadb852c00eddf21611589ec6555f746d0cd005b8d034e9b0e0dac55d56",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948924-darklyte-atari-st-one-of-my-droids-got-killed.png"
+  },
+  "art/catalog/moby/36634/screenshot-15456daa6939.webp": {
+   "game": "atarist:moby-36634",
+   "sha256": "5d0a0cafd4e1e830221b3914e2a09f0753cdc82910f54eedbac6979f61b88c25",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16048030-aliens-atari-st-one-of-my-marines-is-almost-at-the-exit.png"
+  },
+  "art/catalog/moby/36635/screenshot-ef4f82aac45b.webp": {
+   "game": "atarist:moby-36635",
+   "sha256": "8951177df1caebf1eb767b05192c750a72872a2d3d0a29bd647462cb10c112e2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16061635-world-fighting-championship-atari-st-a-direct-hit.png"
+  },
+  "art/catalog/moby/36636/screenshot-16d90798f844.webp": {
+   "game": "atarist:moby-36636",
+   "sha256": "331f9791663f4ecfd2069f0c8af2caa9214bfe4ad7d255db1e30275f1948cb59",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15949301-susan-a-lustful-game-atari-st-getting-your-first-quest-from-susa.png"
+  },
+  "art/catalog/moby/36742/screenshot-987803da08ed.webp": {
+   "game": "atarist:moby-36742",
+   "sha256": "2c5fd7f93ee930f5924304330888a0a634d1ff9c87afaa5e72f7bdcb9827552d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15836893-blat-atari-st-exploding-dynamite-sticks.png"
+  },
+  "art/catalog/moby/36743/screenshot-f6d6d48aa576.webp": {
+   "game": "atarist:moby-36743",
+   "sha256": "80cc907b17c0904f528bfee26726825ae00d61de57a6ba64c4a98b4c8e516988",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15916995-match-atari-st-later-levels-are-harder.png"
+  },
+  "art/catalog/moby/36744/screenshot-c37fb9a446c0.webp": {
+   "game": "atarist:moby-36744",
+   "sha256": "b1f6bc7846ebacec27c79e2a7f478633dac2897907b9697c1939b1d82fef423a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15917991-oh-no-not-more-radioactive-mineshafts-atari-st-i-failed.png"
+  },
+  "art/catalog/moby/36745/screenshot-68757e64c4d4.webp": {
+   "game": "atarist:moby-36745",
+   "sha256": "e516b4112fc44c253beb0e7c563680304e6bcdc74d606939e0cae15cceb2ccd2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15983907-h-mec-2-atari-st-the-ghost-got-me.png"
+  },
+  "art/catalog/moby/36746/screenshot-7f5fce832046.webp": {
+   "game": "atarist:moby-36746",
+   "sha256": "4d414efe7277481ca1dd8c7cc778e3dfd272733cdb4bc46d4ee7de9a34a3082e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15838912-the-original-atari-st-im-traped.png"
+  },
+  "art/catalog/moby/36760/screenshot-752704ef875d.webp": {
+   "game": "atarist:moby-36760",
+   "sha256": "f9f74bd7bd50a95c97f111a0adb6e6fbb3ce089e2cb936eb906ebd745f47677a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15926232-smash-hit-atari-st-the-square-indicates-that-its-my-turn-to-hit-.png"
+  },
+  "art/catalog/moby/36761/screenshot-5ebc9f24340b.webp": {
+   "game": "atarist:moby-36761",
+   "sha256": "ed6963f502372526d0aa2f6ac4adc073796e4d26e3588390c9df05bbabd0a4a3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15926118-roll-n-nudge-atari-st-im-holding-the-three-melons-and-hope-for-t.png"
+  },
+  "art/catalog/moby/36762/screenshot-88b7469c06b9.webp": {
+   "game": "atarist:moby-36762",
+   "sha256": "526584f9ce96cfec250e49e453b0682548c0495a52cad9ac2a72825d0d0ce164",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15979435-fruity-atari-st-hold-option-enabled.png"
+  },
+  "art/catalog/moby/36763/screenshot-0fbfa5f67eda.webp": {
+   "game": "atarist:moby-36763",
+   "sha256": "e5806428d82bd0c1bec80a397dfb1bf0172f221c60b8e059472354614e6fe707",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15926151-fruit-machine-atari-st-what-should-i-do-with-the-money-i-won.png"
+  },
+  "art/catalog/moby/36764/screenshot-a05cb69ea5a3.webp": {
+   "game": "atarist:moby-36764",
+   "sha256": "bb9353d2a7ae7accc14de1a8b96bfe0358db225a6bba9e268a0e7af37df23eed",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15926346-st-keno-atari-st-i-won.png"
+  },
+  "art/catalog/moby/36794/screenshot-77e595cca5b0.webp": {
+   "game": "atarist:moby-36794",
+   "sha256": "f10dce20680d98b2559303a99f204a3d3809edd1d904f4a1eb6926071a79d9a5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15939254-quest-for-tanda-atari-st-walking-in-a-city.png"
+  },
+  "art/catalog/moby/36795/screenshot-46cf46188819.webp": {
+   "game": "atarist:moby-36795",
+   "sha256": "986014ada8fd6f79675b7525de5ee557c2dc58008af19ad25a4732a89538cf5b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15841720-night-crawlers-atari-st-it-isnt-easy-at-this-point.png"
+  },
+  "art/catalog/moby/36796/screenshot-1fc60fb5a7c5.webp": {
+   "game": "atarist:moby-36796",
+   "sha256": "6719355c566904971b0d99bba6f600df6b637599772d7236f0967340f71004c1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15971710-cadenza-bog-atari-st-the-computer-won.png"
+  },
+  "art/catalog/moby/36817/screenshot-ededf2f3fb0a.webp": {
+   "game": "atarist:moby-36817",
+   "sha256": "96239cf688aceb7a81ce41aaff00aee39c0ea367bb7e79fadc770b67ea43ac6b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16055365-st-krak-atari-st-that-thing-to-the-left-changes-all-bricks-it-co.png"
+  },
+  "art/catalog/moby/36853/screenshot-93629a584e8c.webp": {
+   "game": "atarist:moby-36853",
+   "sha256": "338c0192a88853f650a029e0ccae817db1af9ff1fef729b7e7777bbbc14a0a3d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15971518-the-computer-coarse-angler-atari-st-the-logbook-screen.png"
+  },
+  "art/catalog/moby/36983/screenshot-84939dc03425.webp": {
+   "game": "atarist:moby-36983",
+   "sha256": "fb5cee6d4fae945e2489810b8ceb70837150afbfd91b97280507cf64724d2074",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15686665-the-village-atari-st-at-the-police-station.png"
+  },
+  "art/catalog/moby/36984/screenshot-2d9553f5490d.webp": {
+   "game": "atarist:moby-36984",
+   "sha256": "1800ce202e2a923099143f9f511f2f92a790b160b7c75f0e9552c735724873f8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15939575-the-star-portal-atari-st-trying-to-open-a-door.png"
+  },
+  "art/catalog/moby/36986/screenshot-e73d178c2904.webp": {
+   "game": "atarist:moby-36986",
+   "sha256": "d0ca64a7aa813663589d95f9a9a4af1aa7ad59c3535211da3497770e0778499f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15939947-hostile-reception-atari-st-a-power-up.png"
+  },
+  "art/catalog/moby/36987/screenshot-bad00758c135.webp": {
+   "game": "atarist:moby-36987",
+   "sha256": "3274577f4bced6de57ba190bba8e3ae3005ccc4ef3bb87a7394a8edd40481ceb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15939788-super-break-out-atari-st-an-exit-brick-has-appeard.png"
+  },
+  "art/catalog/moby/36988/screenshot-a892ee5a55cf.webp": {
+   "game": "atarist:moby-36988",
+   "sha256": "5b2477b2b76a378a3461a83dda698e06b08a20bda10a62d51af5bae73543610f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15940124-leonid-atari-st-shooting-at-a-block.png"
+  },
+  "art/catalog/moby/37061/screenshot-6f64012ad175.webp": {
+   "game": "atarist:moby-37061",
+   "sha256": "85b6e7460fb9c2d14d821abd0051b040c4b75226232deea68dbe642ba4fc8b36",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/4376733-daleks-atari-st-high-score-table.png"
+  },
+  "art/catalog/moby/37202/box-6766adf50935.webp": {
+   "game": "atarist:moby-37202",
+   "sha256": "b30cda114675c50629a3f5667350b3b20b8fe8004fb4a26f4a7b674b0ecca348",
+   "sourceUrl": "https://cdn.mobygames.com/covers/11152164-virtual-worlds-the-3d-game-collection-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/37202/screenshot-ebaf43eee417.webp": {
+   "game": "atarist:moby-37202",
+   "sha256": "f5aec4c6ac066eeb2198b6316b7efa82902754362bf0a64e6218ee161fe4ab79",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16924983-virtual-worlds-the-3d-game-collection-atari-st-game-selection-di.png"
+  },
+  "art/catalog/moby/37227/box-701575b4f21c.webp": {
+   "game": "atarist:moby-37227",
+   "sha256": "05569d3c931cd430b3af80dafb391a66171a26615d8f49854ca707f68d89e2a1",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6942177-fugger-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/37227/screenshot-d981d7b06162.webp": {
+   "game": "atarist:moby-37227",
+   "sha256": "7ff3eed39c49bb3c97e89c9940e897d2e3f073f07a206a9283b9a98d953b441e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16233309-fugger-atari-st-main-office.png"
+  },
+  "art/catalog/moby/37293/screenshot-3ae4ae40c6e8.webp": {
+   "game": "atarist:moby-37293",
+   "sha256": "2239d19a5de7ee0e926896400f4e82c7c19a4114a64d9bcfd8fd165a15780de0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16395311-sat1-bingo-atari-st-wrong-answer-one-round-blocked-st-monochrome.png"
+  },
+  "art/catalog/moby/37622/screenshot-6ed0994f729a.webp": {
+   "game": "atarist:moby-37622",
+   "sha256": "885849c72679b94f8bee9b8b41cf2c2fe1e473c104278e23e9df423c0ac3abef",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15962684-quatris-atari-st-its-getting-crowded.png"
+  },
+  "art/catalog/moby/37623/screenshot-4f0143602f21.webp": {
+   "game": "atarist:moby-37623",
+   "sha256": "ca558c49a10c8feb9106264d5310371030e296af9de1fbccc1774ccf10fb2d96",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15962693-cyberstorm-atari-st-that-thing-under-my-ship-fires-when-i-fire.png"
+  },
+  "art/catalog/moby/37625/screenshot-5d919ba35b5d.webp": {
+   "game": "atarist:moby-37625",
+   "sha256": "1acfab988553d238e2557b6951b07c462a0a9efef401311b864dcfa41b3751b5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15963038-darklyte-ii-atari-st-visiting-the-shop.png"
+  },
+  "art/catalog/moby/37626/screenshot-2814a12900e6.webp": {
+   "game": "atarist:moby-37626",
+   "sha256": "a0fe86b75561fcea2828f839cfeead571070014905b4ec604cbce5df17185736",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15959122-quizz-atari-st-oops-wrong-answer.png"
+  },
+  "art/catalog/moby/37636/screenshot-06a295162709.webp": {
+   "game": "atarist:moby-37636",
+   "sha256": "687b2440e60abafa04ed3174ed8c1c8eee7afc22609468311b6aa056bb548ca2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16059295-trivia-master-atari-st-i-guessed-wrong.png"
+  },
+  "art/catalog/moby/37637/screenshot-64a82773093e.webp": {
+   "game": "atarist:moby-37637",
+   "sha256": "d992a62e8f5d3baa6faadf21698390cdbdcac0c6572b20055b9965809c4b57cc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15963936-manical-drop-atari-st-game-over.png"
+  },
+  "art/catalog/moby/37638/screenshot-04c6fbde37e4.webp": {
+   "game": "atarist:moby-37638",
+   "sha256": "9f07def27624c2a6d50efa7828663faecc43a85bbcdfebc5472edc10612ad113",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16050634-asteroidia-atari-st-an-alien-atacks.png"
+  },
+  "art/catalog/moby/37654/screenshot-8b297bbd0b76.webp": {
+   "game": "atarist:moby-37654",
+   "sha256": "5bfe9e5291092765493e56bb42a060dd80617b03a1a9570a7b6f074de6d6cf22",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16059343-trivia-quiz-atari-st-i-guessed-wrong.png"
+  },
+  "art/catalog/moby/37655/screenshot-efd5d453f76c.webp": {
+   "game": "atarist:moby-37655",
+   "sha256": "7975cfb2a7a68955b639a09ed556562601ae6064c62e2b5cb76a08d4e025faaf",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15696970-x-trivia-atari-st-wrong-answer.png"
+  },
+  "art/catalog/moby/37656/screenshot-fc3cab326e8b.webp": {
+   "game": "atarist:moby-37656",
+   "sha256": "0ace61a607381911dad4ed3696ad4873e49ff9cc4658589b310c7a1a2754fb91",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15700203-strivia-atari-st-wrong-answer.png"
+  },
+  "art/catalog/moby/37658/screenshot-d02daeeefa0a.webp": {
+   "game": "atarist:moby-37658",
+   "sha256": "a0f66d7de8df4e5d1fbb16ebf519cb5fc71368634038c5324ead0bffcb0351fd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948720-wheel-of-fortune-atari-st-wrong-answer.png"
+  },
+  "art/catalog/moby/37661/screenshot-bbd727256582.webp": {
+   "game": "atarist:moby-37661",
+   "sha256": "0dc7962866dd366b030ba34fdbdc7a9394e7cfe57a8d92b6b84979e01e0af583",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948936-sliding-puzzler-atari-st-the-picture-has-been-scrambled-a-pictur.png"
+  },
+  "art/catalog/moby/37663/screenshot-2207cda078f2.webp": {
+   "game": "atarist:moby-37663",
+   "sha256": "5e3da9cabbcad9d6738b8655a860306845d6b330cb4ea07944f5aabc2ac4d12c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948672-chain-reaction-atari-st-one-of-the-high-score-tables.png"
+  },
+  "art/catalog/moby/37664/screenshot-239f8a0288a6.webp": {
+   "game": "atarist:moby-37664",
+   "sha256": "d4552b6dc270d9036da44c73bcc6aa3dabd121a87a39f71f217911098a73eedb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15948494-st-vegas-atari-st-i-lost.png"
+  },
+  "art/catalog/moby/37668/screenshot-f002f57658c6.webp": {
+   "game": "atarist:moby-37668",
+   "sha256": "7dc23790e70040cbb16bbaba88a11132b2a1ba1e874fbcd425f29174d9d181d6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15949103-blokdrop-atari-st-this-looks-grim.png"
+  },
+  "art/catalog/moby/37669/screenshot-1e373a383718.webp": {
+   "game": "atarist:moby-37669",
+   "sha256": "fbbb738785fb9682d04d6cfc18dad9e070f30f2c7d2ea61e1af793ac7e9389af",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15949142-valgus-atari-st-game-over-but-i-got-a-high-score.png"
+  },
+  "art/catalog/moby/37670/screenshot-2ed7f0f11673.webp": {
+   "game": "atarist:moby-37670",
+   "sha256": "150bb196b171efabee206b2055bf92521d5963ed3de6e80e32a2796ff2e0ee24",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15877617-blox-atari-st-i-the-middle-of-a-game-standard-level.png"
+  },
+  "art/catalog/moby/37671/screenshot-f9474bb63d1e.webp": {
+   "game": "atarist:moby-37671",
+   "sha256": "5b44b9a440084962a83a352de3f3d717bfab42b3734e8058bd19bf1e65e2ef3d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15950961-kubes-atari-st-the-high-score-table.png"
+  },
+  "art/catalog/moby/37672/screenshot-6db0f2475100.webp": {
+   "game": "atarist:moby-37672",
+   "sha256": "75fc95b698caa2fcaa3d4d6cd42b6a059a491d1cce002a130dc556b539b08baa",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16008656-warzone-atari-st-a-hit.png"
+  },
+  "art/catalog/moby/37673/screenshot-c9b1b457249a.webp": {
+   "game": "atarist:moby-37673",
+   "sha256": "3a17a4cda67daf120cd2a6fc6ba8043d58e6f21272ef9fff6a4763e3f177379b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15638709-mission-x-atari-st-game-over.png"
+  },
+  "art/catalog/moby/37827/screenshot-8c7d0b1583aa.webp": {
+   "game": "atarist:moby-37827",
+   "sha256": "71a808f2a28cfe493b565dac420f8e3e1a10eccdf6e32b5921f3c3d9e3f6b0ca",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15639810-frustration-atari-st-im-suffering-from-lack-of-imagination.png"
+  },
+  "art/catalog/moby/37828/screenshot-7eb60b5ecdce.webp": {
+   "game": "atarist:moby-37828",
+   "sha256": "8ad7cbc69a1a92656fb38b0864aec76993d99b004dba9c1ee96a6ade21e3f9af",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884136-wordbid-atari-st-almost-there.png"
+  },
+  "art/catalog/moby/37829/screenshot-e1eef69fef37.webp": {
+   "game": "atarist:moby-37829",
+   "sha256": "a72c69225a1d504ab00b84f5b2dc7fce95bb77693c57e4bd371120cd02586719",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884505-mumbo-jumbo-atari-st-solved-an-easy-puzzle.png"
+  },
+  "art/catalog/moby/37830/screenshot-d5f98844bb75.webp": {
+   "game": "atarist:moby-37830",
+   "sha256": "42f706bfac453be44c08398fe6178c1cebe887bb8c9356c84bfee943e9db5de9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884793-bridge-it-atari-st-yellow-player-wins-this-match.png"
+  },
+  "art/catalog/moby/37832/screenshot-5bb8fbc10226.webp": {
+   "game": "atarist:moby-37832",
+   "sha256": "052a763239672a4bca888625adb88a29924ce75ba730224273ea4b8c32993813",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15885890-dominoes-atari-st-a-game-in-progress-high-resolution.png"
+  },
+  "art/catalog/moby/37844/screenshot-8e02b469d6bf.webp": {
+   "game": "atarist:moby-37844",
+   "sha256": "e06478de4d49614416285607e191647c1577cc14453e44c550848b91c62ba946",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15889361-celestial-ceasars-atari-st-a-combat-in-progress.png"
+  },
+  "art/catalog/moby/37923/screenshot-a67748a93aa0.webp": {
+   "game": "atarist:moby-37923",
+   "sha256": "1d15a1c30992ebc6db64de8fd81ee2cc45ad23430787e3b0e947666b38991634",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16047634-air-traffic-controller-atari-st-disaser-is-iminent-plane-a-and-c.png"
+  },
+  "art/catalog/moby/37959/screenshot-3bc5ea3d6f8a.webp": {
+   "game": "atarist:moby-37959",
+   "sha256": "4ec4880c20f40c72ab5db95632ed2495bfe5f1b404cd8c5b9c975fab0ef5de24",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15889565-dr-zock-atari-st-game-over.png"
+  },
+  "art/catalog/moby/37960/screenshot-4ee64b942721.webp": {
+   "game": "atarist:moby-37960",
+   "sha256": "9afd0dd9cfd2f18520496621f0879d6946d7551f30358c1731df96ca0ea2cbde",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15890556-fuffy-atari-st-the-game-is-over.png"
+  },
+  "art/catalog/moby/38128/screenshot-65ad2985e022.webp": {
+   "game": "atarist:moby-38128",
+   "sha256": "3bef4e24e1994e71431a08070810081adb28233cae2731beab8306c5eeabc558",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16009001-conqueror-atari-st-how-many-armies-should-i-transfer.png"
+  },
+  "art/catalog/moby/38324/screenshot-6cbb99a40d1e.webp": {
+   "game": "atarist:moby-38324",
+   "sha256": "3068370a846c7ec8496eb59384e6a5cecb0b56d1311ebd60eb7943883bcc55da",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8901131-wetten-dass-atari-st-there-are-three-difficulties-easy-medium-di.png"
+  },
+  "art/catalog/moby/38887/box-f4b273af18fd.webp": {
+   "game": "atarist:moby-38887",
+   "sha256": "356a3cdf580053b5170e370fe58001e56917044b25efb3d14eb8691136e7b29e",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9913271-saint-greavsie-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/38887/screenshot-9caafd8905bd.webp": {
+   "game": "atarist:moby-38887",
+   "sha256": "bd6a120f7f40085a64e95f49fc6c4b8723742806dc8be5373a592b76397cfcf5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8085909-saint-greavsie-atari-st-nice-way-to-say-it-was-wrong.png"
+  },
+  "art/catalog/moby/3951/screenshot-d6b807239a73.webp": {
+   "game": "atarist:moby-3951",
+   "sha256": "8e3b2d9e5b8a13ad2ad168ca713c14b6facfcf05da7c4f7938f17605afca033f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15992863-microleague-baseball-atari-st-the-running-commentary-explains-it.png"
+  },
+  "art/catalog/moby/39822/screenshot-cdb2ea95a1ae.webp": {
+   "game": "atarist:455632",
+   "sha256": "8cc510deb32475ad4c3cea6711a200d845372ed3eae9844b9dc1cff13d32e6b1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15973747-playhouse-strippoker-atari-st-victory-over-judy.png"
+  },
+  "art/catalog/moby/40305/screenshot-7c5c2c37c979.webp": {
+   "game": "atarist:moby-40305",
+   "sha256": "d25119864f98ec34558d77b5f0e61fbfdd2e1097be327e54de6abee33d34550e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16601117-telemark-warrior-atari-st-everyone-still-wants-me-dead.png"
+  },
+  "art/catalog/moby/40426/screenshot-ed1c3cd0d369.webp": {
+   "game": "atarist:moby-40426",
+   "sha256": "426c79ea52fd3604cc68337a2f3949c1cc26ae39820206552406d560405e154b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15986595-jumping-ghost-atari-st-level-three-is-a-lot-more-complex-than-le.png"
+  },
+  "art/catalog/moby/40427/screenshot-aa6a8f014237.webp": {
+   "game": "atarist:moby-40427",
+   "sha256": "009ea4f9e1e7ff56f962333a05ecd15396b15b0c510ce0efddba99e540ead3ef",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16051225-atari-slalom-atari-st-route-4.png"
+  },
+  "art/catalog/moby/40428/screenshot-dda055e39707.webp": {
+   "game": "atarist:moby-40428",
+   "sha256": "56eae7508f56856033990a16d4392a0b2059264275fcd657fd821580f41b0581",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15749130-ball-park-atari-st-this-is-an-interesting-level.png"
+  },
+  "art/catalog/moby/40429/screenshot-859b17993a81.webp": {
+   "game": "atarist:moby-40429",
+   "sha256": "2298c43bfd2a06e7a257bab269e3ff28e189ecb8017bc934a34150c93d470dae",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16051924-bandit-atari-st-game-over.png"
+  },
+  "art/catalog/moby/40430/screenshot-843efb91abfd.webp": {
+   "game": "atarist:moby-40430",
+   "sha256": "d29d965b294c82e8930be425445ce6dd7714dc3f2102e8756d0bc6976d18f819",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16005365-bert-the-squirt-atari-st-the-second-level-is-a-bit-tricky.png"
+  },
+  "art/catalog/moby/40431/screenshot-316b12f33e23.webp": {
+   "game": "atarist:moby-40431",
+   "sha256": "1facd749023a691bb69a199d3f468d864e75093d2055cee0c8e96681e1d7aa36",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15809783-bomb-disposal-atari-st-info-screen.png"
+  },
+  "art/catalog/moby/40432/screenshot-501556602ac3.webp": {
+   "game": "atarist:moby-40432",
+   "sha256": "f725647a1150437a23e1be32ce084e7d8ffe541e775fb2f764c79e3279896c5c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15809579-bug-spray-atari-st-the-second-level-features-wasps.png"
+  },
+  "art/catalog/moby/40433/screenshot-def275a22731.webp": {
+   "game": "atarist:moby-40433",
+   "sha256": "586dce3838b8646c5ec62a36531ad52888eef719b134d1717a7901c01e56d826",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15809543-carrier-attack-atari-st-the-computer-is-attacking-one-of-my-carr.png"
+  },
+  "art/catalog/moby/40434/screenshot-556f652a1019.webp": {
+   "game": "atarist:moby-40434",
+   "sha256": "d990ea34a0dd619dd7f2e8a26d7b53459bb9ea1e23104a708f8c95cb82688303",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15809678-chiropodist-in-hell-atari-st-foothills.png"
+  },
+  "art/catalog/moby/40435/screenshot-e0fbd16d163e.webp": {
+   "game": "atarist:moby-40435",
+   "sha256": "9955c7958e2de6b7cec5c7d083898c2d0123d89651398efa89281fa570227f28",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15809924-clacker-atari-st-im-about-to-score-some-points.png"
+  },
+  "art/catalog/moby/40436/screenshot-fd631898f372.webp": {
+   "game": "atarist:moby-40436",
+   "sha256": "9bb90dd4d66b792767c3ef9021d740aaa26c43c7d3554876cad235ee693567e3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15810125-invaders-atari-st-the-situation-looks-grim.png"
+  },
+  "art/catalog/moby/40437/screenshot-c9dc536b05a8.webp": {
+   "game": "atarist:moby-40437",
+   "sha256": "c383dfb228db67dea01c5fffd2ca52662fd9e6bdee86593a4148eb602e95bd60",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15810476-glob-atari-st-a-room-with-sliders-on-the-floor.png"
+  },
+  "art/catalog/moby/40455/screenshot-d3a9e8ded280.webp": {
+   "game": "atarist:moby-40455",
+   "sha256": "2eff50d545b4fa39d3291c12294345c36bbef6a5f4248c895c9d7eb2c8e5204e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15811607-clunk-atari-st-a-bit-too-slow.png"
+  },
+  "art/catalog/moby/40456/screenshot-5b2b4ace9025.webp": {
+   "game": "atarist:moby-40456",
+   "sha256": "085457054adfe2c506225c7948dfb9b5a7123e7eed6960488b7bea92de67c4fe",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15810578-crush-atari-st-blocks-with-a-down-arrow-is-best-to-have-at-the-b.png"
+  },
+  "art/catalog/moby/40457/screenshot-3099e6669384.webp": {
+   "game": "atarist:moby-40457",
+   "sha256": "95ec053081a42660769cb7f111ebfea19301627864cb8d9a92dd029f140e7f88",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15810428-dead-or-alive-atari-st-at-the-locked-gates.png"
+  },
+  "art/catalog/moby/40473/screenshot-9437a95a8ee4.webp": {
+   "game": "atarist:moby-40473",
+   "sha256": "7fd8aa577e5f2478e909d69a6be706f420ff4111675043ed926fbadd62ae2387",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15810440-death-camp-atari-st-i-tried-to-take-some-rice-but-that-didnt-go-.png"
+  },
+  "art/catalog/moby/40474/screenshot-b39e10c89c10.webp": {
+   "game": "atarist:moby-40474",
+   "sha256": "4e3024585935b8daade3e58b5c15824858069fad4ab440fe6e825e4a8d657f96",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15810974-dennis-denise-atari-st-got-50.png"
+  },
+  "art/catalog/moby/40562/screenshot-adaa4cf9ffef.webp": {
+   "game": "atarist:moby-40562",
+   "sha256": "d73b920a4bf36f19ac247c976a33c3795b510babba650540de602200f460cc8f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16005479-deuce-atari-st-game-over.png"
+  },
+  "art/catalog/moby/40564/screenshot-eb6a48f5606d.webp": {
+   "game": "atarist:moby-40564",
+   "sha256": "e86ce5505e147f9a2007d94b7fedcc218fcb25ff8fcbd97a9fc7ae8fc0955138",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16005497-dizzy-lizzy-atari-st-i-died.png"
+  },
+  "art/catalog/moby/40565/screenshot-ad92b708bd78.webp": {
+   "game": "atarist:moby-40565",
+   "sha256": "bbf839d8879f7b75dd47a3711a59a4ebd3df3fd98b02946745695526ab2de9b7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16005302-dizzy-lizzy-2-a-winters-tale-atari-st-status-screen.png"
+  },
+  "art/catalog/moby/40566/screenshot-1b1425455780.webp": {
+   "game": "atarist:moby-40566",
+   "sha256": "3dc3dbb5b9e5e26fd242b4497e0972655746baf7d0ce7d6f2921156316e5e181",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16005338-mind-warp-atari-st-from-level-three-the-game-gets-more-interesti.png"
+  },
+  "art/catalog/moby/4162/screenshot-a326605ac657.webp": {
+   "game": "atarist:moby-4162",
+   "sha256": "fdd94bf312f0cd66995e27d9058af7f0a0c7510c123498d0feea378e8fd8eb54",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15877128-mot-atari-st-in-the-house.png"
+  },
+  "art/catalog/moby/41995/screenshot-3d39724072b7.webp": {
+   "game": "atarist:moby-41995",
+   "sha256": "ce614d16eeb3dba4e68ce29ecd682b8ab010b3e05dbaf0b7642682f278658308",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16038934-the-return-of-jusse-atari-st-attacking-a-sentinel.png"
+  },
+  "art/catalog/moby/41996/screenshot-32d3b177d1d9.webp": {
+   "game": "atarist:moby-41996",
+   "sha256": "3a69afd1a54cf0d56477ebfc2cdb5db260f554504785d861b39f8941126924f7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16105618-overlord-atari-st-the-insectoid-got-one-player.png"
+  },
+  "art/catalog/moby/41997/screenshot-f1205b7a43c3.webp": {
+   "game": "atarist:moby-41997",
+   "sha256": "9833e001a23db74293f9416e026c748c7c32612e2a3d05a2ef35a46ebff5a638",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16038340-dogfight-atari-st-going-down.png"
+  },
+  "art/catalog/moby/41998/screenshot-78a7f149d229.webp": {
+   "game": "atarist:moby-41998",
+   "sha256": "da2f1a0d710d023466837ec9d5e01a9eb2b054da72c610329308cf6878fb405a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15991924-firegame-atari-st-this-option-makes-the-game-a-bit-easier.png"
+  },
+  "art/catalog/moby/42133/screenshot-56d1d5b839d3.webp": {
+   "game": "atarist:moby-42133",
+   "sha256": "7c37029683241899aa9e3d2716bce5bd8cebd986cfe8309a9c15ba36a91eadf4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/5035780-r0x-atari-st-this-looks-like-a-perfect-time-to-destroy-all-visib.jpg"
+  },
+  "art/catalog/moby/42249/screenshot-4d453e01f5f6.webp": {
+   "game": "atarist:moby-42249",
+   "sha256": "2abb859b7f11d431f8d7e1f837f45b1fefc0002ecc2f6e26ab4dffdd96d7945f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16197923-vermeer-atari-st-time-to-buy-land.png"
+  },
+  "art/catalog/moby/42465/screenshot-c97e9b6d27d3.webp": {
+   "game": "atarist:219040",
+   "sha256": "61efbac58a074047129550c42fd314f0b5f860be6f4d93f0c5095ceb6d7c03d1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15853439-overscan-invaders-atari-st-almost-done-a-small-saucer-flies-acro.png"
+  },
+  "art/catalog/moby/42478/screenshot-934105afe5a2.webp": {
+   "game": "atarist:moby-42478",
+   "sha256": "58d6ab5900883f02a8fdf13c9fa6c4a847f18decbc811e54ddf214c0b29b860a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15869832-scary-atari-st-flying-axes.png"
+  },
+  "art/catalog/moby/4254/box-fb7dab676180.webp": {
+   "game": "atarist:moby-4254",
+   "sha256": "3d2ac0a14269fc2ce7a60934b74998bd2a429c823915a432816630b937f655b4",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6765859-merchant-colony-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/4320/box-ab76452fc88c.webp": {
+   "game": "atarist:moby-4320",
+   "sha256": "fa3bc0f53d72f65b5fc4e58a949da332a438449e0fbf96cd9d8e5a6b716cf839",
+   "sourceUrl": "https://cdn.mobygames.com/covers/851612-traders-the-intergalactic-trading-game-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/4320/screenshot-9098554c7ee1.webp": {
+   "game": "atarist:moby-4320",
+   "sha256": "7cd5aeae6af44c6ce2cbcd94d3692547e5e321bed317a8b7e67a5a76d6e01730",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15924344-traders-the-intergalactic-trading-game-atari-st-start-menu.png"
+  },
+  "art/catalog/moby/448/box-8bb441915b60.webp": {
+   "game": "atarist:moby-448",
+   "sha256": "274705008687f5710533a77ac6039a196a5bc89171f152a2bef864ae30ba2663",
+   "sourceUrl": "https://cdn.mobygames.com/covers/2317128-world-class-leader-board-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/45368/screenshot-54b052b86563.webp": {
+   "game": "atarist:moby-45368",
+   "sha256": "ae87e5baca199e604a290cbfa259a96cbe25178523930d84aa22aa9c44d3238c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16508239-lupercalia-atari-st-atari-st-monochrome.png"
+  },
+  "art/catalog/moby/45900/screenshot-82c64b0a4a28.webp": {
+   "game": "atarist:moby-45900",
+   "sha256": "e01d1e5b7be7d7719effd386e4e1e2ac1755968564d9083ede6367cb7037b64e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15931460-jumble-up-atari-st-quit.png"
+  },
+  "art/catalog/moby/45949/screenshot-1d74e15b4527.webp": {
+   "game": "atarist:moby-45949",
+   "sha256": "ff613cd5e2663341741f13b494fc852daf1604ff895abbd9f4f9003b1a42b30a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16078500-dr-jekyll-and-mr-hyde-atari-st-in-your-study.png"
+  },
+  "art/catalog/moby/46498/screenshot-10818b56034c.webp": {
+   "game": "atarist:moby-46498",
+   "sha256": "50387534843bfe620a6f9111b2624e4fc7e0a0def265bc46b4831477b30c959c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16095909-guided-missile-atari-st-thats-a-hit.png"
+  },
+  "art/catalog/moby/46499/screenshot-7d92eb75a692.webp": {
+   "game": "atarist:moby-46499",
+   "sha256": "620f0890c4c4b02e1a4762fd4684fe9d27592861f4ed5217f7863e1a0bd29c35",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16095900-evasion-2-atari-st-a-power-up-have-appeared.png"
+  },
+  "art/catalog/moby/473/screenshot-8e6a9320348a.webp": {
+   "game": "atarist:moby-473",
+   "sha256": "e0cd6d640c1370dca12010b6b02fc311606316af53cea9350159644c372a508e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2238227-plundered-hearts-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/4848/screenshot-e59a72f6530c.webp": {
+   "game": "atarist:moby-4848",
+   "sha256": "31b43eb72d1678341354d69fb87d4a6353b560204dfaaca513a72951b59b6f24",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15732504-where-in-the-world-is-carmen-sandiego-enhanced-atari-st-veroniqu.png"
+  },
+  "art/catalog/moby/49187/screenshot-c62dc4a7922f.webp": {
+   "game": "atarist:moby-49187",
+   "sha256": "584e19e03e0302d4568b537810ea4b456804f9bc37bf485577a47124463010ea",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16781346-knuddels-quest-atari-st-level-1.png"
+  },
+  "art/catalog/moby/50257/screenshot-1ea73afe931a.webp": {
+   "game": "atarist:moby-50257",
+   "sha256": "5799e5ca6fdb16609174b549e4e5765cf44c7797d9e7e0495f6634afba0f61f2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16015233-four-f-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/50258/screenshot-bf2fadf5c4c8.webp": {
+   "game": "atarist:moby-50258",
+   "sha256": "0d70af9a18c840173670c6af022d40f35ea960dce9a98c02e0eca011b5aeaa47",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16015170-planet-lander-atari-st-that-didnt-go-well.png"
+  },
+  "art/catalog/moby/50260/screenshot-a1594c862ed9.webp": {
+   "game": "atarist:moby-50260",
+   "sha256": "feffc2e4ab5ff4229bad58da59ff48ac2f83119eef81440c17cb4780fa61331e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16020864-the-dark-wars-atari-st-meeting-a-fellow-adventurer-out-in-the-wo.png"
+  },
+  "art/catalog/moby/50261/screenshot-d10e758dda76.webp": {
+   "game": "atarist:moby-50261",
+   "sha256": "59971687dbcff2ce6b4183c3ab15f2cddf24ac0f8e1620ddd9f3f02c8a5b1b95",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16015791-doctor-boris-atari-st-traped-against-the-wall.png"
+  },
+  "art/catalog/moby/50262/screenshot-c54785f18c57.webp": {
+   "game": "atarist:moby-50262",
+   "sha256": "0afe4e3d9dc91799ff18385eb628b9da51b2d634ffbbec420166878b529ba23a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16183237-inferno-atari-st-game-over.png"
+  },
+  "art/catalog/moby/50263/screenshot-23a61df4d9e5.webp": {
+   "game": "atarist:moby-50263",
+   "sha256": "6458d1f6cced6d7bf010c6f737b6abcc9b4ff51bfcf7141cd3243eede39d362d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16016157-impulse-atari-st-game-over.png"
+  },
+  "art/catalog/moby/50297/screenshot-5a12466dede2.webp": {
+   "game": "atarist:moby-50297",
+   "sha256": "673958fa8bac9e20174925cc0f9bb22dc89557cabfa56027fd39960539e7fea2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1685342-road-riot-4wd-atari-st-several-bumps-in-the-road-let-your-buggy-.png"
+  },
+  "art/catalog/moby/50792/screenshot-a462459dfb37.webp": {
+   "game": "atarist:moby-50792",
+   "sha256": "a1860a8ec37ea742bad15ad5a3410d16a33d087264835b2b8174b40be4541094",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16196805-lin-wus-challenge-atari-st-waiting-for-tiles.png"
+  },
+  "art/catalog/moby/51/box-1582b4d9f166.webp": {
+   "game": "atarist:moby-51",
+   "sha256": "8b92fda08a47ed4882bcf63e4fbbf9cad33857e25dba07448b0c43d9c8f237e0",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4005821-planetfall-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/51/screenshot-81b4bcc33d0c.webp": {
+   "game": "atarist:moby-51",
+   "sha256": "7e2add01745446a06e60735744040e8fb7d888e085de35548dbb745e0ad1f7eb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16442003-planetfall-atari-st-balcony.png"
+  },
+  "art/catalog/moby/51754/screenshot-37ace4e13b28.webp": {
+   "game": "atarist:moby-51754",
+   "sha256": "d3d2091023432b9a8087d215a1b17799d6a5e4ad8f198dc645564a6a83553869",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16192420-astro-panic-atari-st-monochrome-mode-the-same-game-black-and-whi.png"
+  },
+  "art/catalog/moby/52829/box-e1e6635f02b4.webp": {
+   "game": "atarist:moby-52829",
+   "sha256": "d2294fd632dd4f1c251f3010611e13c4c42d46f4d14f0ab93eb1b61b82304078",
+   "sourceUrl": "https://cdn.mobygames.com/covers/532580-llamazap-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/53065/screenshot-bdfbba54d345.webp": {
+   "game": "atarist:moby-53065",
+   "sha256": "5b9802d9a64d923570aec1d6d3f59b730f6e77b91bc9caf3f49de6ae930687ca",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16219698-murder-on-the-atlantic-atari-st-whats-the-combination.png"
+  },
+  "art/catalog/moby/53074/box-9e3129c6498b.webp": {
+   "game": "atarist:moby-53074",
+   "sha256": "420108ca402357d1a510f05142d11be5fe872fd6bf2acb58645ef6c84fa9524b",
+   "sourceUrl": "https://cdn.mobygames.com/covers/510791-typhoon-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/53074/screenshot-6c4a0e3453f3.webp": {
+   "game": "atarist:moby-53074",
+   "sha256": "527e3ddedb88b6630ecb8ee6007f7c69ca005e672eb7a9c1563bd6d5bf571770",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8068032-typhoon-atari-st-entering-an-asteroid-field-which-is-just-a-back.png"
+  },
+  "art/catalog/moby/53107/screenshot-d4da987ab119.webp": {
+   "game": "atarist:moby-53107",
+   "sha256": "079c855860cb45b862581e902f57584e5e1d2a18e70c8c6ac7864bc7f79ceb22",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16229676-match-it-atari-st-the-line-shows-the-match.png"
+  },
+  "art/catalog/moby/53108/screenshot-66d9a3b19021.webp": {
+   "game": "atarist:moby-53108",
+   "sha256": "c6d9124efd138f265ba323b7897ed6a930fc8f32ee942e312e6542b5f34bb903",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16229643-jetpac-atari-st-one-barrel-of-fuel-coming-up.png"
+  },
+  "art/catalog/moby/53109/screenshot-3a4f0c09d566.webp": {
+   "game": "atarist:moby-53109",
+   "sha256": "b4ab2f0a3e24209ebcb0d5287da480418d7edc00cd894a746e86c70356b10c29",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16229649-paco-and-the-tunnels-of-doom-atari-st-this-will-be-a-bit-tricky.png"
+  },
+  "art/catalog/moby/53193/screenshot-7c9036ba2fdf.webp": {
+   "game": "atarist:moby-53193",
+   "sha256": "7d31fdfb11d45d05b2d885399cfdf602b6f23da6bcbb1201723870771aed5019",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16231041-flipped-micro-care-edition-atari-st-the-first-level.png"
+  },
+  "art/catalog/moby/53194/screenshot-0cd513971eba.webp": {
+   "game": "atarist:moby-53194",
+   "sha256": "0a1836afcdebab282012ae234c4020fe3acb1029bfbedcebeb6e5578f564a2ba",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16230948-first-dominoes-atari-st-only-one-tile-left-and-nowhere.png"
+  },
+  "art/catalog/moby/53196/screenshot-7d956fe1e3f5.webp": {
+   "game": "atarist:moby-53196",
+   "sha256": "faf17ae55c121bd97809cc8c78195b15492aef36d55e11d8ce8461f2989d3106",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16230930-headlong-atari-st-that-didnt-go-well.png"
+  },
+  "art/catalog/moby/53199/screenshot-b443896f37cf.webp": {
+   "game": "atarist:moby-53199",
+   "sha256": "300caf2572c8b16fa1775e85a59c93db92e7417c68bf3db346f2a26df427fbfd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16231086-horse-racing-simulator-atari-st-details-about-the-horses-you-own.png"
+  },
+  "art/catalog/moby/53201/screenshot-5458cb1ef1c6.webp": {
+   "game": "atarist:moby-53201",
+   "sha256": "e3b9de77f491459dc4e6bd53f05f15b21d4845bf3c41c40daada4eb531c63cfd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16231056-super-scramble-atari-st-the-end-of-level-boss.png"
+  },
+  "art/catalog/moby/53234/box-6a2d15462823.webp": {
+   "game": "atarist:moby-53234",
+   "sha256": "f44f8afa5dbda5cf45bf5830ce8c6982438f85bd26d311b38c39db9a85827248",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6446616-fun-radio-la-compil-micro-2-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/53247/box-9e31c7399e1d.webp": {
+   "game": "atarist:moby-53247",
+   "sha256": "db13cc27da578d4fd24bcf1b4ea05e12516e1b02a2f337153ac103d86bfca396",
+   "sourceUrl": "https://cdn.mobygames.com/covers/531516-soccer-king-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/53247/screenshot-40048cc08cee.webp": {
+   "game": "atarist:moby-53247",
+   "sha256": "a1949dbf278bde0991782a626a64e4b9a8b992b5db167a4ee4aea4982a4eb7a7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8068863-soccer-king-atari-st-tough-fight-in-the-box.png"
+  },
+  "art/catalog/moby/53260/screenshot-a49bdc93f06c.webp": {
+   "game": "atarist:moby-53260",
+   "sha256": "985470a2516b6e001169ca0f2865a0daff6ec5f50cd382f43169da49bcc48838",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16003554-bellum-internecinum-atari-st-got-2-x-250-points.png"
+  },
+  "art/catalog/moby/53263/screenshot-1d026f2d7a53.webp": {
+   "game": "atarist:moby-53263",
+   "sha256": "608fdbde43ac75b4aaeb5949256f1e1735aa50a4c79419cd0399b16528e2f48c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16027278-sharks-atari-st-incoming-chopper.png"
+  },
+  "art/catalog/moby/53264/screenshot-0766101ebe02.webp": {
+   "game": "atarist:moby-53264",
+   "sha256": "9407690e7bc4f9d15cb53a399e389de0a0b928f365fdd17a0c2741b0fc327e6b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16028397-wintris-atari-st-looking-good.png"
+  },
+  "art/catalog/moby/53268/screenshot-92630a58465e.webp": {
+   "game": "atarist:moby-53268",
+   "sha256": "5cb7562be388971a8dd6b869873e4e8b0f27b850f4e3eac665986262afa43f62",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16216761-sea-fisherman-atari-st-waiting-for-the-fish.png"
+  },
+  "art/catalog/moby/53269/screenshot-7a75c3bc072a.webp": {
+   "game": "atarist:moby-53269",
+   "sha256": "ccd906913fa75b76fd9becb5bd5640bd9ac6afee8d2446bccc2828147c894194",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16033069-sub-hunt-atari-st-chopper-wins.png"
+  },
+  "art/catalog/moby/53437/screenshot-522bb9d73592.webp": {
+   "game": "atarist:moby-53437",
+   "sha256": "a5c123f59506cb3b5b1b2394fc9aa93f15833a0827913ae83274619e5e958f34",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8117155-spaceball-atari-st-bat-splitting-extra-blue-player.png"
+  },
+  "art/catalog/moby/53469/box-eb7529dedc91.webp": {
+   "game": "atarist:moby-53469",
+   "sha256": "97f98aafb0bdc5e1bdcd6f66a7f622b3d2f189c780fe84c7c2d51d2963a6b9a2",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6957262-tetra-quest-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/53469/screenshot-cc8224126695.webp": {
+   "game": "atarist:moby-53469",
+   "sha256": "3d5988f698e3d67226a9b6e3d636a064578a6c58f73b7035d6e7f7ba50781b57",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8075211-tetra-quest-atari-st-fighting-more-formations.png"
+  },
+  "art/catalog/moby/53475/screenshot-38e742c521cc.webp": {
+   "game": "atarist:moby-53475",
+   "sha256": "1356686736bb0d737551aed276b6fd1b247587f6fe15d12f892d436b85171dbe",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8072770-sorcery-atari-st-oh-sorcerers-cant-swim-bad.png"
+  },
+  "art/catalog/moby/53506/screenshot-7fbe1449e426.webp": {
+   "game": "atarist:moby-53506",
+   "sha256": "a63ca356c9677b4fb43741bfc9394b9615a5cd83205571b3edf1e7f923ca2d51",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16308439-hotball-atari-st-the-crowd-goes-crazy.png"
+  },
+  "art/catalog/moby/54008/box-6abc4ce3f082.webp": {
+   "game": "atarist:moby-54008",
+   "sha256": "d5c5a7857c7b67fdf646976bcf3086ab14e92029b53e71aaa7a4a06e42d4b693",
+   "sourceUrl": "https://cdn.mobygames.com/covers/781775-gary-linekers-hot-shot-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/54008/screenshot-e5817355ec6b.webp": {
+   "game": "atarist:moby-54008",
+   "sha256": "4088c570507750ba44667f1dd79ac6a16d80d72888f3764d192d00d7e228e1cb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16307917-gary-linekers-hot-shot-atari-st-thats-a-goal.png"
+  },
+  "art/catalog/moby/54156/screenshot-704e48e1d600.webp": {
+   "game": "atarist:moby-54156",
+   "sha256": "2fc3891b68aa605416b7043f18811d492952c7dd7dcde575fd141436e56a8cc5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9034860-diablo-atari-st-as-the-ball-processes-through-the-level-the-pass.png"
+  },
+  "art/catalog/moby/54174/screenshot-e235035f5553.webp": {
+   "game": "atarist:moby-54174",
+   "sha256": "3a020eda644dab0b0198c4cd47c1320c7291a4d132313d6c1e203acbea2218fb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8078656-startrash-atari-st-surrounded-by-two-enemies.png"
+  },
+  "art/catalog/moby/54182/screenshot-0ca3f61f1c13.webp": {
+   "game": "atarist:moby-54182",
+   "sha256": "0883b1741cf6ae9dcaaae8773d17b051c80b5e6332a8f134eda59ae11f575c8d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16275854-das-haus-atari-st-at-the-bank.png"
+  },
+  "art/catalog/moby/54239/screenshot-450d17bde267.webp": {
+   "game": "atarist:moby-54239",
+   "sha256": "bb10bc5e2e10aa63bb25a77568589c0699daba62bbb66c966b2d973f60c5d88a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16275923-sunny-shine-on-the-funny-side-of-life-atari-st-back-at-home-afte.png"
+  },
+  "art/catalog/moby/54315/screenshot-dc32be418437.webp": {
+   "game": "atarist:moby-54315",
+   "sha256": "623375e5f8fc27472373dbc01012cc1e3a42968ffb8eb6cfa9c446294f2203d5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16248141-flip-it-magnose-water-carriers-from-mars-atari-st-and-were-off.png"
+  },
+  "art/catalog/moby/54322/screenshot-e75fbc628229.webp": {
+   "game": "atarist:moby-54322",
+   "sha256": "8f58a7318bb13e6e2cd6e8de9f9f845565c2f0a47be02db0801450fcef552913",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8853739-prosoccer-2190-atari-st-this-smells-like-a-good-counter-attack-p.png"
+  },
+  "art/catalog/moby/54348/screenshot-2d72faeac1db.webp": {
+   "game": "atarist:moby-54348",
+   "sha256": "aeb2e520a198dbd017f0b53f697d11030e548ada23b0f67aded582c077b31c01",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16248609-world-soccer-atari-st-half-time-results.png"
+  },
+  "art/catalog/moby/54571/screenshot-73819bda0b3c.webp": {
+   "game": "atarist:moby-54571",
+   "sha256": "14d057c874bac753c3d62295afe621e0b193f6777c4ec764898a7d2ad54bd5e3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16308235-turn-n-burn-atari-st-better-shoot-them-before-they-get-too-close.png"
+  },
+  "art/catalog/moby/54577/screenshot-6522c0a778ab.webp": {
+   "game": "atarist:moby-54577",
+   "sha256": "d86b5e812e1ee1ea320059c8287311de3054410f4c97231342310f69dfdb918b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/7708530-challenge-golf-atari-st-and-the-overhead-view.png"
+  },
+  "art/catalog/moby/54987/screenshot-c8ec6374a303.webp": {
+   "game": "atarist:moby-54987",
+   "sha256": "a5966d9651c3e99c2d362ea06ecfa3758247291bf0432fffc936b9673378f2d6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16262406-checker-atari-st-game-screen.png"
+  },
+  "art/catalog/moby/55402/box-ebfbf0a4e5b7.webp": {
+   "game": "atarist:moby-55402",
+   "sha256": "6795309daad210781bfa4c54d226f104edf3c4871da58276ad686f1321a17f85",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6784137-sporting-gold-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/55458/screenshot-42403f875865.webp": {
+   "game": "atarist:moby-55458",
+   "sha256": "731f0c1e1fcd11898f6e81a2f4ea78efaf8b3a32395a867c0ec0a3c365117017",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/6278817-treble-champions-ii-atari-st-this-weeks-friendly-games-we-picked.png"
+  },
+  "art/catalog/moby/55573/screenshot-3fdd230048a4.webp": {
+   "game": "atarist:moby-55573",
+   "sha256": "aa60eb48e7a2573592efa92cba04cda764e7bdfc8c45d70f01b9552feb2ceb8c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16331835-championship-manager-italia-atari-st-team-information-for-milan.png"
+  },
+  "art/catalog/moby/55770/screenshot-8b1fa69248cc.webp": {
+   "game": "atarist:moby-55770",
+   "sha256": "3ec671e1291b07674d6acf575e27ce3e4c4de03b05c68a0f2fbc6a75f8f13d2d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16270276-ultimate-tron-st-atari-st-i-lost-that-match.png"
+  },
+  "art/catalog/moby/55788/screenshot-b81940ec736d.webp": {
+   "game": "atarist:moby-55788",
+   "sha256": "bb0e36d17859719c1cd5583480bffc0b48b311b07bb93eb2dab6f2afe79e3f9c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16270063-the-vault-atari-st-examining-a-cabinet.png"
+  },
+  "art/catalog/moby/55796/screenshot-e8ed79c5dac6.webp": {
+   "game": "atarist:moby-55796",
+   "sha256": "52151f48af7cc12a9c3068a58431beca2a151c5c94f426b5f9fa938579e73498",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16270081-agros-atari-st-it-seems-that-i-cant-walk-on-water.png"
+  },
+  "art/catalog/moby/55800/screenshot-2869452c0198.webp": {
+   "game": "atarist:moby-55800",
+   "sha256": "4c9d741131ffe3ef46db2d5bf0f7ba0a6a6ddc36c4005eac5602896c40ffa682",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16270165-project-airline-atari-st-information-screen.png"
+  },
+  "art/catalog/moby/55812/screenshot-346d0c8c7e97.webp": {
+   "game": "atarist:moby-55812",
+   "sha256": "09eb43fcb75735760ef9fc88ca99102d54d871df6d1b3760c1310b6fe38f0b0b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16270210-balloons-atari-st-the-exit-is-revealed.png"
+  },
+  "art/catalog/moby/55813/screenshot-3316023e72e1.webp": {
+   "game": "atarist:moby-55813",
+   "sha256": "ef0623f9005e5bf612e22683d0dc462e80816e8a8d6529e33b91c275a960175b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271734-bits-atari-st-a-different-board-style.png"
+  },
+  "art/catalog/moby/55824/screenshot-4dda3cc91c14.webp": {
+   "game": "atarist:moby-55824",
+   "sha256": "2d75f16e4448418ddf20c8ec2f0150cc36400516102bf2105a04badda98ca0f0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16270267-boxy-gambler-atari-st-after-completing-a-level-successfully-the-.png"
+  },
+  "art/catalog/moby/55892/screenshot-520b28a5e638.webp": {
+   "game": "atarist:moby-55892",
+   "sha256": "4e18fdbf3b75510042e6c8e47a952276c74ebaa0ac6e857360460c0bb307ce47",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271128-snakes-ladders-atari-st-in-mid-game.png"
+  },
+  "art/catalog/moby/55893/screenshot-24b415367495.webp": {
+   "game": "atarist:moby-55893",
+   "sha256": "2169ac9376fdcd63bdb776b9a02567a66ee77624b729ae3bffd23f1a5748412f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271227-space-blob-atari-st-hmm-isnt-that-pac-man.png"
+  },
+  "art/catalog/moby/55894/screenshot-2768b2362549.webp": {
+   "game": "atarist:moby-55894",
+   "sha256": "ccbe611132cc0adc2001240bada652cc18bda98e6a4c39c186b4fe8084a5ba51",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271161-space-invaders-atari-st-game-over.png"
+  },
+  "art/catalog/moby/55906/screenshot-78cf51551e26.webp": {
+   "game": "atarist:moby-55906",
+   "sha256": "1a9eb8ac3aa6d4e778b5bae657f835dfe05b0b1a52b8f7203c6d76bc35e0ecb9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271332-speculator-atari-st-market-stoped.png"
+  },
+  "art/catalog/moby/55907/screenshot-42b7d461cd6e.webp": {
+   "game": "atarist:moby-55907",
+   "sha256": "00df408aad2ba34143e95768a4abb5329490442e586db7ba93dc3783b8eff471",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271347-spaced-weller-atari-st-first-round.png"
+  },
+  "art/catalog/moby/55908/screenshot-748b7d371fef.webp": {
+   "game": "atarist:moby-55908",
+   "sha256": "a266260dcc68db4def30f9e3fe537f8c0e718e0bbf5f4d4ac99dd7713a241921",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271410-platform-capers-atari-st-i-fell-down.png"
+  },
+  "art/catalog/moby/55911/screenshot-d680105c9881.webp": {
+   "game": "atarist:moby-55911",
+   "sha256": "a9d7df161b2b6ae90370bb6a6b5c4dc45227acae55593bc166e2c5baf2b8c4b4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16271428-light-cycles-atari-st-game-over.png"
+  },
+  "art/catalog/moby/56081/box-2cc5c760175e.webp": {
+   "game": "atarist:moby-56081",
+   "sha256": "89fff747b62145beba5cd5957945c0295d55044cac8dc370e42fba2e4ee830ce",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6096984-the-chronicles-of-omega-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/56081/screenshot-bc2ee2917f60.webp": {
+   "game": "atarist:moby-56081",
+   "sha256": "f4d341d183e54393ab1fad86fa0dcea856ec70d0ab9f5650103cba2211f387d5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/7585616-the-chronicles-of-omega-atari-st-the-first-level.png"
+  },
+  "art/catalog/moby/56165/screenshot-111ea38e3d38.webp": {
+   "game": "atarist:moby-56165",
+   "sha256": "f6c1c1b565185e383502659fc975484bdc5ac447b5a2c4fba8a5f644513d566d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8086312-tank-attack-atari-st-bombardment-successful-enemy-headquarter-de.png"
+  },
+  "art/catalog/moby/56920/screenshot-c433fbb70586.webp": {
+   "game": "atarist:moby-56920",
+   "sha256": "6629154f29a27982fa2c9ca4724b95a510b313b5e001cfb3c9b6c9687530f02b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8005491-european-soccer-challenge-atari-st-the-question-is-where-is-the-.png"
+  },
+  "art/catalog/moby/57011/screenshot-26f0bc0ce23f.webp": {
+   "game": "atarist:moby-57011",
+   "sha256": "cc3ce6dc9d5c08b0976d581ec3760bf92a882a59cd9909a7e758824881af0a97",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8757641-the-lands-of-havoc-atari-st-found-the-book-of-chance.png"
+  },
+  "art/catalog/moby/58/box-c41f93eeb777.webp": {
+   "game": "atarist:moby-58",
+   "sha256": "dc181be2abf4f70c4941bc3880b5a0e6101e2aac759c6d3f93aa840b2a7a88cd",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4031744-spellbreaker-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/58/screenshot-8fb8eec8700f.webp": {
+   "game": "atarist:moby-58",
+   "sha256": "c674229efb2323606fb6e7536fdd3339b1242f99b69b9cb8511374e24453e6c5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/370643-spellbreaker-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/59/box-733a31a5277e.webp": {
+   "game": "atarist:moby-59",
+   "sha256": "ff6a0f25d2452fe40f6324811d5650695bb2d9fe28d43d7b2c2350eabea3d96f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4030542-starcross-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/59/screenshot-59e7576ed7b3.webp": {
+   "game": "atarist:moby-59",
+   "sha256": "572d9f67252be925028dc7b570c5f02b092eac812e11f6a23da2659b75f50af6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/371694-starcross-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/5919/screenshot-4880bf130ec8.webp": {
+   "game": "atarist:moby-5919",
+   "sha256": "8f7657d9aa93f98c170e75477424ed114379c3d17f7eaf09c00320f66a8bffba",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15763902-the-computer-edition-of-scrabble-brand-crossword-game-atari-st-t.png"
+  },
+  "art/catalog/moby/59219/screenshot-d1cb42f57074.webp": {
+   "game": "atarist:moby-59219",
+   "sha256": "19860e25c18678978e9d0c08d8942c1a7be6b83e146f02091e910e25759fd9c0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16308322-star-wars-atari-st-got-one.png"
+  },
+  "art/catalog/moby/59220/screenshot-eb72ad4f31b9.webp": {
+   "game": "atarist:moby-59220",
+   "sha256": "101a9612c74a457bfe1954b49869b0760db9b8a0f0802a87b6edef5220d3eeee",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16308391-plumb-crazy-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/59221/screenshot-b0799b178460.webp": {
+   "game": "atarist:moby-59221",
+   "sha256": "a8790a4903013f8ee6d698da772653034a8c062d0f21dfd380ccf2440263bc8b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16308376-lucky-7-atari-st-trying-to-win-some-serious-money.png"
+  },
+  "art/catalog/moby/59223/screenshot-135f55d29b1c.webp": {
+   "game": "atarist:moby-59223",
+   "sha256": "b5c7f6bd41be7e8cdf3261c7852ac0c2809a9cac8a64cbbc63924dc1e030087d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16308310-hedgehogger-atari-st-half-way.png"
+  },
+  "art/catalog/moby/59745/screenshot-e11ad8006453.webp": {
+   "game": "atarist:moby-59745",
+   "sha256": "6348abdf5d4c3972a9e978505a103bf00b176b0d25310d4dee08ac8f497d3f16",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16331811-count-duckula-in-no-sax-please-were-egyptian-atari-st-oh-a-power.png"
+  },
+  "art/catalog/moby/59874/screenshot-57f0473309a8.webp": {
+   "game": "atarist:moby-59874",
+   "sha256": "94ca82c3850e020af7ab86800b1ec4c12f0194fe3480ed18d6aa5dc6a5b6eb2b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8114097-gone-fishing-atari-st-shopping-the-boats-are-very-expensive.png"
+  },
+  "art/catalog/moby/59900/box-ddcc83e24a18.webp": {
+   "game": "atarist:219041",
+   "sha256": "d4157d9f4b8991559eae3ad62611de56219c7c8cbaa553e5bf226741e0850df3",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6684401-oxxonian-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/59900/screenshot-4c70b49e22a1.webp": {
+   "game": "atarist:219041",
+   "sha256": "accd101b25843326dc1b1f55b697e60fd4143436bd533e942882c11ddfc70629",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/7692761-oxxonian-atari-st-level-2-pushing-some-boxes-to-get-extras.png"
+  },
+  "art/catalog/moby/59986/box-af80adea5a44.webp": {
+   "game": "atarist:moby-59986",
+   "sha256": "35ca62ea4c896c8496312db00341ed940085d9692f779f6003c18a02c92f45b6",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9830209-leader-board-birdie-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/60/box-e1ebf9964650.webp": {
+   "game": "atarist:moby-60",
+   "sha256": "0e339c731dffe8b63ee6726c693fc4619cb15f296c5dd803a637c8fd4ab9c7e4",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4039694-suspended-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/60/screenshot-586c7422a118.webp": {
+   "game": "atarist:moby-60",
+   "sha256": "c90dfd48ff20ea7fa6b7ef19abc5de043f92d8b2a0e7b7460a9383efd4980657",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/367960-suspended-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/60292/box-1374c283d8f5.webp": {
+   "game": "atarist:moby-60292",
+   "sha256": "dbbdb336885284b8c8ba1d0e335706dae6b73ae8018bba65d780beae744f1b0f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/19420388-speccy-classix-3000-linux-front-cover.png"
+  },
+  "art/catalog/moby/61196/box-263c43d899f5.webp": {
+   "game": "atarist:moby-61196",
+   "sha256": "41fc6b9c64a16ae802106f94c8dfdd35915f58d684888672b9b30979aa7a13e7",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6865168-atari-powerpack-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/62/box-79ea2ec5e047.webp": {
+   "game": "atarist:moby-62",
+   "sha256": "86dc98dff12c9daa3f7190a85b6b5724ace334911f4d939e73c374145d2a8bf1",
+   "sourceUrl": "https://cdn.mobygames.com/covers/3974492-infidel-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/62/screenshot-f34223bf9749.webp": {
+   "game": "atarist:moby-62",
+   "sha256": "13fe74e43f7637ee040d68a1982d4f652c14c23f851c6af528d40ebacfa39689",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1377640-infidel-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/6267/box-5a95299857f1.webp": {
+   "game": "atarist:moby-6267",
+   "sha256": "9d21d19a8f2906da75eeca9a5520993ad9dbcdb415a17d599bfd65ed831d65f1",
+   "sourceUrl": "https://cdn.mobygames.com/covers/10815293-eden-blues-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/6267/screenshot-da8b9bf54242.webp": {
+   "game": "atarist:moby-6267",
+   "sha256": "94fa8728c09cf7334b7911509c8bbf3f7c3390709b02ef9e3390c8de765f13a8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15894240-eden-blues-atari-st-the-opening-room.png"
+  },
+  "art/catalog/moby/63/screenshot-ec75204b6cc4.webp": {
+   "game": "atarist:moby-63",
+   "sha256": "ee4ad84502dd5e07aa36ef65d467720ccc9e206bf6b0bc4ce47661ebcaa6df3b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/390357-seastalker-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/6322/box-7a750e75e2f6.webp": {
+   "game": "atarist:moby-6322",
+   "sha256": "718ede8e0850148989fb7882b472ba30aa4dbfedb9982e7e3fdfa9c5a7892849",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4640171-drachen-von-laas-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/6322/screenshot-8e23f94b57e7.webp": {
+   "game": "atarist:moby-6322",
+   "sha256": "492c855287903a89d4380e9ad8027441d05936d03c796a097ebd7077b7f3789e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16231443-drachen-von-laas-atari-st-starting-out.png"
+  },
+  "art/catalog/moby/63456/screenshot-cb5556762a63.webp": {
+   "game": "atarist:moby-63456",
+   "sha256": "ff763b687fb8c76fa8ae6f9eb2cb337cf081de922afbbeb756dd6da0fe5595c4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8033051-jay-minesweeper-atari-st-playing-on-a-larger-minefield.png"
+  },
+  "art/catalog/moby/64404/box-e2577c550633.webp": {
+   "game": "atarist:moby-64404",
+   "sha256": "5ef2491355a76e9fff204dc3821fa12404671d6e4c90c234e5b8acb9d46642e5",
+   "sourceUrl": "https://cdn.mobygames.com/covers/21504351-dreamlands-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/64877/box-b397d0b6d907.webp": {
+   "game": "atarist:moby-64877",
+   "sha256": "c14ba0e3cb2b2729c28fa9cf2ec13d0624af131e06aac46445420a620d927640",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6921687-las-vegas-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/64877/screenshot-3202c2173c99.webp": {
+   "game": "atarist:moby-64877",
+   "sha256": "32770c402915335068281457f8d1f25f01ddb3687b91c9f72af7d6d31d3ac33d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8761838-las-vegas-atari-st-two-reels-held-to-increase-chance.png"
+  },
+  "art/catalog/moby/65193/screenshot-e4afca741498.webp": {
+   "game": "atarist:moby-65193",
+   "sha256": "dfd5c835b63d364aea9b1b9f8d7276fd3937b3993b3ff56a911f85d4713e06ad",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16459984-cave-runner-ii-caverns-of-death-atari-st-impression-of-level-60.png"
+  },
+  "art/catalog/moby/65226/screenshot-a2d061798dca.webp": {
+   "game": "atarist:moby-65226",
+   "sha256": "3560ad146791b7c52b30347bcea1f17bde3f0c2a3bba4f13b266df1b5960b8e0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3287560-killing-machine-atari-st-a-huge-ship-and-another-formation-attac.png"
+  },
+  "art/catalog/moby/65354/screenshot-33541696b27c.webp": {
+   "game": "atarist:moby-65354",
+   "sha256": "eb11e53e91616a53d01a52c86b4c29492eae4c227c8d7389164a0c2083dbcabd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8968582-marias-christmas-box-atari-st-the-luck-came-back-now-she-has-to-.png"
+  },
+  "art/catalog/moby/65396/box-81eabf43ed3f.webp": {
+   "game": "atarist:moby-65396",
+   "sha256": "6e3da85717655f1e8cb0f9602b99c65d85e1c4307ff616908e6d9255e319be9a",
+   "sourceUrl": "https://cdn.mobygames.com/covers/780130-insector-hecti-in-the-inter-change-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/65396/screenshot-fea1366c1af5.webp": {
+   "game": "atarist:moby-65396",
+   "sha256": "e482d9f1ef1be3828eb109c8d436ab3e6160e11ee397827ca472f346fc250500",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3618774-insector-hecti-in-the-inter-change-atari-st-payback-collected-an.png"
+  },
+  "art/catalog/moby/65459/box-97eeede964ef.webp": {
+   "game": "atarist:moby-65459",
+   "sha256": "98387748cd9b1c2274bc58463b544a95b9f8048eeb210968147e40a3d77d83e8",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9632183-hollywood-collection-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/65496/screenshot-94a92e0bf974.webp": {
+   "game": "atarist:moby-65496",
+   "sha256": "65d20dba80469487f92fda066c44e7177c43486bd70116299ba210c0f329d9bc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9048284-black-orchid-atari-st-outnumbered.png"
+  },
+  "art/catalog/moby/65607/box-c453347a9579.webp": {
+   "game": "atarist:moby-65607",
+   "sha256": "f4757cc844998056ccd20c754feff0371e1ca4fcb5f59caa626a225b9a037717",
+   "sourceUrl": "https://cdn.mobygames.com/covers/7071324-fun-school-3-for-the-over-7s-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/65607/screenshot-29a921db8dfc.webp": {
+   "game": "atarist:moby-65607",
+   "sha256": "d134061a7b00c3fdfbf9dd2122ff5ecaa28090c4d7678c8dd12dca93985d8981",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16522409-fun-school-3-for-the-over-7s-atari-st-treasure-search.png"
+  },
+  "art/catalog/moby/65619/screenshot-26dd400d0d10.webp": {
+   "game": "atarist:moby-65619",
+   "sha256": "8f454a510510402836835672520159630b880f614ec0faaceb56f82f70038d09",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8973702-xtron-atari-st-is-this-an-amiga-cross-reference.png"
+  },
+  "art/catalog/moby/65656/screenshot-7b6391ff8b20.webp": {
+   "game": "atarist:moby-65656",
+   "sha256": "778a9d213b02adc78e554af04ab93c59580942ef24b9957045afc1f1fb874a54",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9003026-skate-tribe-atari-st-level-end-report-few-money-collected-but-as.png"
+  },
+  "art/catalog/moby/65699/screenshot-7d6729f5d738.webp": {
+   "game": "atarist:moby-65699",
+   "sha256": "309edc6c53a64a3753ad12d5cdb5104869563a42a80b293fae3303143e3de20e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8999408-brainbox-atari-st-another-one-in-art-red-circles-i-failed-giving.png"
+  },
+  "art/catalog/moby/65755/screenshot-e3f5e03513fa.webp": {
+   "game": "atarist:moby-65755",
+   "sha256": "63368ecd88a1bb509083e04d9af093a2a56785484c126a71fc1bd599caa8c646",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16478503-bolo-werkstatt-atari-st-i-set-up-a-random-level-and-also-directl.png"
+  },
+  "art/catalog/moby/65864/screenshot-ff33e3dd32b4.webp": {
+   "game": "atarist:219038",
+   "sha256": "5360c9806faaf0fa3c47189211302ce3cc34ed85e22f4dfbb0ade92abf43fb06",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9122127-othello-killer-atari-st-all-valid-fields-are-marked.png"
+  },
+  "art/catalog/moby/65996/screenshot-c5f381348eca.webp": {
+   "game": "atarist:moby-65996",
+   "sha256": "0b102c78d81ddbd85ea550a2fb760ce68732008a36689b326d387006b3da7491",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9074841-killing-spree-atari-st-the-grey-wall-in-the-front-is-moving-up-a.png"
+  },
+  "art/catalog/moby/66009/screenshot-68f55f454157.webp": {
+   "game": "atarist:moby-66009",
+   "sha256": "0975fdeeb1e158625195286958e30f9dff78459ac0fcacea85852f6b6270fa9f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9076059-hot-wheels-atari-st-heavy-oil-pattern-here.png"
+  },
+  "art/catalog/moby/66187/screenshot-1a6871e4efb9.webp": {
+   "game": "atarist:moby-66187",
+   "sha256": "f825dadd8bd4fac0114b58821664cccd52f290618581342c77c22d560d829ce2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16143070-yogi-bear-friends-in-the-greed-monster-a-treasure-hunt-atari-st-.png"
+  },
+  "art/catalog/moby/66268/box-fb6d9197cb7a.webp": {
+   "game": "atarist:moby-66268",
+   "sha256": "4ddeed8768f9642ce959c116034aaea92ff7d7c9d3f2f96d8bcc846ae67640e8",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9999031-fast-lane-the-spice-engineering-challenge-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/66268/screenshot-28475289949e.webp": {
+   "game": "atarist:moby-66268",
+   "sha256": "0e9a37c6607cbc3fa391e8ed803b630bc560d6bb02705335c558a8ac74e52b65",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/8789211-fast-lane-the-spice-engineering-challenge-atari-st-leaving-the-r.png"
+  },
+  "art/catalog/moby/66714/screenshot-118f5dcf056c.webp": {
+   "game": "atarist:moby-66714",
+   "sha256": "cb39aee9a3ee536621de0042363e8f7ad728091058e88f099e72fb914ed9bef7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16496827-original-adventure-atari-st-adventuring.png"
+  },
+  "art/catalog/moby/67256/screenshot-823f032002c0.webp": {
+   "game": "atarist:moby-67256",
+   "sha256": "3b0c966c8d93ddb41ef3e88efc210886f5ae5611a279ecb21568ea76359316ee",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16575666-the-lost-kingdom-of-zkul-west-atari-st-west-after-dying-i-come-a.png"
+  },
+  "art/catalog/moby/67273/screenshot-dd07843b143b.webp": {
+   "game": "atarist:moby-67273",
+   "sha256": "80cdc70be0a782713451a4446ca5a1cb0130b19f916cb855b3c651cea2e2cb8c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9253506-robert-in-the-fire-factory-atari-st-game-over.png"
+  },
+  "art/catalog/moby/67339/screenshot-4a24c0766fe9.webp": {
+   "game": "atarist:moby-67339",
+   "sha256": "11d45b7d989071fd9848eef11014e7f6a31018bc5377175477399d9d92b989e1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16808390-dont-worry-be-happy-atari-st-two-figures-are-in-the-home-and-two.png"
+  },
+  "art/catalog/moby/6737/box-983900f36505.webp": {
+   "game": "atarist:moby-6737",
+   "sha256": "15ad041c9095aa98ef04df4a0a29b49bc0a77cebf52324be1c66664a943d7770",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4261049-top-gun-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/6737/screenshot-0a78dd41f0d4.webp": {
+   "game": "atarist:moby-6737",
+   "sha256": "3f9a48d0088ff911cd40c5bea089d379bcf843553d51157e94de107c5592eb8d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15889872-top-gun-atari-st-seeing-each-other-in-mid-air.png"
+  },
+  "art/catalog/moby/67818/screenshot-e662a2dc3a68.webp": {
+   "game": "atarist:moby-67818",
+   "sha256": "d5e34c324472bf2f9c2e9f5bb902b70199ce0976a62c8c149d98a26cc442dec9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16534455-gnu-chess-atari-st-v40-game-in-progress.png"
+  },
+  "art/catalog/moby/68037/screenshot-2155117b5f33.webp": {
+   "game": "atarist:moby-68037",
+   "sha256": "dc1fb86b476f97a8843d6ae3925aa6685494d175ef09c51ee2e7510e22056300",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16588316-laser-chess-atari-st-made-some-moves.png"
+  },
+  "art/catalog/moby/69012/box-4d6e034bf12d.webp": {
+   "game": "atarist:moby-69012",
+   "sha256": "805cdd82063b0c866bcb666cd4a52b730c1b8ef4681f80cebe19f3c785c54830",
+   "sourceUrl": "https://cdn.mobygames.com/covers/7124819-u5-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/69457/screenshot-3bc1c886caeb.webp": {
+   "game": "atarist:moby-69457",
+   "sha256": "1838c071d1580f3120bc890f0f1337228a09503492e2d77013599ddd84546741",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16898708-computer-diplomacy-atari-st-lower-right-corner-of-the-map.png"
+  },
+  "art/catalog/moby/698/box-50235afe547b.webp": {
+   "game": "atarist:454472",
+   "sha256": "6758cdd91d6ef1b524eba99671687b190b1d94f93ebd0d23a6c943063bba925f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/17605432-skychase-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/698/screenshot-f8712c872c35.webp": {
+   "game": "atarist:454472",
+   "sha256": "01a9b2bfda421091251150521292ad760abeb9ad79112113752665f6011f195c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15676195-skychase-atari-st-on-level-ground.png"
+  },
+  "art/catalog/moby/70176/screenshot-a4a0d75097d5.webp": {
+   "game": "atarist:moby-70176",
+   "sha256": "b3518f694d296f1a4058888189c68cba06eb391042189eab0e8e1a71296c0f2a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16556563-flappybird-atari-st-game-over.png"
+  },
+  "art/catalog/moby/7021/screenshot-efa33220ec5f.webp": {
+   "game": "atarist:moby-7021",
+   "sha256": "4e6b37bd2b589215fa564b77881afee71b20ad9971c4dab3edb8f2977bb45d50",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15888058-fuck-quest-atari-st-inside-your-hose.png"
+  },
+  "art/catalog/moby/70282/screenshot-9e0e9ad277f8.webp": {
+   "game": "atarist:moby-70282",
+   "sha256": "54aa58496f81762f4279bb70f110f010d4b9a7708d360efaa01bfd739373fb17",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16548845-dynabusters-atari-st-a-level-filled-with-dynamite.png"
+  },
+  "art/catalog/moby/70578/box-96a2ebfdfa8d.webp": {
+   "game": "atarist:moby-70578",
+   "sha256": "03255b6febd9e29c88b2acf1c8202820adca4c9577a3a22c07066013921f8105",
+   "sourceUrl": "https://cdn.mobygames.com/covers/6644105-arcade-action-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/71359/box-788610928599.webp": {
+   "game": "atarist:moby-71359",
+   "sha256": "b0ba53ab1ba760330740908bb95b15cd55566f425fc3eac2c277ed02b00d3490",
+   "sourceUrl": "https://cdn.mobygames.com/covers/8955746-high-energy-2-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/71427/screenshot-deb810282b81.webp": {
+   "game": "atarist:moby-71427",
+   "sha256": "fe8fd9b3d637cb6ee5d92a773b328dc7873b5d3fdc4435c1e7eb116ccd257cd7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16106629-the-magician-atari-st-jumping-over-the-deadly-arrows.png"
+  },
+  "art/catalog/moby/71700/screenshot-956a224c3083.webp": {
+   "game": "atarist:moby-71700",
+   "sha256": "1227c5e072be0ad94a5d569061da0eca96c76bc2ded8f3165b143b78f0a7c7de",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16933667-warzone-atari-st-avoided-some-helicopters-by-veering-right-only-.png"
+  },
+  "art/catalog/moby/73036/screenshot-aa374a143a84.webp": {
+   "game": "atarist:moby-73036",
+   "sha256": "d268cbe050bcf6f8513192717ff86a24269dbcaaca13e1582fdf19d0589f0fb0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16358510-elf-atari-st-i-love-surprises.png"
+  },
+  "art/catalog/moby/73417/screenshot-c722fea67bbb.webp": {
+   "game": "atarist:moby-73417",
+   "sha256": "0751d12c1dcf5f6325c45338e2fd81c56a975aecab7802c37b1f67638465dda9",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15635027-warlock-atari-st-a-small-room.png"
+  },
+  "art/catalog/moby/73772/box-4fff46169f39.webp": {
+   "game": "atarist:moby-73772",
+   "sha256": "0aa12202a262aa6ce055de20b65fb136fc5ffbb8b9e40442d934794268acffd0",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9538925-mega-pack-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/73773/box-b3db3157890d.webp": {
+   "game": "atarist:moby-73773",
+   "sha256": "f7249b71bc3fc8ad5d83adcb336d50e38a884b9e57a523f0f7d86ae0043f27f3",
+   "sourceUrl": "https://cdn.mobygames.com/covers/9630657-mega-pack-ii-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/73965/box-4542958d01ab.webp": {
+   "game": "atarist:moby-73965",
+   "sha256": "8c93db1136ff24d6004a78c1af6a4704316088536588abe1f5588bbe0b864737",
+   "sourceUrl": "https://cdn.mobygames.com/covers/624747-verthor-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/73965/screenshot-1accfb3d03ae.webp": {
+   "game": "atarist:moby-73965",
+   "sha256": "d2d557f6a8028d05593ddce354d98cc872d012b0d4cee7c8a8f4888beb464122",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2851027-verthor-atari-st-the-longer-the-game-the-more-negative-blue-numb.png"
+  },
+  "art/catalog/moby/73996/screenshot-547c4f3efd24.webp": {
+   "game": "atarist:moby-73996",
+   "sha256": "c1d9cb3cdc8384d48594bdf6e28255cfb880a455099799c1e684968012a07d11",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2865902-lamemine-atari-st-uuuups-i-revealed-a-bomb-and-blew-up.png"
+  },
+  "art/catalog/moby/74100/screenshot-5e427f221fb6.webp": {
+   "game": "atarist:moby-74100",
+   "sha256": "2263f6d186b41bda4096df0750be333c401f248bc9afbf808652513ce590e7de",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2941096-triton-iii-atari-st-in-fight-with-a-bigger-ship-which-is-constan.png"
+  },
+  "art/catalog/moby/74102/screenshot-117578489a65.webp": {
+   "game": "atarist:moby-74102",
+   "sha256": "1c29cff2ff5d4f84f0296ee43e696976a75bcb247b25fd5d3ef58a235124f2fc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2937172-unheart-atari-st-they-also-take-items-with-them-upwards-like-gre.png"
+  },
+  "art/catalog/moby/74106/screenshot-6d051decca47.webp": {
+   "game": "atarist:moby-74106",
+   "sha256": "2b49e0451f9674a9ea28e1f575037fdd61e9f9c4f988d3c46c5615d7384be681",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15812108-racer-2-atari-st-the-tracks-are-decorated-with-lots-of-additiona.png"
+  },
+  "art/catalog/moby/74188/screenshot-2422d33371e9.webp": {
+   "game": "atarist:moby-74188",
+   "sha256": "13f0dcf1530b136d0937858ff71b016d3fd7305861bfd5504018668ef49fe66a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2983007-platonix-atari-st-level-4-is-a-very-tricky-one.png"
+  },
+  "art/catalog/moby/74191/box-bc108dfe777b.webp": {
+   "game": "atarist:moby-74191",
+   "sha256": "29bd775c97297675750958ac51cca6b7b17391ca9ba7ca65c603decfc36642d6",
+   "sourceUrl": "https://cdn.mobygames.com/covers/639420-platonix-profi-edition-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/74191/screenshot-ccbc5d3ce17e.webp": {
+   "game": "atarist:moby-74191",
+   "sha256": "e21dd868ff7149e26fab5de2fe2a465959cc321ea2eabf8163f1f39f4c411025",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2995730-platonix-profi-edition-atari-st-the-solid-block-left-are-just-fo.png"
+  },
+  "art/catalog/moby/74197/screenshot-2ee5d02f5859.webp": {
+   "game": "atarist:moby-74197",
+   "sha256": "9903eea52c245eaf28777ccfa94bd5c0f7ab267dfe2e9fec2500e659621fecd7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3023202-jigsaw-puzzlemania-atari-st-the-pieces-are-splitted-on-five-page.png"
+  },
+  "art/catalog/moby/74230/screenshot-84d28102eb8c.webp": {
+   "game": "atarist:moby-74230",
+   "sha256": "4e962b4cf65ce0ff6a274b0a742fc7b55a54657528a7434ffbc1cf4f79d8d0d4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3028753-vertical-mayhem-atari-st-entering-the-playing-mode-heaven-and-he.png"
+  },
+  "art/catalog/moby/74320/screenshot-4dc57887e3c2.webp": {
+   "game": "atarist:moby-74320",
+   "sha256": "8a655971e1cbdf4d0cdf018f52aaefe17cc6cbbbd7dd7626fdb90102433b80c6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3084323-bloody-run-atari-st-red-requires-some-carefully-control-in-the-a.png"
+  },
+  "art/catalog/moby/74331/screenshot-925867556caa.webp": {
+   "game": "atarist:moby-74331",
+   "sha256": "eac03fbeed2e3b1bd0de79267e85082233d71ea5e9997fb514e2765b44b9050e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3093077-downfall-atari-st-i-set-a-new-local-high-score-just-before-finis.png"
+  },
+  "art/catalog/moby/74344/screenshot-3728e55d4fe2.webp": {
+   "game": "atarist:moby-74344",
+   "sha256": "ce18216a83ab7193fe3c3dae9c690c18f413ca281d2cbc518d9513505434acd5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3101610-poker-square-atari-st-going-for-flush-or-straights.png"
+  },
+  "art/catalog/moby/74350/screenshot-aa2075d2498e.webp": {
+   "game": "atarist:moby-74350",
+   "sha256": "5cb262643d0b13b9d55b8ee7a6cdccee6cd799198c9a57a063a6d6daa603edae",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15829406-sweety-thingies-atari-st-with-my-low-score-i-didnt-managed-to-ac.png"
+  },
+  "art/catalog/moby/74352/screenshot-2c075f3faf9c.webp": {
+   "game": "atarist:moby-74352",
+   "sha256": "0ca402b7e4697587814636b4d5155dab5d46d81eee6c2970c7b7cfdf69c106f6",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3108381-kolmik-deluxe-edition-atari-st-at-least-i-made-it-into-the-hall-.png"
+  },
+  "art/catalog/moby/74354/screenshot-94bbf2f90e9d.webp": {
+   "game": "atarist:moby-74354",
+   "sha256": "41c59098d3f276b60b63662dcbe7b557d00d955a2d3a5446c5e3e606ea3d11cb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3114942-attack-wave-atari-st-they-are-hitting-me-hard.png"
+  },
+  "art/catalog/moby/74357/screenshot-c615181e473d.webp": {
+   "game": "atarist:moby-74357",
+   "sha256": "0928f86aa089bd57e037dcc82c79526e172c2c158ea1f3d0bfc75fed5bac83ee",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15833818-jewelz-atari-st-level-9-adds-the-third-color.png"
+  },
+  "art/catalog/moby/74368/screenshot-d2acc0b3c6e4.webp": {
+   "game": "atarist:moby-74368",
+   "sha256": "21bde3828ace271daebe146f3d16bd18ec1e18acd02b3990d6317f6196761db0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3121894-spy-4k-atari-st-another-victory.png"
+  },
+  "art/catalog/moby/74378/screenshot-bb144e7ce855.webp": {
+   "game": "atarist:moby-74378",
+   "sha256": "748baefb5881479ea0e057dc5435f4263f243ddb88dba81d6159e65d4675dd50",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3127752-twix-atari-st-this-will-not-help-me-progress-further.png"
+  },
+  "art/catalog/moby/74400/screenshot-99d41f5e4b1f.webp": {
+   "game": "atarist:moby-74400",
+   "sha256": "c45fe247d406d78fd2e1f809104235c02e7f42d0b9aa9966feca0efd3a1ddb32",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15833566-chainz-atari-st-one-jump-to-the-top-color-and-one-move-down-shap.png"
+  },
+  "art/catalog/moby/74423/screenshot-334ca1631301.webp": {
+   "game": "atarist:moby-74423",
+   "sha256": "a91757f7d4207c036cace9c8717a796c8d4bdace25e3be5c4b33faac9f21a128",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3163177-nuclear-waste-dump-atari-st-it-leaves-a-wide-hole-in-the-formati.png"
+  },
+  "art/catalog/moby/74433/screenshot-51525593fd41.webp": {
+   "game": "atarist:moby-74433",
+   "sha256": "24a161191db58f4680b562434733c889beab023196b65113b628631a2e495f0b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3169032-znax-atari-st-marking-is-done-with-the-left-button-right-deletes.png"
+  },
+  "art/catalog/moby/74434/screenshot-4a8221a25add.webp": {
+   "game": "atarist:moby-74434",
+   "sha256": "05c976cee0fcdd669437a0f3579ee339cc76b5defd1cdb6ce5f1b667fa5f4d36",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3172141-pooz-atari-st-in-time-attack-playing-mode-the-board-is-full-but-.png"
+  },
+  "art/catalog/moby/74445/screenshot-07d9906bd034.webp": {
+   "game": "atarist:moby-74445",
+   "sha256": "d26be3d41acb0a2366d129f5e3a418544f661428c60760e2c28f00e5f26a4840",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3182906-penta-atari-st-at-least-some-points-were-rewarded-for-my-effort.png"
+  },
+  "art/catalog/moby/74450/screenshot-cc7e0382cf0f.webp": {
+   "game": "atarist:moby-74450",
+   "sha256": "58938b3fa86117d310c5146219f68bd5239f28033ee6306899bc3be775443272",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3182741-super-tet-atari-st-two-player-game.png"
+  },
+  "art/catalog/moby/74452/screenshot-a3a0d033b17e.webp": {
+   "game": "atarist:moby-74452",
+   "sha256": "2543270668ce0110cd6bb455277218b0f4c5176393c9e1b2cd02f5f76103058e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3181124-shockwave-atari-st-they-are-shooting-rockets-at-me.png"
+  },
+  "art/catalog/moby/74457/screenshot-5b4ddb38a149.webp": {
+   "game": "atarist:moby-74457",
+   "sha256": "f3b515faf2a7d29b1f34dc6aad4dff56909163b9792fd5f9a28f0f9d262e4b44",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15837100-fanwor-the-legend-of-gemda-atari-st-passing-through-the-forest-t.png"
+  },
+  "art/catalog/moby/74461/screenshot-d497ba58ee2a.webp": {
+   "game": "atarist:moby-74461",
+   "sha256": "69aab41377874632d9ea716224c55874c59dfda43657bb34e1bdcf8fd80dae96",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15837151-orb-atari-st-on-this-monitor-the-scrolling-makes-the-game-more-d.png"
+  },
+  "art/catalog/moby/74465/screenshot-8cce21e4af13.webp": {
+   "game": "atarist:moby-74465",
+   "sha256": "765666e9cb893dca15727739ed34e1979d8a819da0128c70c05649f988f0e624",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15837745-boinkout2-atari-st-even-an-amiga-icon-is-used-as-ball.png"
+  },
+  "art/catalog/moby/74466/screenshot-2d55d7ef7192.webp": {
+   "game": "atarist:moby-74466",
+   "sha256": "62344bcdaa7102aa2302bc1819c54a91c7159bc1d66d2d2b1d0b6ac3c23c16fb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15838495-creature-power-atari-st-the-only-correct-choice-to-transform-to-.png"
+  },
+  "art/catalog/moby/74474/screenshot-4dbbd129ba7c.webp": {
+   "game": "atarist:moby-74474",
+   "sha256": "3f29749763f013ebb872b979ed3377588defb0eb0a692406d43c15d2c111a8d5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15839425-alfreds-kistenlager-schiebereien-atari-st-level-2-also-from-the-.png"
+  },
+  "art/catalog/moby/74493/screenshot-8f68b22076cb.webp": {
+   "game": "atarist:moby-74493",
+   "sha256": "4c9aff8ccceaba9c43e2f498d009857440695112673180057774ed6a7fc3cbba",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3226372-space-battle-atari-st-red-with-a-risky-manoeuvre-at-the-star.png"
+  },
+  "art/catalog/moby/74501/screenshot-2c05b7390690.webp": {
+   "game": "atarist:moby-74501",
+   "sha256": "410cf9f3829359709b9663a140d24c3be2e4de9916c1e37ef2910bd95d95685a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15844394-tictactoe-atari-st-an-old-trick-is-working-against-the-ai.png"
+  },
+  "art/catalog/moby/74537/screenshot-0350fe4b9641.webp": {
+   "game": "atarist:moby-74537",
+   "sha256": "c34c7d6c15f9e6c94ff779dcacae05e645db57fb26d9f88a5e8bcec6fb03775e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3298113-spitzenreiter-atari-st-due-to-injuries-and-cards-i-only-have-8-p.png"
+  },
+  "art/catalog/moby/74540/screenshot-17b783353146.webp": {
+   "game": "atarist:moby-74540",
+   "sha256": "4316b57fc4186baf19541781377588135a781a5a9a51d6bb44e9d8e8fa4119d3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3305119-spitzenreiter-2-atari-st-match-day-game-simulation-games-for-all.png"
+  },
+  "art/catalog/moby/74562/screenshot-0959d96938ef.webp": {
+   "game": "atarist:moby-74562",
+   "sha256": "b2f2ee2455295b88893cf0fa787ccb6fe88c66de752cfede96172af8ee67044d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/640234-esla-league-manager-iii-atari-st-set-up-of-tactical-formation-an.png"
+  },
+  "art/catalog/moby/74568/screenshot-3a27ebec2b7f.webp": {
+   "game": "atarist:moby-74568",
+   "sha256": "34565410ffb8662ac9e48f46a524c0e8385c982c7f3001d431790bf34088e609",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15660373-premium-mah-jongg-atari-st-pausing-the-game-does-not-give-you-ti.png"
+  },
+  "art/catalog/moby/74572/screenshot-ef8228a16f56.webp": {
+   "game": "atarist:moby-74572",
+   "sha256": "9fe2cab38b2a15b65ea9cee090074bc46b0c8e1605b75706c3948b4dbc733cc1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15664547-galactic-empires-atari-st-about-to-reach-a-defended-world.png"
+  },
+  "art/catalog/moby/74581/screenshot-80a161f96aff.webp": {
+   "game": "atarist:moby-74581",
+   "sha256": "382fdf861e4cc017fb63dd5247b644d7b08a57f38d683370ce08c08b2b5876c7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1001513-tautology-atari-st-high-score-table.png"
+  },
+  "art/catalog/moby/74582/screenshot-f9792c25280c.webp": {
+   "game": "atarist:moby-74582",
+   "sha256": "bf48335d2c6071ba8e2a759e15c4d9db5b6c721883f460ae530b381bc1dc41c0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15690820-tautology-ii-atari-st-clearing-a-board-is-rewarded-with-bonus-po.png"
+  },
+  "art/catalog/moby/74584/screenshot-df2b2e9fe5ec.webp": {
+   "game": "atarist:moby-74584",
+   "sha256": "29f5f30a566a0f170c1532fcaf04ce28a759bad97a2c311ddfec950d873eb397",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15679809-double-bobble-2000-atari-st-hint-in-this-level-you-can-reach-a-h.png"
+  },
+  "art/catalog/moby/74608/screenshot-9a4008647f90.webp": {
+   "game": "atarist:moby-74608",
+   "sha256": "3f9b0b7645b8bafa3772b074b92a59e96a6f5df82963a90db4207266118f5d82",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15706438-pac-them-atari-st-a-fruit-is-spawning-but-i-am-moving-in-the-tel.png"
+  },
+  "art/catalog/moby/74627/screenshot-41725cab71b0.webp": {
+   "game": "atarist:moby-74627",
+   "sha256": "85d2dd83bda8b509017fda32155d8b3646f15172b7710b44fb18adb85612f553",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1617008-argon-atari-st-a-room-with-a-shop.png"
+  },
+  "art/catalog/moby/74630/screenshot-6d712a7fde96.webp": {
+   "game": "atarist:moby-74630",
+   "sha256": "5ec7efe56c6f5f90e971571476fc13477a0fddb8daa89128fce0bf00540642dc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15710533-stello-atari-st-as-well-as-the-output-settings.png"
+  },
+  "art/catalog/moby/74638/screenshot-e02aff4c55a7.webp": {
+   "game": "atarist:moby-74638",
+   "sha256": "58326700a1868bbed1bf076f9d0488ec824535426c4f59a9ade7b175d3b56bf3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1679174-graveyard-atari-st-on-the-radar-all-the-moving-things-are-visibl.png"
+  },
+  "art/catalog/moby/74640/screenshot-c7d7b38e876f.webp": {
+   "game": "atarist:moby-74640",
+   "sha256": "7692c4974c93985a5d6478ad54793c3bf9a594e3d1099b46638ada22323b2e07",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15714111-ausbruch-atari-st-we-have-removes-7-8-and-7-stones-to-get-those-.png"
+  },
+  "art/catalog/moby/74648/screenshot-7af05dbe3e6a.webp": {
+   "game": "atarist:moby-74648",
+   "sha256": "18a9d72dee6869e82fd9d3a986a96f4168eac2b066360ad809d513d4f434beef",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15716620-premium-mah-jongg-ii-atari-st-i-wonder-who-the-guy-on-place-60-i.png"
+  },
+  "art/catalog/moby/74652/screenshot-5241821323bd.webp": {
+   "game": "atarist:moby-74652",
+   "sha256": "6fcca84980619165cc58a55b65d4c52f3ed878f7d7ff7f5b7c21bd93cef936bb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15717718-only-valency-atari-st-impression-of-a-later-level.png"
+  },
+  "art/catalog/moby/74655/screenshot-6470eb40a346.webp": {
+   "game": "atarist:moby-74655",
+   "sha256": "ee31c3fb576953f87bb8961dbbc853cb227684bcdd84ba2e59fc9ad32651b2c8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1786060-clogged-up-atari-st-the-game-tracks-the-success-or-failure-of-yo.png"
+  },
+  "art/catalog/moby/74676/box-079867c6ad12.webp": {
+   "game": "atarist:moby-74676",
+   "sha256": "d0133c2248a77f60514d907e62dc7978352b395fd00798a34437b2c19c7a24cf",
+   "sourceUrl": "https://cdn.mobygames.com/covers/607417-power-box-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/74698/screenshot-0bbacdc6a753.webp": {
+   "game": "atarist:moby-74698",
+   "sha256": "9f29d21bc09a36ac0b9e8de03e17052ec86fa094c5f68806469bb354fe9fdd02",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1898679-frog-race-atari-st-but-in-the-end-frog-on-lane-2-took-the-lead.png"
+  },
+  "art/catalog/moby/74716/screenshot-9cc597fa83f8.webp": {
+   "game": "atarist:moby-74716",
+   "sha256": "40d0920fc3be6415ec033deada606aac5ad0bea7daf65a59b47d19982a618af7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15734349-apparition-finder-atari-st-its-a-ghost.png"
+  },
+  "art/catalog/moby/74717/screenshot-87b90a55c86a.webp": {
+   "game": "atarist:moby-74717",
+   "sha256": "87ee294a47930c929ddc077a1147e1796fb70fd73f53e0afb8b6503e3d937dc7",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15733107-alterra-atari-st-hiring-army-units.png"
+  },
+  "art/catalog/moby/74763/screenshot-20c2df6df0b0.webp": {
+   "game": "atarist:moby-74763",
+   "sha256": "56c3eb6e206b226ab9684298c92170e8685604cff7f98c3b8e607b679b7bcf21",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15744822-mac-pan-atari-st-the-final-frame-of-a-single-player-game-surroun.png"
+  },
+  "art/catalog/moby/74857/screenshot-503de909bbb7.webp": {
+   "game": "atarist:moby-74857",
+   "sha256": "e3eb723076f538191988a555dc908888dbbee874571be4cd6fa25bd6d780d111",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15753663-bouncing-boubles-atari-st-the-last-enemy-type-the-bird-fires-las.png"
+  },
+  "art/catalog/moby/74862/screenshot-604b729c28bd.webp": {
+   "game": "atarist:moby-74862",
+   "sha256": "fe0602699dae5bffe8e69feae1c6e9b5f5c3bf14b83d71d34670e55ad98645bc",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15754047-abalone-atari-st-white-wins.png"
+  },
+  "art/catalog/moby/74872/screenshot-3edb757c4d13.webp": {
+   "game": "atarist:moby-74872",
+   "sha256": "bdb0a22d0a96592fc4004bab3d0655684c00ef7b9c3d6f7482a19ef2664d76ed",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15754803-pks-dame-atari-st-choosing-difficulty-and-animation-speed.png"
+  },
+  "art/catalog/moby/74876/box-c71e7e1e269f.webp": {
+   "game": "atarist:moby-74876",
+   "sha256": "63226b229edf5e3699a60da7558b3435d4e78e930e639d460ff90791362595d8",
+   "sourceUrl": "https://cdn.mobygames.com/covers/700862-full-blast-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/74907/screenshot-23bd817cdc4a.webp": {
+   "game": "atarist:moby-74907",
+   "sha256": "ef314c32afb69dfc249b952101a7419fd69dea10fe2340481d44b9eb00d6817f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15758583-zyklop-atari-st-i-hit-a-skull.png"
+  },
+  "art/catalog/moby/74909/screenshot-ca3141451f64.webp": {
+   "game": "atarist:moby-74909",
+   "sha256": "5257747ee0fa0240c087397c1972d883acc83d441f75f24a2ae3263f14c2be92",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15758961-zyklop-2-hyleilos-atari-st-the-door-to-the-next-level.png"
+  },
+  "art/catalog/moby/74910/screenshot-8c2a98fc3436.webp": {
+   "game": "atarist:moby-74910",
+   "sha256": "ff2ee8cc30709741c6a802f1b41dcb067f32a08044aee7d4f6aab68ea327d957",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15759357-world-cup-atari-st-setting-up-team-and-strategy-how-can-i-fail-i.png"
+  },
+  "art/catalog/moby/74911/screenshot-e5f32e531966.webp": {
+   "game": "atarist:moby-74911",
+   "sha256": "b2816406af0def7c6752654b8b14bef5a9159c354980bfe3547673db5cbce747",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15759279-whoopsy-atari-st-now-she-will-get-off-my-back-for-a-while.png"
+  },
+  "art/catalog/moby/74912/screenshot-7c1e0a27bd23.webp": {
+   "game": "atarist:moby-74912",
+   "sha256": "689e3dab41b5cc6da6a7e0334e8a64b02f746e5ee741faae393e84b346fe2fd2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15759345-tri-heli-ii-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/74913/screenshot-43ebf8ad6095.webp": {
+   "game": "atarist:moby-74913",
+   "sha256": "2835cc4cdabf46c420aa3f71fbb35093f3c0f04793231bcd27e4b3e72cbcbd0c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15759477-travelgame-atari-st-two-cities-visited-34-to-go.png"
+  },
+  "art/catalog/moby/74914/screenshot-280be6e346b4.webp": {
+   "game": "atarist:moby-74914",
+   "sha256": "9fe1baed2d2297de5a06b7e7c095cb621a5ff0af58cc99a1e83d587796e4cf77",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15759912-tablit-2-atari-st-got-16-points.png"
+  },
+  "art/catalog/moby/74915/screenshot-7bf19c759e72.webp": {
+   "game": "atarist:moby-74915",
+   "sha256": "59caf7c2f2b6ef4a21f9330d50e9e8653f7945b82a5594130ee7cbf9623d6c6f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15760221-super-league-soccer-atari-st-picking-my-squad.png"
+  },
+  "art/catalog/moby/74916/screenshot-c670d905761a.webp": {
+   "game": "atarist:moby-74916",
+   "sha256": "14551bdd1005718419e3ed4a7a3d80925dfb15d0093fe802877df9ff4083524b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15761268-square-off-the-rosetta-stoned-remix-atari-st-just-follow-the-xs.png"
+  },
+  "art/catalog/moby/74931/screenshot-02721d76b052.webp": {
+   "game": "atarist:moby-74931",
+   "sha256": "e4e59b0e9de38ac24b824b29ff1860bbbe75dc411090a7b2ac283b544b4c1d95",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/1519757-no-name-atari-st-passed-that-door-and-found-a-room-with-the-next.png"
+  },
+  "art/catalog/moby/74937/screenshot-c281630c6aef.webp": {
+   "game": "atarist:moby-74937",
+   "sha256": "d2868d49c5801fb761d1f00b4d4136f86af8b893b1284c627ab4f4d65c12e18d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15768807-mafia-the-game-atari-st-currently-there-are-some-drugs-on-the-ma.png"
+  },
+  "art/catalog/moby/74943/screenshot-9db13df409a7.webp": {
+   "game": "atarist:moby-74943",
+   "sha256": "426f25be88f903556ee7516305cde2468c963379e25f75900aa706c80a02b1ab",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15769437-mafia-2-the-game-atari-st-your-office-here-you-can-access-analys.png"
+  },
+  "art/catalog/moby/74961/screenshot-8911ed075a88.webp": {
+   "game": "atarist:moby-74961",
+   "sha256": "aad76069347bc47eb3e63d2a995da2c25e153357461206ab04ee567c115acd0a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15773169-formel-1-manager-atari-st-only-the-results-are-presented-of-the-.png"
+  },
+  "art/catalog/moby/74963/screenshot-876900caa0a8.webp": {
+   "game": "atarist:moby-74963",
+   "sha256": "8fc89fa5979fb53e06c4e83d9855cdaf35f6f8c0683ab58843fb734114afaede",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15773847-fussballprg-atari-st-overview-over-the-trading-activities.png"
+  },
+  "art/catalog/moby/74985/screenshot-b1e88e12c7d8.webp": {
+   "game": "atarist:moby-74985",
+   "sha256": "0e39c9ddf6dcf0c84722ad026b888f5033880e808c20152c3d638fc20be4aa5c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2574838-bauernkampf-atari-st-game-over-the-computer-gets-a-point-and-i-a.png"
+  },
+  "art/catalog/moby/75007/screenshot-9dd8265bf14f.webp": {
+   "game": "atarist:moby-75007",
+   "sha256": "6a7d92cdf950a1e63be614ca9c1b28a22b40d4853c780303ea1b6e3375ccaa84",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15784030-top-20-atari-st-my-band-playing-oldies-successfully-got-a-demo-a.png"
+  },
+  "art/catalog/moby/75009/screenshot-292d2f0af1e2.webp": {
+   "game": "atarist:moby-75009",
+   "sha256": "32fde6f3a9efc9e16258eb38a7dfe017189f62dc0bea45e7f05cb21863cd8acb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2640902-das-groe-quiz-atari-st-before-giving-an-answer-you-get-the-quest.png"
+  },
+  "art/catalog/moby/75017/screenshot-6c07d444a0f7.webp": {
+   "game": "atarist:moby-75017",
+   "sha256": "42e0c4f608fdec9bdb969ae1ac96378dfb56ca29edc13b67b5b705ca72db71de",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2651289-super-hangman-st-atari-st-if-you-search-a-german-word-always-pic.png"
+  },
+  "art/catalog/moby/75018/screenshot-e4f5cfa1c1ac.webp": {
+   "game": "atarist:moby-75018",
+   "sha256": "c6456b6e71b2503c26e4333b53e1b7e64db8d5498ba9f9dbfe28bfbf92494744",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15786250-shogun-atari-st-if-the-game-shows-shogun-its-like-chess-a-figure.png"
+  },
+  "art/catalog/moby/7502/box-050e6e22f883.webp": {
+   "game": "atarist:moby-7502",
+   "sha256": "33b99aa4b0fcc5a1624fed501029b23f740eb57c29652a8c496776c048b827c3",
+   "sourceUrl": "https://cdn.mobygames.com/covers/619876-cisco-heat-all-american-police-car-race-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/7502/screenshot-f5401ff1e2cb.webp": {
+   "game": "atarist:moby-7502",
+   "sha256": "fb64acd1374475b726947e9d59e00e04e4ca0609465e910f13d58ecdff9e753c",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15928852-cisco-heat-all-american-police-car-race-atari-st-game-over.png"
+  },
+  "art/catalog/moby/75027/screenshot-06c68e9849d8.webp": {
+   "game": "atarist:moby-75027",
+   "sha256": "16531a56425441043fc72a166f2f35540d97cf3370d08ac41e7369b21142be94",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15791837-atari-st-memory-atari-st-the-professional-set.png"
+  },
+  "art/catalog/moby/75029/screenshot-cf69a1030379.webp": {
+   "game": "atarist:moby-75029",
+   "sha256": "1a83c44cde471fa14cfa8bd9d4d2c43cc4f70b7ed98a01d9556e540eaab39a32",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15792341-memory-atari-st-playing-memory-against-a-computer-is-somehow-the.png"
+  },
+  "art/catalog/moby/75030/screenshot-ec1c9311be3f.webp": {
+   "game": "atarist:moby-75030",
+   "sha256": "38b49fd143d57560fb215c6367b9bf2691a1ef658472ad51347a63d6692eb98b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15792389-memoryprg-atari-st-a-bit-later.png"
+  },
+  "art/catalog/moby/75034/screenshot-170089ad37b2.webp": {
+   "game": "atarist:moby-75034",
+   "sha256": "d894f005e8d6a88597acbf3ff628ad85933a4d1cac682107cb8425fc97f56923",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15713052-bert-games-atari-st-the-revenge-of-bert-defend-by-planting-bombs.png"
+  },
+  "art/catalog/moby/75043/screenshot-1689997fc858.webp": {
+   "game": "atarist:moby-75043",
+   "sha256": "ee16b151c90ba8767f03c5fb2a74f47eac2058426b2fc34803504cef0a31e848",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2740903-memory-recall-atari-st-jodie-foster-is-also-in-the-20-images.png"
+  },
+  "art/catalog/moby/75052/screenshot-de2163fd07e0.webp": {
+   "game": "atarist:moby-75052",
+   "sha256": "81ed31d7f978758d7a04f44248c7cfb48182d390d127f32ee402615c1c10b5ac",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2766211-atariscene-cardbattle-ex-plus-atari-st-if-both-cards-have-the-sa.png"
+  },
+  "art/catalog/moby/75056/screenshot-3bd6abe654e6.webp": {
+   "game": "atarist:moby-75056",
+   "sha256": "cce35ec0a144a9f2a5bf445a679f218f4005f28f1eafc2966ab5413793633b40",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2776493-bob-fossils-sudokuniverse-atari-st-the-small-numbers-can-be-clic.png"
+  },
+  "art/catalog/moby/75058/screenshot-8e654b62ca76.webp": {
+   "game": "atarist:moby-75058",
+   "sha256": "f1a45f6095545100c14b4692e3a1f7ddaa33c585a48ee123b02cc588cf48e388",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15798082-filler-atari-st-with-a-precise-shot-and-the-ball-bouncing-betwee.png"
+  },
+  "art/catalog/moby/75059/screenshot-41075156eb7f.webp": {
+   "game": "atarist:moby-75059",
+   "sha256": "3862865cbae0079498c8f2b2ed34b07ce9cb4a10a322aa13446a4257332766b5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15797953-punssi-atari-st-player-1-better-gets-the-ball-to-the-other-side-.png"
+  },
+  "art/catalog/moby/75066/screenshot-722262562d08.webp": {
+   "game": "atarist:moby-75066",
+   "sha256": "7df639aee1343095f34691dc944ad7d0686fed31db82e9835188c391d340151f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15799456-mortar-atari-st-after-some-more-hits-player-2-goes-down.png"
+  },
+  "art/catalog/moby/75104/screenshot-87edd49e5912.webp": {
+   "game": "atarist:moby-75104",
+   "sha256": "f8d65d6e7205d410f75036be6693911a6d3968a8ad5bff72e8623ed3410ae597",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2944917-double-juggle-vegetabobble-atari-st-and-damned-one-ballvegetable.png"
+  },
+  "art/catalog/moby/75113/screenshot-3f4b88f78f7a.webp": {
+   "game": "atarist:moby-75113",
+   "sha256": "a4dec1ff8ec54be606c3d8baeaad9ca5a23c3b9fc1cd969e1bc9161bf75d2781",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15814631-bunion-canyon-atari-st-second-level-far-fewer-platforms-to-climb.png"
+  },
+  "art/catalog/moby/75118/screenshot-6952c0cc9ee7.webp": {
+   "game": "atarist:moby-75118",
+   "sha256": "c950cfe470c66abaf552ee3fc0cf1a2d5c40c63dbaafd37dd3600f9814f244fe",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2982621-stupid-balloon-game-atari-st-only-seconds-left.png"
+  },
+  "art/catalog/moby/75119/screenshot-fcbdac6cbf34.webp": {
+   "game": "atarist:moby-75119",
+   "sha256": "ccfc1967a97bf28565bb475fbb6705095a103347b71806c97aa93aaaac2c260f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15713898-sworm-atari-st-3d-mode-you-play-on-2d-fields-mapped-on-each-side.png"
+  },
+  "art/catalog/moby/75122/screenshot-73894fc4d047.webp": {
+   "game": "atarist:moby-75122",
+   "sha256": "276fbf3ed85a5ab2005c75de40b3ae7e5124ca8d6132bddc4946fc8d8e1ae511",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15713211-static-atari-st-player-2-has-a-lock-effect-atm-visible-with-the-.png"
+  },
+  "art/catalog/moby/75123/screenshot-e6cf6978cbf4.webp": {
+   "game": "atarist:moby-75123",
+   "sha256": "0f6431ba6d690ef00f172f1f387d4a8704d4e947b6efcaa95e1984215e4e2d76",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3003707-bugger-atari-st-surprisingly-five-are-still-alive-at-this-moment.png"
+  },
+  "art/catalog/moby/75126/screenshot-fa05eb12c897.webp": {
+   "game": "atarist:moby-75126",
+   "sha256": "b2eb75493deb0818ccf9eba1dc2a342b01eeccbdb6c4dc3711b5eef0439aebb5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3034130-power-up-plus-atari-st-an-ai-car-set-a-new-round-record.png"
+  },
+  "art/catalog/moby/75128/screenshot-6d800d2cba39.webp": {
+   "game": "atarist:moby-75128",
+   "sha256": "4f63b5d3fbcd54144373825fa9dd20149244a4c18775653f956e1bd7feedb829",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15822314-zwyrds-doppelkopf-programm-atari-st-computer-announced-a-solo-pl.png"
+  },
+  "art/catalog/moby/75136/screenshot-6f4b12031c48.webp": {
+   "game": "atarist:moby-75136",
+   "sha256": "d31e274d1e51d4673686957df44df372dd67643a34439ff1b7fe5ed109adb5d8",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15806864-lila-atari-st-a-ladder-erbarmen-mercy-is-a-huge-lift-from-field-.png"
+  },
+  "art/catalog/moby/75180/screenshot-33aa6b5d1af1.webp": {
+   "game": "atarist:moby-75180",
+   "sha256": "3d8e378d7c0a0edf7aa7a85c8149380a9be6e4d5130c8d46e4bddda1aa377dac",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3205994-roger-atari-st-a-huge-jumping-scenery-the-pill-restores-energy-i.png"
+  },
+  "art/catalog/moby/75185/screenshot-8946bf3a349b.webp": {
+   "game": "atarist:moby-75185",
+   "sha256": "167855247353b5176e382ca84b6d894c3e3a2591a9062f20e0e3b0637ec29caf",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3317798-heartland-atari-st-entering-the-door-will-get-you-one-card-for-t.png"
+  },
+  "art/catalog/moby/75223/screenshot-9bd7c69bfff7.webp": {
+   "game": "atarist:moby-75223",
+   "sha256": "b822ce564a1b38d854894704dd07dbdca15a79af31842bb76d29fa0ce71c59a0",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3322094-insecticide-atari-st-some-bonus-points-appeared-after-shooting-a.png"
+  },
+  "art/catalog/moby/75242/screenshot-ba64d7d8c046.webp": {
+   "game": "atarist:moby-75242",
+   "sha256": "4e9475ac8e025fbe855c39776fae281e0052a2fb53f639b97ec803980ffa2836",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3328782-fate-master-atari-st-a-spooky-finding.png"
+  },
+  "art/catalog/moby/75243/screenshot-ab2dbaae9e33.webp": {
+   "game": "atarist:moby-75243",
+   "sha256": "1391e7c4f21006a0e2e3cd1dd65d7591a3c03912f4aa8c2330384b80db958311",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3329468-sim-pig-atari-st-current-state-of-the-farm.png"
+  },
+  "art/catalog/moby/75981/screenshot-124dd3756564.webp": {
+   "game": "atarist:moby-75981",
+   "sha256": "9dfbf48abf3d3e0828d815924d4e72e0b6fb0075e6a28264f1c3b526aeb7ef3e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3327034-the-pursuit-to-earth-atari-st-red-shots-are-ours-blue-ones-from-.png"
+  },
+  "art/catalog/moby/75997/box-eb69d06cf454.webp": {
+   "game": "atarist:moby-75997",
+   "sha256": "1e5553b10299988e8768160efa892a9ca7938634580d05a76fdabc0388ff156b",
+   "sourceUrl": "https://cdn.mobygames.com/covers/20422869-amiga-classics-linux-front-cover.png"
+  },
+  "art/catalog/moby/76842/screenshot-8c79198b05a1.webp": {
+   "game": "atarist:moby-76842",
+   "sha256": "51ddd4874ea3cef3a6af2f6fd4e1a78ab5290c76d6da8a52981442e65bc2155b",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15879569-the-spitting-fish-atari-st-instructions.png"
+  },
+  "art/catalog/moby/76843/screenshot-7918e28f1a4b.webp": {
+   "game": "atarist:moby-76843",
+   "sha256": "ad74601b00437f5e1dd22bfcbee3ea562d83cd14134cad65cb9804de8247229e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15879806-slime-nemesis-atari-st-info-about-one-of-the-store-items.png"
+  },
+  "art/catalog/moby/76844/screenshot-21bd816c33d6.webp": {
+   "game": "atarist:moby-76844",
+   "sha256": "4b7a205a065a865b17cbf1941f48000b5767912f7177133d6a4ac67650b71850",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15880082-sidelong-atari-st-my-ship-hit-the-ground.png"
+  },
+  "art/catalog/moby/76943/screenshot-ef2ff38ec834.webp": {
+   "game": "atarist:moby-76943",
+   "sha256": "98380cbcd5acf7f4e267355a6b691fa657ddbdb700a4f811bc4e844a17ca74b5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884999-rotatus-atari-st-level-2.png"
+  },
+  "art/catalog/moby/76944/screenshot-12d59d36236b.webp": {
+   "game": "atarist:moby-76944",
+   "sha256": "456bea251ae1491295933962adbf0eb58bc4f9ce16a85b4f6a93fa69d5c5848d",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884978-a-quest-for-galaxia-atari-st-a-bit-different-color-scheme-in-thi.png"
+  },
+  "art/catalog/moby/76945/screenshot-e4595b9dd8ed.webp": {
+   "game": "atarist:moby-76945",
+   "sha256": "026f7280d62f744e2d26bd432bf6aba58e9f5a6fbc0ebff9af2a70922f850eec",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15885647-puzzle-squares-atari-st-three-letters-back-in-place.png"
+  },
+  "art/catalog/moby/76946/screenshot-b99e463492c8.webp": {
+   "game": "atarist:moby-76946",
+   "sha256": "a4547f7c7b171ad26adff827348577ca4a2886ff49c57005297ccf50b4126246",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884951-pair-off-atari-st-the-table-is-full.png"
+  },
+  "art/catalog/moby/76947/screenshot-035370d67041.webp": {
+   "game": "atarist:moby-76947",
+   "sha256": "7d0da5958ee822caae4cf2025d5466f59109b16c493b886f5aaf05c391228467",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15885218-seapower-atari-st-game-over.png"
+  },
+  "art/catalog/moby/77024/screenshot-5ee4ffea04fc.webp": {
+   "game": "atarist:moby-77024",
+   "sha256": "04cfc3b84e4f4639249f7b8bf6fafdc7f9b6533e766136c01a7d01e3393cd310",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15892819-from-little-acorns-atari-st-typing-what-i-try-to-say.png"
+  },
+  "art/catalog/moby/77038/screenshot-40f1df059ee3.webp": {
+   "game": "atarist:moby-77038",
+   "sha256": "3df0f50f00182bc6098566061e017c57eb6d4fa5ee89e6adbff25bbac37939f3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15893065-mission-deadzone-atari-st-a-switch.png"
+  },
+  "art/catalog/moby/77039/screenshot-70cbb050a61c.webp": {
+   "game": "atarist:moby-77039",
+   "sha256": "b7d95ae233daa1df6ff860b47074a546e702e2871f6763f160950655cb18f3cf",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15892873-minefield-atari-st-got-one-of-the-computers-tanks.png"
+  },
+  "art/catalog/moby/77099/box-dea8091c0533.webp": {
+   "game": "atarist:moby-77099",
+   "sha256": "c6c4784dc8ba317a2cb9973bd29fe3b7f93536d2cb15f0687f13d64a1ae00e50",
+   "sourceUrl": "https://cdn.mobygames.com/covers/971547-web-of-terror-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/77157/screenshot-e73f901dade2.webp": {
+   "game": "atarist:moby-77157",
+   "sha256": "ee8e15e22d3693af211518c4c6c480d8fcd9c78c8f0d215f886de4c438e42052",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15898711-club-backgammon-atari-st-means-i-can-enter-my-own-dice-values.png"
+  },
+  "art/catalog/moby/7743/box-00e15e481e06.webp": {
+   "game": "atarist:moby-7743",
+   "sha256": "cfea9b0a229c3ee9a500a1014736c20d6ac6a00aa26ea2beac8a8609d70cde23",
+   "sourceUrl": "https://cdn.mobygames.com/covers/3941429-deja-vu-ii-lost-in-las-vegas-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/7743/screenshot-b5e577774524.webp": {
+   "game": "atarist:moby-7743",
+   "sha256": "572999c863abab4905132dc665d4144fdc5c132412215c8aaab165d0a9affcd5",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15855374-deja-vu-ii-lost-in-las-vegas-atari-st-inside-cab.png"
+  },
+  "art/catalog/moby/78083/screenshot-7f346b954d4b.webp": {
+   "game": "atarist:moby-78083",
+   "sha256": "5abd20c3029a9b80fc3297f0a22cfc66e1c734adfc6fe7646c53464389d4a27e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15707803-tnt-atari-st-the-helicopter-is-whisking-you-away-to-stage-2.png"
+  },
+  "art/catalog/moby/81690/screenshot-3ee0c819d922.webp": {
+   "game": "atarist:moby-81690",
+   "sha256": "ba4a61e528787bb82ad0faf4ba0b8091d38724370944d9b4b7d75ae6e4748fde",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15882530-wizards-tower-atari-st-found-a-key.png"
+  },
+  "art/catalog/moby/81692/screenshot-f5ee8d22c3c3.webp": {
+   "game": "atarist:moby-81692",
+   "sha256": "fc2524f970e8b7774a70dc4c436e5949f036d9b97a430eb28ae3768cc85feb14",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15883080-the-enchanted-realm-atari-st-ok-if-you-say-so.png"
+  },
+  "art/catalog/moby/81693/screenshot-19d20e14a7c6.webp": {
+   "game": "atarist:moby-81693",
+   "sha256": "85b13e235c61ac39774042bca18e795317b986bf1da2ea4b15f82903e2e56cbb",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15883386-once-a-king-atari-st-my-inventory.png"
+  },
+  "art/catalog/moby/81694/screenshot-17da7495c92b.webp": {
+   "game": "atarist:moby-81694",
+   "sha256": "fa81ba19390f6d9b14bf8585db8584bea4c9e1f45e62da551c9c5568d74bb313",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15884550-alien-blockade-atari-st-im-getting-there.png"
+  },
+  "art/catalog/moby/81695/screenshot-55bd5238d523.webp": {
+   "game": "atarist:moby-81695",
+   "sha256": "160e78c38e5336dabe46a0248cd1afae77e62126eca6cea1e56e07d632e8caf1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15886022-empire-builder-atari-st-my-workforce.png"
+  },
+  "art/catalog/moby/81697/screenshot-32daddf61322.webp": {
+   "game": "atarist:moby-81697",
+   "sha256": "faf373d8dc9c6a2cc5a4c54ef3d21bf73687ac80196d1ad1510f32cc44c5462a",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15886202-pork-2-atari-st-well-that-was-informative.png"
+  },
+  "art/catalog/moby/81698/screenshot-cf07de206f90.webp": {
+   "game": "atarist:moby-81698",
+   "sha256": "1fefe35e522b203af6abc4cc020d36b58f34fe6b92e2678cf172a5def395558e",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15886754-the-mystic-well-atari-st-whats-behind-the-door.png"
+  },
+  "art/catalog/moby/81739/screenshot-803710f4602b.webp": {
+   "game": "atarist:moby-81739",
+   "sha256": "a6c58938ab9a2439f12155078442c90263c161e037c31b2568187b72078966b2",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15921876-starship-columbus-atari-st-hmm-do-a-sense-a-mystery.png"
+  },
+  "art/catalog/moby/81753/screenshot-e445d62c30a1.webp": {
+   "game": "atarist:moby-81753",
+   "sha256": "218b1676b3f59198d1f80873b8b9b009d7adf9bd48dbca864878ee259e21d4ca",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15932091-robot-attack-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/81974/screenshot-458d174c8621.webp": {
+   "game": "atarist:moby-81974",
+   "sha256": "ea2d2cf62062c782d904af7a4abd128d4a15617117113c55470b72a5c21d1209",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16038595-trionoids-atari-st-creating-a-match-of-five.png"
+  },
+  "art/catalog/moby/820/screenshot-ba49eb54e0a1.webp": {
+   "game": "atarist:moby-820",
+   "sha256": "671038b20b891738d8e83d94a0db58f2489fb2de33f140973f723fc82042dbd4",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/3689365-nethack-atari-st-exploring-a-dungeon-v311.png"
+  },
+  "art/catalog/moby/837/screenshot-552f80c3cb72.webp": {
+   "game": "atarist:moby-837",
+   "sha256": "6a9c6fbbc10da2af1523af258eb479098c70a49cf994cf8743fc39ccbcc653aa",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/7884309-conflict-atari-st-current-state-of-the-available-military-forces.png"
+  },
+  "art/catalog/moby/8593/box-698ad30a5c7d.webp": {
+   "game": "atarist:moby-8593",
+   "sha256": "d3e71dce8fa694aa6d2707f288ff32b4a698210c76d49077ac040b584f4c10df",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4067836-zork-trilogy-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/87/box-229b0d2d6156.webp": {
+   "game": "atarist:moby-87",
+   "sha256": "85a3bb7777a20ebdec5c6831d705fe34d52721c2d24bc1b7c9206a304695ca9d",
+   "sourceUrl": "https://cdn.mobygames.com/covers/8895582-cutthroats-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/87/screenshot-b46beea76c5a.webp": {
+   "game": "atarist:moby-87",
+   "sha256": "5a1c3b76f6964ec567672e9c2ebc603edcfe42a844c35a757265731d7cfb7188",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/9469414-cutthroats-atari-st-starting-location.png"
+  },
+  "art/catalog/moby/8798/box-374b0533e319.webp": {
+   "game": "atarist:moby-8798",
+   "sha256": "5fea074cbd4975d7f64e37f3f2ac93725a23830b4039b18cec051b6c400d533e",
+   "sourceUrl": "https://cdn.mobygames.com/covers/28554508-fast-food-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/8798/screenshot-ba8bf59edafa.webp": {
+   "game": "atarist:moby-8798",
+   "sha256": "1f42fe7a2deb34ab74b9f705899f1c22b3a557b564066b1b09e6b70795903958",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15746220-fast-food-atari-st-the-high-scores.png"
+  },
+  "art/catalog/moby/9112/screenshot-6bf3d926d763.webp": {
+   "game": "atarist:moby-9112",
+   "sha256": "1b508e7583ef4dba12de09c8ed946d63f355c2e889a5da114931d781b831d4dd",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/2061758-millipede-atari-st-shooting-dynamite.png"
+  },
+  "art/catalog/moby/920/screenshot-0d65d49049b1.webp": {
+   "game": "atarist:moby-920",
+   "sha256": "311132ce2329a3251fc9e3bd5868592d0a3cbe1cceae093ffc88130093c3a8c1",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16362328-lock-on-atari-st-level-complete.png"
+  },
+  "art/catalog/moby/9260/screenshot-aae108deaa0e.webp": {
+   "game": "atarist:moby-9260",
+   "sha256": "19e5cc7cfd7f913b82164639197f434491858b1fc3aa29e0b93d51ae3f3fa0ce",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/449504-super-breakout-atari-st-cavity-breakout.png"
+  },
+  "art/catalog/moby/9588/screenshot-e471684a6754.webp": {
+   "game": "atarist:moby-9588",
+   "sha256": "6ce08e96243de5e7dac6c2af1a925323f5473d57ac6a1c09e17b3e8b0cd4871f",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/15875535-eamon-atari-st-fighting-a-hermit.png"
+  },
+  "art/catalog/moby/9605/box-f44e3d1af3ad.webp": {
+   "game": "atarist:moby-9605",
+   "sha256": "8bbb0acf89defad1642ebd8e8c34fd77965e36c1920cda2f3e235a1afb3f6075",
+   "sourceUrl": "https://cdn.mobygames.com/covers/4206371-super-quintet-atari-st-front-cover.jpg"
+  },
+  "art/catalog/moby/96564/screenshot-7f5e20447074.webp": {
+   "game": "atarist:moby-96564",
+   "sha256": "93dbfd8223805adf3709bb86d989c16fb53e2e905697e627e8c40e841898f9d3",
+   "sourceUrl": "https://cdn.mobygames.com/screenshots/16282418-seven-little-horrors-atari-st-doing-375-points-of-damage-to-the-.png"
+  },
+  "art/catalog/moby/9710/box-5b1790505779.webp": {
+   "game": "atarist:moby-9710",
+   "sha256": "288588b97e2597e9eab897a665215a2ccb6a0fe98f65472fd5fa59671c26b29f",
+   "sourceUrl": "https://cdn.mobygames.com/covers/8248373-the-duel-test-drive-ii-car-disk-the-muscle-cars-atari-st-front-c.jpg"
+  }
+ },
+ "schemaVersion": 1
+}

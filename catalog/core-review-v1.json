@@ -1,4 +1,125 @@
 {
  "adultArtwork": {},
- "excluded": {}
+ "excluded": {
+  "atarist:183629": {
+   "reason": "MobyGames Adult genre",
+   "title": "Fascination"
+  },
+  "atarist:184084": {
+   "reason": "MobyGames Adult genre",
+   "title": "Teenage Queen"
+  },
+  "atarist:188728": {
+   "reason": "MobyGames Adult genre",
+   "title": "Leisure Suit Larry III: Passionate Patti in Pursuit of the Pulsating Pectorals"
+  },
+  "atarist:188729": {
+   "reason": "MobyGames Adult genre",
+   "title": "Leisure Suit Larry Goes Looking for Love (In Several Wrong Places)"
+  },
+  "atarist:191068": {
+   "reason": "MobyGames Adult genre",
+   "title": "Emmanuelle: A Game of Eroticism"
+  },
+  "atarist:191139": {
+   "reason": "MobyGames Adult genre",
+   "title": "Geisha"
+  },
+  "atarist:191387": {
+   "reason": "MobyGames Adult genre",
+   "title": "Blue Angel 69"
+  },
+  "atarist:191398": {
+   "reason": "MobyGames Adult genre",
+   "title": "Bride of the Robot"
+  },
+  "atarist:191467": {
+   "reason": "MobyGames Adult genre",
+   "title": "Leisure Suit Larry in the Land of the Lounge Lizards"
+  },
+  "atarist:193589": {
+   "reason": "MobyGames Adult genre",
+   "title": "Centerfold Squares"
+  },
+  "atarist:193688": {
+   "reason": "MobyGames Adult genre",
+   "title": "Hollywood Poker Pro"
+  },
+  "atarist:193693": {
+   "reason": "MobyGames Adult genre",
+   "title": "Insects in Space"
+  },
+  "atarist:194033": {
+   "reason": "MobyGames Adult genre",
+   "title": "Planet of Lust"
+  },
+  "atarist:194064": {
+   "reason": "MobyGames Adult genre",
+   "title": "Rock Star Ate My Hamster"
+  },
+  "atarist:194077": {
+   "reason": "Adult-content review",
+   "title": "Rosemary Raccoon's Strip Game"
+  },
+  "atarist:194086": {
+   "reason": "MobyGames Adult genre",
+   "title": "Sex Olympics"
+  },
+  "atarist:194087": {
+   "reason": "MobyGames Adult genre",
+   "title": "Sex Vixens from Space"
+  },
+  "atarist:194146": {
+   "reason": "MobyGames Adult genre",
+   "title": "Strip Poker II: A Game of Sizzling Chance"
+  },
+  "atarist:194212": {
+   "reason": "MobyGames Adult genre",
+   "title": "Viz: The Game"
+  },
+  "atarist:206538": {
+   "reason": "MobyGames Adult genre",
+   "title": "Strip Poker: A Sizzling Game of Chance"
+  },
+  "atarist:455632": {
+   "reason": "MobyGames Adult genre",
+   "title": "Playhouse Strip Poker"
+  },
+  "atarist:moby-12601": {
+   "reason": "MobyGames Adult genre",
+   "title": "Hollywood Poker"
+  },
+  "atarist:moby-13750": {
+   "reason": "MobyGames Adult genre",
+   "title": "Ranx: The Video Game"
+  },
+  "atarist:moby-17975": {
+   "reason": "MobyGames Adult genre",
+   "title": "Bomb'X"
+  },
+  "atarist:moby-29551": {
+   "reason": "MobyGames Adult genre",
+   "title": "Dungeons, Amethysts, Alchemists 'n' Everythin'"
+  },
+  "atarist:moby-33022": {
+   "reason": "MobyGames Adult genre",
+   "title": "Dal'X"
+  },
+  "atarist:moby-36636": {
+   "reason": "MobyGames Adult genre",
+   "title": "Susan (A lustful Game)"
+  },
+  "atarist:moby-54106": {
+   "reason": "MobyGames Adult genre",
+   "title": "Logo"
+  },
+  "atarist:moby-65354": {
+   "reason": "MobyGames Adult genre",
+   "title": "Maria's Christmas Box"
+  },
+  "atarist:moby-7021": {
+   "reason": "MobyGames Adult genre",
+   "title": "Fuck Quest"
+  }
+ }
 }

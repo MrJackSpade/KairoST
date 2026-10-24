@@ -1472,8 +1472,8 @@ int	FDC_GetBytesPerTrack_STX ( uint8_t Drive , uint8_t Track , uint8_t Side )
 	int			TrackSize;
 
 	pStxTrack = STX_FindTrack ( Drive , Track , Side );
-	if ( pStxTrack == NULL )
-		TrackSize =  FDC_TRACK_BYTES_STANDARD;			/* Use a standard track length is track is not available */
+	if ( pStxTrack == NULL || ( pStxTrack->pTrackImageData ? pStxTrack->TrackImageSize : pStxTrack->MFMSize ) == 0 )
+		TrackSize =  FDC_TRACK_BYTES_STANDARD;			/* Use a standard track length is track is not available */	/* KairoST: or empty */
 
 	else if ( pStxTrack->pTrackImageData )
 		TrackSize = pStxTrack->TrackImageSize;

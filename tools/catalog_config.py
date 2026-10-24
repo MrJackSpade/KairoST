@@ -1,5 +1,6 @@
 """KairoST's catalog settings: Atari ST floppy disk media, artwork references, the platform's
 slugs and the machine a disk's name asks for."""
+import json
 import re
 import sys
 from pathlib import Path
@@ -33,7 +34,10 @@ MEDIA = content_ids.Media(kind, content_ids.same_file, LIMITS.__getitem__, 1)
 MOBYGAMES = "atarist"
 # The standard set: TOSEC 2012-04-23's Games folder (its [ST], [STX] and Public Domain sets).
 # Its other folders (applications, demos, compilations, coverdisks and so on) are not catalogued.
-SCANS = {"atarist": (".downloads/scan/atarist.json", ("atarist",))}
+# "extra" is the top level of roms/ (scan_media.py --top-level): common dumps outside TOSEC that
+# the device and UI tests boot, GOAL.MSA among them.
+SCANS = {"atarist": (".downloads/scan/atarist.json", ("atarist",)),
+         "extra": (".downloads/scan/extra.json", ("atarist",))}
 
 # The settings a game can ask for, as StCatalog's options name them.
 MACHINE_OPTIONS = {
@@ -44,6 +48,9 @@ MACHINE_OPTIONS = {
     "tos": {"emutos", "tos"},
 }
 
+# Disks that fail on EmuTOS and run on the player's TOS: {content ID: what goes wrong on EmuTOS}.
+_TOS = json.loads((ROOT / "catalog/research/tos-disks-v1.json").read_text(encoding="utf-8"))["disks"]
+
 _STE = re.compile(r"\(STE\)|\[STE\]")
 _FALCON = re.compile(r"\[Falcon only\]|\(Falcon\)", re.I)
 _MONO = re.compile(r"\[monochrome\]|\[mono\]", re.I)
@@ -52,8 +59,9 @@ _MEMORY = re.compile(r"\[([124])\s*MB\]", re.I)
 
 def MACHINE(name, set_name, content_id):
     """The machine a disk's TOSEC name asks for: "(STE)" an STE, "[Falcon only]" a Falcon (with
-    4 MB, its usual memory), "[monochrome]" the mono monitor, "[2Mb]" or "[4MB]" that much memory."""
-    settings = {}
+    4 MB, its usual memory), "[monochrome]" the mono monitor, "[2Mb]" or "[4MB]" that much memory.
+    A disk tos-disks-v1.json lists starts on the player's TOS."""
+    settings = {"tos": "tos"} if content_id in _TOS else {}
     if _FALCON.search(name):
         settings.update(machine="falcon", memory="4096")
     elif _STE.search(name):

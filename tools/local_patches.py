@@ -54,6 +54,18 @@ HATARI_RESTART = [
      '\tCpuSymbolsList = DspSymbolsList = NULL;\t/* KairoST: a later machine loads its own */\n}\n'),
 ]
 
+# A track an STX image records with no data (an unformatted track some copy protections leave)
+# has size 0, so one revolution took 0 cycles and the index pulse setup divided by it: a crash on
+# x86, a wrong pulse time on ARM. The drive still spins it in one revolution, as a missing track.
+HATARI_STX_EMPTY_TRACK = [
+    ('hatari/src/floppy_stx.c',
+     '\tif ( pStxTrack == NULL )\n'
+     '\t\tTrackSize =  FDC_TRACK_BYTES_STANDARD;\t\t\t/* Use a standard track length is track is not available */\n',
+     '\tif ( pStxTrack == NULL || ( pStxTrack->pTrackImageData ? pStxTrack->TrackImageSize : pStxTrack->MFMSize ) == 0 )\n'
+     '\t\tTrackSize =  FDC_TRACK_BYTES_STANDARD;\t\t\t/* Use a standard track length is track is not available */'
+     '\t/* KairoST: or empty */\n'),
+]
+
 # The WD1772's motor-on status bit: set when a command starts and cleared after the drive has
 # idled for nine revolutions. KairoST runs a game's boot at full speed until its first floppy
 # load is over (kairo/main.c), and reads it each frame; Hatari keeps it to itself.
@@ -150,6 +162,7 @@ PATCHES = {
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
     'hatari-restart': HATARI_RESTART,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
+    'hatari-stx-empty-track': HATARI_STX_EMPTY_TRACK,
     'sdl-android-sources': SDL_ANDROID_SOURCES,
     'sdl-android-video': SDL_ANDROID_VIDEO,
     'sdl-no-java': SDL_NO_JAVA,

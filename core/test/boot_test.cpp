@@ -92,6 +92,12 @@ int main(int argc, char **argv) {
             config.program = media;
         else
             config.floppy[kairost::kDriveA] = media;
+        // Hatari ends the process without a word when it cannot open the disk (on Windows, a
+        // path over MAX_PATH), so say which file it was.
+        if (!std::ifstream(media, std::ios::binary)) {
+            std::fprintf(stderr, "run 0: could not start: cannot open %s\n", media.c_str());
+            return 1;
+        }
     }
     const int runs = argc > 6 ? std::atoi(argv[6]) : 1;
     const std::vector<Press> presses = argc > 7 && *argv[7] ? parse_keys(argv[7]) : std::vector<Press>{};
