@@ -42,7 +42,7 @@ SCANS = {"atarist": (".downloads/scan/atarist.json", ("atarist",)),
 # The settings a game can ask for, as StCatalog's options name them.
 MACHINE_OPTIONS = {
     "machine": {"st", "megast", "ste", "megaste", "tt", "falcon"},
-    "memory": {"512", "1024", "2048", "4096"},
+    "memory": {512, 1024, 2048, 4096},
     "monitor": {"rgb", "mono"},
     "region": {"uk", "us"},
     "tos": {"emutos", "tos"},
@@ -63,14 +63,14 @@ def MACHINE(name, set_name, content_id):
     A disk tos-disks-v1.json lists starts on the player's TOS."""
     settings = {"tos": "tos"} if content_id in _TOS else {}
     if _FALCON.search(name):
-        settings.update(machine="falcon", memory="4096")
+        settings.update(machine="falcon", memory=4096)
     elif _STE.search(name):
         settings["machine"] = "ste"
     if _MONO.search(name):
         settings["monitor"] = "mono"
     memory = _MEMORY.search(name)
     if memory and memory.group(1) != "1":
-        settings["memory"] = str(int(memory.group(1)) * 1024)
+        settings["memory"] = int(memory.group(1)) * 1024
     return settings
 
 

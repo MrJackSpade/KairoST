@@ -5,6 +5,7 @@ plugins {
 
 extra["kairoProduct"] = "kairost"
 extra["kairoLabel"] = "KairoST"
+extra["kairoCatalogRules"] = "com.mrjackspade.kairost.StCatalog"
 apply(from = rootProject.file("shared/gradle/kairo-app.gradle"))
 
 // EmuTOS, which the app ships for every model (third_party/emutos-1024k), in assets/emutos;

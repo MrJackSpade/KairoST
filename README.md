@@ -18,6 +18,9 @@
     <td align="center" width="33%"><a href="https://github.com/MrJackSpade/KairoTowns"><img src="https://raw.githubusercontent.com/MrJackSpade/KairoTowns/main/kairotowns/src/main/res/drawable-nodpi/product_icon_art.png" width="96" alt="KairoTowns"><br><b>KairoTowns</b></a><br>FM Towns</td>
     <td align="center" width="33%"><a href="https://github.com/MrJackSpade/KairoMSX"><img src="https://raw.githubusercontent.com/MrJackSpade/KairoMSX/main/kairomsx/src/main/res/drawable-nodpi/product_icon_art.png" width="96" alt="KairoMSX"><br><b>KairoMSX</b></a><br>MSX</td>
   </tr>
+  <tr>
+    <td align="center" width="33%"><a href="https://github.com/MrJackSpade/Kairo64"><img src="https://raw.githubusercontent.com/MrJackSpade/Kairo64/main/kairo64/src/main/res/drawable-nodpi/product_icon_art.png" width="96" alt="Kairo64"><br><b>Kairo64</b></a><br>C64</td>
+  </tr>
 </table>
 <p align="center">Every Kairo app is built on <a href="https://github.com/MrJackSpade/Kairo">Kairo</a>, the shared frontend for the game library, controls, and settings.</p>
 <!-- /kairo:family -->

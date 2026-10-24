@@ -19334,11 +19334,11 @@
    "diskMachine": {
     "sha256-fd-v1:a601e40ee5da3e0abe2114eab4cd51e51fa81d96091abbd6557986299500cffe": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:ef46cb3692ff1a4bbbd4f87fb686faa2e307f4f514f41abd0f6f836372654182": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "diskSets": {
@@ -22723,23 +22723,23 @@
    "diskMachine": {
     "sha256-fd-v1:104d6aa2b79830928b7aef076660b1274278d155aae3a9205079f06554661745": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:669b901e352f03a39e650f1139e3fdaf32e55d65d4b7b7da03164874e4023919": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:7b1c088f095d8855d4d53bf9159a406e9c517df44bfafae24376bfb4ddad024d": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:e41ab603fea1e09a5b28cb1171efeffb39e8110854d142bc975b6b18f7f9bbee": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:f387a3b66ccb0a5cebbe070f1888ab02fdbf5872c2a8c6fcec4c01eecf4e79b5": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "diskSets": {
@@ -51499,10 +51499,10 @@
    "description": "A first-person role-playing game in which an adventurer explores a tower to learn the fate of its lord.",
    "diskMachine": {
     "sha256-fd-v1:311fc386dfea56992bc43943b9d20101197fc33a0abc3acbbb9262391cf07ab1": {
-     "memory": "2048"
+     "memory": 2048
     },
     "sha256-fd-v1:905789c5e2f80807f49215c46f52a11368b2d2169133747db48a2acf7f373fd1": {
-     "memory": "2048"
+     "memory": 2048
     }
    },
    "diskSets": {
@@ -53700,7 +53700,7 @@
     },
     "sha256-fd-v1:7aecb1e8c2eec7758691266e0004c373b8c0941e550bb0395c270377669fd482": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "diskSets": {
@@ -59766,7 +59766,7 @@
    "diskMachine": {
     "sha256-fd-v1:322291ec53ff479bbc71fbfdec44c082de7ca872c452e65685a8d6e54ab2722d": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "sourceGroups": [
@@ -60910,7 +60910,7 @@
    "diskMachine": {
     "sha256-fd-v1:375e4e2cc31a1cfd7a406cd07c13948115633f1ac9c85c5973197f2ccb112612": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "sourceGroups": [
@@ -62279,7 +62279,7 @@
    "diskMachine": {
     "sha256-fd-v1:7c475cc4ea8a013b8aabd8a8822882b83b9f76d1ee0db8af398cacbbe77790eb": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "sourceGroups": [
@@ -65237,7 +65237,7 @@
    "diskMachine": {
     "sha256-fd-v1:c012140559183e6724ec8b9a54c2e8f9bf4b367fb87aa94fa04e1dbf93aeb2d8": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "sourceGroups": [
@@ -66011,15 +66011,15 @@
    "diskMachine": {
     "sha256-fd-v1:6cf51f005fe13f040cfbd40811dd07bebd346dc499866bc68d0b143af913c301": {
      "machine": "ste",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:cf4f3b96d04deac6bf64f6cc259657ed1e918bfd8aa2c24078f67d7109b27a3c": {
      "machine": "ste",
-     "memory": "4096"
+     "memory": 4096
     },
     "sha256-fd-v1:d1d7223401d895379ae3c2f10a9584290c6397288b48c0bcc7f37e937d5faef9": {
      "machine": "ste",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "diskSets": {
@@ -69020,7 +69020,7 @@
    "diskMachine": {
     "sha256-fd-v1:defebeb6d4bc12c7b585aad69c808e9fcda3fc920140826ad0b0381a3a377c45": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "sourceGroups": [
@@ -69277,7 +69277,7 @@
    "diskMachine": {
     "sha256-fd-v1:4197bd68141179b2ddd337b2ed01afa1ac271f40cc5631c2c803d7c229317799": {
      "machine": "falcon",
-     "memory": "4096"
+     "memory": 4096
     }
    },
    "sourceGroups": [
