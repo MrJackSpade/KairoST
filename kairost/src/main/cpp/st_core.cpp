@@ -107,6 +107,9 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
         return nullptr;
     }
     config.skip_memory_check = skip == "on";
+    // The program on drive A that TOS starts, "" for the automatic choice (MainActivity: the game's
+    // Startup program setting).
+    config.floppy_program = launch.settings.at("program");
     auto machine = StMachine::create(config, error);
     if (!machine) return nullptr;
     return std::make_unique<StCore>(std::move(machine));

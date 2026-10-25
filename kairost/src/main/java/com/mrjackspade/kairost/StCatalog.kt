@@ -5,11 +5,13 @@ import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.LayeredGameCatalog
 import com.mrjackspade.kairo.frontend.MachineOption
 import org.json.JSONArray
+import org.json.JSONObject
 
 /**
  * KairoST's catalog records beyond the common fields: the machine a game starts on (`machine`,
- * by Hatari's name for it), its memory, monitor, region and system software, and the second disk it
- * starts with in drive B (media role `floppyB`).
+ * by Hatari's name for it), its memory, monitor, region and system software, the second disk it
+ * starts with in drive B (media role `floppyB`), and the program on drive A that TOS starts once it
+ * has booted (`launch.program`), for a disk that boots to the desktop.
  */
 object StCatalog : LayeredGameCatalog.Schema {
     override val platform = "atarist"
@@ -72,13 +74,32 @@ object StCatalog : LayeredGameCatalog.Schema {
     val skipMemoryCheck = MachineOption.skipMemoryCheck()
     val options = listOf(machine, memory, monitor, region, system, skipMemoryCheck)
 
-    override val settings: List<CatalogSetting> = options.map(CatalogSetting::Choice) + CatalogSetting.Drive("floppyB", "Drive B")
+    /** The program setting's catalog place: `launch.program`, with MainActivity's own row. */
+    const val PROGRAM = "program"
+    const val LAUNCH = "launch"
+
+    /**
+     * A program in drive A's disk for TOS to start, by its path from the disk's top folder, such as
+     * GAME.PRG or GAMES\RUN.PRG; "" for the automatic choice (core/st_machine.h floppy_program).
+     */
+    val programPath = Regex("""(?:[A-Za-z0-9_\-!~#$%&@^'(){}]{1,8}(?:\.[A-Za-z0-9_\-]{1,3})?\\)*""" +
+        """[A-Za-z0-9_\-!~#$%&@^'(){}]{1,8}\.[A-Za-z]{1,3}""")
+
+    override val settings: List<CatalogSetting> = options.map(CatalogSetting::Choice) +
+        CatalogSetting.Drive("floppyB", "Drive B") + CatalogSetting.Custom(PROGRAM, LAUNCH, setOf(PROGRAM))
     override val fields = CatalogSetting.fields(settings)
 
     override fun validMedia(role: String, contentId: String) = role == "floppyB" && contentId.startsWith("sha256-fd-v1:")
 
-    override fun validField(field: String, value: Any): Boolean =
-        field in fields && CatalogSetting.validSection(settings, field, value)
+    override fun validField(field: String, value: Any): Boolean = when (field) {
+        LAUNCH -> value is JSONObject && value.length() == 1 &&
+            (value.opt(PROGRAM) as? String)?.let { it.isEmpty() || programPath.matches(it) } == true
+        else -> field in fields && CatalogSetting.validSection(settings, field, value)
+    }
+
+    /** The game's startup program: its own, or "" for the automatic choice. */
+    fun program(game: com.mrjackspade.kairo.frontend.CatalogGame): String =
+        game.section(LAUNCH)?.optString(PROGRAM, "") ?: ""
 
     override fun validBindings(bindings: JSONArray) = StKeys.bindings.valid(bindings)
 }
