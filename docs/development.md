@@ -38,6 +38,13 @@ It builds for the host and, configured with the NDK and `-DKAIROST_TOOLS=ON`, fo
 game_profile <TOS image> <work folder> <media> <machine> <memory KiB> <frames> <script> [--warmup n] [--hashes file]
 ```
 
+The device build of the core is profile-guided (`core/pgo`, shared `cmake/KairoPgo.cmake`): the
+profile was recorded on the RG DS by `tools/perf/pgo-train.ps1` from a training build of the tool
+(`-DKAIROST_PGO_GENERATE=ON -DKAIRO_PGO=OFF`). A change to the core's code makes the profile out of
+date, which fails the build (`-Werror=profile-instr-out-of-date`): train it again, or build with
+`-DKAIRO_PGO=OFF` (gradle property `pgo=false`). `tools/perf/verify-hashes.ps1` and
+`compare-hashes.ps1` check that a build runs the guest frame for frame as another does.
+
 ## Catalog passes
 
 - `tools/boot_disks.py` reads every floppy the scans list and records how it starts (boot sector,

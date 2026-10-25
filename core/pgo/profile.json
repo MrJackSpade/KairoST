@@ -1,0 +1,74 @@
+{
+  "format": "LLVM IR instrumentation profile text, sparse",
+  "compilerVersion": "19.0.1",
+  "ndkProvenance": "28.2.13676358",
+  "abi": "arm64-v8a",
+  "sourceRevision": "8599f8a733d63f7308a02c339bdf45435b6a96d6",
+  "portableTextSha256": "cba0234867987ac127eda4234f4bd519d1386305ed056aae66d9d4bfd8d8413a",
+  "functionRecords": 1582,
+  "pathOccurrencesRewritten": 2670,
+  "normalization": "The checkout root in function names is @KAIRO_SOURCE@/ (shared/cmake/KairoPgo.cmake puts the actual root back before indexing). LF newlines, one final newline.",
+  "training": "tools/perf/pgo-train.ps1: oxyd, psyborg, outrun, goal, rotmc-ste, ooze, 2400 frames after a 600-frame boot each; Gauntlet II held out",
+  "inputs": [
+    {
+      "name": "goal-15855577245646448773_0",
+      "rawProfileSha256": "57c54dd3bc65f8e5d813a0a4e1dfd8227c11c52bf136cd12c9a4d3f855912d78",
+      "weight": 1
+    },
+    {
+      "name": "goal-8299702818687936222_0",
+      "rawProfileSha256": "99fccfc6678fed8fac7e5c97447a55d05dead330deef32b57d1d63f0c10ee56e",
+      "weight": 1
+    },
+    {
+      "name": "ooze-15855577245646448773_0",
+      "rawProfileSha256": "38b984aac6a0c04df113b0153c7d35deb9318c40f2438d5ccfc9fcdc2a04fa7f",
+      "weight": 1
+    },
+    {
+      "name": "ooze-8299702818687936222_0",
+      "rawProfileSha256": "46be73e853dc6380af5f544ce09e43b6d2f68ab45ef80029effc223491db1da1",
+      "weight": 1
+    },
+    {
+      "name": "outrun-15855577245646448773_0",
+      "rawProfileSha256": "c258c36fc00ccd838d160cbd191bb3a727bef1a294908eb3b60c4da2d3c303e9",
+      "weight": 1
+    },
+    {
+      "name": "outrun-8299702818687936222_0",
+      "rawProfileSha256": "d5ead6c13741291f3aec7a240e3b14124bc2c24042d8f4d4de296fb184458e15",
+      "weight": 1
+    },
+    {
+      "name": "oxyd-15855577245646448773_0",
+      "rawProfileSha256": "cf69af838f0aba224f0cabebcd06e490995219fbec94cf6fdbc0608c03abdf08",
+      "weight": 1
+    },
+    {
+      "name": "oxyd-8299702818687936222_0",
+      "rawProfileSha256": "3afd7e6911c9d1bef451517ec4e9a876c366f4575c954acae1433677f3cea4b9",
+      "weight": 1
+    },
+    {
+      "name": "psyborg-15855577245646448773_0",
+      "rawProfileSha256": "f9cb522012bfad7a48a9df39906b359b066227d1a6e67cc47abd99b6ce73de1b",
+      "weight": 1
+    },
+    {
+      "name": "psyborg-8299702818687936222_0",
+      "rawProfileSha256": "2d40ff43b5301339732fae31fa51a37242db2a07d330eb889afd577ab2b62afe",
+      "weight": 1
+    },
+    {
+      "name": "rotmc-ste-15855577245646448773_0",
+      "rawProfileSha256": "12ded02ab11fd75134bb0f2748046d69a9429f48d9ca4af0f06c28e9727c2a18",
+      "weight": 1
+    },
+    {
+      "name": "rotmc-ste-8299702818687936222_0",
+      "rawProfileSha256": "570e05130e8868ff5332ed68d44a29691ccb3e7cc2069210d97f865dde6e743b",
+      "weight": 1
+    }
+  ]
+}
