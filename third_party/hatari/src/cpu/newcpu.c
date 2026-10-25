@@ -5592,6 +5592,17 @@ static void m68k_run_1_ce (void)
 
 #ifdef WINUAE_FOR_HATARI
 				currcycle = 0;
+				/* KairoST: a STOP that no interrupt can end before the next event skips to the last
+				 * 4-cycle step before it (tools/local_patches.py HATARI_STOP_SKIP). */
+				if (r->stopped == 1 && !(r->spcflags & ~SPCFLAG_CHECK) && !r->t1 && !r->t0 && !cpu_tracer && nCpuFreqShift == 0
+				    && !MFP_UpdateNeeded && r->ipl_pin <= r->intmask && r->ipl_pin_p <= r->intmask
+				    && r->ipl[0] <= r->intmask && r->ipl[1] <= r->intmask && intlev() <= r->intmask)
+				{
+					uint64_t now = CyclesGlobalClockCounter;
+					uint64_t next = CycInt_ActiveInt_Cycles >> CYCINT_SHIFT;
+					if (next > now + 8)
+						M68000_AddCycles_CE((int)((next - now - 5) & ~(uint64_t)3));
+				}
 #endif
 
 #ifndef WINUAE_FOR_HATARI

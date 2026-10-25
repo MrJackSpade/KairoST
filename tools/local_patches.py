@@ -95,6 +95,38 @@ HATARI_SINGLE_LINES = [
      '\tbScreenLinesHalved = false;\t/* KairoST: these screens are not doubled */\n'),
 ]
 
+# While the 68000 waits in STOP with no interrupt it would take, the cycle-exact core runs STOP again
+# every 4 cycles (opcode, IPL fetch, interrupt check, cycle accounting) until the next event (an
+# HBL, a timer) raises one: a quarter of the frame in games that wait for the VBL this way
+# (KairoST#15). Nothing but events can change that wait (every interrupt source, and the host's
+# input, comes from an event handler), so the time up to the last 4-cycle step before the next
+# event is added at once; that step and the event run as before, so the machine runs the same
+# frames, cycle for cycle. Only for the 8 MHz 68000 with no trace and no special state pending
+# (SPCFLAG_CHECK, which stays set in a stopped CPU, does nothing in Hatari's build of the core).
+HATARI_STOP_SKIP = [
+    ('hatari/src/cpu/newcpu.c',
+     '\t\t\t\t\tcputrace.readcounter = cputrace.writecounter = 0;\n\t\t\t\t}\n\n#ifndef WINUAE_FOR_HATARI\n'
+     '\t\t\t\tif (inputrecord_debug & 4) {\n\t\t\t\t\tif (input_record > 0)\n\t\t\t\t\t\tinprec_recorddebug_cpu (1);\n'
+     '\t\t\t\t\telse if (input_play > 0)\n\t\t\t\t\t\tinprec_playdebug_cpu (1);\n\t\t\t\t}\n#endif\n\n'
+     '#ifdef WINUAE_FOR_HATARI\n\t\t\t\tcurrcycle = 0;\n#endif\n',
+     '\t\t\t\t\tcputrace.readcounter = cputrace.writecounter = 0;\n\t\t\t\t}\n\n#ifndef WINUAE_FOR_HATARI\n'
+     '\t\t\t\tif (inputrecord_debug & 4) {\n\t\t\t\t\tif (input_record > 0)\n\t\t\t\t\t\tinprec_recorddebug_cpu (1);\n'
+     '\t\t\t\t\telse if (input_play > 0)\n\t\t\t\t\t\tinprec_playdebug_cpu (1);\n\t\t\t\t}\n#endif\n\n'
+     '#ifdef WINUAE_FOR_HATARI\n\t\t\t\tcurrcycle = 0;\n'
+     '\t\t\t\t/* KairoST: a STOP that no interrupt can end before the next event skips to the last\n'
+     '\t\t\t\t * 4-cycle step before it (tools/local_patches.py HATARI_STOP_SKIP). */\n'
+     '\t\t\t\tif (r->stopped == 1 && !(r->spcflags & ~SPCFLAG_CHECK) && !r->t1 && !r->t0 && !cpu_tracer && nCpuFreqShift == 0\n'
+     '\t\t\t\t    && !MFP_UpdateNeeded && r->ipl_pin <= r->intmask && r->ipl_pin_p <= r->intmask\n'
+     '\t\t\t\t    && r->ipl[0] <= r->intmask && r->ipl[1] <= r->intmask && intlev() <= r->intmask)\n'
+     '\t\t\t\t{\n'
+     '\t\t\t\t\tuint64_t now = CyclesGlobalClockCounter;\n'
+     '\t\t\t\t\tuint64_t next = CycInt_ActiveInt_Cycles >> CYCINT_SHIFT;\n'
+     '\t\t\t\t\tif (next > now + 8)\n'
+     '\t\t\t\t\t\tM68000_AddCycles_CE((int)((next - now - 5) & ~(uint64_t)3));\n'
+     '\t\t\t\t}\n'
+     '#endif\n'),
+]
+
 # A track an STX image records with no data (an unformatted track some copy protections leave)
 # has size 0, so one revolution took 0 cycles and the index pulse setup divided by it: a crash on
 # x86, a wrong pulse time on ARM. The drive still spins it in one revolution, as a missing track.
@@ -204,6 +236,7 @@ PATCHES = {
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
     'hatari-single-lines': HATARI_SINGLE_LINES,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
+    'hatari-stop-skip': HATARI_STOP_SKIP,
     'hatari-stx-empty-track': HATARI_STX_EMPTY_TRACK,
     'sdl-android-sources': SDL_ANDROID_SOURCES,
     'sdl-android-video': SDL_ANDROID_VIDEO,
