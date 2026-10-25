@@ -8,6 +8,30 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # The emulator runs in real time only optimized, so the core is optimized in debug builds too.
 add_compile_options(-O3)
 
+# The device build of the core uses a profile of the device playing games (KairoST#9,
+# tools/perf/pgo-train.ps1, core/pgo). The profile describes this exact code as the device compiles
+# it, so a training build (KAIROST_PGO_GENERATE), the host or another compiler turns it off with
+# -DKAIRO_PGO=OFF (the app's gradle property pgo=false).
+if(ANDROID AND EXISTS "${CMAKE_CURRENT_LIST_DIR}/pgo/profile.json")
+    set(KAIROST_PGO_DEFAULT ON)
+else()
+    set(KAIROST_PGO_DEFAULT OFF)
+endif()
+option(KAIRO_PGO "Build the core with its recorded profile (core/pgo)" ${KAIROST_PGO_DEFAULT})
+option(KAIROST_PGO_GENERATE "Build the core to record a profile (tools/perf/pgo-train.ps1)" OFF)
+if(KAIRO_PGO)
+    if(KAIROST_PGO_GENERATE)
+        message(FATAL_ERROR "The recorded profile is for the ordinary core: add -DKAIRO_PGO=OFF to a KAIROST_PGO_GENERATE build")
+    endif()
+    include("${CMAKE_CURRENT_LIST_DIR}/../shared/cmake/KairoPgo.cmake")
+    kairo_use_profile("${CMAKE_CURRENT_LIST_DIR}/pgo/arm64.proftext" "${CMAKE_CURRENT_LIST_DIR}/pgo/profile.json"
+        "${CMAKE_CURRENT_LIST_DIR}/..")
+endif()
+if(KAIROST_PGO_GENERATE)
+    add_compile_options(-fprofile-generate)
+    add_link_options(-fprofile-generate)
+endif()
+
 include(CheckIncludeFiles)
 include(CheckSymbolExists)
 include(CheckStructHasMember)
