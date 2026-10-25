@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "kairo/machine_core.h"
+#include "kairo/thread_priority.h"
 #include "st_machine.h"
 
 namespace {
@@ -110,6 +111,11 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     // The program on drive A that TOS starts, "" for the automatic choice (MainActivity: the game's
     // Startup program setting).
     config.floppy_program = launch.settings.at("program");
+    // Hatari runs the emulation on a thread of its own, which takes emulation work's priority.
+    config.on_thread_start = [] {
+        kairo::name_thread("kairost-hatari");
+        kairo::raise_emulation_priority("hatari");
+    };
     auto machine = StMachine::create(config, error);
     if (!machine) return nullptr;
     return std::make_unique<StCore>(std::move(machine));

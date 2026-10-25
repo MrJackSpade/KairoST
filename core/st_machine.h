@@ -9,6 +9,7 @@
 #pragma once
 
 #include <cstdint>
+#include <functional>
 #include <memory>
 #include <string>
 #include <vector>
@@ -53,6 +54,10 @@ struct Config {
     bool skip_memory_check = true;
     // The seed of Hatari's random numbers; 0 for the time. A measurement fixes it so runs repeat.
     unsigned int seed = 0;
+    // Called on Hatari's thread before it starts, where the emulation runs: the app names the
+    // thread and gives it the priority of emulation work (shared thread_priority.h), which belongs
+    // to a thread, not to the threads that start it.
+    std::function<void()> on_thread_start;
 };
 
 class StMachine {

@@ -156,7 +156,8 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     state->library = std::move(library);
     state->host = {state, host_vbl, host_fatal, host_notice,
                    config.seed ? config.seed : static_cast<unsigned int>(std::time(nullptr))};
-    state->thread = std::thread([state, args = std::move(args), home = config.home] {
+    state->thread = std::thread([state, args = std::move(args), home = config.home, start = config.on_thread_start] {
+        if (start) start();
         std::vector<const char *> argv;
         for (const auto &arg : args) argv.push_back(arg.c_str());
         bool clean = state->hatari->run(int(argv.size()), argv.data(), home.c_str(), &state->host);

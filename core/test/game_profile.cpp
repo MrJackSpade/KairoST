@@ -17,6 +17,7 @@
 //   --program <name>  the program on drive A that TOS starts (Config::floppy_program)
 //   --shots <n>       write the picture every n measured frames as <work dir>/frame-<frame>.bmp
 //   --hashes <file>   write a hash of each frame's picture and sound, boot frames included
+//   --nice <n>        run Hatari's thread at this priority, as the app does (-16; root on Android)
 //   --present         take each frame's picture and copy it, as the app's frame host does
 //                     (StMachine::frame, then FrameMachine::publish's copy), and time it apart
 //
@@ -32,6 +33,10 @@
 #include <vector>
 
 #include "st_machine.h"
+
+#ifndef _WIN32
+#include <sys/resource.h>
+#endif
 
 using kairost::Config;
 using kairost::StMachine;
@@ -146,6 +151,19 @@ int main(int argc, char **argv) {
         else if (option == "--shots") shots = std::atol(value().c_str());
         else if (option == "--hashes") hashes_path = value();
         else if (option == "--present") present = true;
+        else if (option == "--nice") {
+#ifdef _WIN32
+            return fail("--nice is for Linux and Android");
+#else
+            const int nice = std::atoi(value().c_str());
+            config.on_thread_start = [nice] {
+                if (setpriority(PRIO_PROCESS, 0, nice) != 0) {
+                    std::fprintf(stderr, "FAIL: could not set priority %d\n", nice);
+                    std::exit(1);
+                }
+            };
+#endif
+        }
         else return fail("unknown option " + option);
     }
     if (config.seed == 0) return fail("--seed 0 means the time; give a fixed seed");
