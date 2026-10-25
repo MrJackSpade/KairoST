@@ -1119,12 +1119,8 @@
    "diskSets": {
     "sha256-fd-v1:3a85a58b31091f8ae5162754ca221c3a97b9bf4cb058dc3e3825e44441c72785": {
      "setDisks": [
+      "sha256-fd-v1:58d2a80b09818ab51f44a27bf58395507d91f5586f2364afc29082928e19b29d",
       "sha256-fd-v1:ddeecccfea664f43a7062fc0fe867e0d7404d2100aa0d53cac900ce8b01bdd52"
-     ]
-    },
-    "sha256-fd-v1:58d2a80b09818ab51f44a27bf58395507d91f5586f2364afc29082928e19b29d": {
-     "setDisks": [
-      "sha256-fd-v1:3a85a58b31091f8ae5162754ca221c3a97b9bf4cb058dc3e3825e44441c72785"
      ]
     }
    },
@@ -1543,41 +1539,41 @@
    "description": "A first-person space shooter in which you fly a fighter or warship on missions to defend Earth from alien convoys.",
    "developer": "Caspian Software",
    "diskSets": {
-    "sha256-fd-v1:21a239c5fa74d88e1aee4cb31527df5defc133998b630de49b0a298419efd8af": {
+    "sha256-fd-v1:1fd4645d9e4913d75f07e4c179aefaa35244aeeed66487e0a97ec32ab754606b": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:da44988d092a69ef3ab3e8931d7a8c298f9116858d456b8489ca8fe72f5a7777",
+       "contentId": "sha256-fd-v1:5c17ea58b8911ef34b4f24293f08197b30db7ed13ee9c35d571510f21e1660ac",
        "role": "floppyB"
       }
      ],
      "setDisks": [
+      "sha256-fd-v1:5c17ea58b8911ef34b4f24293f08197b30db7ed13ee9c35d571510f21e1660ac",
+      "sha256-fd-v1:6bc09bb90b71bf319d2920a723e96082f8fa1051c5861982e17ea0ef7e5f29f1",
+      "sha256-fd-v1:d3863129ef91b7fa1cc5cd7a61cfe88cf6eb0a8ff5b0e7b067a0e89bbe61d7f6",
       "sha256-fd-v1:da44988d092a69ef3ab3e8931d7a8c298f9116858d456b8489ca8fe72f5a7777"
      ]
     },
-    "sha256-fd-v1:2e4683696d09d33580df957364277439cb4793a6cd476e3395ef02f19eea5740": {
+    "sha256-fd-v1:d3863129ef91b7fa1cc5cd7a61cfe88cf6eb0a8ff5b0e7b067a0e89bbe61d7f6": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:d3863129ef91b7fa1cc5cd7a61cfe88cf6eb0a8ff5b0e7b067a0e89bbe61d7f6",
+       "contentId": "sha256-fd-v1:2e4683696d09d33580df957364277439cb4793a6cd476e3395ef02f19eea5740",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:2fba34283a89e02e5e403d0116bda3087bfc2270145f077c6ecce5e9d67b5803",
-      "sha256-fd-v1:d3863129ef91b7fa1cc5cd7a61cfe88cf6eb0a8ff5b0e7b067a0e89bbe61d7f6"
+      "sha256-fd-v1:2e4683696d09d33580df957364277439cb4793a6cd476e3395ef02f19eea5740",
+      "sha256-fd-v1:2fba34283a89e02e5e403d0116bda3087bfc2270145f077c6ecce5e9d67b5803"
      ]
     },
-    "sha256-fd-v1:5c17ea58b8911ef34b4f24293f08197b30db7ed13ee9c35d571510f21e1660ac": {
+    "sha256-fd-v1:da44988d092a69ef3ab3e8931d7a8c298f9116858d456b8489ca8fe72f5a7777": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:1fd4645d9e4913d75f07e4c179aefaa35244aeeed66487e0a97ec32ab754606b",
+       "contentId": "sha256-fd-v1:21a239c5fa74d88e1aee4cb31527df5defc133998b630de49b0a298419efd8af",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:1fd4645d9e4913d75f07e4c179aefaa35244aeeed66487e0a97ec32ab754606b",
-      "sha256-fd-v1:21a239c5fa74d88e1aee4cb31527df5defc133998b630de49b0a298419efd8af",
-      "sha256-fd-v1:2e4683696d09d33580df957364277439cb4793a6cd476e3395ef02f19eea5740",
-      "sha256-fd-v1:6bc09bb90b71bf319d2920a723e96082f8fa1051c5861982e17ea0ef7e5f29f1"
+      "sha256-fd-v1:21a239c5fa74d88e1aee4cb31527df5defc133998b630de49b0a298419efd8af"
      ]
     }
    },
@@ -2162,10 +2158,10 @@
    "description": "A side-scrolling platformer in which the knight Arthur fights zombies and demons to rescue a princess from the Demon King.",
    "developer": "Elite Systems",
    "diskSets": {
-    "sha256-fd-v1:3066b99e49d3e1ced704e8766e6d23dd005aa88e7115f099030a52c7fc55b83d": {
+    "sha256-fd-v1:477e55d58715868171c05501dbcb8fbd2eed0aad30ed9fbd05096fb9e28ad178": {
      "setDisks": [
       "sha256-fd-v1:002e2ad67fea40b341bebb93336551508b6c88e7a9619800f0f80628aefd6ac3",
-      "sha256-fd-v1:477e55d58715868171c05501dbcb8fbd2eed0aad30ed9fbd05096fb9e28ad178",
+      "sha256-fd-v1:3066b99e49d3e1ced704e8766e6d23dd005aa88e7115f099030a52c7fc55b83d",
       "sha256-fd-v1:8bc2176860aeb8e55894c667728e5c66b05b00900107140d9c7e8ce20ac4b7fc"
      ]
     },
@@ -6089,10 +6085,10 @@
     }
    },
    "diskSets": {
-    "sha256-fd-v1:01277b6952557d2ef7016853eced008f4a5092d53697c53b8626e8ca26c82b5e": {
+    "sha256-fd-v1:b00ca42d9a7153c2987be2af062ce86c024aeb923153320dd65a2a8d0cbf932a": {
      "setDisks": [
-      "sha256-fd-v1:2381385062f7bb7a3921473b35a85258c42a1bcd2331487ad664bfd1ef0164e8",
-      "sha256-fd-v1:b00ca42d9a7153c2987be2af062ce86c024aeb923153320dd65a2a8d0cbf932a"
+      "sha256-fd-v1:01277b6952557d2ef7016853eced008f4a5092d53697c53b8626e8ca26c82b5e",
+      "sha256-fd-v1:2381385062f7bb7a3921473b35a85258c42a1bcd2331487ad664bfd1ef0164e8"
      ]
     }
    },
@@ -7896,13 +7892,13 @@
    "description": "A platform game in which a cat sets off across four levels to rescue his girlfriend from scientists.",
    "developer": "Frames",
    "diskSets": {
-    "sha256-fd-v1:ef3573cb7249e45c5693361c1e915f393e5838f08c7ff1dc6d29e45ff1f49830": {
+    "sha256-fd-v1:a01a2750f19b943ad8bde5ddb6076483ad6f6563956ba6c7a0c0aa2d56e8f539": {
      "setDisks": [
       "sha256-fd-v1:2117acdd81e1e08fc34dca98df889ede2dc407c0caa5c7181662f2096d3726a7",
       "sha256-fd-v1:4dd22155a0c2847ef90dcdc787163cf192e88de16b760d4ccfdc096ffe5966ab",
       "sha256-fd-v1:81dd22da836aba1c499a86d80c91c0c49aea3da9937fe0f21ed3f4834a3a737b",
-      "sha256-fd-v1:a01a2750f19b943ad8bde5ddb6076483ad6f6563956ba6c7a0c0aa2d56e8f539",
-      "sha256-fd-v1:c72228354fef08550e7b0394485f58fd6230c94898e7d1ce4380c1e84b8e558e"
+      "sha256-fd-v1:c72228354fef08550e7b0394485f58fd6230c94898e7d1ce4380c1e84b8e558e",
+      "sha256-fd-v1:ef3573cb7249e45c5693361c1e915f393e5838f08c7ff1dc6d29e45ff1f49830"
      ]
     },
     "sha256-fd-v1:f456f58c33b864dbeb49456b4bd4dc7d16c36c40c0d4aa02f33fd3661d9d9003": {
@@ -10140,9 +10136,9 @@
    "description": "A sci-fi role-playing game in which an amnesiac prisoner remotely controls four droids to explore bases and find himself.",
    "developer": "Mindscape",
    "diskSets": {
-    "sha256-fd-v1:7f985bce0c11bf2f8bb31f79312565fff1b4cb5c147e73a4bbedfad2e5170b15": {
+    "sha256-fd-v1:c5deb87f851bcc8de7d7228f82d232e62b91a98b202f85989998295227d916bb": {
      "setDisks": [
-      "sha256-fd-v1:c5deb87f851bcc8de7d7228f82d232e62b91a98b202f85989998295227d916bb"
+      "sha256-fd-v1:7f985bce0c11bf2f8bb31f79312565fff1b4cb5c147e73a4bbedfad2e5170b15"
      ]
     },
     "sha256-fd-v1:e171f4a9f89410ef0e5116c4132012bb8da557fca55a8bda64cece55488cb31d": {
@@ -11552,20 +11548,31 @@
       "program": "GREY.PRG"
      },
      "tos": "tos"
+    },
+    "sha256-fd-v1:2a4915747fd61e56be9fc0a4ce3d3fd91fb6796d61a3141a211e1a4e8e71c7e8": {
+     "launch": {
+      "program": "SHORT_G.PRG"
+     }
+    },
+    "sha256-fd-v1:8036bc8b786666d3516b5109515cc8b64b22da373e295e2137029dfa5056afa9": {
+     "launch": {
+      "program": "GREY.PRG"
+     }
     }
    },
    "diskSets": {
-    "sha256-fd-v1:1b892eb0f3c880e1fa7317fb3820a9f93d52cd5cf740a375661fae94dc5b659f": {
+    "sha256-fd-v1:2a4915747fd61e56be9fc0a4ce3d3fd91fb6796d61a3141a211e1a4e8e71c7e8": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:8ed56a5178f481ad5fdfb0d22f813d3178c44dbd12734c8714feb90c67dd4d50",
+       "contentId": "sha256-fd-v1:9e5d3f397bbba1fdbf987cc3cfc41c4394e7591ade183a5bb090893cde4c2e09",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:5a391c80859a1ae86b9e0db0277e6e7af35e5d96c22bb7bd576c21c2f54dfd49",
-      "sha256-fd-v1:8ed56a5178f481ad5fdfb0d22f813d3178c44dbd12734c8714feb90c67dd4d50",
-      "sha256-fd-v1:fecb66013765912f855f8e2e549e76f608845b2edf7b63dc01d423b6d8f6845b"
+      "sha256-fd-v1:6f44b7cd9aff72fa9bdd26e92686e83ce28e89a74791d040d9e35544e51be31d",
+      "sha256-fd-v1:8036bc8b786666d3516b5109515cc8b64b22da373e295e2137029dfa5056afa9",
+      "sha256-fd-v1:9e5d3f397bbba1fdbf987cc3cfc41c4394e7591ade183a5bb090893cde4c2e09",
+      "sha256-fd-v1:b2197ac543b7cbe290c215efc3c850f79c78dce5d9d4b58d62a84bcfc9fbb5ab"
      ]
     },
     "sha256-fd-v1:8036bc8b786666d3516b5109515cc8b64b22da373e295e2137029dfa5056afa9": {
@@ -11575,18 +11582,17 @@
       "sha256-fd-v1:b616f0c869f624b99b9a03e27b6cceebc180e508f13da5f81cec9e539d15de60"
      ]
     },
-    "sha256-fd-v1:9e5d3f397bbba1fdbf987cc3cfc41c4394e7591ade183a5bb090893cde4c2e09": {
+    "sha256-fd-v1:8ed56a5178f481ad5fdfb0d22f813d3178c44dbd12734c8714feb90c67dd4d50": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:2a4915747fd61e56be9fc0a4ce3d3fd91fb6796d61a3141a211e1a4e8e71c7e8",
+       "contentId": "sha256-fd-v1:1b892eb0f3c880e1fa7317fb3820a9f93d52cd5cf740a375661fae94dc5b659f",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:2a4915747fd61e56be9fc0a4ce3d3fd91fb6796d61a3141a211e1a4e8e71c7e8",
-      "sha256-fd-v1:6f44b7cd9aff72fa9bdd26e92686e83ce28e89a74791d040d9e35544e51be31d",
-      "sha256-fd-v1:8036bc8b786666d3516b5109515cc8b64b22da373e295e2137029dfa5056afa9",
-      "sha256-fd-v1:b2197ac543b7cbe290c215efc3c850f79c78dce5d9d4b58d62a84bcfc9fbb5ab"
+      "sha256-fd-v1:1b892eb0f3c880e1fa7317fb3820a9f93d52cd5cf740a375661fae94dc5b659f",
+      "sha256-fd-v1:5a391c80859a1ae86b9e0db0277e6e7af35e5d96c22bb7bd576c21c2f54dfd49",
+      "sha256-fd-v1:fecb66013765912f855f8e2e549e76f608845b2edf7b63dc01d423b6d8f6845b"
      ]
     }
    },
@@ -19732,9 +19738,9 @@
    ],
    "description": "A side-scrolling fantasy platform game in which a hero fights through five levels of a trap-filled castle, pulling levers to progress.",
    "diskSets": {
-    "sha256-fd-v1:20fbd7747cc7f0615a1a906ca54392385210702b59e0bb9ef92370ac5a11732f": {
+    "sha256-fd-v1:5a8570f8fd3147fd7eb47a6666d6897fd4374d9b36b3d693b188e886cdcc1b9d": {
      "setDisks": [
-      "sha256-fd-v1:5a8570f8fd3147fd7eb47a6666d6897fd4374d9b36b3d693b188e886cdcc1b9d"
+      "sha256-fd-v1:20fbd7747cc7f0615a1a906ca54392385210702b59e0bb9ef92370ac5a11732f"
      ]
     }
    },
@@ -21261,27 +21267,27 @@
     }
    },
    "diskSets": {
-    "sha256-fd-v1:34288d60062e23ee01e64c49ec8e7bb2d24264da7d1986ccdfa69d5bd45ce590": {
+    "sha256-fd-v1:1d336f99e4a802fea718381f5864ca72b715e36224b171b891894b53e0c64985": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:1d336f99e4a802fea718381f5864ca72b715e36224b171b891894b53e0c64985",
+       "contentId": "sha256-fd-v1:34288d60062e23ee01e64c49ec8e7bb2d24264da7d1986ccdfa69d5bd45ce590",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:1d336f99e4a802fea718381f5864ca72b715e36224b171b891894b53e0c64985",
-      "sha256-fd-v1:503d86adb3f12768406cd971bbc5412af72862c59b9f1203d9e183920765b46d"
+      "sha256-fd-v1:34288d60062e23ee01e64c49ec8e7bb2d24264da7d1986ccdfa69d5bd45ce590",
+      "sha256-fd-v1:e38ad71ac90aaefedbcb3a49afb3119fcdcea0be8bf1ae73dc6a16cc3fee2d97"
      ]
     },
-    "sha256-fd-v1:503d86adb3f12768406cd971bbc5412af72862c59b9f1203d9e183920765b46d": {
+    "sha256-fd-v1:e38ad71ac90aaefedbcb3a49afb3119fcdcea0be8bf1ae73dc6a16cc3fee2d97": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:e38ad71ac90aaefedbcb3a49afb3119fcdcea0be8bf1ae73dc6a16cc3fee2d97",
+       "contentId": "sha256-fd-v1:503d86adb3f12768406cd971bbc5412af72862c59b9f1203d9e183920765b46d",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:e38ad71ac90aaefedbcb3a49afb3119fcdcea0be8bf1ae73dc6a16cc3fee2d97"
+      "sha256-fd-v1:503d86adb3f12768406cd971bbc5412af72862c59b9f1203d9e183920765b46d"
      ]
     },
     "sha256-fd-v1:edf0f644f62e79a8e62159155eae0ffccd8f01226fa8ed05af215a6691ef1ca9": {
@@ -25856,10 +25862,10 @@
    "description": "A tactical shooter in which three police squads infiltrate a drug cartel's tunnel complex to blow up its factory.",
    "developer": "Iron Byte",
    "diskSets": {
-    "sha256-fd-v1:a8c56cad12047025b0bf6dbae31a6dccf505e1ebaa7585c3d7bed73a01742b8d": {
+    "sha256-fd-v1:bf6c176f2e9762d530a3d29107668b909d2c44cf21ae6b2bbaf7a2e9173223c7": {
      "setDisks": [
       "sha256-fd-v1:721d069c620bff1ac82ab0e83bb9548d4885a3dc4df0f43aff05599cb4a99e73",
-      "sha256-fd-v1:bf6c176f2e9762d530a3d29107668b909d2c44cf21ae6b2bbaf7a2e9173223c7",
+      "sha256-fd-v1:a8c56cad12047025b0bf6dbae31a6dccf505e1ebaa7585c3d7bed73a01742b8d",
       "sha256-fd-v1:e20e3ff0b4e3ec1431cc67fec1fafc98e141041b4120a3c4bfeeea2c7640f93a"
      ]
     }
@@ -28029,23 +28035,33 @@
     "sha256-fd-v1:6c83d70ea6ca03f67a572476292bb3bf65768a3af159108680eb35b28909fd4a"
    ],
    "description": "A cue sports game offering snooker, pool and billiards against a friend or a computer opponent.",
-   "diskSets": {
-    "sha256-fd-v1:43720761b1bfe3a357bad16c7a39d8766f3410923ac673b5a11eeb8dc168f1a0": {
-     "setDisks": [
-      "sha256-fd-v1:071da615c31708a3468551c8dccb553db9211cf0c768c76c358621c9c5945204",
-      "sha256-fd-v1:3fba4f4ad42016ac5b77575baead7f943975c3a00c6925342cc69abd57c010f3"
-     ]
+   "diskMachine": {
+    "sha256-fd-v1:0efccd27ca04b5b5552c0888b30f94cb8f32ea126a51ebf9545eabc2b638b083": {
+     "launch": {
+      "program": "MAIN.PRG"
+     }
     },
-    "sha256-fd-v1:6c83d70ea6ca03f67a572476292bb3bf65768a3af159108680eb35b28909fd4a": {
+    "sha256-fd-v1:43720761b1bfe3a357bad16c7a39d8766f3410923ac673b5a11eeb8dc168f1a0": {
+     "tos": "tos"
+    }
+   },
+   "diskSets": {
+    "sha256-fd-v1:0efccd27ca04b5b5552c0888b30f94cb8f32ea126a51ebf9545eabc2b638b083": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:0efccd27ca04b5b5552c0888b30f94cb8f32ea126a51ebf9545eabc2b638b083",
+       "contentId": "sha256-fd-v1:6c83d70ea6ca03f67a572476292bb3bf65768a3af159108680eb35b28909fd4a",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:0efccd27ca04b5b5552c0888b30f94cb8f32ea126a51ebf9545eabc2b638b083",
-      "sha256-fd-v1:43720761b1bfe3a357bad16c7a39d8766f3410923ac673b5a11eeb8dc168f1a0"
+      "sha256-fd-v1:43720761b1bfe3a357bad16c7a39d8766f3410923ac673b5a11eeb8dc168f1a0",
+      "sha256-fd-v1:6c83d70ea6ca03f67a572476292bb3bf65768a3af159108680eb35b28909fd4a"
+     ]
+    },
+    "sha256-fd-v1:43720761b1bfe3a357bad16c7a39d8766f3410923ac673b5a11eeb8dc168f1a0": {
+     "setDisks": [
+      "sha256-fd-v1:071da615c31708a3468551c8dccb553db9211cf0c768c76c358621c9c5945204",
+      "sha256-fd-v1:3fba4f4ad42016ac5b77575baead7f943975c3a00c6925342cc69abd57c010f3"
      ]
     }
    },
@@ -28101,10 +28117,17 @@
     "sha256-fd-v1:a7ec96fff259a3008217d8a0da50af7faa2a1b772097413867a06c27c55601eb"
    ],
    "description": "A side-scrolling action game in which a half-robot agent defends a domed city from cyborg assassins on foot and in craft.",
+   "diskMachine": {
+    "sha256-fd-v1:1b2090660a52e861b2a7304e345fb56024babca8e7ca081dc34212b73ffb7467": {
+     "launch": {
+      "program": "STRYX.PRG"
+     }
+    }
+   },
    "diskSets": {
-    "sha256-fd-v1:91e25e706978980ac4da9cd8bbc1592ec33e516daa5cdbf3919529b3751bab16": {
+    "sha256-fd-v1:1b2090660a52e861b2a7304e345fb56024babca8e7ca081dc34212b73ffb7467": {
      "setDisks": [
-      "sha256-fd-v1:1b2090660a52e861b2a7304e345fb56024babca8e7ca081dc34212b73ffb7467"
+      "sha256-fd-v1:91e25e706978980ac4da9cd8bbc1592ec33e516daa5cdbf3919529b3751bab16"
      ]
     },
     "sha256-fd-v1:a7ec96fff259a3008217d8a0da50af7faa2a1b772097413867a06c27c55601eb": {
@@ -29839,7 +29862,18 @@
     "sha256-fd-v1:fe6aa609768923939e0684e42ade7d8ab9c14be697764b6779962083987ae227"
    ],
    "description": "A golf game with club choices, practice, match play and an international tournament against 15 rivals.",
+   "diskMachine": {
+    "sha256-fd-v1:90e04cd69e34f65c71f4b41552910e395b29ed07e60077ba6e4415528ff94ba8": {
+     "tos": "tos"
+    }
+   },
    "diskSets": {
+    "sha256-fd-v1:90e04cd69e34f65c71f4b41552910e395b29ed07e60077ba6e4415528ff94ba8": {
+     "setDisks": [
+      "sha256-fd-v1:dc0061e9b9ad35e297184b1342f455b291458f844294381204c08321b2c1fb31",
+      "sha256-fd-v1:fe6aa609768923939e0684e42ade7d8ab9c14be697764b6779962083987ae227"
+     ]
+    },
     "sha256-fd-v1:dc0061e9b9ad35e297184b1342f455b291458f844294381204c08321b2c1fb31": {
      "setDisks": [
       "sha256-fd-v1:0f411719e2b29bf760e0e423afa03b9a9d8242595ddb825bcdc464e2b4a887dc"
@@ -29847,9 +29881,7 @@
     },
     "sha256-fd-v1:fe6aa609768923939e0684e42ade7d8ab9c14be697764b6779962083987ae227": {
      "setDisks": [
-      "sha256-fd-v1:3a677ec8c207e81b55010f14d7487c1e826c1536d9ae204adae0fef4a99aac82",
-      "sha256-fd-v1:90e04cd69e34f65c71f4b41552910e395b29ed07e60077ba6e4415528ff94ba8",
-      "sha256-fd-v1:dc0061e9b9ad35e297184b1342f455b291458f844294381204c08321b2c1fb31"
+      "sha256-fd-v1:3a677ec8c207e81b55010f14d7487c1e826c1536d9ae204adae0fef4a99aac82"
      ]
     }
    },
@@ -35591,10 +35623,15 @@
    ],
    "description": "A puzzle action game in which rival mad scientists roll bombs through a mechanical billiard-table maze.",
    "developer": "Silmarils",
+   "diskMachine": {
+    "sha256-fd-v1:cd91c81bfd3afaca8facaaad7e23cd97f110d813e206d5f449002f4e838633d2": {
+     "tos": "tos"
+    }
+   },
    "diskSets": {
-    "sha256-fd-v1:4d224d2c4a63c925fa6dcb8085afcb2739175c024a6b3e66dab81fc907b27e95": {
+    "sha256-fd-v1:cd91c81bfd3afaca8facaaad7e23cd97f110d813e206d5f449002f4e838633d2": {
      "setDisks": [
-      "sha256-fd-v1:cd91c81bfd3afaca8facaaad7e23cd97f110d813e206d5f449002f4e838633d2",
+      "sha256-fd-v1:4d224d2c4a63c925fa6dcb8085afcb2739175c024a6b3e66dab81fc907b27e95",
       "sha256-fd-v1:d4b7366ccd59a33f8ecbef20751974d2eaca58e77481a85c2788b7d092ef98d0"
      ]
     }
@@ -39335,7 +39372,18 @@
    ],
    "description": "An isometric martial arts adventure in which the Last Ninja battles an evil shogun through the temples of Tibet.",
    "developer": "System 3 Software",
+   "diskMachine": {
+    "sha256-fd-v1:3527bd045a2fafe631d6d3b4f14be889fef91ee2ba1426ecd772b4cae74e114f": {
+     "tos": "tos"
+    }
+   },
    "diskSets": {
+    "sha256-fd-v1:0972164e064b653a9825ad2ffde5a07dabe620f023eb7b51662ddd538dba232b": {
+     "setDisks": [
+      "sha256-fd-v1:3527bd045a2fafe631d6d3b4f14be889fef91ee2ba1426ecd772b4cae74e114f",
+      "sha256-fd-v1:a1171c2c962f36791dad9b49c0158d9a6a6c96cbfe87d550b71a5e7de5ac6ffb"
+     ]
+    },
     "sha256-fd-v1:a1171c2c962f36791dad9b49c0158d9a6a6c96cbfe87d550b71a5e7de5ac6ffb": {
      "media": [
       {
@@ -39344,8 +39392,6 @@
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:0972164e064b653a9825ad2ffde5a07dabe620f023eb7b51662ddd538dba232b",
-      "sha256-fd-v1:3527bd045a2fafe631d6d3b4f14be889fef91ee2ba1426ecd772b4cae74e114f",
       "sha256-fd-v1:82bb970755a54aaaabd5059819c04afbd407e9a297d1bd67008494ae5e0e3525"
      ]
     }
@@ -41056,9 +41102,9 @@
    "description": "A first-person action game in which a psychic agent races through vortex tunnels across star systems to stop an alien invasion.",
    "developer": "Loriciel",
    "diskSets": {
-    "sha256-fd-v1:3e7d38d09cbf9df8cf47d3a6e6ca42b381604b91588539d67d38c61d26c7f5af": {
+    "sha256-fd-v1:612fa44453f7b2e0b9a08a076f27a5af18ebb9eb44af7b877ceedd1d386b72aa": {
      "setDisks": [
-      "sha256-fd-v1:612fa44453f7b2e0b9a08a076f27a5af18ebb9eb44af7b877ceedd1d386b72aa"
+      "sha256-fd-v1:3e7d38d09cbf9df8cf47d3a6e6ca42b381604b91588539d67d38c61d26c7f5af"
      ]
     }
    },
@@ -41157,14 +41203,14 @@
    "description": "A space adventure in which you hunt down an alien brood-mother to save scattered human colonies from an insectoid race.",
    "developer": "Silmarils",
    "diskSets": {
+    "sha256-fd-v1:9c28dea50ed2ff6dca6479b2bd4f4940c4df7264b16f04f57bf39c4e76b595ce": {
+     "setDisks": [
+      "sha256-fd-v1:b8e023ce55463f089c63f4dd4f84234068e947fb9bfe3ff03ef619957070b032"
+     ]
+    },
     "sha256-fd-v1:b029052ece4012c03f9d74438667973ffe0f98b2a62855bc55b87617ddc926b6": {
      "setDisks": [
       "sha256-fd-v1:c188e2e4929f062cf519ddfd98cf6b4fae2126febbeef318fc55ead27bce32b3"
-     ]
-    },
-    "sha256-fd-v1:b8e023ce55463f089c63f4dd4f84234068e947fb9bfe3ff03ef619957070b032": {
-     "setDisks": [
-      "sha256-fd-v1:9c28dea50ed2ff6dca6479b2bd4f4940c4df7264b16f04f57bf39c4e76b595ce"
      ]
     },
     "sha256-fd-v1:c188e2e4929f062cf519ddfd98cf6b4fae2126febbeef318fc55ead27bce32b3": {
@@ -42515,15 +42561,15 @@
    "description": "An educational game for children based on The Shoe People, with a drawing program and five reading and math mini games.",
    "developer": "Storm",
    "diskSets": {
-    "sha256-fd-v1:cd557df91d900cfb58fb3f2aeb7c2e3b7ada4806d40a6e8be33180c7b1d1cbc9": {
+    "sha256-fd-v1:1ffa7f465f5fc6d229d4dfe9661454d342907c06cac7edae159ad0883531f488": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:1ffa7f465f5fc6d229d4dfe9661454d342907c06cac7edae159ad0883531f488",
+       "contentId": "sha256-fd-v1:cd557df91d900cfb58fb3f2aeb7c2e3b7ada4806d40a6e8be33180c7b1d1cbc9",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:1ffa7f465f5fc6d229d4dfe9661454d342907c06cac7edae159ad0883531f488"
+      "sha256-fd-v1:cd557df91d900cfb58fb3f2aeb7c2e3b7ada4806d40a6e8be33180c7b1d1cbc9"
      ]
     }
    },
@@ -42582,19 +42628,19 @@
       "sha256-fd-v1:f7e3ed4c24f375fc6cc7b6ed8bbfc0906f498d1eee9a7a86c3182b7b2ca14268"
      ]
     },
+    "sha256-fd-v1:0c5ea947e93e9d6b145d5bf6716b853c5a3c7b9b6113f53f7110c7145dda89da": {
+     "setDisks": [
+      "sha256-fd-v1:059e8fb55675419fa7e63f8e99476119e1dfd8646741494b094882dc21d93867",
+      "sha256-fd-v1:a74f8482f584569879b02ef93ce8db3fc9c56be03d2b9f0fc4c2d4231d73e346",
+      "sha256-fd-v1:aa416fa7a1eb29306206028b454fb18e0e0d14c918d1835f5a9e156aedcd9501",
+      "sha256-fd-v1:ba1c29de70a51e914e608230596da6ed2f049cdbd7855912eef4b2f1482e2613",
+      "sha256-fd-v1:e8e5cad36c40cae67c4ebe3b0afc3bb84db44660ce9a61db1899ae1120102050",
+      "sha256-fd-v1:f545ac8b650a22e28276eb133bd1f22d83c9a3f7e68ea32fda2dfcfef6e098c8"
+     ]
+    },
     "sha256-fd-v1:a74f8482f584569879b02ef93ce8db3fc9c56be03d2b9f0fc4c2d4231d73e346": {
      "setDisks": [
       "sha256-fd-v1:d44d420177006d25aa8a4edf3ebbdf3ca7d76bb711ad279a8209b7a4cf1919c8"
-     ]
-    },
-    "sha256-fd-v1:ba1c29de70a51e914e608230596da6ed2f049cdbd7855912eef4b2f1482e2613": {
-     "setDisks": [
-      "sha256-fd-v1:059e8fb55675419fa7e63f8e99476119e1dfd8646741494b094882dc21d93867",
-      "sha256-fd-v1:0c5ea947e93e9d6b145d5bf6716b853c5a3c7b9b6113f53f7110c7145dda89da",
-      "sha256-fd-v1:a74f8482f584569879b02ef93ce8db3fc9c56be03d2b9f0fc4c2d4231d73e346",
-      "sha256-fd-v1:aa416fa7a1eb29306206028b454fb18e0e0d14c918d1835f5a9e156aedcd9501",
-      "sha256-fd-v1:e8e5cad36c40cae67c4ebe3b0afc3bb84db44660ce9a61db1899ae1120102050",
-      "sha256-fd-v1:f545ac8b650a22e28276eb133bd1f22d83c9a3f7e68ea32fda2dfcfef6e098c8"
      ]
     }
    },
@@ -47445,12 +47491,19 @@
    ],
    "description": "An expansion for Powermonger moving its conquest strategy to a map of Europe in 1914 with new territories to capture.",
    "developer": "Bullfrog Productions",
+   "diskMachine": {
+    "sha256-fd-v1:48af8abe0ac4d101e04dc57c0e30a5d805518bab01348bb00df83d56e11fa829": {
+     "launch": {
+      "program": "JUTO\\MENU109A.PRG"
+     }
+    }
+   },
    "diskSets": {
-    "sha256-fd-v1:25c9fdfa50f1677bf3120c5f6ec9cfec5386dcaf3a931e2f0eaeb7107a6af7b0": {
+    "sha256-fd-v1:e534aace84b66e5c997de312394b4cc8a5eb6d5dd374a7594770170578ee5baa": {
      "setDisks": [
+      "sha256-fd-v1:25c9fdfa50f1677bf3120c5f6ec9cfec5386dcaf3a931e2f0eaeb7107a6af7b0",
       "sha256-fd-v1:48af8abe0ac4d101e04dc57c0e30a5d805518bab01348bb00df83d56e11fa829",
-      "sha256-fd-v1:8da891a8c9f2672798ed7b5ef768b9f8a9923e6eb429260b51728eb774001a59",
-      "sha256-fd-v1:e534aace84b66e5c997de312394b4cc8a5eb6d5dd374a7594770170578ee5baa"
+      "sha256-fd-v1:8da891a8c9f2672798ed7b5ef768b9f8a9923e6eb429260b51728eb774001a59"
      ]
     }
    },
@@ -47683,9 +47736,9 @@
    "description": "A map-coloring puzzle game in which you paint every region of a layout without giving neighbors the same color.",
    "developer": "Loriciel",
    "diskSets": {
-    "sha256-fd-v1:f98e86d111c93048a3ec1a9c02336a05aacd1ddd614823b5e08e64394b372523": {
+    "sha256-fd-v1:1bdef8f7683923615f6f1b53d09bf80609fe446ad15579c132901143cc7f51aa": {
      "setDisks": [
-      "sha256-fd-v1:1bdef8f7683923615f6f1b53d09bf80609fe446ad15579c132901143cc7f51aa"
+      "sha256-fd-v1:f98e86d111c93048a3ec1a9c02336a05aacd1ddd614823b5e08e64394b372523"
      ]
     }
    },
@@ -47780,16 +47833,15 @@
     }
    },
    "diskSets": {
-    "sha256-fd-v1:181a18a18ca6d78e6b6b1da3e6c226ef005668eff0cdacb80d6ea889b6a5dfef": {
+    "sha256-fd-v1:0e1ece6cdc78753eac3a16a6efa92b22c44824e45d2824ffefc0b7581dbaab6a": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:5dfcf8c6b80b5a059a7454cd6adc3adee27c2a563c1d9823e0cf540ce58ac5aa",
+       "contentId": "sha256-fd-v1:552ce44f2008b271ee95bf08c052995b65aa43fbd95a57c981d935162d0a305c",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:552ce44f2008b271ee95bf08c052995b65aa43fbd95a57c981d935162d0a305c",
-      "sha256-fd-v1:5dfcf8c6b80b5a059a7454cd6adc3adee27c2a563c1d9823e0cf540ce58ac5aa"
+      "sha256-fd-v1:552ce44f2008b271ee95bf08c052995b65aa43fbd95a57c981d935162d0a305c"
      ]
     },
     "sha256-fd-v1:2b730e824ff8d817d0568ff7bfb5b9d9dbd6dd6c4851c4cda38a91c69a3e9fc2": {
@@ -47798,15 +47850,16 @@
       "sha256-fd-v1:619569b13eb34fdf1602563c2472e38003414c1b4ea28d6b1190d270177f01a2"
      ]
     },
-    "sha256-fd-v1:552ce44f2008b271ee95bf08c052995b65aa43fbd95a57c981d935162d0a305c": {
+    "sha256-fd-v1:5dfcf8c6b80b5a059a7454cd6adc3adee27c2a563c1d9823e0cf540ce58ac5aa": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:0e1ece6cdc78753eac3a16a6efa92b22c44824e45d2824ffefc0b7581dbaab6a",
+       "contentId": "sha256-fd-v1:181a18a18ca6d78e6b6b1da3e6c226ef005668eff0cdacb80d6ea889b6a5dfef",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:0e1ece6cdc78753eac3a16a6efa92b22c44824e45d2824ffefc0b7581dbaab6a"
+      "sha256-fd-v1:0e1ece6cdc78753eac3a16a6efa92b22c44824e45d2824ffefc0b7581dbaab6a",
+      "sha256-fd-v1:181a18a18ca6d78e6b6b1da3e6c226ef005668eff0cdacb80d6ea889b6a5dfef"
      ]
     }
    },
@@ -48487,15 +48540,15 @@
     }
    },
    "diskSets": {
-    "sha256-fd-v1:6d139e52a2c546ea881cf34185c928944e2899c5a258c62a3e573d20a1effc55": {
+    "sha256-fd-v1:33903f73a59b20aaa64f8bb65da2d31b633e70e36d4b20c5e76987fd8c6a5353": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:33903f73a59b20aaa64f8bb65da2d31b633e70e36d4b20c5e76987fd8c6a5353",
+       "contentId": "sha256-fd-v1:6d139e52a2c546ea881cf34185c928944e2899c5a258c62a3e573d20a1effc55",
        "role": "floppyB"
       }
      ],
      "setDisks": [
-      "sha256-fd-v1:33903f73a59b20aaa64f8bb65da2d31b633e70e36d4b20c5e76987fd8c6a5353",
+      "sha256-fd-v1:6d139e52a2c546ea881cf34185c928944e2899c5a258c62a3e573d20a1effc55",
       "sha256-fd-v1:d729e27273089fe161d4ae328b36e86213414bbfdfb23961b19424dfeda56163"
      ]
     },
@@ -48636,10 +48689,10 @@
    "description": "An isometric role-playing game in which a party of four explores dungeons full of traps, puzzles and monsters.",
    "developer": "Teque Software Development",
    "diskSets": {
-    "sha256-fd-v1:8149805b02793bca1df548e7208afcfeef19802b7d27286c28a69502c83407e2": {
+    "sha256-fd-v1:e2b5ce70726ed4d2f902c6ad439e263f6a24b623ae68c2f0c6638cfef92336d0": {
      "setDisks": [
       "sha256-fd-v1:441ea3eb341dacdc0a6c440e1f87ef6405c65b337ff66ee2472496890dcdc1d5",
-      "sha256-fd-v1:e2b5ce70726ed4d2f902c6ad439e263f6a24b623ae68c2f0c6638cfef92336d0"
+      "sha256-fd-v1:8149805b02793bca1df548e7208afcfeef19802b7d27286c28a69502c83407e2"
      ]
     }
    },
@@ -50604,9 +50657,9 @@
    "description": "A touring car racing game featuring four cars and four real British circuits.",
    "developer": "Cloud Nine Developments",
    "diskSets": {
-    "sha256-fd-v1:d16288882adf089517540aaebd0760ca18e9950ff2cd649fe3fb283949b4a207": {
+    "sha256-fd-v1:089f24008fe3a85365be9521f86f4eedbfff6cd6fd1cb2502c286c2a8ad17db2": {
      "setDisks": [
-      "sha256-fd-v1:089f24008fe3a85365be9521f86f4eedbfff6cd6fd1cb2502c286c2a8ad17db2"
+      "sha256-fd-v1:d16288882adf089517540aaebd0760ca18e9950ff2cd649fe3fb283949b4a207"
      ]
     }
    },
@@ -52359,8 +52412,12 @@
     },
     "sha256-fd-v1:47237331700b01243496387b8f4c0a58b4e17c3a7dce95eede4d87453ac5b844": {
      "setDisks": [
-      "sha256-fd-v1:08c88adda22f2d7940bfde3fe40aaf40671e02918aaa3b5810585d42f8d42269",
-      "sha256-fd-v1:64fd9f4a926ddc249d0c071ac9bd4e0a1ee8c8c57f463ff592800bb594b66b0f"
+      "sha256-fd-v1:08c88adda22f2d7940bfde3fe40aaf40671e02918aaa3b5810585d42f8d42269"
+     ]
+    },
+    "sha256-fd-v1:64fd9f4a926ddc249d0c071ac9bd4e0a1ee8c8c57f463ff592800bb594b66b0f": {
+     "setDisks": [
+      "sha256-fd-v1:47237331700b01243496387b8f4c0a58b4e17c3a7dce95eede4d87453ac5b844"
      ]
     }
    },
@@ -53712,9 +53769,9 @@
    "description": "A side-scrolling beat-em-up in which Lemmy fights rival music fans to rescue his kidnapped bandmates.",
    "developer": "Kaitsu",
    "diskSets": {
-    "sha256-fd-v1:921c89cef3fe08abea0a49ee54995c1c18c59a148ed36a2a3fdb328c629f1245": {
+    "sha256-fd-v1:fb001e5dcd1604030083a684bf2052df60aadfe4997b41733e7cfaee8259b529": {
      "setDisks": [
-      "sha256-fd-v1:fb001e5dcd1604030083a684bf2052df60aadfe4997b41733e7cfaee8259b529"
+      "sha256-fd-v1:921c89cef3fe08abea0a49ee54995c1c18c59a148ed36a2a3fdb328c629f1245"
      ]
     }
    },
@@ -57078,17 +57135,18 @@
     "sha256-fd-v1:6efbdbf62cabecfa71dee016d5aab2ad68847e0a064a2885f83a9e2c335860c7",
     "sha256-fd-v1:a8ed4cd618e4af40aab187052a3d8a9344df909f0bfc20fd617dfcd0ff855076"
    ],
+   "diskMachine": {
+    "sha256-fd-v1:06061dd4d462571d2829f244bbf008cc3c2e8e81772f79d5fd1b7cd91bc363c2": {
+     "tos": "tos"
+    }
+   },
    "diskSets": {
     "sha256-fd-v1:06061dd4d462571d2829f244bbf008cc3c2e8e81772f79d5fd1b7cd91bc363c2": {
      "setDisks": [
+      "sha256-fd-v1:486cdc001e793a8f36d7b12acb3af3d49d3af3cc52ebbdc52a7ef0615d81ffc2",
+      "sha256-fd-v1:4b5fea3359acfa74af169fca8fb74bc5550523fdd3e9c6cf90e1c32d887d7d48",
       "sha256-fd-v1:6efbdbf62cabecfa71dee016d5aab2ad68847e0a064a2885f83a9e2c335860c7",
       "sha256-fd-v1:a8ed4cd618e4af40aab187052a3d8a9344df909f0bfc20fd617dfcd0ff855076"
-     ]
-    },
-    "sha256-fd-v1:4b5fea3359acfa74af169fca8fb74bc5550523fdd3e9c6cf90e1c32d887d7d48": {
-     "setDisks": [
-      "sha256-fd-v1:06061dd4d462571d2829f244bbf008cc3c2e8e81772f79d5fd1b7cd91bc363c2",
-      "sha256-fd-v1:486cdc001e793a8f36d7b12acb3af3d49d3af3cc52ebbdc52a7ef0615d81ffc2"
      ]
     }
    },
@@ -66776,30 +66834,30 @@
     "sha256-fd-v1:e9fe0994e1b78da8a683fded82324931f587e90037fb7b6f9f92a67bbbdd1531"
    ],
    "diskSets": {
-    "sha256-fd-v1:355bc9df92d20f0b31a3c51561a450694230410edc4f460c3c3ce9733e2d613c": {
+    "sha256-fd-v1:8ecd940e3ff4ac91e397bd5646794097c2159ebe619d8a78fa6c0fff9f2bb164": {
      "media": [
       {
-       "contentId": "sha256-fd-v1:e9fe0994e1b78da8a683fded82324931f587e90037fb7b6f9f92a67bbbdd1531",
+       "contentId": "sha256-fd-v1:36151711a407a332ceaca3220c1165dcbfb0d23009e760795dd4d3afa88f4d68",
+       "role": "floppyB"
+      }
+     ],
+     "setDisks": [
+      "sha256-fd-v1:35c46923db4112147db9160932203e55287e93df60dca2a32615cd390983f366",
+      "sha256-fd-v1:36151711a407a332ceaca3220c1165dcbfb0d23009e760795dd4d3afa88f4d68",
+      "sha256-fd-v1:3aea2e7672cad703dcc48b57e08e0f4d3451facc31e5b6943d8505f76bde39be",
+      "sha256-fd-v1:e9fe0994e1b78da8a683fded82324931f587e90037fb7b6f9f92a67bbbdd1531"
+     ]
+    },
+    "sha256-fd-v1:e9fe0994e1b78da8a683fded82324931f587e90037fb7b6f9f92a67bbbdd1531": {
+     "media": [
+      {
+       "contentId": "sha256-fd-v1:355bc9df92d20f0b31a3c51561a450694230410edc4f460c3c3ce9733e2d613c",
        "role": "floppyB"
       }
      ],
      "setDisks": [
       "sha256-fd-v1:0ad3fb295fec265a8267125d4df2dfd29222f7955fa273ac0ea2dae50c615222",
-      "sha256-fd-v1:e9fe0994e1b78da8a683fded82324931f587e90037fb7b6f9f92a67bbbdd1531"
-     ]
-    },
-    "sha256-fd-v1:36151711a407a332ceaca3220c1165dcbfb0d23009e760795dd4d3afa88f4d68": {
-     "media": [
-      {
-       "contentId": "sha256-fd-v1:8ecd940e3ff4ac91e397bd5646794097c2159ebe619d8a78fa6c0fff9f2bb164",
-       "role": "floppyB"
-      }
-     ],
-     "setDisks": [
-      "sha256-fd-v1:355bc9df92d20f0b31a3c51561a450694230410edc4f460c3c3ce9733e2d613c",
-      "sha256-fd-v1:35c46923db4112147db9160932203e55287e93df60dca2a32615cd390983f366",
-      "sha256-fd-v1:3aea2e7672cad703dcc48b57e08e0f4d3451facc31e5b6943d8505f76bde39be",
-      "sha256-fd-v1:8ecd940e3ff4ac91e397bd5646794097c2159ebe619d8a78fa6c0fff9f2bb164"
+      "sha256-fd-v1:355bc9df92d20f0b31a3c51561a450694230410edc4f460c3c3ce9733e2d613c"
      ]
     }
    },
