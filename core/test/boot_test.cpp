@@ -170,14 +170,14 @@ int main(int argc, char **argv) {
                 booting = false;
                 std::printf("run %d: boot over after %ld frames (%.1f s)\n", run, frames, elapsed);
                 uint32_t width, height;
-                const uint8_t *rgba = machine->frame(width, height);
+                const uint8_t *rgba = machine->picture(width, height);
                 write_bmp(config.home + "/frame-" + std::to_string(run) + "-booted.bmp", rgba, width, height);
             }
             const double before = elapsed;
             elapsed += machine->frame_seconds();
             if (int(elapsed / 5) != int(before / 5)) {
                 uint32_t width, height;
-                const uint8_t *rgba = machine->frame(width, height);
+                const uint8_t *rgba = machine->picture(width, height);
                 write_bmp(config.home + "/frame-" + std::to_string(run) + "-" + std::to_string(int(elapsed)) + "s.bmp",
                           rgba, width, height);
             }
@@ -194,7 +194,7 @@ int main(int argc, char **argv) {
         }
         if (elapsed < seconds) continue;
         uint32_t width, height;
-        const uint8_t *rgba = machine->frame(width, height);
+        const uint8_t *rgba = machine->picture(width, height);
         std::string bmp = config.home + "/frame-" + std::to_string(run) + ".bmp";
         write_bmp(bmp, rgba, width, height);
         {

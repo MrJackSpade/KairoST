@@ -84,6 +84,8 @@ enum
 extern bool bGrabMouse;
 extern bool bInFullScreen;
 extern int nScreenZoomX, nScreenZoomY;
+extern bool bScreenSingleLines;	/* KairoST: keep doubled ST screens at one line per ST line */
+extern bool bScreenLinesHalved;	/* KairoST: the current screen is (each line stands for two) */
 extern int nBorderPixelsLeft, nBorderPixelsRight;
 extern int STScreenStartHorizLine;
 extern int STScreenLeftSkipBytes;

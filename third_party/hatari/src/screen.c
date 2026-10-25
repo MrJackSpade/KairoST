@@ -59,6 +59,8 @@ const char Screen_fileid[] = "Hatari screen.c";
 /* extern for several purposes */
 SDL_Surface *sdlscrn = NULL;                /* The SDL screen surface */
 int nScreenZoomX, nScreenZoomY;             /* Zooming factors, used for scaling mouse motions */
+bool bScreenSingleLines;                    /* KairoST: keep doubled ST screens at one line per ST line */
+bool bScreenLinesHalved;                    /* KairoST: the current screen is */
 int nBorderPixelsLeft, nBorderPixelsRight;  /* Pixels in left and right border */
 static int nBorderPixelsTop, nBorderPixelsBottom;  /* Lines in top and bottom border */
 
@@ -618,6 +620,10 @@ static void Screen_SetSTResolution(bool bForceChange)
 		DEBUGPRINT(("\t= %d x %d (+ statusbar)\n", Width, Height));
 	}
 
+	/* KairoST: one host line per ST line; the host repeats each line */
+	bScreenLinesHalved = bScreenSingleLines && (STRes == ST_MEDIUM_RES || (STRes == ST_LOW_RES && bDoubleLowRes));
+	if (bScreenLinesHalved)
+		Height /= 2;
 	Screen_SetSTScreenOffsets();  
 	Height += Statusbar_SetHeight(Width, Height);
 
@@ -1313,6 +1319,7 @@ bool Screen_Draw(void)
  */
 void Screen_SetGenConvSize(int width, int height, bool bForceChange)
 {
+	bScreenLinesHalved = false;	/* KairoST: these screens are not doubled */
 	const bool keep = ConfigureParams.Screen.bKeepResolution;
 	int screenwidth, screenheight, maxw, maxh;
 	int scalex, scaley, sbarheight;
@@ -1516,6 +1523,8 @@ static Uint32* Double_ScreenLine32(Uint32 *line, int size)
 	Uint32 *next;
 	Uint32 mask;
 
+	if (bScreenLinesHalved)
+		return line + fmt_size;	/* KairoST: the host repeats the line */
 	next = line + fmt_size;
 	/* copy as-is */
 	if (bScrDoubleY)

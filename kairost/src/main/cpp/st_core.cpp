@@ -32,6 +32,8 @@ public:
     bool booting() override { return machine_->booting(); }
     std::string error() override { return error_; }
     const uint8_t *frame(uint32_t &width, uint32_t &height) override { return machine_->frame(width, height); }
+    // An ST low or medium resolution screen comes one row per ST line; the presenter repeats it.
+    uint32_t line_repeat() override { return machine_->line_repeat(); }
     double frame_seconds() override { return machine_->frame_seconds(); }
     int32_t audio_rate() override { return machine_->sample_rate(); }
     uint32_t read_audio(int16_t *stereo, uint32_t max_frames) override { return machine_->read_audio(stereo, max_frames); }

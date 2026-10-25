@@ -7,6 +7,7 @@ import com.mrjackspade.kairo.frontend.GuestKeyboardLayout
 import com.mrjackspade.kairo.frontend.GuestKeyboardPage
 import com.mrjackspade.kairo.frontend.JoystickInputRouter
 import com.mrjackspade.kairo.frontend.KeyboardKey
+import com.mrjackspade.kairo.frontend.SymbolPage
 import android.view.KeyEvent
 
 /**
@@ -100,19 +101,21 @@ object StKeys {
             KeyboardKey("→", RIGHT))
     )
 
-    /** Each symbol on its own key, Shift chorded where the symbol needs it. */
-    private fun symbolRows(): List<List<KeyboardKey>> = listOf(
-        listOf(KeyboardKey("Esc", ESC, 1.3f)) + DIGITS.map { KeyboardKey("$it", digit(it)) } + KeyboardKey("BS", BACKSPACE, 1.5f),
-        DIGITS.zip("!@#$%^&*()").map { (char, symbol) -> KeyboardKey("$symbol", digit(char), chordShift = true) } +
-            KeyboardKey("Return", RETURN, 1.5f),
-        listOf("-" to MINUS, "=" to EQUALS, "\\" to BACKSLASH, "[" to LEFT_BRACKET, "]" to RIGHT_BRACKET,
+    /** Each symbol on its own key, Shift chorded where the symbol needs it, in the shared layout (one Return). */
+    private fun symbolRows(): List<List<KeyboardKey>> = SymbolPage.rows(
+        digits = DIGITS.map { KeyboardKey("$it", digit(it)) },
+        delete = KeyboardKey("BS", BACKSPACE, 1.5f),
+        shiftedDigits = DIGITS.zip("!@#$%^&*()").map { (char, symbol) -> KeyboardKey("$symbol", digit(char), chordShift = true) },
+        symbols = listOf("-" to MINUS, "=" to EQUALS, "\\" to BACKSLASH, "[" to LEFT_BRACKET, "]" to RIGHT_BRACKET,
             ";" to SEMICOLON, "'" to QUOTE, "`" to BACKQUOTE, "," to COMMA, "." to DOT, "/" to SLASH)
             .map { (label, code) -> KeyboardKey(label, code) },
-        listOf("_" to MINUS, "+" to EQUALS, "|" to BACKSLASH, "{" to LEFT_BRACKET, "}" to RIGHT_BRACKET,
+        shiftedSymbols = listOf("_" to MINUS, "+" to EQUALS, "|" to BACKSLASH, "{" to LEFT_BRACKET, "}" to RIGHT_BRACKET,
             ":" to SEMICOLON, "\"" to QUOTE, "~" to BACKQUOTE, "<" to COMMA, ">" to DOT, "?" to SLASH)
             .map { (label, code) -> KeyboardKey(label, code, chordShift = true) },
-        listOf(KeyboardKey("Tab", TAB), KeyboardKey("Space", SPACE, 5f), KeyboardKey("Return", RETURN, 1.5f))
-    )
+        space = KeyboardKey("Space", SPACE, 5f),
+        enter = KeyboardKey("Return", RETURN, 1.5f),
+        escape = KeyboardKey("Esc", ESC, 1.3f),
+        tab = KeyboardKey("Tab", TAB))
 
     /** The function keys, the editing block and the keypad. */
     private fun stRows(): List<List<KeyboardKey>> = listOf(

@@ -66,8 +66,10 @@ _NOT_GAME_PROGRAM = re.compile(r"INSTAL|SETUP|CONFIG|MUSIC|DOC|DOX|README|LISEZ|
 def DATA_DISK(content_id):
     """A floppy that never starts a game: no executable boot sector, no AUTO programs and no
     programs at all in its top folder (boot-disks-v1.json "data"): game data read sector by sector,
-    or an empty disk. shared disk_sets never starts a set from one."""
-    return _BOOT.get(content_id, {}).get("boot") == "data"
+    or an empty disk. shared disk_sets never starts a set from one. An STX image is an original that
+    may start from a loader its file system does not show, so it is never taken for a data disk."""
+    record = _BOOT.get(content_id, {})
+    return record.get("boot") == "data" and record.get("image") != "stx"
 
 
 def _program(content_id, name):
@@ -78,7 +80,9 @@ def _program(content_id, name):
     record = _BOOT.get(content_id)
     if not record or not (record["boot"] == "desktop" or content_id in _DESKTOP):
         return None
-    games = [program for program in record["programs"] if not _NOT_GAME_PROGRAM.search(program.rsplit(".", 1)[0])]
+    # A name TOS could not be asked to start (a character a path cannot hold) is left to the player.
+    games = [program for program in record["programs"] if not _NOT_GAME_PROGRAM.search(program.rsplit(".", 1)[0])
+             and re.fullmatch(LAUNCH_FIELDS["program"], program)]
     if len(games) != 1:
         return None
     automatic = (record["boot"] == "desktop" and len(record["programs"]) == 1

@@ -58,6 +58,9 @@ struct KairoStApi {
 
 	/* The last picture: rows of R, G, B, A bytes (SDL's ABGR8888), pitch bytes apart. */
 	const uint32_t *(*screen)(int *width, int *height, int *pitch);
+	/* How many picture lines each line of the screen stands for: 2 for an ST low or medium
+	 * resolution screen, kept at one line per ST line (patch hatari-single-lines), 1 otherwise. */
+	int (*line_repeat)(void);
 	/* How long the frame that just ended lasts on the guest. */
 	double (*frame_seconds)(void);
 	/* The sound sample rate. */

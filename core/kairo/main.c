@@ -342,6 +342,8 @@ static bool Main_Init(void)
 	SCC_Init();
 	Midi_Init();
 	Videl_Init();
+	/* The host repeats a doubled screen's lines itself (MachineCore::line_repeat). */
+	bScreenSingleLines = true;
 	Screen_Init();
 
 	STMemory_Init(ConfigureParams.Memory.STRamSize_KB * 1024);
@@ -608,6 +610,11 @@ static const char *KairoSt_Floppy(int drive)
 	return ConfigureParams.DiskImage.szDiskFileName[drive];
 }
 
+static int KairoSt_LineRepeat(void)
+{
+	return bScreenLinesHalved ? 2 : 1;
+}
+
 static bool KairoSt_GuestCrashed(void)
 {
 	return STMemory_ReadLong(0x380) == 0x12345678;
@@ -649,6 +656,7 @@ const struct KairoStApi *KairoSt_Api(void)
 		.run = KairoSt_Run,
 		.quit = KairoSt_Quit,
 		.screen = KairoSt_Screen,
+		.line_repeat = KairoSt_LineRepeat,
 		.frame_seconds = KairoSt_FrameSeconds,
 		.sample_rate = KairoSt_SampleRate,
 		.read_audio = KairoSt_ReadAudio,

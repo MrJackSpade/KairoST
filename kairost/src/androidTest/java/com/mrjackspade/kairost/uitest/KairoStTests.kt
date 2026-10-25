@@ -40,7 +40,7 @@ object KairoStApp : AppUnderTest() {
     override val arrowKeys = listOf(StKeys.UP, StKeys.DOWN, StKeys.LEFT, StKeys.RIGHT)
     override val returnKey = StKeys.RETURN
     override val spaceKey = StKeys.SPACE
-    override val mediaSwap = MediaSwap("Goal!", "Drive B", "OOZE")
+    override val mediaSwap = MediaSwap("Goal!", "Drive B", "OOZE", filler = "st")
 }
 
 class KairoStFirstRunTests : FirstRunTests() { override val app = KairoStApp }

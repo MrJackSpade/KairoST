@@ -62,6 +62,39 @@ SDL_DUMMY_RGBA = [
      '    const Uint32 surface_format = SDL_PIXELFORMAT_ABGR8888; /* KairoST: R, G, B, A bytes, as the frame host shows them */\n'),
 ]
 
+# Hatari draws ST low resolution doubled both ways and medium resolution doubled vertically,
+# copying every converted line to the line below it. KairoST's host repeats lines itself, exactly
+# (shared MachineCore::line_repeat, Kairo#50), so with bScreenSingleLines set such a screen is one
+# host line per ST line: the surface is half as tall and the line copy is skipped. bScreenLinesHalved
+# tells whether the current screen is (not for monochrome, TT or Falcon screens, which are not
+# doubled).
+HATARI_SINGLE_LINES = [
+    ('hatari/src/includes/screen.h',
+     'extern int nScreenZoomX, nScreenZoomY;\n',
+     'extern int nScreenZoomX, nScreenZoomY;\n'
+     'extern bool bScreenSingleLines;\t/* KairoST: keep doubled ST screens at one line per ST line */\n'
+     'extern bool bScreenLinesHalved;\t/* KairoST: the current screen is (each line stands for two) */\n'),
+    ('hatari/src/screen.c',
+     'int nScreenZoomX, nScreenZoomY;             /* Zooming factors, used for scaling mouse motions */\n',
+     'int nScreenZoomX, nScreenZoomY;             /* Zooming factors, used for scaling mouse motions */\n'
+     'bool bScreenSingleLines;                    /* KairoST: keep doubled ST screens at one line per ST line */\n'
+     'bool bScreenLinesHalved;                    /* KairoST: the current screen is */\n'),
+    ('hatari/src/screen.c',
+     '\tScreen_SetSTScreenOffsets();  \n\tHeight += Statusbar_SetHeight(Width, Height);\n',
+     '\t/* KairoST: one host line per ST line; the host repeats each line */\n'
+     '\tbScreenLinesHalved = bScreenSingleLines && (STRes == ST_MEDIUM_RES || (STRes == ST_LOW_RES && bDoubleLowRes));\n'
+     '\tif (bScreenLinesHalved)\n\t\tHeight /= 2;\n'
+     '\tScreen_SetSTScreenOffsets();  \n\tHeight += Statusbar_SetHeight(Width, Height);\n'),
+    ('hatari/src/screen.c',
+     '\tnext = line + fmt_size;\n\t/* copy as-is */\n',
+     '\tif (bScreenLinesHalved)\n\t\treturn line + fmt_size;\t/* KairoST: the host repeats the line */\n'
+     '\tnext = line + fmt_size;\n\t/* copy as-is */\n'),
+    ('hatari/src/screen.c',
+     'void Screen_SetGenConvSize(int width, int height, bool bForceChange)\n{\n',
+     'void Screen_SetGenConvSize(int width, int height, bool bForceChange)\n{\n'
+     '\tbScreenLinesHalved = false;\t/* KairoST: these screens are not doubled */\n'),
+]
+
 # A track an STX image records with no data (an unformatted track some copy protections leave)
 # has size 0, so one revolution took 0 cycles and the index pulse setup divided by it: a crash on
 # x86, a wrong pulse time on ARM. The drive still spins it in one revolution, as a missing track.
@@ -169,6 +202,7 @@ SDL_NO_JAVA = [
 PATCHES = {
     'hatari-emutos-welcome': HATARI_EMUTOS_WELCOME,
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
+    'hatari-single-lines': HATARI_SINGLE_LINES,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
     'hatari-stx-empty-track': HATARI_STX_EMPTY_TRACK,
     'sdl-android-sources': SDL_ANDROID_SOURCES,

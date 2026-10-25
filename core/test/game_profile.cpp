@@ -191,7 +191,7 @@ int main(int argc, char **argv) {
         }
         if (hashes) {
             uint32_t width, height;
-            const uint8_t *rgba = machine->frame(width, height);
+            const uint8_t *rgba = machine->picture(width, height);
             std::fprintf(hashes, "%ld %016llx %016llx %u\n", frame,
                          (unsigned long long) hash(rgba, size_t(width) * height * 4), (unsigned long long) sound, total);
         }
@@ -232,7 +232,7 @@ int main(int argc, char **argv) {
             const long measured = after - warmup;
             if (shots > 0 && measured % shots == 0) {
                 uint32_t width, height;
-                const uint8_t *rgba = machine->frame(width, height);
+                const uint8_t *rgba = machine->picture(width, height);
                 write_bmp(config.home + "/frame-" + std::to_string(measured) + ".bmp", rgba, width, height);
             }
         }

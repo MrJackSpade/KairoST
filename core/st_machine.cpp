@@ -42,6 +42,8 @@ struct Session {
     std::thread thread;
 
     std::vector<uint8_t> rgba;
+    // picture(): frame() with its rows repeated.
+    std::vector<uint8_t> picture;
     std::string floppy[kDrives];
 
     // Lets Hatari run until its next VBL or until it ends; false when it ended.
@@ -203,6 +205,21 @@ const uint8_t *StMachine::frame(uint32_t &width, uint32_t &height) {
     impl_->rgba.resize(row * size_t(h));
     for (int y = 0; y < h; ++y) std::memcpy(impl_->rgba.data() + row * size_t(y), pixels + size_t(pitch) * size_t(y), row);
     return impl_->rgba.data();
+}
+
+uint32_t StMachine::line_repeat() const { return uint32_t(impl_->hatari->line_repeat()); }
+
+const uint8_t *StMachine::picture(uint32_t &width, uint32_t &height) {
+    const uint8_t *rows = frame(width, height);
+    const uint32_t repeat = line_repeat();
+    if (repeat == 1) return rows;
+    const size_t row = size_t(width) * 4;
+    impl_->picture.resize(row * height * repeat);
+    for (uint32_t y = 0; y < height; ++y)
+        for (uint32_t r = 0; r < repeat; ++r)
+            std::memcpy(impl_->picture.data() + row * (size_t(y) * repeat + r), rows + row * y, row);
+    height *= repeat;
+    return impl_->picture.data();
 }
 
 int StMachine::sample_rate() const { return impl_->hatari->sample_rate(); }

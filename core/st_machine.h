@@ -74,6 +74,11 @@ public:
     double frame_seconds() const;
     // The latest picture: RGBA rows of width pixels.
     const uint8_t *frame(uint32_t &width, uint32_t &height);
+    // How many picture rows each row of frame() stands for: 2 for an ST low or medium resolution
+    // screen (each ST line is one row; the picture repeats it), 1 otherwise.
+    uint32_t line_repeat() const;
+    // frame() with each row repeated line_repeat() times: the picture as it is seen, for tests.
+    const uint8_t *picture(uint32_t &width, uint32_t &height);
     int sample_rate() const;
     // Takes up to max_frames interleaved stereo frames produced so far.
     uint32_t read_audio(int16_t *stereo, uint32_t max_frames);

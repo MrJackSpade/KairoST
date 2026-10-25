@@ -10,11 +10,15 @@ catalog/research/boot-disks-v1.json, by content ID:
   {"boot": "sector"}    its boot sector is executable (its big-endian words add up to 0x1234): the
                         ST runs it when it boots from the disk
   {"boot": "auto"}      its AUTO folder holds programs, which TOS runs as it boots
-  {"boot": "desktop"}   neither, but its top folder holds programs: TOS boots to the desktop, where a
-                        player opens one; "programs" lists them
+  {"boot": "desktop"}   neither, but it holds programs: TOS boots to the desktop, where a player opens
+                        one; "programs" lists those in its top folder, "folders" those in others
   {"boot": "data"}      none of these, including a disk whose file system is empty or not FAT (game
                         data a game reads sector by sector): never the disk a game starts from
   {"boot": "unreadable", "why": ...}   the image could not be decoded
+
+Every record names its image format ("image": st, msa, stx or dim). STX images are originals,
+often copy protected: one can start from a loader no file system shows (Black Tiger's Disk 1 reads
+as an empty disk with a plain boot sector), so their "data" is a reading, not a certainty.
 
 Every record but "unreadable" also lists the top folder's programs ("programs") and the AUTO
 folder's ("auto"). Programs are .PRG, .TOS, .TTP, .APP and .GTP files, as the core names them
@@ -181,10 +185,12 @@ def classify(read):
         side, sector = divmod(rest, per_track)
         return read(track, side, sector + 1)
 
-    record = {"programs": [], "auto": []}
+    record = {"programs": [], "auto": [], "folders": []}
     sector = disk[11] | disk[12] << 8
     cluster_sectors = disk[13]
-    reserved = disk[14] | disk[15] << 8
+    # TOS takes the FATs to start after the boot sector, whatever the reserved count says (many disks
+    # say 0).
+    reserved = max(disk[14] | disk[15] << 8, 1)
     fats = disk[16]
     entries = disk[17] | disk[18] << 8
     fat_sectors = disk[22] | disk[23] << 8
@@ -208,8 +214,22 @@ def classify(read):
             record["auto"] = sorted(f"{name}.{ext}" for name, ext, attr, _ in
                                     directory(logical, data_start, 0, cluster_sectors, fat, auto)
                                     if ext.upper() in PROGRAMS and not attr & 0x10 and name)
+        # Programs in other folders, which a player opens on the desktop: "FOLDER\\GAME.PRG".
+        seen = set()
+        def walk(entries, path, depth):
+            for name, ext, attr, first in entries:
+                full = f"{path}{name}{'.' + ext if ext else ''}"
+                if attr & 0x10 and name not in (".", "..") and name and first not in seen and depth < 4:
+                    if not path and name.upper() == "AUTO" and not ext:
+                        continue
+                    seen.add(first)
+                    walk(directory(logical, data_start, 0, cluster_sectors, fat, first), full + "\\", depth + 1)
+                elif path and not attr & 0x10 and ext.upper() in PROGRAMS and name:
+                    record["folders"].append(full)
+        walk(root, "", 0)
+        record["folders"].sort()
     record["boot"] = ("sector" if checksum == 0x1234 else "auto" if record["auto"] else
-                      "desktop" if record["programs"] else "data")
+                      "desktop" if record["programs"] or record["folders"] else "data")
     return record
 
 
@@ -234,7 +254,7 @@ def read_disk(job):
             read = plain_reader(data[32:] if suffix == ".dim" else data)
         else:
             raise Unreadable(f"not a floppy image: {name}")
-        return content_id, classify(read)
+        return content_id, {**classify(read), "image": suffix[1:]}
     except (Unreadable, struct.error, IndexError) as error:
         return content_id, {"boot": "unreadable", "why": str(error) or type(error).__name__}
 
