@@ -182,7 +182,13 @@ def main():
         tos = record.get("tos")
         if not tos:
             continue
-        if failure(tos, record["seconds"]):
+        # A disk that crashes, stops or ends on the desktop on EmuTOS needs only to do none of that on
+        # TOS: a game can be quiet at the moments sound is measured (TOS 1.04 boots later than EmuTOS,
+        # so the first press may come before its intro). One that is only silent on EmuTOS must
+        # make sound on TOS.
+        emutos_silent_only = failure(record["emutos"], record["seconds"]).startswith("is silent")
+        tos_failure = failure(tos, record["seconds"])
+        if tos_failure and (emutos_silent_only or not tos_failure.startswith("is silent")):
             both.append(content_id)
             continue
         if content_id in listed["disks"]:

@@ -74,18 +74,23 @@ def DATA_DISK(content_id):
 
 def _program(content_id, name):
     """The program on a floppy that TOS must start, or None: for a disk that boots to the desktop
-    (its boot sector starts nothing), the one program in its top folder that is the game. The core
+    (its boot sector starts nothing), the one program in its top folder that is the game, or in its
+    other folders when the top folder has none. The core
     starts a lone program itself on plain (.st, .msa) images that do not boot; an STX image, a disk
     with several programs, or one whose executable boot sector leads to the desktop needs it named."""
     record = _BOOT.get(content_id)
     if not record or not (record["boot"] == "desktop" or content_id in _DESKTOP):
         return None
     # A name TOS could not be asked to start (a character a path cannot hold) is left to the player.
-    games = [program for program in record["programs"] if not _NOT_GAME_PROGRAM.search(program.rsplit(".", 1)[0])
-             and re.fullmatch(LAUNCH_FIELDS["program"], program)]
+    def game_programs(programs):
+        return [program for program in programs
+                if not _NOT_GAME_PROGRAM.search(program.rsplit("\\", 1)[-1].rsplit(".", 1)[0])
+                and re.fullmatch(LAUNCH_FIELDS["program"], program)]
+    # The top folder's programs first; a disk with none there starts the one in its other folders.
+    games = game_programs(record.get("programs", [])) or game_programs(record.get("folders", []))
     if len(games) != 1:
         return None
-    automatic = (record["boot"] == "desktop" and len(record["programs"]) == 1
+    automatic = (record["boot"] == "desktop" and len(record.get("programs", [])) == 1
                  and Path(name).suffix.lower() in (".st", ".msa", ".dim"))
     return None if automatic else games[0]
 
