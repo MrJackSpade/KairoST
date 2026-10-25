@@ -47,6 +47,15 @@ OUT = ROOT / ".downloads/tos-pass"
 LIST = ROOT / "catalog/research/tos-disks-v1.json"
 # Disks that end on the GEM desktop on both systems: catalog_config names the program they start.
 DESKTOP = ROOT / "catalog/research/desktop-disks-v1.json"
+# Disks that stop with an error or crash on both systems: catalog_config never starts a set from one
+# while another of its disks works (KairoST#38).
+BROKEN = ROOT / "catalog/research/broken-disks-v1.json"
+
+
+def broken(record):
+    """Whether a disk's record shows it stopping or crashing on EmuTOS and on TOS."""
+    tos = record.get("tos")
+    return bool(tos) and all(result["error"] or result.get("crashed") for result in (record["emutos"], tos))
 # boot_test counts presses in frames; the machines run at 50 Hz (60 Hz for a US machine, whose
 # presses then come a little sooner).
 FRAMES_PER_SECOND = 50
@@ -61,8 +70,9 @@ def presses(seconds):
     return ",".join(items)
 
 
-def boot_disks():
-    """{content ID: (disk path, machine, why it cannot be tested or None)} for every disk the library lists."""
+def boot_disks(results):
+    """{content ID: (disk path, machine, why it cannot be tested or None)} for every disk the library lists,
+    and the disks behind a set entry that [results] show broken, which may start the set instead."""
     research = json.loads((ROOT / "catalog/research/games-v1.json").read_text(encoding="utf-8"))
     where = {}
     for set_name, (index_path, _) in catalog_config.SCANS.items():
@@ -77,8 +87,10 @@ def boot_disks():
             continue
         behind = {disk for fields in game.get("diskSets", {}).values() for disk in fields["setDisks"]}
         behind |= set(game.get("diskHidden", []))
+        alternates = {disk for entry, fields in game.get("diskSets", {}).items()
+                      if entry in results and broken(results[entry]) for disk in fields["setDisks"]}
         for content_id in game["contentIds"]:
-            if content_id in behind:
+            if content_id in behind and content_id not in alternates:
                 continue
             path, members = where[content_id]
             settings = game.get("diskMachine", {}).get(content_id, {})
@@ -138,7 +150,7 @@ def main():
     results_path = OUT / "results-presses.json"
     results = json.loads(results_path.read_text(encoding="utf-8")) if results_path.is_file() else {}
     lock = threading.Lock()
-    disks = boot_disks()
+    disks = boot_disks(results)
     todo = [(content_id, *fields) for content_id, fields in sorted(disks.items())
             if fields[2] is None and content_id not in results]
     slots = [OUT / f"work-{slot}" for slot in range(args.workers)]
@@ -202,6 +214,11 @@ def main():
     desktop = {content_id: f"tos_pass.py: ends on the GEM desktop on EmuTOS 1.4 and {record['tos']['image']}"
                for content_id, record in sorted(results.items())
                if record["emutos"].get("desktop") and (record.get("tos") or {}).get("desktop")}
+    BROKEN.write_text(json.dumps({"schemaVersion": 1, "disks": {
+        content_id: f"tos_pass.py: on EmuTOS 1.4 it {failure(record['emutos'], record['seconds'])}; "
+                    f"on {record['tos']['image']} it {failure(record['tos'], record['seconds'])}"
+        for content_id, record in sorted(results.items()) if broken(record)}}, indent=1, sort_keys=True) + "\n",
+        encoding="utf-8")
     DESKTOP.write_text(json.dumps({"schemaVersion": 1, "disks": desktop}, indent=1, sort_keys=True) + "\n",
                        encoding="utf-8")
     untestable = {}

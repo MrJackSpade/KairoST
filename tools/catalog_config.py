@@ -63,6 +63,17 @@ _DESKTOP = json.loads((ROOT / "catalog/research/desktop-disks-v1.json").read_tex
 _NOT_GAME_PROGRAM = re.compile(r"INSTAL|SETUP|CONFIG|MUSIC|DOC|DOX|README|LISEZ|EDIT|CHT|CHEAT|DEMO|PRINT", re.I)
 
 
+# Disks that stop or crash on EmuTOS and on the player's TOS (tools/tos_pass.py): a set never starts
+# from one while another of its disks works (KairoST#38).
+_BROKEN = json.loads((ROOT / "catalog/research/broken-disks-v1.json").read_text(encoding="utf-8"))["disks"]
+
+
+def BROKEN_DISK(content_id):
+    """A floppy that fails on every system KairoST has (broken-disks-v1.json): shared disk_sets
+    starts a set, dump group or folder from another disk while one works."""
+    return content_id in _BROKEN
+
+
 def DATA_DISK(content_id):
     """A floppy that never starts a game: no executable boot sector, no AUTO programs and no
     programs at all in its top folder (boot-disks-v1.json "data"): game data read sector by sector,
