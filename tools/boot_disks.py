@@ -132,9 +132,9 @@ def plain_reader(data):
 
 
 def stx_reader(sectors):
-    """read(track, side, sector number) of an STX image's sector map."""
-    if (0, 0, 1) not in sectors:
-        raise Unreadable("the STX image has no boot sector")
+    """read(track, side, sector number) of an STX image's sector map. A sector the image does not
+    hold reads as zeros: an image without a boot sector (only track images, as some copy-protected
+    data disks are) cannot boot, and is a data disk."""
     return lambda track, side, sector: sectors.get((track, side, sector), bytes(SECTOR))
 
 

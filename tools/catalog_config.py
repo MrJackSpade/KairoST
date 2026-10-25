@@ -51,6 +51,45 @@ MACHINE_OPTIONS = {
 # Disks that fail on EmuTOS and run on the player's TOS: {content ID: what goes wrong on EmuTOS}.
 _TOS = json.loads((ROOT / "catalog/research/tos-disks-v1.json").read_text(encoding="utf-8"))["disks"]
 
+# How each floppy starts, read from the disk itself (tools/boot_disks.py): boot "sector", "auto",
+# "desktop" (programs in its top folder only) or "data", with its top folder's programs.
+_BOOT = json.loads((ROOT / "catalog/research/boot-disks-v1.json").read_text(encoding="utf-8"))["disks"]
+
+# Disks that end on the GEM desktop on EmuTOS and on the player's TOS (tools/tos_pass.py), even
+# where their boot sector is executable: the game is a program a player would open there.
+_DESKTOP = json.loads((ROOT / "catalog/research/desktop-disks-v1.json").read_text(encoding="utf-8"))["disks"]
+
+# Programs that are not the game: installers, setup, music and document viewers, editors, cheats.
+_NOT_GAME_PROGRAM = re.compile(r"INSTAL|SETUP|CONFIG|MUSIC|DOC|DOX|README|LISEZ|EDIT|CHT|CHEAT|DEMO|PRINT", re.I)
+
+
+def DATA_DISK(content_id):
+    """A floppy that never starts a game: no executable boot sector, no AUTO programs and no
+    programs at all in its top folder (boot-disks-v1.json "data"): game data read sector by sector,
+    or an empty disk. shared disk_sets never starts a set from one."""
+    return _BOOT.get(content_id, {}).get("boot") == "data"
+
+
+def _program(content_id, name):
+    """The program on a floppy that TOS must start, or None: for a disk that boots to the desktop
+    (its boot sector starts nothing), the one program in its top folder that is the game. The core
+    starts a lone program itself on plain (.st, .msa) images that do not boot; an STX image, a disk
+    with several programs, or one whose executable boot sector leads to the desktop needs it named."""
+    record = _BOOT.get(content_id)
+    if not record or not (record["boot"] == "desktop" or content_id in _DESKTOP):
+        return None
+    games = [program for program in record["programs"] if not _NOT_GAME_PROGRAM.search(program.rsplit(".", 1)[0])]
+    if len(games) != 1:
+        return None
+    automatic = (record["boot"] == "desktop" and len(record["programs"]) == 1
+                 and Path(name).suffix.lower() in (".st", ".msa", ".dim"))
+    return None if automatic else games[0]
+
+
+# The launch fields a disk's record may carry (shared app_catalog): the program TOS starts.
+LAUNCH_FIELDS = {"program": r"(?:[A-Za-z0-9_\-!~#$%&@^'(){}]{1,8}(?:\.[A-Za-z0-9_\-]{1,3})?\\)*"
+                            r"[A-Za-z0-9_\-!~#$%&@^'(){}]{1,8}\.[A-Za-z]{1,3}"}
+
 _STE = re.compile(r"\(STE\)|\[STE\]")
 _FALCON = re.compile(r"\[Falcon only\]|\(Falcon\)", re.I)
 _MONO = re.compile(r"\[monochrome\]|\[mono\]", re.I)
@@ -60,7 +99,8 @@ _MEMORY = re.compile(r"\[([124])\s*MB\]", re.I)
 def MACHINE(name, set_name, content_id):
     """The machine a disk's TOSEC name asks for: "(STE)" an STE, "[Falcon only]" a Falcon (with
     4 MB, its usual memory), "[monochrome]" the mono monitor, "[2Mb]" or "[4MB]" that much memory.
-    A disk tos-disks-v1.json lists starts on the player's TOS."""
+    A disk tos-disks-v1.json lists starts on the player's TOS; a disk that boots to the desktop
+    starts its game's program (launch.program, _program)."""
     settings = {"tos": "tos"} if content_id in _TOS else {}
     if _FALCON.search(name):
         settings.update(machine="falcon", memory=4096)
@@ -71,6 +111,9 @@ def MACHINE(name, set_name, content_id):
     memory = _MEMORY.search(name)
     if memory and memory.group(1) != "1":
         settings["memory"] = int(memory.group(1)) * 1024
+    program = _program(content_id, name)
+    if program:
+        settings["launch"] = {"program": program}
     return settings
 
 

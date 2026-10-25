@@ -18,7 +18,9 @@ count).
 A disk that fails on EmuTOS is booted again on real TOS for that model (bios/retrobios: TOS 1.04 for an ST, 1.62 for an STE, 2.06 for a Mega STE, 3.06 for a TT, 4.04 for a Falcon), with
 the same presses; if it passes there, catalog/research/tos-disks-v1.json gains it, so
 tools/catalog_config.MACHINE gives it "tos": "tos". Disks already listed there are kept as they
-are. Disks that fail on both are reported at the end, for review.
+are. Disks that fail on both are reported at the end, for review; those that end on the desktop on
+both go to catalog/research/desktop-disks-v1.json, from which catalog_config names the program a
+disk starts.
 
 Results are kept per disk in .downloads/tos-pass/results-presses.json, so a stopped run carries
 on, and the last frame of every disk that needs TOS is kept beside it for review. Monochrome disks,
@@ -43,6 +45,8 @@ TOS = {"st": "tos104uk.img", "megast": "tos104uk.img", "ste": "tos162uk.img", "m
        "tt": "tos306uk.img", "falcon": "tos404.img"}
 OUT = ROOT / ".downloads/tos-pass"
 LIST = ROOT / "catalog/research/tos-disks-v1.json"
+# Disks that end on the GEM desktop on both systems: catalog_config names the program they start.
+DESKTOP = ROOT / "catalog/research/desktop-disks-v1.json"
 # boot_test counts presses in frames; the machines run at 50 Hz (60 Hz for a US machine, whose
 # presses then come a little sooner).
 FRAMES_PER_SECOND = 50
@@ -189,6 +193,11 @@ def main():
         found += 1
     listed["disks"] = dict(sorted(listed["disks"].items()))
     LIST.write_text(json.dumps(listed, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    desktop = {content_id: f"tos_pass.py: ends on the GEM desktop on EmuTOS 1.4 and {record['tos']['image']}"
+               for content_id, record in sorted(results.items())
+               if record["emutos"].get("desktop") and (record.get("tos") or {}).get("desktop")}
+    DESKTOP.write_text(json.dumps({"schemaVersion": 1, "disks": desktop}, indent=1, sort_keys=True) + "\n",
+                       encoding="utf-8")
     untestable = {}
     for fields in disks.values():
         if fields[2]:

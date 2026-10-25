@@ -380,8 +380,9 @@
    ]
   },
   "sha256-fd-v1:024dcfaaa9cbbb3c3b238817742f407516af8af0123c1ea6a92c7832446c2e32": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:0250d487fe8ee4dc49a83c8390d0df21f3fed8df1c892fb65d8c312c8fc1a823": {
    "auto": [],
@@ -487,8 +488,9 @@
    ]
   },
   "sha256-fd-v1:02dce67efffe0fb9520665deb6c2264ebf5f34f21e0f9971449a322b49ba5e7f": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:02f8c52814702ffa44efa00c0f8e964f7f03c70c20d749eb97a38afca9e02e35": {
    "auto": [],
@@ -1057,8 +1059,9 @@
    ]
   },
   "sha256-fd-v1:06afe7dffd7916977fdf0e8c4e431d6b80f7a7a94d816195cb0d303e9b390848": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:06c5891095a8a9baa4d56c9115731d6b0302a8be350e4b25a83c8319b726bffe": {
    "auto": [],
@@ -3070,8 +3073,9 @@
    "programs": []
   },
   "sha256-fd-v1:112acace30e0c93acf052c2d09fb14034f2b40b78c58ba6a7b87001d63066f5c": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:112bf38c51bbe38fa47dee63458a1acdac7ac7b4080544e6d08073b59fdc1e1b": {
    "auto": [],
@@ -5219,8 +5223,9 @@
    ]
   },
   "sha256-fd-v1:1d42c6224f7ae6ec63dab093b11e3481fbba0d0ea7da10b175d33e233545ffcf": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:1d543f3a980e2c2a4e6a44cb4c88d589ce237fbb16510c91f202774b6a466e5e": {
    "auto": [],
@@ -5938,8 +5943,9 @@
    "programs": []
   },
   "sha256-fd-v1:2178010affdc531feb4bd2bc3ccd58539dfeece5a3a76970d3ab6f4ef32fc998": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:217cb28b62984b7f6d07209805375a42d4af2e079dc8f4ff6d93a6be1f1d7d75": {
    "auto": [],
@@ -6208,8 +6214,9 @@
    "programs": []
   },
   "sha256-fd-v1:2242419255581bb948f3714a934fa18647468a5e43f58a4a35ec542ab8d57a0f": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:224c2ca369d57e537346ef15cad4adf50a9ec74c151289b18052610f77530214": {
    "auto": [],
@@ -8011,8 +8018,9 @@
    ]
   },
   "sha256-fd-v1:2c35bcafe8f2bc34d8d3a6e1fcbe6b7bbd6d401c1b738d8d9299ac839134a46a": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:2c40e3c69c65b8cf3da82d483deb5bffbbd36a7477af717596024bccef4521f1": {
    "auto": [],
@@ -8435,8 +8443,9 @@
    "programs": []
   },
   "sha256-fd-v1:2f9732bc4acd57006a37fc3cf5b133b1c5603ce588c9f8912ad5bb158f208855": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:2fa316fbb03d03237b9bd7178d26b63038b240384962731c93cc4d431a0cccb9": {
    "auto": [],
@@ -9277,8 +9286,9 @@
    "programs": []
   },
   "sha256-fd-v1:3465776f15d6b96b2d0bd98e37cf0cbe7399505dd2e58ad5b94831deec9f4f04": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:346fc677476e15e8840703d84532b52c9421891ea226c03020ef6aaa62895b25": {
    "auto": [],
@@ -9356,8 +9366,9 @@
    "programs": []
   },
   "sha256-fd-v1:34ffa96226b7ba1c025b7195a101ad3e38304bf0c9b3d8fdc9dda25391d4eceb": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:3504ec0ffc64cc087b1486f418148f3724d552d302aab56df5d0e8947b352f2c": {
    "auto": [],
@@ -10552,8 +10563,9 @@
    "programs": []
   },
   "sha256-fd-v1:3b8533cceb89a43fd14d920b84655205bee99e50f8163296ab61ac9170d75b13": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:3b97a42c0690e9e98691e7635eb1b0ebda1fbc87f067f53b9d6fb6541cb45ff3": {
    "auto": [],
@@ -13348,8 +13360,9 @@
    "programs": []
   },
   "sha256-fd-v1:4b02214d90dc4c033577f1fee163e64fa145ea61f355c7a46e8a68792a07acc4": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:4b08fe5eec58dd8ccf355c05b81c5455459ccafbebfa555d119cd75d5a5b230c": {
    "auto": [
@@ -13602,8 +13615,9 @@
    "programs": []
   },
   "sha256-fd-v1:4c6cd856df7261dd172d109eadb1228c2dfc253a49875b472ac280900621506e": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:4c7753412929660071dad4df5e8c3028865e32cd9d09ce93b2f15c9b7bba3139": {
    "auto": [
@@ -14484,8 +14498,9 @@
    "programs": []
   },
   "sha256-fd-v1:51b6be78ff7f6ee2fac725047cda73f1cf4220d48a87b5b74a9fb83d3532ab7a": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:51c6549ac7225f3b8ece3ee17f47916eea2f659300d1c8da26cb58a9ee5907fd": {
    "auto": [],
@@ -15341,8 +15356,9 @@
    ]
   },
   "sha256-fd-v1:56ed4fb7ebb45a4d75d46f14b9876355a6a3de7f93eddb9267157d9811f86cb9": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:56f4746b4396603ee1cb7d9f5b1818a9822b2a85ce075551f682511022ecb817": {
    "auto": [],
@@ -15820,8 +15836,9 @@
    "programs": []
   },
   "sha256-fd-v1:596dcf17ac9748796a6b92bc5b49e70d49b7e0aa1cc24dc62ffab6cd03cd3711": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:5977f0a56225f2d6e87b426cd5265a6ddca4591be3f91ae543c013fab017a959": {
    "auto": [],
@@ -18617,8 +18634,9 @@
    ]
   },
   "sha256-fd-v1:6a3b6cee03561847a1a2d40750fa740bb858c6ede7510039cfe0639717f0114d": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:6a40cef104f0deca38824ee923d7f7eb5e4497c9d24788462cefa0303ab317c8": {
    "auto": [],
@@ -19283,8 +19301,9 @@
    "programs": []
   },
   "sha256-fd-v1:6df1c64916f582b0ad4eafbd9792beadb4dc11d87990562e537768437ae8ac41": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:6dfdb28fd08bab9a5a9956fe94c094455f6ce45206dbd2372da03dabb3575d35": {
    "auto": [],
@@ -22732,8 +22751,9 @@
    "programs": []
   },
   "sha256-fd-v1:82dd8e301c03aa25569930c520d3139904b3c543948cad309e036895b8f86787": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:82f0a60dd2452b30a289407c73cc81abeda8e0a808303f8a1cf172543be3481a": {
    "auto": [],
@@ -23970,12 +23990,14 @@
    "programs": []
   },
   "sha256-fd-v1:8a4784ebca4950606f57977b573a606a0edcc12ac488c7196ff4aba6c514c5a6": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:8a60aa40b026f37caec56848635dc138767d24403e79d36a93ed31a29be88ea7": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:8a66df2627eba5ab324209dac325a03f08839678cd76a203a9dbba8e5ac457ad": {
    "auto": [],
@@ -24893,8 +24915,9 @@
    "programs": []
   },
   "sha256-fd-v1:8f087e4ac9e099cd982b623ae0eccbe17fad6627a173ee965608607c788ce41c": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:8f1db27eadd6c426b90ff45851e2f537823cdd90151b67bc1977b59fa2efe293": {
    "auto": [],
@@ -25268,8 +25291,9 @@
    ]
   },
   "sha256-fd-v1:9163deef4223dd07406c65f1bd5348d7cf660cad7f484d220a654d07f049f8ca": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:91661f34a37da167abe93c9e7a7c175d01b468bcf0b33c79b19e21919ab5f3eb": {
    "auto": [],
@@ -26492,8 +26516,9 @@
    "programs": []
   },
   "sha256-fd-v1:9832caf5f57c7e0c30cf87c91abac5cc2d6f311fd4eabfaa09239dddd0eb01fe": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:9837b1fa52efce2543c4d42549d5315efcb97c83ef554cb2e319c62ad11ae345": {
    "auto": [
@@ -27583,8 +27608,9 @@
    "programs": []
   },
   "sha256-fd-v1:9e651e27383e7aec742e41517955d087ae8d1cbda94abaedc61aef0593cb88ff": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:9e6e5736193bd0970fb96370afa0fb0671ee0c5a41dc410c4a277429f190b0ee": {
    "auto": [],
@@ -28569,8 +28595,9 @@
    "programs": []
   },
   "sha256-fd-v1:a3c3d77c6e826cc54d946ddbdde8b87f08e62a61e3847f7bed4f1137003131a1": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:a3e156644da75f91abe3aa852e2c956062adc0bdb9689b11dab39254f1f08ecf": {
    "auto": [],
@@ -32340,8 +32367,9 @@
    "programs": []
   },
   "sha256-fd-v1:b895222086e41ed3789e0e2cfb067a7c7795db066459e7b1dad800216cfa2f80": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:b89571cabc850b3a3f429157ebe1366ed382159a609711db28027b67a38c8c2e": {
    "auto": [],
@@ -33670,8 +33698,9 @@
    ]
   },
   "sha256-fd-v1:bf84beeecd161ac566c59363dda20b17c740df79f18c7a256ad536f8d8230792": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:bf84fdfc31a3746be467c47b547094396a5ffb0ecf896b47765f0f49003d63dd": {
    "auto": [],
@@ -34313,8 +34342,9 @@
    ]
   },
   "sha256-fd-v1:c347ae9babfb8350db45b47eb870549a70704637df9bf35b7b62ee0f95e2d578": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:c347bfe61f4429c071374c6727afbe1e6066be087c3b6aa0d63e7baeef180f7a": {
    "auto": [],
@@ -34371,8 +34401,9 @@
    "programs": []
   },
   "sha256-fd-v1:c3c1743984d7c2e96e972999608788e051511ed8c6c03900652f9cd0436ff08d": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:c3c7ed1d4794159b7b71913d7a2a742b4a38377ad516c0afb2c66b4ea526ed0d": {
    "auto": [],
@@ -37995,8 +38026,9 @@
    "programs": []
   },
   "sha256-fd-v1:d7ba75fe7cb45565d1840ed7a7d043f4a99fe4b97c9a8b3743feee4daebfdd46": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:d7bc4ace74e06fc1c411976fa53f436620d681ef59673e5e3572551f62bd3a59": {
    "auto": [
@@ -41856,8 +41888,9 @@
    ]
   },
   "sha256-fd-v1:ecc550e22b68ca2cd9fa9e22311fc39a79cdf77772e962ae87422174c6d1ceb8": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:ecd6a493f7bfad9d23dd8841812ee363b04232a15804ade26bde423523f34da9": {
    "auto": [],
@@ -43371,8 +43404,9 @@
    "programs": []
   },
   "sha256-fd-v1:f5308a4693545096451fd9d7cd4636ef0afad3090e53540c9c9b3454b2f86be0": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:f5312e0d4397d63d0ed27f37783e080797a1b6af02d52471e673d0868130dd6d": {
    "auto": [],
@@ -43501,8 +43535,9 @@
    ]
   },
   "sha256-fd-v1:f61bbef6e45fda22b5da37de9c9dbe32eeb74152aacb9d25bcec306934f728b2": {
-   "boot": "unreadable",
-   "why": "the STX image has no boot sector"
+   "auto": [],
+   "boot": "data",
+   "programs": []
   },
   "sha256-fd-v1:f61d6fa8b9b68476894e4df98e69fdced89d2059793ace0d36aea26538a2a35a": {
    "auto": [],
