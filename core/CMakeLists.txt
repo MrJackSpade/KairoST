@@ -140,6 +140,11 @@ target_compile_options(kairost_hatari PRIVATE -fwrapv -fsigned-char -Wno-write-s
     -Wno-missing-braces -Wno-unused-but-set-variable)
 target_link_libraries(kairost_hatari PRIVATE kairo_zlib SDL2-static)
 if(ANDROID)
+    # ThinLTO across Hatari's files, and scheduling for the Cortex-A55 cores of the handhelds it runs
+    # on (tuning only: code still runs on any ARMv8-A core). RG DS, profile-guided build: ThinLTO
+    # +9-15%, the A55 tuning a few percent more (KairoST#10, #12).
+    target_compile_options(kairost_hatari PRIVATE -flto=thin -mtune=cortex-a55)
+    target_link_options(kairost_hatari PRIVATE -flto=thin)
     target_link_libraries(kairost_hatari PRIVATE log)
     target_link_options(kairost_hatari PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_LIST_DIR}/kairo/hatari.map")
     set_target_properties(kairost_hatari PROPERTIES LINK_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/kairo/hatari.map")
