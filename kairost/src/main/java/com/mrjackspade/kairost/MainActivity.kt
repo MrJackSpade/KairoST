@@ -3,9 +3,6 @@ package com.mrjackspade.kairost
 import android.content.Intent
 import android.os.Bundle
 import com.mrjackspade.kairo.frontend.CatalogGame
-import com.mrjackspade.kairo.frontend.CatalogSetting
-import com.mrjackspade.kairo.frontend.GameSettingsRows
-import com.mrjackspade.kairo.frontend.GameSource
 import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.ControllerGuestSpec
 import com.mrjackspade.kairo.frontend.ControllerLayout
@@ -163,31 +160,6 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         check(bridge.start(tosDirectory.absolutePath, home.absolutePath, images, options)) { "Another machine is still running" }
         awaitRunning()
         mediaStarted(media)
-    }
-
-    /**
-     * The game's startup program (StCatalog.PROGRAM): a program on drive A's disk for TOS to start,
-     * for a disk that boots to the desktop. Saving nothing returns to the automatic choice, even
-     * where the catalog names a program; Reset returns to the catalog's.
-     */
-    override fun customSettingRow(entry: DiskImageEntry, setting: CatalogSetting.Custom,
-                                  enabled: () -> Boolean): SettingsRow? {
-        check(setting.id == StCatalog.PROGRAM) { "KairoST has no row for its catalog setting ${setting.id}" }
-        if (!isFloppy(entry)) return null
-        val id = entry.key.takeIf { entry.contentId != null }
-        fun custom() = id != null && catalog.sourceOf(entry, StCatalog.LAUNCH, StCatalog.PROGRAM) == "User override"
-        return GameSettingsRows.text("program", "Startup program", "Program on drive A, such as GAME.PRG",
-            { StCatalog.program(catalog.resolve(entry)).takeIf { it.isNotEmpty() } }, ::custom,
-            { id?.let { catalog.sourceOf(entry, StCatalog.LAUNCH) }?.takeIf { it != "App default" }?.let(GameSource::label) },
-            { value ->
-                val program = value.trim().uppercase()
-                if (program.isNotEmpty() && !StCatalog.programPath.matches(program)) {
-                    toast("Not a program path: $value")
-                } else saveGameSetting(entry) {
-                    catalog.updateOverrideSubfields(id!!, StCatalog.LAUNCH, mapOf(StCatalog.PROGRAM to program))
-                }
-            }, { saveGameSetting(entry) { catalog.resetOverride(id!!, StCatalog.LAUNCH) } },
-            empty = "Automatic", enabled = enabled, disabledReason = { GameSettingsRows.NO_HASH })
     }
 
     /**
