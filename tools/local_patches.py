@@ -26,32 +26,40 @@ HATARI_SNAPSHOT_FAILED = [
      'void MemorySnapShot_Restore_Do(void)\n{\n'),
 ]
 
-# Hatari tears down only when the process exits, so it leaves some pointers to freed memory set.
-# KairoST runs one machine after another in a process (the next game), and the next machine's
-# setup reads them: IOmemory points into the ROM memory memory_uninit frees, and the debugger's
-# symbol lists (loaded for TOS images with a .sym file beside them) would be freed again.
-HATARI_RESTART = [
-    ('hatari/src/cpu/memory.c',
-     '\tif (STmem_size <= 0x800000 && ROMmemory) {\n\t\tfree(ROMmemory);\n\t}\n\tROMmemory = NULL;\n',
-     '\tif (STmem_size <= 0x800000 && ROMmemory) {\n\t\tfree(ROMmemory);\n\t}\n\tROMmemory = NULL;\n'
-     '\tIOmemory = NULL;\t/* KairoST: it points into ROMmemory */\n'),
-    # The INF override (autostart program and resolution) is set from the options and never
-    # cleared: a later machine would autostart the previous one's program.
-    ('hatari/src/includes/inffile.h',
-     'extern void INF_CreateOverride(void);\n',
-     'extern void INF_CreateOverride(void);\n'
-     'extern void INF_Reset(void);\t/* KairoST: forgets the autostart program and resolution */\n'),
-    ('hatari/src/inffile.c',
-     'void INF_CreateOverride(void)\n{\n',
-     '/* KairoST: forgets the autostart program and resolution, before a new machine sets its own. */\n'
-     'void INF_Reset(void)\n{\n\tINF_CloseOverride(TosOverride.file);\n\tfree(TosOverride.prgname);\n'
-     '\tTosOverride.prgname = NULL;\n\tTosOverride.prgname_id = 0;\n\tTosOverride.reso = RES_UNSET;\n'
-     '\tTosOverride.reso_id = 0;\n\tTosOverride.reso_str = NULL;\n}\n\n'
-     'void INF_CreateOverride(void)\n{\n'),
-    ('hatari/src/debug/symbols.c',
-     'void Symbols_FreeAll(void)\n{\n\tsymbol_list_free(CpuSymbolsList);\n\tsymbol_list_free(DspSymbolsList);\n}\n',
-     'void Symbols_FreeAll(void)\n{\n\tsymbol_list_free(CpuSymbolsList);\n\tsymbol_list_free(DspSymbolsList);\n'
-     '\tCpuSymbolsList = DspSymbolsList = NULL;\t/* KairoST: a later machine loads its own */\n}\n'),
+# EmuTOS 1.4 (the 1024k image KairoST ships) holds its welcome screen for 3 seconds on a first boot
+# (INITINFO_DURATION, bios/initinfo.c), before it boots the floppy. With Hatari's fast boot (KairoST's
+# Skip memory check), the hold is skipped: both places initinfo() computes its end time
+# (addi.l #600,d4: 3 s of 200 Hz ticks) add 0 instead, as INITINFO_DURATION 0 would build it. Only an
+# image with exactly those instructions there is patched, as Hatari checks its own TOS patches.
+HATARI_EMUTOS_WELCOME = [
+    ('hatari/src/tos.c',
+     '\nstatic void TOS_FixRom(uint32_t *logopatch_addr)\n',
+     '\n/* KairoST: EmuTOS 1.4 1024k\'s welcome screen hold, skipped with fast boot (tools/local_patches.py). */\n'
+     'static void TOS_FixEmuTosWelcome(void)\n{\n'
+     '\tstatic const uint32_t holds[] = { 0xE0D810, 0xE0D8E8 };\t/* addi.l #600,d4 */\n'
+     '\tint i;\n\n'
+     '\tfor (i = 0; i < 2; i++)\n'
+     '\t\tif (STMemory_ReadWord(holds[i]) != 0x0684 || STMemory_ReadLong(holds[i] + 2) != 600)\n'
+     '\t\t\treturn;\t/* another EmuTOS build */\n'
+     '\tfor (i = 0; i < 2; i++)\n'
+     '\t\tmemset(&RomMem[holds[i] + 2], 0, 4);\n'
+     '\tLog_Printf(LOG_DEBUG, "Skipped the EmuTOS welcome screen hold.\\n");\n}\n\n'
+     'static void TOS_FixRom(uint32_t *logopatch_addr)\n'),
+    ('hatari/src/tos.c',
+     '\t\tLog_Printf(LOG_DEBUG, "Skipped TOS patches.\\n");\n\t}\n',
+     '\t\tLog_Printf(LOG_DEBUG, "Skipped TOS patches.\\n");\n\t}\n'
+     '\tif (bIsEmuTOS && !bRamTosImage && ConfigureParams.System.bFastBoot)\n'
+     '\t\tTOS_FixEmuTosWelcome();\t/* KairoST */\n'),
+]
+
+# The dummy video driver's window surface, which Hatari draws into (KairoST runs headless), in the
+# byte order the frame host shows (R, G, B, A in memory: SDL_PIXELFORMAT_ABGR8888) instead of XRGB:
+# Hatari maps its colours through the surface's format, so the picture is the same, and the machine
+# hands it on without converting every pixel of every frame (KairoST#23).
+SDL_DUMMY_RGBA = [
+    ('sdl2/src/video/dummy/SDL_nullframebuffer.c',
+     '    const Uint32 surface_format = SDL_PIXELFORMAT_RGB888;\n',
+     '    const Uint32 surface_format = SDL_PIXELFORMAT_ABGR8888; /* KairoST: R, G, B, A bytes, as the frame host shows them */\n'),
 ]
 
 # A track an STX image records with no data (an unformatted track some copy protections leave)
@@ -159,12 +167,13 @@ SDL_NO_JAVA = [
 ]
 
 PATCHES = {
+    'hatari-emutos-welcome': HATARI_EMUTOS_WELCOME,
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
-    'hatari-restart': HATARI_RESTART,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
     'hatari-stx-empty-track': HATARI_STX_EMPTY_TRACK,
     'sdl-android-sources': SDL_ANDROID_SOURCES,
     'sdl-android-video': SDL_ANDROID_VIDEO,
+    'sdl-dummy-rgba': SDL_DUMMY_RGBA,
     'sdl-no-java': SDL_NO_JAVA,
 }
 

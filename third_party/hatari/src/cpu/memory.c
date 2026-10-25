@@ -1874,7 +1874,6 @@ void memory_uninit (void)
 		free(ROMmemory);
 	}
 	ROMmemory = NULL;
-	IOmemory = NULL;	/* KairoST: it points into ROMmemory */
 }
 
 

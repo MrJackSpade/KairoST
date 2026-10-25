@@ -830,18 +830,6 @@ static FILE* write_inf_file(const char *contents, int size, int res, int res_col
  *
  * Called at end of TOS ROM loading.
  */
-/* KairoST: forgets the autostart program and resolution, before a new machine sets its own. */
-void INF_Reset(void)
-{
-	INF_CloseOverride(TosOverride.file);
-	free(TosOverride.prgname);
-	TosOverride.prgname = NULL;
-	TosOverride.prgname_id = 0;
-	TosOverride.reso = RES_UNSET;
-	TosOverride.reso_id = 0;
-	TosOverride.reso_str = NULL;
-}
-
 void INF_CreateOverride(void)
 {
 	char *contents;

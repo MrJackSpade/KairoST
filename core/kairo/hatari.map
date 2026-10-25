@@ -1,0 +1,5 @@
+/* The Hatari library's one exported symbol (kairo_st.h); SDL's API, which it builds in, stays inside. */
+{
+    global: KairoSt_Api;
+    local: *;
+};

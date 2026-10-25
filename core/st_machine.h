@@ -3,7 +3,8 @@
 // end of each frame (core/kairo/kairo_st.h); between frames the host takes the picture and sound
 // and sends input.
 //
-// Hatari keeps process-wide state: a process runs one machine at a time.
+// Hatari keeps process-wide state, so each machine runs on a fresh copy of the Hatari library
+// (hatari_library.h), which starts from Hatari's initial state as a new process would.
 
 #pragma once
 
@@ -41,11 +42,17 @@ struct Config {
     // A program to start, "" for none: its folder becomes drive C (Hatari's GEMDOS hard disk),
     // the machine boots from it, and TOS starts the program (Hatari's autostart).
     std::string program;
+    // A program in the top folder of drive A's disk for TOS to start after it boots (Hatari's
+    // autostart), such as "GAME.PRG", for a disk that boots to the desktop. "" for the automatic
+    // choice: a disk that does not boot and holds exactly one program in its top folder starts it.
+    std::string floppy_program;
     // The audio sample rate.
     int sample_rate = 48000;
     // Hatari's TOS patches for a faster boot: no memory test, and on TOS 1.00 to 2.05 no wait
     // for hard disks on the DMA bus (there are none). Games see the same machine.
     bool skip_memory_check = true;
+    // The seed of Hatari's random numbers; 0 for the time. A measurement fixes it so runs repeat.
+    unsigned int seed = 0;
 };
 
 class StMachine {
@@ -85,6 +92,14 @@ public:
     bool insert(Drive drive, const std::string &path, std::string &error);
     // The image in a drive, as it was inserted; "" when it is empty.
     std::string media_path(Drive drive);
+    // Whether the guest crashed (a TOS bomb or EmuTOS panic, kairo_st.h).
+    bool guest_crashed() const;
+    // 1 when TOS runs its GEM desktop, 0 when not, -1 when the TOS cannot tell (kairo_st.h).
+    int on_desktop() const;
+    // For host diagnostics: the CPU's D0-D7 and A0-A7, PC and SR, and the guest's memory as the
+    // CPU sees it.
+    void cpu_state(uint32_t registers[16], uint32_t &pc, uint16_t &sr) const;
+    std::vector<uint8_t> read_memory(uint32_t address, uint32_t length) const;
 
 private:
     struct Impl;

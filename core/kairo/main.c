@@ -9,6 +9,9 @@
  * surface of SDL's "dummy" video driver, which keeps the picture in memory for the host to take.
  * Fatal errors end the machine instead of the process.
  *
+ * A copy of this library runs one machine (kairo_st.h): Hatari's variables start from their
+ * initial values only once, so the host loads a fresh copy for each machine.
+ *
  * Based on Hatari's main.c. KairoST is free software under the GNU General Public License,
  * version 2 or (at your option) any later version. See LICENSE.md.
  */
@@ -73,18 +76,38 @@ static bool bEmulationActive = true;      /* Hatari's pause state; the host paus
 static uint32_t nRunVBLs;                 /* Hatari's --run-vbls count (unused by KairoST, kept for its API) */
 static int nVBLSlowdown = 1;              /* Hatari's --slowdown factor (likewise) */
 
+/* The machine's side, for this copy's one run. */
+static const struct KairoStHost *host;
+/* The host named the program to start (Hatari's --auto): no program is picked from drive A. */
+static bool autostart_given;
+
 /* Where Main_ErrorExit returns to: KairoSt_Run, on Hatari's thread. */
 static jmp_buf fatal_exit;
 static bool fatal_exit_set;
-/* A Main_ErrorExit left Hatari's state half torn down: no machine can run in this process again. */
-static bool hatari_broken;
 
 /* The boot (KairoSt_Booting), which the host runs at full speed, from the start until the player
- * presses something or: with a disk in drive A, until the drive's first load is over (its motor
- * runs, then stops); for a program, until TOS has read the autostart file that starts it (it then
- * loads from drive C at once). */
+ * presses something or: with a disk in drive A, until the game's first load is over: the drive's
+ * motor has run and stopped, and the screen is no longer the one TOS showed when the load began
+ * (a loader that pauses between reads, to unpack what it read, stops the motor while TOS's boot
+ * screen still shows: KairoST#5); for a program, until TOS has read the autostart file that starts
+ * it (it then loads from drive C at once). */
 static enum { BOOT_OVER, BOOT_WAITING, BOOT_LOADING } boot;
 static bool boot_program;
+/* The screen when the first load began, while it loads. */
+static uint8_t *boot_screen;
+static size_t boot_screen_size;
+
+static size_t screen_size(void)
+{
+	return (size_t)sdlscrn->h * (size_t)sdlscrn->pitch;
+}
+
+static void end_boot(void)
+{
+	boot = BOOT_OVER;
+	free(boot_screen);
+	boot_screen = NULL;
+}
 
 static void update_boot(void)
 {
@@ -96,13 +119,24 @@ static void update_boot(void)
 		if (INF_Overriding(AUTOSTART_FOPEN))
 			boot = BOOT_LOADING;
 		else if (boot == BOOT_LOADING)
-			boot = BOOT_OVER;
+			end_boot();
 		return;
 	}
 	if (FDC_MotorIsOn())
+	{
+		if (boot == BOOT_WAITING)
+		{
+			boot_screen_size = screen_size();
+			boot_screen = malloc(boot_screen_size);
+			if (!boot_screen)
+				Main_ErrorExit("Out of memory for the boot screen", NULL, -1);
+			memcpy(boot_screen, sdlscrn->pixels, boot_screen_size);
+		}
 		boot = BOOT_LOADING;
-	else if (boot == BOOT_LOADING)
-		boot = BOOT_OVER;
+	}
+	else if (boot == BOOT_LOADING
+	         && (screen_size() != boot_screen_size || memcmp(boot_screen, sdlscrn->pixels, boot_screen_size) != 0))
+		end_boot();
 }
 
 /* The joystick in port 1 is Hatari's keyboard-emulated joystick (--joy1 keys), with its default
@@ -317,8 +351,9 @@ static bool Main_Init(void)
 
 	DSP_Init();
 	Floppy_Init();
-	/* A program's own game (KairoSt_Run's program argument) starts from drive C instead. */
-	if (!ConfigureParams.HardDisk.bBootFromHardDisk)
+	/* A program's own game (KairoSt_Run's program argument) starts from drive C instead, and a
+	 * program the host names (--auto) is started whatever the disk holds. */
+	if (!ConfigureParams.HardDisk.bBootFromHardDisk && !autostart_given)
 		autostart_floppy_program();
 	M68000_Init();
 	Audio_Init();
@@ -385,20 +420,33 @@ static void set_env(const char *name, const char *value)
 #endif
 }
 
-bool KairoSt_Run(int argc, const char *const argv[], const char *home)
+void KairoStHost_Vbl(void)
+{
+	host->vbl(host->context);
+}
+
+void KairoStHost_Fatal(const char *message)
+{
+	host->fatal(host->context, message);
+}
+
+void KairoStHost_Notice(const char *message)
+{
+	host->notice(host->context, message);
+}
+
+static bool KairoSt_Run(int argc, const char *const argv[], const char *home, const struct KairoStHost *machine)
 {
 	bool ok;
 
-	if (hatari_broken)
-	{
-		KairoStHost_Fatal("An earlier machine failed while starting; restart the app to run another");
-		return false;
-	}
+	if (host)
+		abort();	/* a copy of the library runs one machine */
+	host = machine;
 	if (setjmp(fatal_exit))
 	{
-		/* Main_ErrorExit: Hatari gave up part way, as when it would have exited the process. */
+		/* Main_ErrorExit: Hatari gave up part way, as when it would have exited the process. The
+		 * host discards this copy of the library with whatever Hatari left behind. */
 		fatal_exit_set = false;
-		hatari_broken = true;
 		return false;
 	}
 	fatal_exit_set = true;
@@ -406,7 +454,7 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 	bQuitProgram = false;
 	bEmulationActive = true;
 
-	Hatari_srand(time(NULL));
+	Hatari_srand(host->seed);
 	Str_Init();
 	Log_Default();
 	/* Hatari keeps its own files (NVRAM, logs) in $HOME/.config/hatari. */
@@ -417,9 +465,10 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 	Paths_Init(argv[0]);
 	Main_Init_HW();
 	Configuration_SetDefault();
-	/* A previous machine's autostart program must not start in this one. */
-	INF_Reset();
 	/* KairoST's options are the whole configuration: no configuration file is read. */
+	for (int i = 1; i < argc; i++)
+		if (strcmp(argv[i], "--auto") == 0)
+			autostart_given = true;
 	if (!Opt_ParseParameters(argc, argv))
 	{
 		char message[1024];
@@ -439,7 +488,7 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 	/* Hatari autostarts only on TOS 1.04 and later (inffile.c); before, a program waits on the
 	 * desktop, so there is no boot to run through. */
 	if (boot_program && bUseTos && TosVersion < 0x0104)
-		boot = BOOT_OVER;
+		end_boot();
 	if (ok)
 	{
 		Main_UnPauseEmulation();
@@ -453,12 +502,12 @@ bool KairoSt_Run(int argc, const char *const argv[], const char *home)
 /*-----------------------------------------------------------------------*/
 /* The host's side (kairo_st.h), called while Hatari's thread waits in Main_WaitOnVbl. */
 
-void KairoSt_Quit(void)
+static void KairoSt_Quit(void)
 {
 	Main_SetQuitValue(0);
 }
 
-const uint32_t *KairoSt_Screen(int *width, int *height, int *pitch)
+static const uint32_t *KairoSt_Screen(int *width, int *height, int *pitch)
 {
 	*width = sdlscrn->w;
 	*height = sdlscrn->h;
@@ -466,29 +515,29 @@ const uint32_t *KairoSt_Screen(int *width, int *height, int *pitch)
 	return (const uint32_t *)sdlscrn->pixels;
 }
 
-double KairoSt_FrameSeconds(void)
+static double KairoSt_FrameSeconds(void)
 {
 	return ClocksTimings_GetVBLDuration_micro(ConfigureParams.System.nMachineType, nScreenRefreshRate)
 		* (double)nVBLSlowdown / 1e6;
 }
 
-bool KairoSt_Booting(void)
+static bool KairoSt_Booting(void)
 {
 	return boot != BOOT_OVER;
 }
 
-void KairoSt_Key(int scancode, bool down)
+static void KairoSt_Key(int scancode, bool down)
 {
 	if (down)
-		boot = BOOT_OVER;
+		end_boot();
 	IKBD_PressSTKey((uint8_t)scancode, down);
 }
 
-void KairoSt_Joystick(int control, bool down)
+static void KairoSt_Joystick(int control, bool down)
 {
 	if (down)
 	{
-		boot = BOOT_OVER;
+		end_boot();
 		Joy_KeyDown(joystick_keys[control], 0);
 	}
 	else
@@ -497,7 +546,7 @@ void KairoSt_Joystick(int control, bool down)
 
 /* Hatari's mouse handling, without its window scaling: the host sends ST pixels. Motion right
  * after a reset is dropped, as Hatari drops it, or TOS may take it for key clicks. */
-void KairoSt_MouseMove(int dx, int dy)
+static void KairoSt_MouseMove(int dx, int dy)
 {
 	if (nVBLs < 10)
 		return;
@@ -505,19 +554,19 @@ void KairoSt_MouseMove(int dx, int dy)
 	KeyboardProcessor.Mouse.dy += dy;
 }
 
-void KairoSt_MouseButton(int button, bool down)
+static void KairoSt_MouseButton(int button, bool down)
 {
 	int *state = button == 1 ? &Keyboard.bLButtonDown : &Keyboard.bRButtonDown;
 	if (down)
 	{
-		boot = BOOT_OVER;
+		end_boot();
 		*state |= BUTTON_MOUSE;
 	}
 	else
 		*state &= ~BUTTON_MOUSE;
 }
 
-void KairoSt_Reset(bool cold)
+static void KairoSt_Reset(bool cold)
 {
 	if (cold)
 		Reset_Cold();
@@ -525,23 +574,23 @@ void KairoSt_Reset(bool cold)
 		Reset_Warm();
 }
 
-void KairoSt_RequestSave(const char *file)
+static void KairoSt_RequestSave(const char *file)
 {
 	MemorySnapShot_Capture(file, false);
 }
 
-void KairoSt_RequestRestore(const char *file)
+static void KairoSt_RequestRestore(const char *file)
 {
-	boot = BOOT_OVER;
+	end_boot();
 	MemorySnapShot_Restore(file, false);
 }
 
-bool KairoSt_StateFailed(void)
+static bool KairoSt_StateFailed(void)
 {
 	return MemorySnapShot_Failed();
 }
 
-bool KairoSt_InsertFloppy(int drive, const char *path)
+static bool KairoSt_InsertFloppy(int drive, const char *path)
 {
 	if (!*path)
 	{
@@ -554,7 +603,70 @@ bool KairoSt_InsertFloppy(int drive, const char *path)
 	return Floppy_InsertDiskIntoDrive(drive);
 }
 
-const char *KairoSt_Floppy(int drive)
+static const char *KairoSt_Floppy(int drive)
 {
 	return ConfigureParams.DiskImage.szDiskFileName[drive];
+}
+
+static bool KairoSt_GuestCrashed(void)
+{
+	return STMemory_ReadLong(0x380) == 0x12345678;
+}
+
+/* The process TOS runs is its desktop: the GEMDOS process TOS runs (the run variable, which the OS
+ * header names at offset 0x28 from TOS 1.02 on, in EmuTOS too) has its code in the ROM, as the
+ * AES and its desktop do; a game's program has its code in RAM, and a game a boot sector starts
+ * never reaches the desktop. -1 for TOS 1.00, which does not name the variable. */
+static int KairoSt_OnDesktop(void)
+{
+	uint32_t run, basepage, text;
+
+	if (!bIsEmuTOS && TosVersion < 0x0102)
+		return -1;
+	run = STMemory_ReadLong(TosAddress + 0x28);
+	basepage = run ? STMemory_ReadLong(run) : 0;
+	text = basepage ? STMemory_ReadLong(basepage + 8) : 0;
+	return text >= TosAddress && text < TosAddress + TosSize;
+}
+
+static void KairoSt_CpuState(uint32_t registers[16], uint32_t *pc, uint16_t *sr)
+{
+	for (int i = 0; i < 16; i++)
+		registers[i] = Regs[i];
+	*pc = M68000_GetPC();
+	*sr = M68000_GetSR();
+}
+
+static void KairoSt_ReadMemory(uint32_t address, uint8_t *out, uint32_t length)
+{
+	for (uint32_t i = 0; i < length; i++)
+		out[i] = STMemory_ReadByte(address + i);
+}
+
+const struct KairoStApi *KairoSt_Api(void)
+{
+	static const struct KairoStApi api = {
+		.run = KairoSt_Run,
+		.quit = KairoSt_Quit,
+		.screen = KairoSt_Screen,
+		.frame_seconds = KairoSt_FrameSeconds,
+		.sample_rate = KairoSt_SampleRate,
+		.read_audio = KairoSt_ReadAudio,
+		.booting = KairoSt_Booting,
+		.key = KairoSt_Key,
+		.joystick = KairoSt_Joystick,
+		.mouse_move = KairoSt_MouseMove,
+		.mouse_button = KairoSt_MouseButton,
+		.reset = KairoSt_Reset,
+		.request_save = KairoSt_RequestSave,
+		.request_restore = KairoSt_RequestRestore,
+		.state_failed = KairoSt_StateFailed,
+		.insert_floppy = KairoSt_InsertFloppy,
+		.floppy = KairoSt_Floppy,
+		.guest_crashed = KairoSt_GuestCrashed,
+		.on_desktop = KairoSt_OnDesktop,
+		.cpu_state = KairoSt_CpuState,
+		.read_memory = KairoSt_ReadMemory,
+	};
+	return &api;
 }

@@ -756,6 +756,20 @@ void TOS_MemorySnapShot_Capture(bool bSave)
  *
  * Set logpatch_addr if patch for that is needed.
  */
+/* KairoST: EmuTOS 1.4 1024k's welcome screen hold, skipped with fast boot (tools/local_patches.py). */
+static void TOS_FixEmuTosWelcome(void)
+{
+	static const uint32_t holds[] = { 0xE0D810, 0xE0D8E8 };	/* addi.l #600,d4 */
+	int i;
+
+	for (i = 0; i < 2; i++)
+		if (STMemory_ReadWord(holds[i]) != 0x0684 || STMemory_ReadLong(holds[i] + 2) != 600)
+			return;	/* another EmuTOS build */
+	for (i = 0; i < 2; i++)
+		memset(&RomMem[holds[i] + 2], 0, 4);
+	Log_Printf(LOG_DEBUG, "Skipped the EmuTOS welcome screen hold.\n");
+}
+
 static void TOS_FixRom(uint32_t *logopatch_addr)
 {
 	int nGoodPatches, nBadPatches;
@@ -1215,6 +1229,8 @@ int TOS_InitImage(void)
 	{
 		Log_Printf(LOG_DEBUG, "Skipped TOS patches.\n");
 	}
+	if (bIsEmuTOS && !bRamTosImage && ConfigureParams.System.bFastBoot)
+		TOS_FixEmuTosWelcome();	/* KairoST */
 
 	/* whether to override EmuTOS country code */
 	osconf = STMemory_ReadWord(TosAddress+0x1C);

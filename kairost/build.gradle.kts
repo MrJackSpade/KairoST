@@ -16,6 +16,9 @@ val stageEmutos = tasks.register<Copy>("stageEmutos") {
     into(emutosAssets.map { it.dir("emutos") })
 }
 android.sourceSets.getByName("main").assets.srcDir(emutosAssets)
+
+// Hatari's own library (core/CMakeLists.txt), which the app's library loads afresh for each machine.
+android.defaultConfig.externalNativeBuild.cmake.targets.add("kairost_hatari")
 tasks.named("preBuild") { dependsOn(stageEmutos) }
 
 dependencies {

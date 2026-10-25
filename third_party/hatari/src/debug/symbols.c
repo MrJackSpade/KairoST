@@ -425,7 +425,6 @@ void Symbols_FreeAll(void)
 {
 	symbol_list_free(CpuSymbolsList);
 	symbol_list_free(DspSymbolsList);
-	CpuSymbolsList = DspSymbolsList = NULL;	/* KairoST: a later machine loads its own */
 }
 
 /**

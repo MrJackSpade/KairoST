@@ -93,31 +93,55 @@ set(GENERATED_CPU_SOURCES
     cpuemu_40.c cpuemu_50.c)
 list(TRANSFORM GENERATED_CPU_SOURCES PREPEND "${GENERATED_CPU}/")
 
-add_library(kairo_hatari STATIC ${HATARI_SOURCES} ${CPU_SOURCES} ${GENERATED_CPU_SOURCES}
+# Hatari, as a library of its own: each machine loads a fresh copy of it (hatari_library.h), so
+# Hatari's process-wide variables start from their initial values for every machine. Its only
+# exported symbol is KairoSt_Api (kairo/kairo_st.h); SDL and zlib are built into it.
+add_library(kairost_hatari SHARED ${HATARI_SOURCES} ${CPU_SOURCES} ${GENERATED_CPU_SOURCES}
     kairo/main.c kairo/audio.c kairo/dlgHalt.c kairo/alert_hooks.c)
-set_target_properties(kairo_hatari PROPERTIES C_STANDARD 99 C_EXTENSIONS ON)
+set_target_properties(kairost_hatari PROPERTIES C_STANDARD 99 C_EXTENSIONS ON C_VISIBILITY_PRESET hidden
+    PREFIX "lib")
+set_target_properties(kairo_zlib SDL2-static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 # KairoST's replacements come first: kairo/uae stands in for the uae/ headers left out of the
 # snapshot. config.h is the one generated above. Alerts go to KairoST's hooks (kairo/alert_hooks.c).
-target_include_directories(kairo_hatari PUBLIC "${CMAKE_CURRENT_LIST_DIR}/kairo")
-target_include_directories(kairo_hatari PRIVATE
+target_include_directories(kairost_hatari PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo"
     "${CMAKE_CURRENT_BINARY_DIR}/hatari-config" "${HATARI}/includes" "${HATARI}/debug" "${HATARI}/falcon"
     "${HATARI}/gui-sdl" "${HATARI}" "${CPU}" "${CPU}/softfloat" "${GENERATED_CPU}")
-target_compile_definitions(kairo_hatari PRIVATE ALERT_HOOKS=1 CONFDIR="." _FILE_OFFSET_BITS=64)
+target_compile_definitions(kairost_hatari PRIVATE ALERT_HOOKS=1 CONFDIR="." _FILE_OFFSET_BITS=64)
 # Hatari's flags for its CPU core (src/cpu/CMakeLists.txt): it relies on wrapping signed
 # arithmetic. char is signed, as on the x86 hosts Hatari is mostly developed on (ARM's is
 # unsigned).
-target_compile_options(kairo_hatari PRIVATE -fwrapv -fsigned-char -Wno-write-strings
+target_compile_options(kairost_hatari PRIVATE -fwrapv -fsigned-char -Wno-write-strings
     -Wno-unused-variable -Wno-unused-function -Wno-unused-label -Wno-sign-compare
     -Wno-missing-braces -Wno-unused-but-set-variable)
-target_link_libraries(kairo_hatari PUBLIC kairo_zlib SDL2-static)
+target_link_libraries(kairost_hatari PRIVATE kairo_zlib SDL2-static)
 if(ANDROID)
-    target_link_libraries(kairo_hatari PUBLIC log)
+    target_link_libraries(kairost_hatari PRIVATE log)
+    target_link_options(kairost_hatari PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_LIST_DIR}/kairo/hatari.map")
+    set_target_properties(kairost_hatari PROPERTIES LINK_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/kairo/hatari.map")
+elseif(WIN32)
+    # The DLL carries its own runtime, as boot_test does.
+    target_link_options(kairost_hatari PRIVATE -static)
 endif()
 
-# The frame-driven machine (st_machine.h).
-add_library(kairost_core STATIC st_machine.cpp)
-target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
-target_link_libraries(kairost_core PUBLIC kairo_hatari)
+# The frame-driven machine (st_machine.h), which loads the Hatari library by its file name.
+add_library(kairost_core STATIC st_machine.cpp hatari_library.cpp)
+target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}" PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo")
+target_compile_definitions(kairost_core PRIVATE KAIROST_HATARI_FILE="$<TARGET_FILE_NAME:kairost_hatari>")
+add_dependencies(kairost_core kairost_hatari)
+if(ANDROID)
+    target_link_libraries(kairost_core PUBLIC dl log)
+endif()
+
+# The measurement tool (test/game_profile.cpp) builds for the host and, with KAIROST_TOOLS=ON and
+# the NDK, for the device, beside the Hatari library it loads.
+option(KAIROST_TOOLS "Build the measurement tool on Android" OFF)
+if(NOT ANDROID OR KAIROST_TOOLS)
+    add_executable(game_profile test/game_profile.cpp)
+    target_link_libraries(game_profile PRIVATE kairost_core)
+    if(WIN32)
+        target_link_options(game_profile PRIVATE -static)
+    endif()
+endif()
 
 if(NOT ANDROID)
     add_executable(boot_test test/boot_test.cpp)

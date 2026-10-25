@@ -1,11 +1,13 @@
 #include "st_machine.h"
 
 #include <condition_variable>
+#include <cstring>
+#include <ctime>
 #include <mutex>
 #include <thread>
 #include <utility>
 
-#include "kairo_st.h"
+#include "hatari_library.h"
 
 #ifdef __ANDROID__
 #include <android/log.h>
@@ -23,14 +25,19 @@ namespace {
 struct Session {
     enum class Turn { kHatari, kHost };
 
+    // This machine's own copy of Hatari, unloaded after its thread ends.
+    std::unique_ptr<HatariLibrary> library;
+    const KairoStApi *hatari = nullptr;
+    KairoStHost host{};
+
     std::mutex mutex;
     std::condition_variable changed;
     Turn turn = Turn::kHatari;
-    // Hatari's thread has returned from KairoSt_Run.
+    // Hatari's thread has returned from its run.
     bool ended = false;
-    // KairoSt_Run's result, once ended.
+    // The run's result, once ended.
     bool quit_cleanly = false;
-    // The error Hatari reported (KairoStHost_Fatal), on Hatari's thread before its turn ends.
+    // The error Hatari reported (host_fatal), on Hatari's thread before its turn ends.
     std::string fatal;
     std::thread thread;
 
@@ -62,15 +69,31 @@ struct Session {
     void stop() {
         if (!thread.joinable()) return;
         if (!ended) {
-            KairoSt_Quit();
+            hatari->quit();
             run_hatari();
         }
         thread.join();
     }
 };
 
-// The running machine, for the KairoStHost_* calls from Hatari's thread. A process runs one.
-Session *running = nullptr;
+// Hatari's thread's calls (KairoStHost), with the session as their context.
+void host_vbl(void *context) { static_cast<Session *>(context)->at_vbl(); }
+
+void host_fatal(void *context, const char *message) {
+    auto *session = static_cast<Session *>(context);
+    // The first error is the cause; later ones follow from it.
+    if (session->fatal.empty()) session->fatal = message;
+}
+
+// Hatari's own log has it too (core/kairo/alert_hooks.c); this puts it where the platform's
+// logs are read. Error level, as some devices keep no other.
+void host_notice(void *, const char *message) {
+#ifdef __ANDROID__
+    __android_log_print(ANDROID_LOG_ERROR, "KairoST", "Hatari: %s", message);
+#else
+    std::fprintf(stderr, "Hatari: %s\n", message);
+#endif
+}
 
 } // namespace
 
@@ -78,19 +101,14 @@ struct StMachine::Impl : Session {};
 
 StMachine::StMachine(std::unique_ptr<Impl> impl) : impl_(std::move(impl)) {}
 
-StMachine::~StMachine() {
-    impl_->stop();
-    running = nullptr;
-}
+StMachine::~StMachine() { impl_->stop(); }
 
 std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &error) {
-    if (running) {
-        error = "Another machine is still running";
-        return nullptr;
-    }
+    auto library = HatariLibrary::load(error);
+    if (!library) return nullptr;
     // Hatari's command line: the whole configuration, with no configuration file. The display
     // is Hatari's own (with borders, for overscan), unscaled; the joystick in port 1 is Hatari's
-    // keyboard joystick, which KairoSt_Joystick drives; nothing asks or waits for a person.
+    // keyboard joystick, which KairoStApi::joystick drives; nothing asks or waits for a person.
     std::vector<std::string> args = {
         "hatari",
         "--machine", config.machine,
@@ -120,6 +138,13 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     };
     if (!config.floppy[kDriveA].empty()) args.insert(args.end(), {"--disk-a", config.floppy[kDriveA]});
     if (!config.floppy[kDriveB].empty()) args.insert(args.end(), {"--disk-b", config.floppy[kDriveB]});
+    if (!config.floppy_program.empty()) {
+        if (config.floppy[kDriveA].empty()) {
+            error = "The startup program " + config.floppy_program + " needs a disk in drive A";
+            return nullptr;
+        }
+        args.insert(args.end(), {"--auto", "A:\\" + config.floppy_program});
+    }
     // Hatari's last argument: a program, whose folder it mounts as drive C and boots from, and
     // which it starts.
     if (!config.program.empty()) args.push_back(config.program);
@@ -127,11 +152,14 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     auto impl = std::make_unique<Impl>();
     for (int drive = 0; drive < kDrives; ++drive) impl->floppy[drive] = config.floppy[drive];
     Session *state = impl.get();
-    running = state;
+    state->hatari = &library->api();
+    state->library = std::move(library);
+    state->host = {state, host_vbl, host_fatal, host_notice,
+                   config.seed ? config.seed : static_cast<unsigned int>(std::time(nullptr))};
     state->thread = std::thread([state, args = std::move(args), home = config.home] {
         std::vector<const char *> argv;
         for (const auto &arg : args) argv.push_back(arg.c_str());
-        bool clean = KairoSt_Run(int(argv.size()), argv.data(), home.c_str());
+        bool clean = state->hatari->run(int(argv.size()), argv.data(), home.c_str(), &state->host);
         std::lock_guard lock(state->mutex);
         state->quit_cleanly = clean;
         state->ended = true;
@@ -145,7 +173,6 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     if (state->ended) {
         error = state->error();
         state->thread.join();
-        running = nullptr;
         return nullptr;
     }
     return std::unique_ptr<StMachine>(new StMachine(std::move(impl)));
@@ -159,54 +186,47 @@ bool StMachine::run_frame(std::string &error) {
     return true;
 }
 
-bool StMachine::booting() const { return KairoSt_Booting(); }
+bool StMachine::booting() const { return impl_->hatari->booting(); }
 
-double StMachine::frame_seconds() const { return KairoSt_FrameSeconds(); }
+double StMachine::frame_seconds() const { return impl_->hatari->frame_seconds(); }
 
 const uint8_t *StMachine::frame(uint32_t &width, uint32_t &height) {
     int w, h, pitch;
-    const uint32_t *pixels = KairoSt_Screen(&w, &h, &pitch);
+    const uint8_t *pixels = reinterpret_cast<const uint8_t *>(impl_->hatari->screen(&w, &h, &pitch));
     width = uint32_t(w);
     height = uint32_t(h);
-    impl_->rgba.resize(size_t(w) * size_t(h) * 4);
-    uint8_t *out = impl_->rgba.data();
-    // SDL's dummy window surface is XRGB8888.
-    for (int y = 0; y < h; ++y) {
-        const uint32_t *row = reinterpret_cast<const uint32_t *>(reinterpret_cast<const uint8_t *>(pixels) + size_t(y) * pitch);
-        for (int x = 0; x < w; ++x) {
-            uint32_t pixel = row[x];
-            *out++ = uint8_t(pixel >> 16);
-            *out++ = uint8_t(pixel >> 8);
-            *out++ = uint8_t(pixel);
-            *out++ = 0xff;
-        }
-    }
+    // SDL's dummy window surface already holds R, G, B, A bytes (patch sdl-dummy-rgba): rows without
+    // padding are the picture as it is; padded rows are packed.
+    const size_t row = size_t(w) * 4;
+    if (size_t(pitch) == row) return pixels;
+    impl_->rgba.resize(row * size_t(h));
+    for (int y = 0; y < h; ++y) std::memcpy(impl_->rgba.data() + row * size_t(y), pixels + size_t(pitch) * size_t(y), row);
     return impl_->rgba.data();
 }
 
-int StMachine::sample_rate() const { return KairoSt_SampleRate(); }
+int StMachine::sample_rate() const { return impl_->hatari->sample_rate(); }
 
-uint32_t StMachine::read_audio(int16_t *stereo, uint32_t max_frames) { return KairoSt_ReadAudio(stereo, max_frames); }
+uint32_t StMachine::read_audio(int16_t *stereo, uint32_t max_frames) { return impl_->hatari->read_audio(stereo, max_frames); }
 
-void StMachine::key(int scancode, bool down) { KairoSt_Key(scancode, down); }
+void StMachine::key(int scancode, bool down) { impl_->hatari->key(scancode, down); }
 
 void StMachine::joystick(int control, bool down) {
     static_assert(kJoystickControls == KAIRO_ST_JOYSTICK_CONTROLS);
-    if (control >= 0 && control < kJoystickControls) KairoSt_Joystick(control, down);
+    if (control >= 0 && control < kJoystickControls) impl_->hatari->joystick(control, down);
 }
 
-void StMachine::mouse_move(int dx, int dy) { KairoSt_MouseMove(dx, dy); }
+void StMachine::mouse_move(int dx, int dy) { impl_->hatari->mouse_move(dx, dy); }
 
 void StMachine::mouse_button(int button, bool down) {
-    if (button == 1 || button == 2) KairoSt_MouseButton(button, down);
+    if (button == 1 || button == 2) impl_->hatari->mouse_button(button, down);
 }
 
-void StMachine::reset() { KairoSt_Reset(false); }
+void StMachine::reset() { impl_->hatari->reset(false); }
 
 bool StMachine::save_state(const std::string &file, std::string &error) {
-    KairoSt_RequestSave(file.c_str());
+    impl_->hatari->request_save(file.c_str());
     if (!run_frame(error)) return false;
-    if (KairoSt_StateFailed()) {
+    if (impl_->hatari->state_failed()) {
         error = "Hatari could not save the state to " + file;
         return false;
     }
@@ -214,18 +234,18 @@ bool StMachine::save_state(const std::string &file, std::string &error) {
 }
 
 bool StMachine::load_state(const std::string &file, std::string &error) {
-    KairoSt_RequestRestore(file.c_str());
+    impl_->hatari->request_restore(file.c_str());
     if (!run_frame(error)) return false;
-    if (KairoSt_StateFailed()) {
+    if (impl_->hatari->state_failed()) {
         error = "Hatari could not restore the state from " + file;
         return false;
     }
-    for (int drive = 0; drive < kDrives; ++drive) impl_->floppy[drive] = KairoSt_Floppy(drive);
+    for (int drive = 0; drive < kDrives; ++drive) impl_->floppy[drive] = impl_->hatari->floppy(drive);
     return true;
 }
 
 bool StMachine::insert(Drive drive, const std::string &path, std::string &error) {
-    if (!KairoSt_InsertFloppy(drive, path.c_str())) {
+    if (!impl_->hatari->insert_floppy(drive, path.c_str())) {
         error = "Hatari refused the disk image " + path;
         return false;
     }
@@ -235,23 +255,18 @@ bool StMachine::insert(Drive drive, const std::string &path, std::string &error)
 
 std::string StMachine::media_path(Drive drive) { return impl_->floppy[drive]; }
 
+bool StMachine::guest_crashed() const { return impl_->hatari->guest_crashed(); }
+
+int StMachine::on_desktop() const { return impl_->hatari->on_desktop(); }
+
+void StMachine::cpu_state(uint32_t registers[16], uint32_t &pc, uint16_t &sr) const {
+    impl_->hatari->cpu_state(registers, &pc, &sr);
+}
+
+std::vector<uint8_t> StMachine::read_memory(uint32_t address, uint32_t length) const {
+    std::vector<uint8_t> bytes(length);
+    impl_->hatari->read_memory(address, bytes.data(), length);
+    return bytes;
+}
+
 } // namespace kairost
-
-// Hatari's thread.
-
-extern "C" void KairoStHost_Vbl(void) { kairost::running->at_vbl(); }
-
-extern "C" void KairoStHost_Fatal(const char *message) {
-    // The first error is the cause; later ones follow from it.
-    if (kairost::running->fatal.empty()) kairost::running->fatal = message;
-}
-
-// Hatari's own log has it too (core/kairo/alert_hooks.c); this puts it where the platform's
-// logs are read. Error level, as some devices keep no other.
-extern "C" void KairoStHost_Notice(const char *message) {
-#ifdef __ANDROID__
-    __android_log_print(ANDROID_LOG_ERROR, "KairoST", "Hatari: %s", message);
-#else
-    std::fprintf(stderr, "Hatari: %s\n", message);
-#endif
-}
