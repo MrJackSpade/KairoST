@@ -12,14 +12,15 @@ add_compile_options(-O3)
 # tools/perf/pgo-train.ps1, core/pgo). The profile describes this exact code as the device compiles
 # it, so a training build (KAIROST_PGO_GENERATE), the host or another compiler turns it off with
 # -DKAIRO_PGO=OFF (the app's gradle property pgo=false).
-if(ANDROID AND EXISTS "${CMAKE_CURRENT_LIST_DIR}/pgo/profile.json")
+if(ANDROID)
     set(KAIROST_PGO_DEFAULT ON)
 else()
     set(KAIROST_PGO_DEFAULT OFF)
 endif()
 option(KAIRO_PGO "Build the core with its recorded profile (core/pgo)" ${KAIROST_PGO_DEFAULT})
 option(KAIROST_PGO_GENERATE "Build the core to record a profile (tools/perf/pgo-train.ps1)" OFF)
-if(KAIRO_PGO)
+# Until tools/perf/pgo-train.ps1 first records core/pgo, there is no profile to build with.
+if(KAIRO_PGO AND EXISTS "${CMAKE_CURRENT_LIST_DIR}/pgo/profile.json")
     if(KAIROST_PGO_GENERATE)
         message(FATAL_ERROR "The recorded profile is for the ordinary core: add -DKAIRO_PGO=OFF to a KAIROST_PGO_GENERATE build")
     endif()
