@@ -258,13 +258,27 @@ static void Main_Init_HW(void)
  * it, through Hatari's autostart (--auto). Disks with several programs, or none, open on the
  * desktop. Only images Hatari keeps as plain sectors (ST, MSA, DIM) are read; STX images are
  * originals, which boot themselves. */
+/* A logical sector of drive A's disk, as TOS finds it: by the sectors per track and sides its boot
+ * sector names, whatever the image's own layout (Hatari's Floppy_ReadSectors reads the image).
+ * Null when the disk does not have it. */
+static const uint8_t *floppy_logical_sector(int logical, int per_track, int sides)
+{
+	uint8_t *sector;
+	int track = logical / (per_track * sides), rest = logical % (per_track * sides);
+
+	if (!Floppy_ReadSectors(0, &sector, rest % per_track + 1, track, rest / per_track, 1, NULL, NULL))
+		return NULL;
+	return sector;
+}
+
 static void autostart_floppy_program(void)
 {
 	static const char *const programs[] = { "PRG", "TOS", "APP", "TTP", "GTP" };
 	const EMULATION_DRIVE *drive = &EmulationDrives[0];
 	const uint8_t *disk = drive->pBuffer;
 	int size = drive->nImageBytes;
-	int sector, reserved, fats, entries, fat_sectors, root, i, found = 0;
+	int bytes, reserved, fats, entries, fat_sectors, per_track, sides, root, i, found = 0;
+	const uint8_t *sector = NULL;
 	uint16_t checksum = 0;
 	char name[16] = "";
 
@@ -278,20 +292,32 @@ static void autostart_floppy_program(void)
 	if (checksum == 0x1234)
 		return;
 
-	sector = disk[11] | disk[12] << 8;
+	bytes = disk[11] | disk[12] << 8;
+	/* TOS takes the FATs to start after the boot sector, whatever the reserved count says (many
+	 * disks say 0). */
 	reserved = disk[14] | disk[15] << 8;
+	if (reserved < 1)
+		reserved = 1;
 	fats = disk[16];
 	entries = disk[17] | disk[18] << 8;
 	fat_sectors = disk[22] | disk[23] << 8;
-	if (sector != 512 || reserved < 1 || fats < 1 || entries < 1)
+	per_track = disk[24] | disk[25] << 8;
+	sides = disk[26] | disk[27] << 8;
+	if (bytes != 512 || fats < 1 || entries < 1 || per_track < 1 || per_track > 48 || sides < 1 || sides > 2)
 		return;		/* not a TOS file system */
-	root = (reserved + fats * fat_sectors) * sector;
-	for (i = 0; i < entries && root + i * 32 + 32 <= size; i++)
+	root = reserved + fats * fat_sectors;
+	for (i = 0; i < entries; i++)
 	{
-		const uint8_t *entry = disk + root + i * 32;
+		const uint8_t *entry;
+
+		if (i % 16 == 0)
+			sector = floppy_logical_sector(root + i / 16, per_track, sides);
 		char base[9], ext[4];
 		int b, e, p;
 
+		if (!sector)
+			break;
+		entry = sector + i % 16 * 32;
 		if (entry[0] == 0)
 			break;
 		if (entry[0] == 0xE5 || entry[11] & 0x18)	/* deleted, volume label or folder */
