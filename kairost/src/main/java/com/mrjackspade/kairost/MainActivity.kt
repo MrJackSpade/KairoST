@@ -8,14 +8,13 @@ import com.mrjackspade.kairo.frontend.ControllerGuestSpec
 import com.mrjackspade.kairo.frontend.ControllerLayout
 import com.mrjackspade.kairo.frontend.DiskImageEntry
 import com.mrjackspade.kairo.frontend.DiskImageLibrary
-import com.mrjackspade.kairo.frontend.DocumentPicker
 import com.mrjackspade.kairo.frontend.FirmwareSet
+import com.mrjackspade.kairo.frontend.ImportedFilePicker
 import com.mrjackspade.kairo.frontend.LayeredGameCatalog
 import com.mrjackspade.kairo.frontend.LibraryStrings
 import com.mrjackspade.kairo.frontend.MachineActivity
 import com.mrjackspade.kairo.frontend.MachineFirstRun
 import com.mrjackspade.kairo.frontend.NativeMachine
-import com.mrjackspade.kairo.frontend.SettingsRow
 import com.mrjackspade.kairo.frontend.mediaFor
 
 import java.io.File
@@ -89,33 +88,15 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
 
     private fun tosChoices() = tosLibrary.images().map { ChoiceOption(it.id, it.label) }
 
-    /** The game (or all games) whose System an import picks, waiting for the picker's result. */
-    private var tosImportPicks: ((String) -> Unit)? = null
-
-    private fun tosActions(select: (String) -> Unit) = listOf(
-        SettingsRow.action("tos-import", "Import a TOS image…") {
-            tosImportPicks = select
-            DocumentPicker.open(this, TOS_IMPORT_REQUEST, failed = ::toast)
-        })
-
-    override fun handleProductResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
-        if (requestCode != TOS_IMPORT_REQUEST) return super.handleProductResult(requestCode, resultCode, data)
-        val select = tosImportPicks ?: return true
-        tosImportPicks = null
-        val uri = DocumentPicker.selectedUri(resultCode, data) ?: return true
-        Thread {
-            val result = runCatching {
-                (contentResolver.openInputStream(uri) ?: error("Could not open that file")).use(tosLibrary::add)
-            }
-            runOnUiThread {
-                result.onSuccess { image ->
-                    select(image.id)
-                    toast("${image.label} imported and chosen")
-                }.onFailure { error -> toast("TOS import failed: ${error.message ?: error.javaClass.simpleName}") }
-            }
-        }.apply { name = "KairoST-tos-import"; start() }
-        return true
+    /** Imports a TOS image into the library and picks it for the game (or all games) asking. */
+    private val tosImport by lazy {
+        ImportedFilePicker(this, tosLibrary.files, TOS_IMPORT_REQUEST, "tos-import", "Import a TOS image…", "TOS", ::toast)
     }
+
+    private fun tosActions(select: (String) -> Unit) = tosImport.actions(select)
+
+    override fun handleProductResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean =
+        tosImport.handle(requestCode, resultCode, data) || super.handleProductResult(requestCode, resultCode, data)
 
     /** The model rows join the library, so a game that picked one keeps it when the row changes. */
     override fun firmwareImported() = tosLibrary.mirrorRows()
