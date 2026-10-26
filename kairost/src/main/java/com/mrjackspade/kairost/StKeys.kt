@@ -238,42 +238,7 @@ object StKeys {
     val joystick = JoystickInputRouter.DEFAULT_CONTROLS
     val joystickLabels = listOf("Up", "Down", "Left", "Right", "Fire", "Fire 2 (unused)")
 
-    val bindings = ControllerBindingsCodec(::defaults, { it in bindableCodes }, joystick,
+    val bindings = ControllerBindingsCodec({ it in bindableCodes }, joystick,
         setOf("menu", "pause", "restart", "exit", "fastForward"))
 
-    fun defaults(layout: ControllerLayout): List<ControllerBinding> =
-        if (layout == ControllerLayout.WITH_STICKS) defaults()
-        else defaults().filterNot { it.input.startsWith("virtual:ls") || it.input.startsWith("virtual:rs") }
-
-    /**
-     * ST games read the joystick in port 1, the mouse in port 0, or the keyboard: the D-pad is the
-     * joystick and the cursor keys, A and B are Return and Space, X is fire, Y is Esc, the left
-     * stick moves the mouse with L1 and R1 its buttons, Start is F1 (many games' start or pause),
-     * Select is Help, L2 and R2 are F2 and Undo, and the right stick is the cursor keys.
-     */
-    fun defaults() = listOf(
-        ControllerBinding("virtual:a", listOf(RETURN)),
-        ControllerBinding("virtual:b", listOf(SPACE)),
-        ControllerBinding("virtual:x", joystick = "button1"),
-        ControllerBinding("virtual:y", listOf(ESC)),
-        ControllerBinding("virtual:l1", mouse = "leftButton"),
-        ControllerBinding("virtual:r1", mouse = "rightButton"),
-        ControllerBinding("virtual:l2", listOf(function(2))),
-        ControllerBinding("virtual:r2", listOf(UNDO)),
-        ControllerBinding("virtual:start", listOf(function(1))),
-        ControllerBinding("virtual:select", listOf(HELP)),
-        ControllerBinding("virtual:menu", action = "menu"),
-        ControllerBinding("virtual:up", listOf(UP), joystick = "up"),
-        ControllerBinding("virtual:down", listOf(DOWN), joystick = "down"),
-        ControllerBinding("virtual:left", listOf(LEFT), joystick = "left"),
-        ControllerBinding("virtual:right", listOf(RIGHT), joystick = "right"),
-        ControllerBinding("virtual:lsup", mouse = "moveUp"),
-        ControllerBinding("virtual:lsdown", mouse = "moveDown"),
-        ControllerBinding("virtual:lsleft", mouse = "moveLeft"),
-        ControllerBinding("virtual:lsright", mouse = "moveRight"),
-        ControllerBinding("virtual:rsup", listOf(UP)),
-        ControllerBinding("virtual:rsdown", listOf(DOWN)),
-        ControllerBinding("virtual:rsleft", listOf(LEFT)),
-        ControllerBinding("virtual:rsright", listOf(RIGHT))
-    )
 }

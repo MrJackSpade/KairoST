@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "controller": {
+    "bindings": [
+      {"input": "virtual:up", "keys": [72], "joystick": "up"},
+      {"input": "virtual:down", "keys": [80], "joystick": "down"},
+      {"input": "virtual:left", "keys": [75], "joystick": "left"},
+      {"input": "virtual:right", "keys": [77], "joystick": "right"},
+      {"input": "virtual:a", "keys": [28]},
+      {"input": "virtual:b", "keys": [57]},
+      {"input": "virtual:x", "joystick": "button1"},
+      {"input": "virtual:y", "keys": [1]},
+      {"input": "virtual:l1", "mouse": "leftButton"},
+      {"input": "virtual:r1", "mouse": "rightButton"},
+      {"input": "virtual:l2", "keys": [60]},
+      {"input": "virtual:r2", "keys": [97]},
+      {"input": "virtual:start", "keys": [59]},
+      {"input": "virtual:select", "keys": [98]},
+      {"input": "virtual:menu", "action": "menu"},
+      {"input": "virtual:lsup", "mouse": "moveUp"},
+      {"input": "virtual:lsdown", "mouse": "moveDown"},
+      {"input": "virtual:lsleft", "mouse": "moveLeft"},
+      {"input": "virtual:lsright", "mouse": "moveRight"},
+      {"input": "virtual:rsup", "keys": [72]},
+      {"input": "virtual:rsdown", "keys": [80]},
+      {"input": "virtual:rsleft", "keys": [75]},
+      {"input": "virtual:rsright", "keys": [77]}
+    ]
+  }
+}

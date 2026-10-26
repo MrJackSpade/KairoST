@@ -43,7 +43,6 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         setOf(StKeys.LEFT_SHIFT, StKeys.RIGHT_SHIFT, StKeys.CONTROL, StKeys.ALTERNATE), StKeys.joystick.zip(StKeys.joystickLabels),
         "The joystick in port 1.", ControllerGuestSpec.STANDARD_ACTIONS, StKeys.layout)
     override val bindingsCodec = StKeys.bindings
-    override fun defaultBindings(layout: ControllerLayout) = StKeys.defaults(layout)
     override val artworkDownloadsEnabled: Boolean get() = resources.getBoolean(R.bool.catalog_art_download_enabled)
 
     /**
