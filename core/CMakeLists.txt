@@ -155,7 +155,10 @@ endif()
 
 # The frame-driven machine (st_machine.h), which loads the Hatari library by its file name.
 add_library(kairost_core STATIC st_machine.cpp hatari_library.cpp)
-target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}" PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo")
+target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}" PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo"
+    "${CMAKE_CURRENT_LIST_DIR}/../shared/frontend/src/main/cpp")
+# The app has the shared state paths in its machine library; these executables compile them.
+set(KAIRO_STATE_PATHS "${CMAKE_CURRENT_LIST_DIR}/../shared/frontend/src/main/cpp/kairo/state_paths.cpp")
 target_compile_definitions(kairost_core PRIVATE KAIROST_HATARI_FILE="$<TARGET_FILE_NAME:kairost_hatari>")
 add_dependencies(kairost_core kairost_hatari)
 if(ANDROID)
@@ -166,7 +169,7 @@ endif()
 # the NDK, for the device, beside the Hatari library it loads.
 option(KAIROST_TOOLS "Build the measurement tool on Android" OFF)
 if(NOT ANDROID OR KAIROST_TOOLS)
-    add_executable(game_profile test/game_profile.cpp)
+    add_executable(game_profile test/game_profile.cpp "${KAIRO_STATE_PATHS}")
     target_link_libraries(game_profile PRIVATE kairost_core)
     if(WIN32)
         target_link_options(game_profile PRIVATE -static)
@@ -174,7 +177,7 @@ if(NOT ANDROID OR KAIROST_TOOLS)
 endif()
 
 if(NOT ANDROID)
-    add_executable(boot_test test/boot_test.cpp)
+    add_executable(boot_test test/boot_test.cpp "${KAIRO_STATE_PATHS}")
     target_link_libraries(boot_test PRIVATE kairost_core)
     if(WIN32)
         target_link_options(boot_test PRIVATE -static)

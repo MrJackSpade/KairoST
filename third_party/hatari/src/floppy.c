@@ -143,7 +143,7 @@ void Floppy_MemorySnapShot_Capture(bool bSave)
 		}
 		if (EmulationDrives[i].pBuffer)
 			MemorySnapShot_Store(EmulationDrives[i].pBuffer, EmulationDrives[i].nImageBytes);
-		MemorySnapShot_Store(EmulationDrives[i].sFileName, sizeof(EmulationDrives[i].sFileName));
+		MemorySnapShot_StorePath(EmulationDrives[i].sFileName, sizeof(EmulationDrives[i].sFileName)); /* KairoST */
 		MemorySnapShot_Store(&EmulationDrives[i].bContentsChanged,sizeof(EmulationDrives[i].bContentsChanged));
 		MemorySnapShot_Store(&EmulationDrives[i].bOKToSave,sizeof(EmulationDrives[i].bOKToSave));
 		MemorySnapShot_Store(&EmulationDrives[i].TransitionState1,sizeof(EmulationDrives[i].TransitionState1));

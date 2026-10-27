@@ -19,6 +19,7 @@
 const char MemorySnapShot_fileid[] = "Hatari memorySnapShot.c";
 
 #include <errno.h>
+#include <string.h> /* KairoST */
 
 #include "main.h"
 #include "blitter.h"
@@ -275,6 +276,29 @@ void MemorySnapShot_Skip(int Nb)
 /**
  * Save/Restore data to/from file.
  */
+/* KairoST: where a file a snapshot names is now (shared kairo/state_paths.h). */
+extern const char *kairo_state_path(const char *recorded);
+
+/* KairoST: stores a file path; restored, it is where that file is now, or the restore fails
+ * when that path does not fit. */
+void MemorySnapShot_StorePath(char *pPath, int Size)
+{
+	const char *now;
+
+	MemorySnapShot_Store(pPath, Size);
+	if (bCaptureSave || bCaptureError)
+		return;
+	now = kairo_state_path(pPath);
+	if (now == pPath)
+		return;
+	if (strlen(now) >= (size_t)Size)
+	{
+		bCaptureError = true;
+		return;
+	}
+	strcpy(pPath, now);
+}
+
 void MemorySnapShot_Store(void *pData, int Size)
 {
 	long nBytes;

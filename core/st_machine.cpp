@@ -8,6 +8,7 @@
 #include <utility>
 
 #include "hatari_library.h"
+#include "kairo/state_paths.h"
 
 #ifdef __ANDROID__
 #include <android/log.h>
@@ -89,6 +90,9 @@ void host_fatal(void *context, const char *message) {
 
 // Hatari's own log has it too (core/kairo/alert_hooks.c); this puts it where the platform's
 // logs are read. Error level, as some devices keep no other.
+// The frontend knows where each of the game's files is now while it loads a state (kairo/state_paths.h).
+const char *host_state_path(void *, const char *recorded) { return kairo_state_path(recorded); }
+
 void host_notice(void *, const char *message) {
 #ifdef __ANDROID__
     __android_log_print(ANDROID_LOG_ERROR, "KairoST", "Hatari: %s", message);
@@ -156,7 +160,7 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     Session *state = impl.get();
     state->hatari = &library->api();
     state->library = std::move(library);
-    state->host = {state, host_vbl, host_fatal, host_notice,
+    state->host = {state, host_vbl, host_fatal, host_notice, host_state_path,
                    config.seed ? config.seed : static_cast<unsigned int>(std::time(nullptr))};
     state->thread = std::thread([state, args = std::move(args), home = config.home, start = config.on_thread_start] {
         if (start) start();

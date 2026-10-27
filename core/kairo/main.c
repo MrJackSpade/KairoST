@@ -463,6 +463,12 @@ void KairoStHost_Notice(const char *message)
 	host->notice(host->context, message);
 }
 
+/* Where a file a state being restored names is now (MemorySnapShot_StorePath). */
+const char *kairo_state_path(const char *recorded)
+{
+	return host->state_path(host->context, recorded);
+}
+
 static bool KairoSt_Run(int argc, const char *const argv[], const char *home, const struct KairoStHost *machine)
 {
 	bool ok;

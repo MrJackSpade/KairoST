@@ -1229,7 +1229,7 @@ void Configuration_MemorySnapShot_Capture(bool bSave)
 	int i;
 
 	MemorySnapShot_Store(ConfigureParams.Rom.szTosImageFileName, sizeof(ConfigureParams.Rom.szTosImageFileName));
-	MemorySnapShot_Store(ConfigureParams.Rom.szCartridgeImageFileName, sizeof(ConfigureParams.Rom.szCartridgeImageFileName));
+	MemorySnapShot_StorePath(ConfigureParams.Rom.szCartridgeImageFileName, sizeof(ConfigureParams.Rom.szCartridgeImageFileName)); /* KairoST */
 
 	MemorySnapShot_Store(ConfigureParams.Lilo.szKernelFileName, sizeof(ConfigureParams.Lilo.szKernelFileName));
 	MemorySnapShot_Store(ConfigureParams.Lilo.szRamdiskFileName, sizeof(ConfigureParams.Lilo.szRamdiskFileName));
@@ -1237,32 +1237,32 @@ void Configuration_MemorySnapShot_Capture(bool bSave)
 	MemorySnapShot_Store(&ConfigureParams.Memory.STRamSize_KB, sizeof(ConfigureParams.Memory.STRamSize_KB));
 	MemorySnapShot_Store(&ConfigureParams.Memory.TTRamSize_KB, sizeof(ConfigureParams.Memory.TTRamSize_KB));
 
-	MemorySnapShot_Store(&ConfigureParams.DiskImage.szDiskFileName[0], sizeof(ConfigureParams.DiskImage.szDiskFileName[0]));
+	MemorySnapShot_StorePath(ConfigureParams.DiskImage.szDiskFileName[0], sizeof(ConfigureParams.DiskImage.szDiskFileName[0])); /* KairoST */
 	MemorySnapShot_Store(&ConfigureParams.DiskImage.szDiskZipPath[0], sizeof(ConfigureParams.DiskImage.szDiskZipPath[0]));
 	MemorySnapShot_Store(&ConfigureParams.DiskImage.EnableDriveA, sizeof(ConfigureParams.DiskImage.EnableDriveA));
 	MemorySnapShot_Store(&ConfigureParams.DiskImage.DriveA_NumberOfHeads, sizeof(ConfigureParams.DiskImage.DriveA_NumberOfHeads));
-	MemorySnapShot_Store(&ConfigureParams.DiskImage.szDiskFileName[1], sizeof(ConfigureParams.DiskImage.szDiskFileName[1]));
+	MemorySnapShot_StorePath(ConfigureParams.DiskImage.szDiskFileName[1], sizeof(ConfigureParams.DiskImage.szDiskFileName[1])); /* KairoST */
 	MemorySnapShot_Store(&ConfigureParams.DiskImage.szDiskZipPath[1], sizeof(ConfigureParams.DiskImage.szDiskZipPath[1]));
 	MemorySnapShot_Store(&ConfigureParams.DiskImage.EnableDriveB, sizeof(ConfigureParams.DiskImage.EnableDriveB));
 	MemorySnapShot_Store(&ConfigureParams.DiskImage.DriveB_NumberOfHeads, sizeof(ConfigureParams.DiskImage.DriveB_NumberOfHeads));
 
 	MemorySnapShot_Store(&ConfigureParams.HardDisk.bUseHardDiskDirectories, sizeof(ConfigureParams.HardDisk.bUseHardDiskDirectories));
-	MemorySnapShot_Store(ConfigureParams.HardDisk.szHardDiskDirectories[DRIVE_C], sizeof(ConfigureParams.HardDisk.szHardDiskDirectories[DRIVE_C]));
+	MemorySnapShot_StorePath(ConfigureParams.HardDisk.szHardDiskDirectories[DRIVE_C], sizeof(ConfigureParams.HardDisk.szHardDiskDirectories[DRIVE_C])); /* KairoST */
 	for (i = 0; i < MAX_ACSI_DEVS; i++)
 	{
 		MemorySnapShot_Store(&ConfigureParams.Acsi[i].bUseDevice, sizeof(ConfigureParams.Acsi[i].bUseDevice));
-		MemorySnapShot_Store(ConfigureParams.Acsi[i].sDeviceFile, sizeof(ConfigureParams.Acsi[i].sDeviceFile));
+		MemorySnapShot_StorePath(ConfigureParams.Acsi[i].sDeviceFile, sizeof(ConfigureParams.Acsi[i].sDeviceFile)); /* KairoST */
 	}
 	for (i = 0; i < MAX_SCSI_DEVS; i++)
 	{
 		MemorySnapShot_Store(&ConfigureParams.Scsi[i].bUseDevice, sizeof(ConfigureParams.Scsi[i].bUseDevice));
-		MemorySnapShot_Store(ConfigureParams.Scsi[i].sDeviceFile, sizeof(ConfigureParams.Scsi[i].sDeviceFile));
+		MemorySnapShot_StorePath(ConfigureParams.Scsi[i].sDeviceFile, sizeof(ConfigureParams.Scsi[i].sDeviceFile)); /* KairoST */
 	}
 	for (i = 0; i < MAX_IDE_DEVS; i++)
 	{
 		MemorySnapShot_Store(&ConfigureParams.Ide[i].bUseDevice, sizeof(ConfigureParams.Ide[i].bUseDevice));
 		MemorySnapShot_Store(&ConfigureParams.Ide[i].nByteSwap, sizeof(ConfigureParams.Ide[i].nByteSwap));
-		MemorySnapShot_Store(ConfigureParams.Ide[i].sDeviceFile, sizeof(ConfigureParams.Ide[i].sDeviceFile));
+		MemorySnapShot_StorePath(ConfigureParams.Ide[i].sDeviceFile, sizeof(ConfigureParams.Ide[i].sDeviceFile)); /* KairoST */
 	}
 
 	MemorySnapShot_Store(&ConfigureParams.Screen.nMonitorType, sizeof(ConfigureParams.Screen.nMonitorType));

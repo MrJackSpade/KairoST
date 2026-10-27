@@ -26,6 +26,51 @@ HATARI_SNAPSHOT_FAILED = [
      'void MemorySnapShot_Restore_Do(void)\n{\n'),
 ]
 
+# Hatari records the files a machine uses (floppy, hard disk directory and images, cartridge) by
+# path in a snapshot and uses those paths after a restore: it reopens the hard disks and writes a
+# changed floppy back to its file. A game's working copy can have another name since the snapshot
+# was saved (named by the game's path since v1.4.1, by a hash before), so each such path is stored
+# through MemorySnapShot_StorePath, which on a restore puts it where the file is now, through the
+# shared frontend's kairo_state_path (kairo/state_paths.h).
+def _store_path(field):
+    return (f'MemorySnapShot_Store({field}, sizeof({field}));\n',
+            f'MemorySnapShot_StorePath({field}, sizeof({field})); /* KairoST */\n')
+
+HATARI_STATE_PATHS = [
+    ('hatari/src/includes/memorySnapShot.h',
+     'extern void MemorySnapShot_Store(void *pData, int Size);\n',
+     'extern void MemorySnapShot_Store(void *pData, int Size);\n'
+     'extern void MemorySnapShot_StorePath(char *pPath, int Size); /* KairoST: a file path, where it is now on restore */\n'),
+    ('hatari/src/memorySnapShot.c',
+     'void MemorySnapShot_Store(void *pData, int Size)\n{\n',
+     '/* KairoST: where a file a snapshot names is now (shared kairo/state_paths.h). */\n'
+     'extern const char *kairo_state_path(const char *recorded);\n\n'
+     '/* KairoST: stores a file path; restored, it is where that file is now, or the restore fails\n'
+     ' * when that path does not fit. */\n'
+     'void MemorySnapShot_StorePath(char *pPath, int Size)\n{\n'
+     '\tconst char *now;\n\n'
+     '\tMemorySnapShot_Store(pPath, Size);\n'
+     '\tif (bCaptureSave || bCaptureError)\n\t\treturn;\n'
+     '\tnow = kairo_state_path(pPath);\n'
+     '\tif (now == pPath)\n\t\treturn;\n'
+     '\tif (strlen(now) >= (size_t)Size)\n\t{\n\t\tbCaptureError = true;\n\t\treturn;\n\t}\n'
+     '\tstrcpy(pPath, now);\n}\n\n'
+     'void MemorySnapShot_Store(void *pData, int Size)\n{\n'),
+    ('hatari/src/memorySnapShot.c', '#include <errno.h>\n', '#include <errno.h>\n#include <string.h> /* KairoST */\n'),
+    ('hatari/src/floppy.c',) + _store_path('EmulationDrives[i].sFileName'),
+    ('hatari/src/configuration.c',) + _store_path('ConfigureParams.Rom.szCartridgeImageFileName'),
+    ('hatari/src/configuration.c',
+     'MemorySnapShot_Store(&ConfigureParams.DiskImage.szDiskFileName[0], sizeof(ConfigureParams.DiskImage.szDiskFileName[0]));\n',
+     'MemorySnapShot_StorePath(ConfigureParams.DiskImage.szDiskFileName[0], sizeof(ConfigureParams.DiskImage.szDiskFileName[0])); /* KairoST */\n'),
+    ('hatari/src/configuration.c',
+     'MemorySnapShot_Store(&ConfigureParams.DiskImage.szDiskFileName[1], sizeof(ConfigureParams.DiskImage.szDiskFileName[1]));\n',
+     'MemorySnapShot_StorePath(ConfigureParams.DiskImage.szDiskFileName[1], sizeof(ConfigureParams.DiskImage.szDiskFileName[1])); /* KairoST */\n'),
+    ('hatari/src/configuration.c',) + _store_path('ConfigureParams.HardDisk.szHardDiskDirectories[DRIVE_C]'),
+    ('hatari/src/configuration.c',) + _store_path('ConfigureParams.Acsi[i].sDeviceFile'),
+    ('hatari/src/configuration.c',) + _store_path('ConfigureParams.Scsi[i].sDeviceFile'),
+    ('hatari/src/configuration.c',) + _store_path('ConfigureParams.Ide[i].sDeviceFile'),
+]
+
 # EmuTOS 1.4 (the 1024k image KairoST ships) holds its welcome screen for 3 seconds on a first boot
 # (INITINFO_DURATION, bios/initinfo.c), before it boots the floppy. With Hatari's fast boot (KairoST's
 # Skip memory check), the hold is skipped: both places initinfo() computes its end time
@@ -236,6 +281,7 @@ PATCHES = {
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
     'hatari-single-lines': HATARI_SINGLE_LINES,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
+    'hatari-state-paths': HATARI_STATE_PATHS,
     'hatari-stop-skip': HATARI_STOP_SKIP,
     'hatari-stx-empty-track': HATARI_STX_EMPTY_TRACK,
     'sdl-android-sources': SDL_ANDROID_SOURCES,

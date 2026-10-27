@@ -42,6 +42,9 @@ struct KairoStHost {
 	void (*fatal)(void *context, const char *message);
 	/* A message Hatari would show in a dialog box and carry on. */
 	void (*notice)(void *context, const char *message);
+	/* Where a file a state being restored names is now: the host's working copy of a game can have
+	 * another name since the state was saved. Returns recorded when it has not moved. */
+	const char *(*state_path)(void *context, const char *recorded);
 	/* The seed of Hatari's random numbers (the floppy's index pulse, keyboard timings): the app
 	 * gives the time, a measurement a fixed seed so that two runs are the same. */
 	unsigned int seed;

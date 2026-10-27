@@ -8,6 +8,7 @@
 
 extern void MemorySnapShot_Skip(int Nb);
 extern void MemorySnapShot_Store(void *pData, int Size);
+extern void MemorySnapShot_StorePath(char *pPath, int Size); /* KairoST: a file path, where it is now on restore */
 extern void MemorySnapShot_Capture(const char *pszFileName, bool bConfirm);
 extern void MemorySnapShot_Capture_Immediate(const char *pszFileName, bool bConfirm);
 extern void MemorySnapShot_Capture_Do(void);
