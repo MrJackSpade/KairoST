@@ -65,7 +65,8 @@ object StCatalog : LayeredGameCatalog.Schema {
     fun system(images: () -> List<ChoiceOption> = { emptyList() },
                actions: (select: (String) -> Unit) -> List<com.mrjackspade.kairo.frontend.SettingsRow> = { emptyList() }) =
         MachineOption("tos", "System", { fixedSystems + images() }, EMUTOS,
-            accepts = { value -> value == EMUTOS || value == OWN_TOS || TosLibrary.ID.matches(value) }, actions = actions)
+            accepts = { value -> value == EMUTOS || value == OWN_TOS || TosLibrary.ID.matches(value) }, actions = actions,
+            ownFirmware = OWN_TOS)
 
     /** The System option as the catalog reads it; MainActivity lists the player's images too. */
     val system = system()

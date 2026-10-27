@@ -2,6 +2,7 @@ package com.mrjackspade.kairost
 
 import android.content.Intent
 import android.os.Bundle
+import com.mrjackspade.kairo.frontend.MachineOption
 import com.mrjackspade.kairo.frontend.CatalogGame
 import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.ControllerGuestSpec
@@ -99,6 +100,12 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
 
     /** The model rows join the library, so a game that picked one keeps it when the row changes. */
     override fun firmwareImported() = tosLibrary.mirrorRows()
+    /** The player's TOS for the game's model, which "Your TOS for its model" starts. */
+    override fun ownFirmwareInstalled(option: MachineOption, values: Map<String, String>): Boolean {
+        check(option.id == StCatalog.system.id) { "${option.id} has no firmware of the player's" }
+        val model = StTos.forMachine(values[StCatalog.machine.id] ?: StCatalog.machine.default)
+        return File(tosDirectory, tosParts.getValue(model).name).isFile
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
