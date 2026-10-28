@@ -2,7 +2,6 @@ package com.mrjackspade.kairost
 
 import android.content.Intent
 import android.os.Bundle
-import com.mrjackspade.kairo.frontend.MachineOption
 import com.mrjackspade.kairo.frontend.CatalogGame
 import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.ControllerGuestSpec
@@ -15,7 +14,9 @@ import com.mrjackspade.kairo.frontend.LayeredGameCatalog
 import com.mrjackspade.kairo.frontend.LibraryStrings
 import com.mrjackspade.kairo.frontend.MachineActivity
 import com.mrjackspade.kairo.frontend.MachineFirstRun
+import com.mrjackspade.kairo.frontend.MachineOption
 import com.mrjackspade.kairo.frontend.NativeMachine
+import com.mrjackspade.kairo.frontend.ShippedAssets
 import com.mrjackspade.kairo.frontend.UiText
 import com.mrjackspade.kairo.frontend.mediaFor
 import com.mrjackspade.kairo.frontend.text
@@ -150,28 +151,17 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     }
 
     /**
-     * The core's home (st_core.cpp): "emutos", EmuTOS copied from assets/emutos when it differs
-     * from the app's,
-     * and "hatari", Hatari's own files.
+     * The core's home (st_core.cpp): "emutos", EmuTOS from assets/emutos (ShippedAssets), and
+     * "hatari", Hatari's own files.
      */
     private fun prepareHome(progress: (String) -> Unit): File {
         val home = File(filesDir, "machine")
-        val emutos = File(home, "emutos/$EMUTOS_IMAGE")
-        val shipped = assets.open("emutos/$EMUTOS_IMAGE").use { it.readBytes() }
-        if (!emutos.isFile || !emutos.readBytes().contentEquals(shipped)) {
-            progress(getString(R.string.preparing_emulator))
-            check(emutos.parentFile!!.mkdirs() || emutos.parentFile!!.isDirectory) { "Could not create ${emutos.parentFile}" }
-            val copy = File(emutos.parentFile, "$EMUTOS_IMAGE.new")
-            copy.writeBytes(shipped)
-            check(copy.renameTo(emutos)) { "Could not install EmuTOS in $emutos" }
-        }
+        ShippedAssets.install(this, "emutos", File(home, "emutos"), progress)
         File(home, "hatari").mkdirs()
         return home
     }
 
     private companion object {
-        /** EmuTOS for every ST, STE, TT and Falcon, in every language (third_party/emutos-1024k). */
-        const val EMUTOS_IMAGE = "etos1024k.img"
         /** The picker of a TOS image for a game's System (tosActions). */
         const val TOS_IMPORT_REQUEST = FIRST_PRODUCT_REQUEST
     }

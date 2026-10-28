@@ -99,8 +99,6 @@
     <string name="tos_image_missing">Образа TOS этой игры больше нет в приложении: выберите или импортируйте другой в разделе Настройки игры › Система</string>
     <!-- EN: The second disk this game needs is not in the library -->
     <string name="second_disk_missing">Второй диск, нужный этой игре, отсутствует в библиотеке</string>
-    <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">Подготовка эмулятора</string>
     <!-- EN: Machine -->
     <string name="option_machine">Машина</string>
     <!-- EN: Memory -->

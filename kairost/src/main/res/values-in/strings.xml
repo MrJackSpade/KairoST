@@ -99,8 +99,6 @@
     <string name="tos_image_missing">Image TOS game ini tidak lagi ada di aplikasi: pilih atau impor image lain di Setelan game › Sistem</string>
     <!-- EN: The second disk this game needs is not in the library -->
     <string name="second_disk_missing">Disk kedua yang diperlukan game ini tidak ada di pustaka</string>
-    <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">Menyiapkan emulator</string>
     <!-- EN: Machine -->
     <string name="option_machine">Mesin</string>
     <!-- EN: Memory -->

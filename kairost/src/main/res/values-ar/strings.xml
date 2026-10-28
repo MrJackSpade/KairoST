@@ -99,8 +99,6 @@
     <string name="tos_image_missing">لم تعد صورة TOS الخاصة بهذه اللعبة موجودة في التطبيق: اختر صورة أخرى أو استوردها من إعدادات اللعبة › النظام</string>
     <!-- EN: The second disk this game needs is not in the library -->
     <string name="second_disk_missing">القرص الثاني الذي تحتاجه هذه اللعبة غير موجود في المكتبة</string>
-    <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">جارٍ تجهيز المحاكي</string>
     <!-- EN: Machine -->
     <string name="option_machine">الجهاز</string>
     <!-- EN: Memory -->

@@ -99,8 +99,6 @@
     <string name="tos_image_missing">A imagem de TOS deste jogo não está mais no app: escolha ou importe outra em Configurações do jogo › Sistema</string>
     <!-- EN: The second disk this game needs is not in the library -->
     <string name="second_disk_missing">O segundo disco de que este jogo precisa não está na biblioteca</string>
-    <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">Preparando o emulador</string>
     <!-- EN: Machine -->
     <string name="option_machine">Máquina</string>
     <!-- EN: Memory -->

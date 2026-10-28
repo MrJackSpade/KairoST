@@ -99,8 +99,6 @@
     <string name="tos_image_missing">このゲームの TOS イメージはアプリ内にありません。ゲーム設定 › システム で別のイメージを選択またはインポートしてください</string>
     <!-- EN: The second disk this game needs is not in the library -->
     <string name="second_disk_missing">このゲームに必要な2枚目のディスクがライブラリにありません</string>
-    <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">エミュレーターを準備しています</string>
     <!-- EN: Machine -->
     <string name="option_machine">マシン</string>
     <!-- EN: Memory -->

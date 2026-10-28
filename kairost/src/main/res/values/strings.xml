@@ -58,7 +58,6 @@
     <string name="own_tos_missing">This game starts on your own TOS: import %1$s in Menu › Machine</string>
     <string name="tos_image_missing">This game\'s TOS image is no longer in the app: choose or import another in Game settings › System</string>
     <string name="second_disk_missing">The second disk this game needs is not in the library</string>
-    <string name="preparing_emulator">Preparing the emulator</string>
 
     <string name="option_machine">Machine</string>
     <string name="option_memory">Memory</string>
