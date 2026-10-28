@@ -19,7 +19,7 @@ import com.mrjackspade.kairo.frontend.MachineOption
 import com.mrjackspade.kairo.frontend.NativeMachine
 import com.mrjackspade.kairo.frontend.ShippedAssets
 import com.mrjackspade.kairo.frontend.UiText
-import com.mrjackspade.kairo.frontend.mediaFor
+import com.mrjackspade.kairo.frontend.companionFor
 import com.mrjackspade.kairo.frontend.text
 
 import java.io.File
@@ -74,7 +74,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
 
     // In the core's drive order (st_machine.h Drive).
     override val mediaSlots = listOf(MediaSlot<DiskImageEntry>(UiText.res(R.string.drive_a), ::isFloppy),
-        MediaSlot(UiText.res(R.string.drive_b), ::isFloppy))
+        MediaSlot(UiText.res(FrontendR.string.kairo_drive_b), ::isFloppy))
 
     private val tosDirectory by lazy { File(filesDir, "tos") }
 
@@ -138,9 +138,8 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         }
         // A program runs from its folder, as drive C, with the drives empty.
         val program = entry.takeUnless(::isFloppy)?.let { this.images.prepare(it, cancelled, progress).absolutePath }
-        val second = if (program != null) null else game.mediaId("floppyB")?.let { id ->
-            mediaFor(id, entry, libraryEntries) ?: error(getString(FrontendR.string.kairo_second_disk_missing))
-        }
+        val second = if (program != null) null else companionFor(game.mediaId("floppyB"), entry, launchEntries,
+            UiText.res(FrontendR.string.kairo_second_disk_missing), ::isFloppy)
         // The program on drive A that TOS starts, "" for the automatic choice (st_core.cpp).
         options[StCatalog.PROGRAM] = if (program == null) StCatalog.program(game) else ""
         // In the core's order (st_core.cpp): drive A, drive B, then the program.

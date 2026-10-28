@@ -94,7 +94,7 @@ object StCatalog : LayeredGameCatalog.Schema {
         { it.trim().uppercase() }) { it.startsWith("sha256-fd-v1:") }
 
     override val settings: List<CatalogSetting> = options.map(CatalogSetting::Choice) +
-        CatalogSetting.Drive("floppyB", UiText.res(R.string.drive_b)) + program
+        CatalogSetting.Drive("floppyB", UiText.res(FrontendR.string.kairo_drive_b)) + program
     override val fields = CatalogSetting.fields(settings)
 
     override fun validMedia(role: String, contentId: String) = role == "floppyB" && contentId.startsWith("sha256-fd-v1:")

@@ -14,8 +14,6 @@
     <string name="joystick_help">El joystick del puerto 1.</string>
     <!-- EN: Drive A -->
     <string name="drive_a">Unidad A</string>
-    <!-- EN: Drive B -->
-    <string name="drive_b">Unidad B</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">TOS para el %1$s</string>

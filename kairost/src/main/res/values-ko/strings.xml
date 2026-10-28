@@ -14,8 +14,6 @@
     <string name="joystick_help">포트 1의 조이스틱입니다.</string>
     <!-- EN: Drive A -->
     <string name="drive_a">드라이브 A</string>
-    <!-- EN: Drive B -->
-    <string name="drive_b">드라이브 B</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">%1$s용 TOS</string>
