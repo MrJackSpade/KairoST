@@ -4,6 +4,7 @@ import com.mrjackspade.kairo.frontend.CatalogSetting
 import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.LayeredGameCatalog
 import com.mrjackspade.kairo.frontend.MachineOption
+import com.mrjackspade.kairo.frontend.UiText
 import org.json.JSONArray
 
 /**
@@ -22,7 +23,7 @@ object StCatalog : LayeredGameCatalog.Schema {
     override val mediaExtensions = Regex("\\.(?:zip|7z|st|msa|stx|dim|prg|tos|ttp|app|gtp)$", RegexOption.IGNORE_CASE)
 
     /** The model, by Hatari's name for it. Each later model runs most of the earlier ones' games. */
-    val machine = MachineOption("machine", "Machine", listOf(
+    val machine = MachineOption("machine", UiText.res(R.string.option_machine), listOf(
         ChoiceOption("st", "Atari ST"),
         ChoiceOption("megast", "Atari Mega ST"),
         ChoiceOption("ste", "Atari STE"),
@@ -31,24 +32,24 @@ object StCatalog : LayeredGameCatalog.Schema {
         ChoiceOption("falcon", "Atari Falcon")), "st")
 
     /** ST RAM in KiB. */
-    val memory = MachineOption("memory", "Memory", listOf(
-        ChoiceOption("512", "512 KB"),
-        ChoiceOption("1024", "1 MB"),
-        ChoiceOption("2048", "2 MB"),
-        ChoiceOption("4096", "4 MB")), "1024", numeric = true)
+    val memory = MachineOption("memory", UiText.res(R.string.option_memory), listOf(
+        ChoiceOption("512", UiText.res(R.string.memory_kb, 512)),
+        ChoiceOption("1024", UiText.res(R.string.memory_mb, 1)),
+        ChoiceOption("2048", UiText.res(R.string.memory_mb, 2)),
+        ChoiceOption("4096", UiText.res(R.string.memory_mb, 4))), "1024", numeric = true)
 
     /** The monitor, by Hatari's name for it: color games need RGB, high resolution ones mono. */
-    val monitor = MachineOption("monitor", "Monitor", listOf(
-        ChoiceOption("rgb", "Color"),
-        ChoiceOption("mono", "Monochrome")), "rgb")
+    val monitor = MachineOption("monitor", UiText.res(R.string.option_monitor), listOf(
+        ChoiceOption("rgb", UiText.res(R.string.monitor_color)),
+        ChoiceOption("mono", UiText.res(R.string.monitor_mono))), "rgb")
 
     /**
      * EmuTOS's country (Hatari's code for it): Europe is the UK, at 50 Hz like most ST games
      * expect; USA runs at 60 Hz. A player's own TOS keeps its own.
      */
-    val region = MachineOption("region", "Region", listOf(
-        ChoiceOption("uk", "Europe (50 Hz)"),
-        ChoiceOption("us", "USA (60 Hz)")), "uk")
+    val region = MachineOption("region", UiText.res(R.string.option_region), listOf(
+        ChoiceOption("uk", UiText.res(R.string.region_europe)),
+        ChoiceOption("us", UiText.res(R.string.region_usa))), "uk")
 
     const val EMUTOS = "emutos"
     const val OWN_TOS = "tos"
@@ -56,7 +57,7 @@ object StCatalog : LayeredGameCatalog.Schema {
     /** The choices every game has: EmuTOS, which comes with the app, or the player's TOS for its model (StTos). */
     val fixedSystems = listOf(
         ChoiceOption(EMUTOS, "EmuTOS"),
-        ChoiceOption(OWN_TOS, "Your TOS for its model"))
+        ChoiceOption(OWN_TOS, UiText.res(R.string.system_own_tos)))
 
     /**
      * The system software a game starts: [fixedSystems], or one TOS image of the player's by name
@@ -64,7 +65,7 @@ object StCatalog : LayeredGameCatalog.Schema {
      */
     fun system(images: () -> List<ChoiceOption> = { emptyList() },
                actions: (select: (String) -> Unit) -> List<com.mrjackspade.kairo.frontend.SettingsRow> = { emptyList() }) =
-        MachineOption("tos", "System", { fixedSystems + images() }, EMUTOS,
+        MachineOption("tos", UiText.res(R.string.option_system), { fixedSystems + images() }, EMUTOS,
             accepts = { value -> value == EMUTOS || value == OWN_TOS || TosLibrary.ID.matches(value) }, actions = actions,
             ownFirmware = OWN_TOS)
 
@@ -89,11 +90,12 @@ object StCatalog : LayeredGameCatalog.Schema {
      * The program on drive A's disk for TOS to start once it has booted, for a disk that boots to
      * the desktop; saving nothing returns to the automatic choice, even where the catalog names one.
      */
-    val program = CatalogSetting.Text(LAUNCH, PROGRAM, "Startup program", "Program on drive A, such as GAME.PRG",
-        programPath, "Automatic", { it.trim().uppercase() }) { it.startsWith("sha256-fd-v1:") }
+    val program = CatalogSetting.Text(LAUNCH, PROGRAM, UiText.res(R.string.startup_program),
+        UiText.res(R.string.startup_program_hint), programPath, UiText.res(R.string.startup_program_automatic),
+        { it.trim().uppercase() }) { it.startsWith("sha256-fd-v1:") }
 
     override val settings: List<CatalogSetting> = options.map(CatalogSetting::Choice) +
-        CatalogSetting.Drive("floppyB", "Drive B") + program
+        CatalogSetting.Drive("floppyB", UiText.res(R.string.drive_b)) + program
     override val fields = CatalogSetting.fields(settings)
 
     override fun validMedia(role: String, contentId: String) = role == "floppyB" && contentId.startsWith("sha256-fd-v1:")

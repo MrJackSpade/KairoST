@@ -1,5 +1,6 @@
 package com.mrjackspade.kairost
 
+import com.mrjackspade.kairo.frontend.UiText
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
@@ -44,11 +45,13 @@ class StTosTest {
     }
 
     @Test fun describesImages() {
-        assertEquals("TOS 1.04 (UK)", StTos.describe(withCountry(0x0104, 3)))
-        assertEquals("TOS 1.62 (Germany)", StTos.describe(withCountry(0x0162, 1)))
-        assertEquals("TOS 4.04", StTos.describe(withCountry(0x0404, 0x7f)))
-        assertEquals("EmuTOS", StTos.describe(header(0x602e, 0x0206, emutos = true)))
-        assertEquals("Unknown image", StTos.describe(header(0xfa52, 0x235f)))
+        assertEquals(UiText.res(R.string.tos_with_country, "TOS 1.04", UiText.res(R.string.country_uk)),
+            StTos.describe(withCountry(0x0104, 3)))
+        assertEquals(UiText.res(R.string.tos_with_country, "TOS 1.62", UiText.res(R.string.country_germany)),
+            StTos.describe(withCountry(0x0162, 1)))
+        assertEquals(UiText.fixed("TOS 4.04"), StTos.describe(withCountry(0x0404, 0x7f)))
+        assertEquals(UiText.fixed("EmuTOS"), StTos.describe(header(0x602e, 0x0206, emutos = true)))
+        assertEquals(UiText.res(R.string.tos_unknown_image), StTos.describe(header(0xfa52, 0x235f)))
     }
 
     @Test fun machinesTakeTheirModel() {

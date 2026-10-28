@@ -1,5 +1,7 @@
 package com.mrjackspade.kairost
 
+import com.mrjackspade.kairo.frontend.UiText
+
 /**
  * Atari TOS images by model. A TOS image names its version in its header (the word after the
  * first branch), and each model ran its own versions: the ST 1.00 to 1.04, the STE 1.06, 1.62 and
@@ -7,12 +9,12 @@ package com.mrjackspade.kairost
  * "ETOS" in their header and are not the player's TOS.
  */
 object StTos {
-    enum class Model(val file: String, val label: String, val description: String, val bytes: Long,
+    enum class Model(val file: String, val label: String, val description: Int, val bytes: Long,
                      val versions: IntRange) {
-        ST("tos-st.img", "ST", "TOS 1.00 to 1.04, for games on the ST and Mega ST", 192L * 1024, 0x0100..0x0104),
-        STE("tos-ste.img", "STE", "TOS 1.06, 1.62 or 2.0x, for games on the STE and Mega STE", 256L * 1024, 0x0106..0x0206),
-        TT("tos-tt.img", "TT", "TOS 3.0x, for games on the TT", 512L * 1024, 0x0300..0x03ff),
-        FALCON("tos-falcon.img", "Falcon", "TOS 4.0x, for games on the Falcon", 512L * 1024, 0x0400..0x04ff)
+        ST("tos-st.img", "ST", R.string.tos_st_description, 192L * 1024, 0x0100..0x0104),
+        STE("tos-ste.img", "STE", R.string.tos_ste_description, 256L * 1024, 0x0106..0x0206),
+        TT("tos-tt.img", "TT", R.string.tos_tt_description, 512L * 1024, 0x0300..0x03ff),
+        FALCON("tos-falcon.img", "Falcon", R.string.tos_falcon_description, 512L * 1024, 0x0400..0x04ff)
     }
 
     /** The model a TOS image's header is for; null for anything else, EmuTOS included. */
@@ -58,19 +60,22 @@ object StTos {
         else (header[2].toInt() and 0xff) shl 8 or (header[3].toInt() and 0xff)
 
     /** The countries TOS names in its header (0x1d, shifted left one bit). */
-    private val countries = listOf("US", "Germany", "France", "UK", "Spain", "Italy", "Sweden",
-        "Switzerland, French", "Switzerland, German", "Turkey", "Finland", "Norway", "Denmark",
-        "Saudi Arabia", "Netherlands", "Czech Republic", "Hungary")
+    private val countries = listOf(R.string.country_us, R.string.country_germany, R.string.country_france,
+        R.string.country_uk, R.string.country_spain, R.string.country_italy, R.string.country_sweden,
+        R.string.country_switzerland_french, R.string.country_switzerland_german, R.string.country_turkey,
+        R.string.country_finland, R.string.country_norway, R.string.country_denmark, R.string.country_saudi_arabia,
+        R.string.country_netherlands, R.string.country_czech_republic, R.string.country_hungary)
 
     /** A name for an image, from its header: "TOS 1.04 (UK)", "TOS 4.04", "EmuTOS". */
-    fun describe(header: ByteArray): String {
-        if (header.size >= 0x30 && String(header, 0x2c, 4, Charsets.ISO_8859_1) == "ETOS") return "EmuTOS"
+    fun describe(header: ByteArray): UiText {
+        if (header.size >= 0x30 && String(header, 0x2c, 4, Charsets.ISO_8859_1) == "ETOS") return UiText.fixed("EmuTOS")
         val version = version(header)
-        if (version == 0 || header.size < 0x1e) return "Unknown image"
+        if (version == 0 || header.size < 0x1e) return UiText.res(R.string.tos_unknown_image)
         val name = "TOS %x.%02x".format(version shr 8, version and 0xff)
         // 0x7f: a multi-language TOS, which takes its language from NVRAM.
         val country = (header[0x1d].toInt() and 0xff) shr 1
-        return countries.getOrNull(country)?.let { "$name ($it)" } ?: name
+        return countries.getOrNull(country)?.let { UiText.res(R.string.tos_with_country, name, UiText.res(it)) }
+            ?: UiText.fixed(name)
     }
 
     /** The model of TOS a machine (StCatalog.machine) starts. */

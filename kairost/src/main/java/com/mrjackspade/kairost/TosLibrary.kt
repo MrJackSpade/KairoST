@@ -1,5 +1,6 @@
 package com.mrjackspade.kairost
 
+import android.content.Context
 import com.mrjackspade.kairo.frontend.ImportedFiles
 import java.io.File
 import java.io.InputStream
@@ -10,12 +11,12 @@ import java.io.InputStream
  * rows of the firmware page ([directory]/tos-st.img and the others) are copied in too, so a game
  * keeps its TOS when a row is replaced.
  */
-class TosLibrary(private val directory: File) {
-    /** The images, oldest TOS first, each named by its header. */
+class TosLibrary(context: Context, private val directory: File) {
+    /** The images, oldest TOS first, each named by its header in [context]'s language. */
     val files = ImportedFiles(File(directory, "library"), PREFIX, ".img", MAX_BYTES,
-        "A TOS image is at most 1 MB; that file is larger") { file, _ ->
+        context.getString(R.string.tos_too_large)) { file, _ ->
         val header = file.inputStream().use(StTos::readHeader)
-        ImportedFiles.Described(StTos.describe(header), StTos.version(header))
+        ImportedFiles.Described(StTos.describe(header).resolve(context), StTos.version(header))
     }
 
     fun images(): List<ImportedFiles.Item> = files.items()
