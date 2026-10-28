@@ -1,28 +1,97 @@
 {
  "descriptions": {
-  "atarist:183629": "Uma aventura de mistério erótica em que uma mulher que carrega uma droga roubada que estimula o desejo sexual encontra personagens sugestivos em cenas com nudez parcial.",
-  "atarist:184084": "Um jogo de strip pôquer em que uma adolescente patinadora, que você conhece num parque, se despe conforme perde as mãos.",
-  "atarist:188728": "Uma aventura cômica maliciosa, cheia de insinuações sexuais e breve nudez, em que Larry e Patti perseguem conquistas sexuais em uma ilha-resort.",
-  "atarist:188729": "Uma aventura cômica maliciosa com humor sexual e mulheres seminuas, em que um solteirão libidinoso tenta seduzir mulheres enquanto foge de espiões.",
-  "atarist:191068": "Uma aventura erótica baseada nos romances de Emmanuelle em que um homem corteja uma mulher por meio de diálogos rumo a cenas sexuais com nudez.",
-  "atarist:191139": "Uma aventura erótica com ilustrações de nu e minijogos sexuais em que o herói salva a namorada de se tornar uma ciborgue sexual.",
-  "atarist:191387": "Um jogo de tabuleiro em que cada vitória revela mais de uma imagem de nu da oponente androide.",
-  "atarist:191398": "Uma aventura de texto de comédia sexual em que o herói mulherengo Brad Stallion enfrenta um robô construído para a luxúria enquanto salva uma supermodelo.",
-  "atarist:191467": "Uma aventura de comédia em que um fracassado de meia-idade vaga por uma cidade sórdida de bares e cassinos tentando perder a virgindade.",
-  "atarist:193589": "Um jogo de estratégia de conquista de quadrados em que cada quadrado capturado revela mais de uma foto de nu de revista.",
-  "atarist:193688": "Um jogo de strip pôquer em que uma de quatro mulheres tira uma peça de roupa sempre que fica sem dinheiro.",
-  "atarist:193693": "Um jogo de tiro de rolagem lateral cuja heroína, St. Helen, é desenhada de topless enquanto combate invasores insetos para salvar os últimos bebês da Terra.",
-  "atarist:194033": "Uma aventura de texto erótica em que Brad Stallion resgata a princesa Orgasma, com encontros sexuais e nudez pelo caminho.",
-  "atarist:194064": "Uma sátira de gerenciamento pop com uso de drogas, sordidez e escândalos de tabloide de fofocas sobre as estrelas que você administra.",
-  "atarist:194077": "Um jogo de strip pedra-papel-tesoura em que três mulheres ilustradas se despem conforme perdem rodadas.",
-  "atarist:194086": "Uma aventura de comédia sexual em que Brad Stallion disputa um concurso sexual interplanetário, resolvendo quebra-cabeças com ações sexuais.",
-  "atarist:194087": "Uma aventura erótica em que Brad Stallion caça amazonas espaciais armadas com pistolas de raio sexual, com nudez e cenas de sexo.",
-  "atarist:194146": "Um jogo de strip pôquer em que duas mulheres digitalizadas se despem conforme você as vence no pôquer.",
-  "atarist:194212": "Um jogo de corrida baseado nos quadrinhos britânicos conhecidos pelo humor grosseiro, cheio de piadas de pum e gags nojentas.",
-  "atarist:206538": "Um jogo de strip pôquer em que mulheres digitalizadas tiram a roupa conforme perdem as mãos.",
-  "atarist:455632": "Um jogo de strip pôquer em que uma oponente tira a roupa conforme perde as mãos, mostrada em imagens digitalizadas.",
-  "atarist:moby-33022": "Um quebra-cabeça de comédia sexual grosseira em que um herói chamado Dick monta a imagem do rosto da namorada para chegar até ela.",
-  "atarist:moby-7021": "Uma paródia de comédia sexual de aventuras no estilo da Sierra, com piadas grosseiras e situações sexuais explícitas."
+  "atarist:183629": {
+   "en": "An erotic mystery adventure in which a woman carrying a stolen sex-drive drug meets suggestive characters in scenes with partial nudity.",
+   "text": "Uma aventura de mistério erótica em que uma mulher que carrega uma droga roubada que estimula o desejo sexual encontra personagens sugestivos em cenas com nudez parcial."
+  },
+  "atarist:184084": {
+   "en": "A strip poker game in which a teenage roller-skater met in a park undresses as she loses hands.",
+   "text": "Um jogo de strip pôquer em que uma adolescente patinadora, que você conhece num parque, se despe conforme perde as mãos."
+  },
+  "atarist:188728": {
+   "en": "A bawdy comic adventure full of sexual innuendo and brief nudity, in which Larry and Patti chase sexual conquests on a resort island.",
+   "text": "Uma aventura cômica maliciosa, cheia de insinuações sexuais e breve nudez, em que Larry e Patti perseguem conquistas sexuais em uma ilha-resort."
+  },
+  "atarist:188729": {
+   "en": "A bawdy comic adventure with sexual humor and scantily clad women, in which a lecherous bachelor tries to seduce women while fleeing spies.",
+   "text": "Uma aventura cômica maliciosa com humor sexual e mulheres seminuas, em que um solteirão libidinoso tenta seduzir mulheres enquanto foge de espiões."
+  },
+  "atarist:191068": {
+   "en": "An erotic adventure based on the Emmanuelle novels in which a man courts a woman through dialogue toward nude sexual scenes.",
+   "text": "Uma aventura erótica baseada nos romances de Emmanuelle em que um homem corteja uma mulher por meio de diálogos rumo a cenas sexuais com nudez."
+  },
+  "atarist:191139": {
+   "en": "An erotic adventure with nude illustrations and sexual mini-games in which the hero saves his girlfriend from becoming a sex cyborg.",
+   "text": "Uma aventura erótica com ilustrações de nu e minijogos sexuais em que o herói salva a namorada de se tornar uma ciborgue sexual."
+  },
+  "atarist:191387": {
+   "en": "A board game in which each win reveals more of a nude picture of the female android opponent.",
+   "text": "Um jogo de tabuleiro em que cada vitória revela mais de uma imagem de nu da oponente androide."
+  },
+  "atarist:191398": {
+   "en": "A sex-comedy text adventure in which the womanizing hero Brad Stallion faces a robot built for lust while saving a supermodel.",
+   "text": "Uma aventura de texto de comédia sexual em que o herói mulherengo Brad Stallion enfrenta um robô construído para a luxúria enquanto salva uma supermodelo."
+  },
+  "atarist:191467": {
+   "en": "A comedy adventure in which a middle-aged loser roams a seedy city of bars and casinos trying to lose his virginity.",
+   "text": "Uma aventura de comédia em que um fracassado de meia-idade vaga por uma cidade sórdida de bares e cassinos tentando perder a virgindade."
+  },
+  "atarist:193589": {
+   "en": "A square-claiming strategy game in which each captured square reveals more of a nude centerfold photo.",
+   "text": "Um jogo de estratégia de conquista de quadrados em que cada quadrado capturado revela mais de uma foto de nu de revista."
+  },
+  "atarist:193688": {
+   "en": "A strip poker game in which one of four women takes off clothing each time she runs out of money.",
+   "text": "Um jogo de strip pôquer em que uma de quatro mulheres tira uma peça de roupa sempre que fica sem dinheiro."
+  },
+  "atarist:193693": {
+   "en": "A side-scrolling shooter whose heroine, St. Helen, is drawn topless as she fights insect invaders to save Earth's last babies.",
+   "text": "Um jogo de tiro de rolagem lateral cuja heroína, St. Helen, é desenhada de topless enquanto combate invasores insetos para salvar os últimos bebês da Terra."
+  },
+  "atarist:194033": {
+   "en": "An erotic text adventure in which Brad Stallion rescues Princess Orgasma, with sexual encounters and nudity along the way.",
+   "text": "Uma aventura de texto erótica em que Brad Stallion resgata a princesa Orgasma, com encontros sexuais e nudez pelo caminho."
+  },
+  "atarist:194064": {
+   "en": "A pop management satire with drug use, sleaze and kiss-and-tell tabloid scandals involving the stars you manage.",
+   "text": "Uma sátira de gerenciamento pop com uso de drogas, sordidez e escândalos de tabloide de fofocas sobre as estrelas que você administra."
+  },
+  "atarist:194077": {
+   "en": "A strip rock, paper, scissors game in which three illustrated women undress as they lose rounds.",
+   "text": "Um jogo de strip pedra-papel-tesoura em que três mulheres ilustradas se despem conforme perdem rodadas."
+  },
+  "atarist:194086": {
+   "en": "A sex comedy adventure in which Brad Stallion competes in an interplanetary sex contest, solving puzzles with sexual actions.",
+   "text": "Uma aventura de comédia sexual em que Brad Stallion disputa um concurso sexual interplanetário, resolvendo quebra-cabeças com ações sexuais."
+  },
+  "atarist:194087": {
+   "en": "An erotic adventure in which Brad Stallion hunts space Amazons armed with sex-ray guns, with nudity and sex scenes.",
+   "text": "Uma aventura erótica em que Brad Stallion caça amazonas espaciais armadas com pistolas de raio sexual, com nudez e cenas de sexo."
+  },
+  "atarist:194146": {
+   "en": "A strip poker game in which two digitized women undress as you beat them at poker.",
+   "text": "Um jogo de strip pôquer em que duas mulheres digitalizadas se despem conforme você as vence no pôquer."
+  },
+  "atarist:194212": {
+   "en": "A racing game based on the British comic known for crude humor, packed with fart jokes and gross-out gags.",
+   "text": "Um jogo de corrida baseado nos quadrinhos britânicos conhecidos pelo humor grosseiro, cheio de piadas de pum e gags nojentas."
+  },
+  "atarist:206538": {
+   "en": "A strip poker game in which digitized women take off their clothes as they lose hands.",
+   "text": "Um jogo de strip pôquer em que mulheres digitalizadas tiram a roupa conforme perdem as mãos."
+  },
+  "atarist:455632": {
+   "en": "A strip poker game in which a female opponent removes clothing as she loses hands, shown in digitized pictures.",
+   "text": "Um jogo de strip pôquer em que uma oponente tira a roupa conforme perde as mãos, mostrada em imagens digitalizadas."
+  },
+  "atarist:moby-33022": {
+   "en": "A crude sexual comedy puzzle in which a hero named Dick assembles a picture of his girlfriend's face to reach her.",
+   "text": "Um quebra-cabeça de comédia sexual grosseira em que um herói chamado Dick monta a imagem do rosto da namorada para chegar até ela."
+  },
+  "atarist:moby-7021": {
+   "en": "A sex comedy parody of Sierra-style adventures with crude jokes and explicit sexual situations.",
+   "text": "Uma paródia de comédia sexual de aventuras no estilo da Sierra, com piadas grosseiras e situações sexuais explícitas."
+  }
  },
  "schemaVersion": 1
 }

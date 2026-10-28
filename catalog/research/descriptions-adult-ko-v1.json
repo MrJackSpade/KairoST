@@ -1,28 +1,97 @@
 {
  "descriptions": {
-  "atarist:183629": "성욕 증진제를 훔쳐 지닌 여성이 부분 노출 장면에서 외설적인 인물들을 만나는 에로틱 미스터리 어드벤처이다.",
-  "atarist:184084": "공원에서 만난 십대 롤러스케이터가 패를 질 때마다 옷을 벗는 스트립 포커 게임이다.",
-  "atarist:188728": "성적 암시가 가득하고 짧은 노출이 있는 외설 코미디 어드벤처로, Larry와 Patti가 휴양 섬에서 성적 정복을 쫓는다.",
-  "atarist:188729": "성적 유머와 노출이 많은 여성들이 나오는 외설 코미디 어드벤처로, 호색한 독신 남성이 스파이를 피해 달아나며 여성들을 유혹하려 한다.",
-  "atarist:191068": "Emmanuelle 소설을 바탕으로 한 에로틱 어드벤처로, 한 남자가 대화로 여성을 구애해 누드 성관계 장면으로 나아간다.",
-  "atarist:191139": "누드 일러스트와 성적인 미니게임이 있는 에로틱 어드벤처로, 주인공이 여자 친구가 섹스 사이보그가 되는 것을 막는다.",
-  "atarist:191387": "이길 때마다 여성 안드로이드 상대의 누드 그림이 더 드러나는 보드 게임이다.",
-  "atarist:191398": "여성 편력이 심한 주인공 Brad Stallion이 슈퍼모델을 구하며 욕정을 위해 만들어진 로봇과 맞서는 섹스 코미디 텍스트 어드벤처이다.",
-  "atarist:191467": "중년의 패배자가 술집과 카지노가 늘어선 추레한 도시를 돌아다니며 동정을 잃으려 하는 코미디 어드벤처이다.",
-  "atarist:193589": "칸을 차지할 때마다 누드 센터폴드 사진이 더 드러나는 칸 차지 전략 게임이다.",
-  "atarist:193688": "돈이 떨어질 때마다 네 여성 중 한 명이 옷을 벗는 스트립 포커 게임이다.",
-  "atarist:193693": "지구의 마지막 아기들을 구하기 위해 곤충 침략자와 싸우는 여주인공 St. Helen이 상의를 벗은 모습으로 그려진 횡스크롤 슈팅 게임이다.",
-  "atarist:194033": "Brad Stallion이 Orgasma 공주를 구하는 에로틱 텍스트 어드벤처로, 도중에 성관계 장면과 노출이 있다.",
-  "atarist:194064": "마약 사용, 외설, 관리하는 스타들과 얽힌 폭로성 타블로이드 스캔들을 다룬 팝 매니지먼트 풍자 게임이다.",
-  "atarist:194077": "그림으로 그려진 여성 세 명이 라운드를 질 때마다 옷을 벗는 스트립 가위바위보 게임이다.",
-  "atarist:194086": "Brad Stallion이 행성 간 섹스 대회에 참가해 성적 행동으로 퍼즐을 푸는 섹스 코미디 어드벤처이다.",
-  "atarist:194087": "Brad Stallion이 섹스 광선총으로 무장한 우주 아마존 족을 사냥하는 에로틱 어드벤처로, 노출과 성관계 장면이 있다.",
-  "atarist:194146": "포커에서 이길 때마다 디지털화된 여성 두 명이 옷을 벗는 스트립 포커 게임이다.",
-  "atarist:194212": "저속한 유머로 유명한 영국 만화를 바탕으로 한 레이싱 게임으로, 방귀 농담과 역겨운 개그가 가득하다.",
-  "atarist:206538": "패를 질 때마다 디지털화된 여성들이 옷을 벗는 스트립 포커 게임이다.",
-  "atarist:455632": "패를 질 때마다 여성 상대가 옷을 벗고, 이 장면이 디지털화된 그림으로 보이는 스트립 포커 게임이다.",
-  "atarist:moby-33022": "주인공 Dick이 여자 친구의 얼굴 그림을 맞춰 그녀에게 닿는 저속한 섹스 코미디 퍼즐 게임이다.",
-  "atarist:moby-7021": "저속한 농담과 노골적인 성적 상황이 나오는 시에라 스타일 어드벤처의 섹스 코미디 패러디이다."
+  "atarist:183629": {
+   "en": "An erotic mystery adventure in which a woman carrying a stolen sex-drive drug meets suggestive characters in scenes with partial nudity.",
+   "text": "성욕 증진제를 훔쳐 지닌 여성이 부분 노출 장면에서 외설적인 인물들을 만나는 에로틱 미스터리 어드벤처이다."
+  },
+  "atarist:184084": {
+   "en": "A strip poker game in which a teenage roller-skater met in a park undresses as she loses hands.",
+   "text": "공원에서 만난 십대 롤러스케이터가 패를 질 때마다 옷을 벗는 스트립 포커 게임이다."
+  },
+  "atarist:188728": {
+   "en": "A bawdy comic adventure full of sexual innuendo and brief nudity, in which Larry and Patti chase sexual conquests on a resort island.",
+   "text": "성적 암시가 가득하고 짧은 노출이 있는 외설 코미디 어드벤처로, Larry와 Patti가 휴양 섬에서 성적 정복을 쫓는다."
+  },
+  "atarist:188729": {
+   "en": "A bawdy comic adventure with sexual humor and scantily clad women, in which a lecherous bachelor tries to seduce women while fleeing spies.",
+   "text": "성적 유머와 노출이 많은 여성들이 나오는 외설 코미디 어드벤처로, 호색한 독신 남성이 스파이를 피해 달아나며 여성들을 유혹하려 한다."
+  },
+  "atarist:191068": {
+   "en": "An erotic adventure based on the Emmanuelle novels in which a man courts a woman through dialogue toward nude sexual scenes.",
+   "text": "Emmanuelle 소설을 바탕으로 한 에로틱 어드벤처로, 한 남자가 대화로 여성을 구애해 누드 성관계 장면으로 나아간다."
+  },
+  "atarist:191139": {
+   "en": "An erotic adventure with nude illustrations and sexual mini-games in which the hero saves his girlfriend from becoming a sex cyborg.",
+   "text": "누드 일러스트와 성적인 미니게임이 있는 에로틱 어드벤처로, 주인공이 여자 친구가 섹스 사이보그가 되는 것을 막는다."
+  },
+  "atarist:191387": {
+   "en": "A board game in which each win reveals more of a nude picture of the female android opponent.",
+   "text": "이길 때마다 여성 안드로이드 상대의 누드 그림이 더 드러나는 보드 게임이다."
+  },
+  "atarist:191398": {
+   "en": "A sex-comedy text adventure in which the womanizing hero Brad Stallion faces a robot built for lust while saving a supermodel.",
+   "text": "여성 편력이 심한 주인공 Brad Stallion이 슈퍼모델을 구하며 욕정을 위해 만들어진 로봇과 맞서는 섹스 코미디 텍스트 어드벤처이다."
+  },
+  "atarist:191467": {
+   "en": "A comedy adventure in which a middle-aged loser roams a seedy city of bars and casinos trying to lose his virginity.",
+   "text": "중년의 패배자가 술집과 카지노가 늘어선 추레한 도시를 돌아다니며 동정을 잃으려 하는 코미디 어드벤처이다."
+  },
+  "atarist:193589": {
+   "en": "A square-claiming strategy game in which each captured square reveals more of a nude centerfold photo.",
+   "text": "칸을 차지할 때마다 누드 센터폴드 사진이 더 드러나는 칸 차지 전략 게임이다."
+  },
+  "atarist:193688": {
+   "en": "A strip poker game in which one of four women takes off clothing each time she runs out of money.",
+   "text": "돈이 떨어질 때마다 네 여성 중 한 명이 옷을 벗는 스트립 포커 게임이다."
+  },
+  "atarist:193693": {
+   "en": "A side-scrolling shooter whose heroine, St. Helen, is drawn topless as she fights insect invaders to save Earth's last babies.",
+   "text": "지구의 마지막 아기들을 구하기 위해 곤충 침략자와 싸우는 여주인공 St. Helen이 상의를 벗은 모습으로 그려진 횡스크롤 슈팅 게임이다."
+  },
+  "atarist:194033": {
+   "en": "An erotic text adventure in which Brad Stallion rescues Princess Orgasma, with sexual encounters and nudity along the way.",
+   "text": "Brad Stallion이 Orgasma 공주를 구하는 에로틱 텍스트 어드벤처로, 도중에 성관계 장면과 노출이 있다."
+  },
+  "atarist:194064": {
+   "en": "A pop management satire with drug use, sleaze and kiss-and-tell tabloid scandals involving the stars you manage.",
+   "text": "마약 사용, 외설, 관리하는 스타들과 얽힌 폭로성 타블로이드 스캔들을 다룬 팝 매니지먼트 풍자 게임이다."
+  },
+  "atarist:194077": {
+   "en": "A strip rock, paper, scissors game in which three illustrated women undress as they lose rounds.",
+   "text": "그림으로 그려진 여성 세 명이 라운드를 질 때마다 옷을 벗는 스트립 가위바위보 게임이다."
+  },
+  "atarist:194086": {
+   "en": "A sex comedy adventure in which Brad Stallion competes in an interplanetary sex contest, solving puzzles with sexual actions.",
+   "text": "Brad Stallion이 행성 간 섹스 대회에 참가해 성적 행동으로 퍼즐을 푸는 섹스 코미디 어드벤처이다."
+  },
+  "atarist:194087": {
+   "en": "An erotic adventure in which Brad Stallion hunts space Amazons armed with sex-ray guns, with nudity and sex scenes.",
+   "text": "Brad Stallion이 섹스 광선총으로 무장한 우주 아마존 족을 사냥하는 에로틱 어드벤처로, 노출과 성관계 장면이 있다."
+  },
+  "atarist:194146": {
+   "en": "A strip poker game in which two digitized women undress as you beat them at poker.",
+   "text": "포커에서 이길 때마다 디지털화된 여성 두 명이 옷을 벗는 스트립 포커 게임이다."
+  },
+  "atarist:194212": {
+   "en": "A racing game based on the British comic known for crude humor, packed with fart jokes and gross-out gags.",
+   "text": "저속한 유머로 유명한 영국 만화를 바탕으로 한 레이싱 게임으로, 방귀 농담과 역겨운 개그가 가득하다."
+  },
+  "atarist:206538": {
+   "en": "A strip poker game in which digitized women take off their clothes as they lose hands.",
+   "text": "패를 질 때마다 디지털화된 여성들이 옷을 벗는 스트립 포커 게임이다."
+  },
+  "atarist:455632": {
+   "en": "A strip poker game in which a female opponent removes clothing as she loses hands, shown in digitized pictures.",
+   "text": "패를 질 때마다 여성 상대가 옷을 벗고, 이 장면이 디지털화된 그림으로 보이는 스트립 포커 게임이다."
+  },
+  "atarist:moby-33022": {
+   "en": "A crude sexual comedy puzzle in which a hero named Dick assembles a picture of his girlfriend's face to reach her.",
+   "text": "주인공 Dick이 여자 친구의 얼굴 그림을 맞춰 그녀에게 닿는 저속한 섹스 코미디 퍼즐 게임이다."
+  },
+  "atarist:moby-7021": {
+   "en": "A sex comedy parody of Sierra-style adventures with crude jokes and explicit sexual situations.",
+   "text": "저속한 농담과 노골적인 성적 상황이 나오는 시에라 스타일 어드벤처의 섹스 코미디 패러디이다."
+  }
  },
  "schemaVersion": 1
 }
