@@ -35,7 +35,7 @@ KairoST builds Hatari's emulation code with its own replacements for the parts t
 
 ## Notices in the app
 
-`tools/notices.py` writes the app's `THIRD_PARTY_NOTICES.txt` (About → Licenses) from the license files and source notices above: Hatari's license statement and GPL text, the notices of the files under other terms, EmuTOS, zlib and SDL2. `tools/notices.py --check` fails when the file is out of date.
+`shared/tools/notices.py .` writes the app's `THIRD_PARTY_NOTICES.txt` (About → Licenses) from `tools/notices_sources.py`, which lists the license files and source notices above: Hatari's license statement and GPL text, the notices of the files under other terms, EmuTOS, zlib and SDL2. `tools/notices.py --check` fails when the file is out of date.
 
 ## Libraries Hatari needs
 
