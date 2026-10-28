@@ -175,10 +175,4 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         /** The picker of a TOS image for a game's System (tosActions). */
         const val TOS_IMPORT_REQUEST = FIRST_PRODUCT_REQUEST
     }
-
-    override fun stateError(code: Int) = when (code) {
-        2 -> getString(R.string.state_error_io)
-        3 -> getString(R.string.state_error_refused)
-        else -> getString(R.string.state_error_code, code)
-    }
 }

@@ -19,8 +19,6 @@ static_assert(kairost::kDriveA == 0 && kairost::kDriveB == 1);
 // MainActivity.machine.stateFile.
 constexpr const char *kStateFile = "/state.sts";
 // MainActivity.stateError reads these.
-constexpr int kStateFailed = 2;
-constexpr int kMediaRefused = 3;
 // StKeys numbers a key by its ST scan code, 1 to 0x72.
 constexpr int kKeyCodes = 0x73;
 
@@ -31,6 +29,8 @@ public:
     bool run_frame() override { return machine_->run_frame(error_); }
     bool booting() override { return machine_->booting(); }
     std::string error() override { return error_; }
+    // The emulator's reason, which save_state and load_state leave in error_.
+    std::string state_error() override { return error_; }
     const uint8_t *frame(uint32_t &width, uint32_t &height) override { return machine_->frame(width, height); }
     // An ST low or medium resolution screen comes one row per ST line; the presenter repeats it.
     uint32_t line_repeat() override { return machine_->line_repeat(); }
@@ -61,16 +61,16 @@ public:
     void reset() override { machine_->reset(); }
 
     int save_state(const std::string &directory) override {
-        return machine_->save_state(directory + kStateFile, error_) ? 0 : kStateFailed;
+        return machine_->save_state(directory + kStateFile, error_) ? 0 : kFailed;
     }
 
     int load_state(const std::string &directory) override {
-        return machine_->load_state(directory + kStateFile, error_) ? 0 : kStateFailed;
+        return machine_->load_state(directory + kStateFile, error_) ? 0 : kFailed;
     }
 
     int media(int slot, const std::string &path) override {
         if (slot < 0 || slot >= kairost::kDrives) return kUnsupported;
-        return machine_->insert(kairost::Drive(slot), path, error_) ? 0 : kMediaRefused;
+        return machine_->insert(kairost::Drive(slot), path, error_) ? 0 : kFailed;
     }
 
     std::vector<std::string> media_paths() override {

@@ -101,13 +101,6 @@
     <string name="second_disk_missing">Disk kedua yang diperlukan game ini tidak ada di pustaka</string>
     <!-- EN: Preparing the emulator -->
     <string name="preparing_emulator">Menyiapkan emulator</string>
-    <!-- EN: the emulator could not read or write the state -->
-    <string name="state_error_io">emulator tidak dapat membaca atau menulis status</string>
-    <!-- EN: the emulator refused the disk image -->
-    <string name="state_error_refused">emulator menolak image disk</string>
-    <!-- %1$d is the emulator's error code. -->
-    <!-- EN: code %1$d -->
-    <string name="state_error_code">kode %1$d</string>
     <!-- EN: Machine -->
     <string name="option_machine">Mesin</string>
     <!-- EN: Memory -->
