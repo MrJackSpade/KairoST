@@ -1303,7 +1303,7 @@
     "ja": "ボンドが、ボートに変形する武器満載のロータスを運転して、ストロンバーグの戦争計画を阻止する、俯瞰視点のアクションゲーム。",
     "ko": "본드가 보트로 변하는 무장한 로터스를 몰고 Stromberg의 전쟁 음모를 막는 탑다운 액션 게임이다.",
     "pt-BR": "Um jogo de ação com visão de cima em que Bond dirige um Lotus carregado de armas que vira barco para deter o plano de guerra de Stromberg.",
-    "ru": "Экшен с видом сверху, в котором Бонд ведет вооруженный Lotus, превращающийся в лодку, чтобы остановить военный замысел Стромберга."
+    "ru": "Экшен с видом сверху, в котором Бонд ведет вооруженный Лотус, превращающийся в лодку, чтобы остановить военный замысел Стромберга."
    },
    "developer": "The Kremlin",
    "diskSets": {
@@ -3010,7 +3010,7 @@
     "ja": "ロータスを運転して、さまざまな路面状況の中で、コンピューターのライバルまたは制限時間と競うレースゲーム。",
     "ko": "다양한 도로 조건에서 컴퓨터 라이벌이나 시간과 겨루며 로터스를 모는 레이싱 게임이다.",
     "pt-BR": "Um jogo de corrida em que você dirige um Lotus em condições variadas de estrada contra rivais controlados pelo computador ou contra o relógio.",
-    "ru": "Гонка, в которой вы ведете Lotus в разных дорожных условиях против компьютерных соперников или на время."
+    "ru": "Гонка, в которой вы ведете Лотус в разных дорожных условиях против компьютерных соперников или на время."
    },
    "developer": "Magnetic Fields",
    "diskSets": {
@@ -4522,7 +4522,7 @@
     "ar": "لعبة منصات يتسلق فيها إندي ويستكشف ويشق طريقه بالسوط عبر أربعة مستويات على أثر الكأس المقدسة.",
     "de": "Ein Jump-and-Run, in dem Indy über vier Levels auf der Spur des Heiligen Grals klettert, erkundet und sich peitscht.",
     "es": "Un juego de plataformas en el que Indy trepa, explora y se abre paso a latigazos por cuatro niveles tras la pista del Santo Grial.",
-    "id": "Platformer tempat Indy memanjat, menjelajah, dan mencambuk jalannya melewati empat level mencari Holy Grail.",
+    "id": "Platformer tempat Indy memanjat, menjelajah, dan mencambuk jalannya melewati empat level mencari Cawan Suci.",
     "ja": "インディが、聖杯を求めて4つのレベルを登り、探索し、ムチを振るって進む、プラットフォームゲーム。",
     "ko": "Indy가 성배의 자취를 따라 네 레벨을 오르고, 탐험하고, 채찍을 휘두르며 나아가는 플랫포머이다.",
     "pt-BR": "Um jogo de plataforma em que Indy escala, explora e usa o chicote por quatro fases na trilha do Santo Graal.",
@@ -11274,7 +11274,7 @@
    ],
    "description": "A maze action game in which Bomberman places bombs to blast walls and enemies, with multiplayer battles for up to five.",
    "descriptions": {
-    "ar": "لعبة متاهة حركة يضع فيها Bomberman القنابل لنسف الجدران والأعداء، مع معارك متعددة اللاعبين حتى خمسة.",
+    "ar": "لعبة متاهة حركة يضع فيها بومبرمان القنابل لنسف الجدران والأعداء، مع معارك متعددة اللاعبين حتى خمسة.",
     "de": "Ein Labyrinth-Actionspiel, in dem Bomberman Bomben legt, um Wände und Gegner zu sprengen, mit Mehrspielerkämpfen für bis zu fünf.",
     "es": "Un juego de acción en laberintos en el que Bomberman coloca bombas para volar muros y enemigos, con batallas multijugador de hasta cinco.",
     "id": "Game aksi labirin tempat Bomberman memasang bom untuk meledakkan dinding dan musuh, dengan pertarungan multipemain hingga lima orang.",
@@ -11756,7 +11756,7 @@
     "id": "Beat-'em-up side-scrolling tempat prajurit yang dibangkitkan berubah menjadi binatang untuk menyelamatkan Athena.",
     "ja": "復活した戦士が獣に変身して、アテナを救う、横スクロールのベルトスクロールアクション。",
     "ko": "부활한 전사가 짐승으로 변신해 아테나를 구하는 횡스크롤 벨트스크롤 액션 게임이다.",
-    "pt-BR": "Um beat 'em up de rolagem lateral em que um guerreiro ressuscitado se transforma em feras para resgatar Athena.",
+    "pt-BR": "Um beat 'em up de rolagem lateral em que um guerreiro ressuscitado se transforma em feras para resgatar Atena.",
     "ru": "Beat 'em up с боковой прокруткой, в котором воскрешенный воин превращается в зверей, чтобы спасти Афину."
    },
    "developer": "Software Studios",
@@ -16793,14 +16793,14 @@
    ],
    "description": "A side-scrolling action game based on the film, in which the cyborg cop RoboCop fights crime on the streets of Detroit.",
    "descriptions": {
-    "ar": "لعبة حركة بتمرير جانبي مبنية على الفيلم يكافح فيها الشرطي السيبراني RoboCop الجريمة في شوارع ديترويت.",
+    "ar": "لعبة حركة بتمرير جانبي مبنية على الفيلم يكافح فيها الشرطي السيبراني روبوكوب الجريمة في شوارع ديترويت.",
     "de": "Ein Side-Scrolling-Actionspiel nach dem Film, in dem der Cyborg-Polizist RoboCop auf den Straßen von Detroit gegen das Verbrechen kämpft.",
     "es": "Un juego de acción de desplazamiento lateral basado en la película, en el que el policía cyborg RoboCop combate el crimen en las calles de Detroit.",
     "id": "Game aksi side-scrolling berdasarkan film, tempat polisi cyborg RoboCop memerangi kejahatan di jalanan Detroit.",
     "ja": "映画を元に、サイボーグ警官ロボコップがデトロイトの街で犯罪と戦う、横スクロールのアクションゲーム。",
     "ko": "영화를 바탕으로 사이보그 경찰 로보캅이 디트로이트 거리에서 범죄와 싸우는 횡스크롤 액션 게임이다.",
     "pt-BR": "Um jogo de ação de rolagem lateral baseado no filme, em que o policial ciborgue RoboCop combate o crime nas ruas de Detroit.",
-    "ru": "Экшен с боковой прокруткой по фильму, в котором полицейский-киборг RoboCop борется с преступностью на улицах Детройта."
+    "ru": "Экшен с боковой прокруткой по фильму, в котором полицейский-киборг Робокоп борется с преступностью на улицах Детройта."
    },
    "developer": "Ocean Software",
    "diskMachine": {
@@ -18469,7 +18469,7 @@
     "ar": "مغامرة رسومية يسعى فيها الملك آرثر إلى الكأس المقدسة لرفع لعنة عن كاميلوت، مواجهًا ألغازًا وقتالًا.",
     "de": "Ein Grafik-Adventure, in dem König Artus den Heiligen Gral sucht, um einen Fluch von Camelot zu nehmen, und sich Rätseln und Kämpfen stellt.",
     "es": "Una aventura gráfica en la que el rey Arturo busca el Santo Grial para levantar una maldición sobre Camelot, afrontando acertijos y combates.",
-    "id": "Petualangan grafis tempat Raja Arthur mencari Holy Grail untuk mengangkat kutukan dari Camelot, menghadapi teka-teki dan pertarungan.",
+    "id": "Petualangan grafis tempat Raja Arthur mencari Cawan Suci untuk mengangkat kutukan dari Camelot, menghadapi teka-teki dan pertarungan.",
     "ja": "アーサー王が、謎解きと戦闘に直面しながら、キャメロットの呪いを解く聖杯を探す、グラフィックアドベンチャー。",
     "ko": "아서 왕이 수수께끼와 전투를 마주하며 카멜롯의 저주를 풀 성배를 찾는 그래픽 어드벤처이다.",
     "pt-BR": "Uma aventura gráfica em que o Rei Artur busca o Santo Graal para quebrar uma maldição sobre Camelot, enfrentando enigmas e combates.",
@@ -20352,8 +20352,8 @@
    "description": "A flip-screen adventure in which the scheming vizier Iznogoud trades objects and plots to overthrow the Caliph of Baghdad.",
    "descriptions": {
     "ar": "مغامرة بشاشات متقلبة يتبادل فيها الوزير المتآمر إزنوغود الأغراض ويدبر مؤامرات للإطاحة بخليفة بغداد.",
-    "de": "Ein Adventure mit Bildschirmwechseln, in dem der ränkeschmiedende Wesir Iznogoud Gegenstände tauscht und Pläne schmiedet, um den Kalifen von Bagdad zu stürzen.",
-    "es": "Una aventura con pantallas fijas en la que el intrigante visir Iznogoud intercambia objetos y conspira para derrocar al califa de Bagdad.",
+    "de": "Ein Adventure mit Bildschirmwechseln, in dem der ränkeschmiedende Wesir Isnogud Gegenstände tauscht und Pläne schmiedet, um den Kalifen von Bagdad zu stürzen.",
+    "es": "Una aventura con pantallas fijas en la que el intrigante visir Iznogud intercambia objetos y conspira para derrocar al califa de Bagdad.",
     "id": "Petualangan layar balik tempat wazir licik Iznogoud menukar benda dan merencanakan penggulingan Khalifah Baghdad.",
     "ja": "策略家の宰相イズノグッドが、物の取引や陰謀でバグダッドのカリフを倒そうとする、フリップスクリーンのアドベンチャー。",
     "ko": "음모를 꾸미는 재상 Iznogoud가 물건을 거래하며 바그다드의 칼리프를 전복하려 하는 화면 전환식 어드벤처이다.",
@@ -20491,7 +20491,7 @@
     "ar": "مغامرة أشر وانقر مبنية على الفيلم يتسابق فيها إنديانا جونز ووالده مع النازيين إلى الكأس المقدسة.",
     "de": "Ein Point-and-Click-Adventure nach dem Film, in dem Indiana Jones und sein Vater sich mit den Nazis ein Wettrennen um den Heiligen Gral liefern.",
     "es": "Una aventura de apuntar y hacer clic basada en la película, en la que Indiana Jones y su padre compiten con los nazis por llegar al Santo Grial.",
-    "id": "Petualangan point-and-click berdasarkan film, tempat Indiana Jones dan ayahnya berpacu melawan Nazi menuju Holy Grail.",
+    "id": "Petualangan point-and-click berdasarkan film, tempat Indiana Jones dan ayahnya berpacu melawan Nazi menuju Cawan Suci.",
     "ja": "映画を元に、インディアナ・ジョーンズと父がナチスと聖杯を競う、ポイント&クリックアドベンチャー。",
     "ko": "영화를 바탕으로 인디아나 존스와 그의 아버지가 나치보다 먼저 성배에 이르려 하는 포인트 앤 클릭 어드벤처이다.",
     "pt-BR": "Uma aventura point-and-click baseada no filme, em que Indiana Jones e seu pai disputam com os nazistas o Santo Graal.",
@@ -22206,14 +22206,14 @@
    ],
    "description": "A movie-based action game mixing side-scrolling platform levels, a puzzle mode and first-person shooting galleries as RoboCop.",
    "descriptions": {
-    "ar": "لعبة حركة مبنية على فيلم تمزج مستويات منصات بتمرير جانبي ونمط ألغاز ومعارض رماية من منظور الشخص الأول بدور RoboCop.",
+    "ar": "لعبة حركة مبنية على فيلم تمزج مستويات منصات بتمرير جانبي ونمط ألغاز ومعارض رماية من منظور الشخص الأول بدور روبوكوب.",
     "de": "Ein Film-Actionspiel, das als RoboCop Side-Scrolling-Plattform-Levels, einen Puzzle-Modus und Schießbuden in der Ego-Perspektive mischt.",
     "es": "Un juego de acción basado en la película que mezcla niveles de plataformas de desplazamiento lateral, un modo de rompecabezas y galerías de tiro en primera persona como RoboCop.",
     "id": "Game aksi berbasis film yang memadukan level platform side-scrolling, mode teka-teki, dan galeri tembak orang pertama sebagai RoboCop.",
     "ja": "ロボコップとして、横スクロールのプラットフォームレベル、パズルモード、一人称視点の射撃場を組み合わせた、映画を元にしたアクションゲーム。",
     "ko": "로보캅이 되어 횡스크롤 플랫폼 레벨, 퍼즐 모드, 1인칭 사격장이 섞인 영화 기반 액션 게임이다.",
     "pt-BR": "Um jogo de ação baseado no filme que mistura fases de plataforma de rolagem lateral, um modo de quebra-cabeça e galerias de tiro em primeira pessoa como RoboCop.",
-    "ru": "Экшен по фильму, сочетающий платформенные уровни с боковой прокруткой, режим головоломки и тиры от первого лица за RoboCop."
+    "ru": "Экшен по фильму, сочетающий платформенные уровни с боковой прокруткой, режим головоломки и тиры от первого лица за Робокопа."
    },
    "developer": "Special FX Software",
    "diskSets": {
@@ -22265,14 +22265,14 @@
    ],
    "description": "A polygon 3D action game based on the film, with varied driving, shooting, fighting and jetpack flying levels as RoboCop.",
    "descriptions": {
-    "ar": "لعبة حركة ثلاثية الأبعاد بالمضلعات مبنية على الفيلم، بمستويات متنوعة من القيادة وإطلاق النار والقتال والطيران بحقيبة نفاثة بدور RoboCop.",
+    "ar": "لعبة حركة ثلاثية الأبعاد بالمضلعات مبنية على الفيلم، بمستويات متنوعة من القيادة وإطلاق النار والقتال والطيران بحقيبة نفاثة بدور روبوكوب.",
     "de": "Ein Polygon-3D-Actionspiel nach dem Film, mit abwechslungsreichen Fahr-, Schieß-, Kampf- und Jetpack-Flug-Levels als RoboCop.",
     "es": "Un juego de acción 3D de polígonos basado en la película, con variados niveles de conducción, disparos, peleas y vuelo con mochila propulsora como RoboCop.",
     "id": "Game aksi 3D poligon berdasarkan film, dengan level mengemudi, menembak, bertarung, dan terbang dengan jetpack yang beragam sebagai RoboCop.",
     "ja": "ロボコップとして、運転、射撃、格闘、ジェットパック飛行といった多彩なレベルを備えた、映画を元にしたポリゴン3Dアクションゲーム。",
     "ko": "로보캅이 되어 운전, 사격, 격투, 제트팩 비행 레벨이 다양한 영화 기반 폴리곤 3D 액션 게임이다.",
     "pt-BR": "Um jogo de ação 3D de polígonos baseado no filme, com fases variadas de direção, tiro, luta e voo com jetpack como RoboCop.",
-    "ru": "Полигональный 3D-экшен по фильму с разнообразными уровнями вождения, стрельбы, драк и полетов с реактивным ранцем за RoboCop."
+    "ru": "Полигональный 3D-экшен по фильму с разнообразными уровнями вождения, стрельбы, драк и полетов с реактивным ранцем за Робокопа."
    },
    "developer": "Digital Image Design",
    "diskSets": {
@@ -22630,7 +22630,7 @@
     "ar": "مغامرة حركة يجوب فيها أستريكس بلاد الغال جامعًا الأغراض لإيجاد علاج للكاهن غيتافيكس وجرعته السحرية.",
     "de": "Ein Action-Adventure, in dem Asterix durch Gallien zieht und Gegenstände sammelt, um ein Heilmittel für den Druiden Miraculix und seinen Zaubertrank zu finden.",
     "es": "Una aventura de acción en la que Astérix recorre la Galia reuniendo objetos para encontrar una cura para el druida Panorámix y su poción mágica.",
-    "id": "Petualangan aksi tempat Asterix berkeliling Gaul mengumpulkan item untuk mencari obat bagi druid Getafix dan ramuan ajaibnya.",
+    "id": "Petualangan aksi tempat Asterix berkeliling Galia mengumpulkan item untuk mencari obat bagi druid Getafix dan ramuan ajaibnya.",
     "ja": "アステリックスがガリアを巡って、ドルイドのパノラミクスと魔法の薬を治す方法を探すためのアイテムを集める、アクションアドベンチャー。",
     "ko": "아스테릭스가 갈리아를 돌아다니며 드루이드 Getafix와 그의 마법 물약을 고칠 방법을 찾기 위해 물건을 모으는 액션 어드벤처이다.",
     "pt-BR": "Uma aventura de ação em que Asterix percorre a Gália reunindo itens para encontrar a cura do druida Panoramix e sua poção mágica.",
@@ -24256,7 +24256,7 @@
     "ja": "映画を元に、顔に傷を負ったダークマンが、プラットフォームと追跡のレベルでマフィアに立ち向かう、横スクロールのアクションゲーム。",
     "ko": "영화를 바탕으로 얼굴이 흉해진 다크맨이 플랫폼과 추격 레벨에서 폭력배와 맞서는 횡스크롤 액션 게임이다.",
     "pt-BR": "Um jogo de ação de rolagem lateral baseado no filme, em que o desfigurado Darkman enfrenta mafiosos em fases de plataforma e perseguição.",
-    "ru": "Экшен с боковой прокруткой по фильму, в котором обезображенный Darkman расправляется с мафиози на платформенных уровнях и уровнях с погонями."
+    "ru": "Экшен с боковой прокруткой по фильму, в котором обезображенный Человек тьмы расправляется с мафиози на платформенных уровнях и уровнях с погонями."
    },
    "developer": "Ocean Software",
    "diskSets": {
@@ -29388,7 +29388,7 @@
     "ja": "ロータスが、さまざまな地形、天候、対向車のある8つのステージを走る、車の後方視点のレースゲーム。",
     "ko": "로터스가 다양한 지형, 날씨, 마주 오는 차량이 있는 여덟 스테이지를 달리는 차량 후방 시점 레이싱 게임이다.",
     "pt-BR": "Um jogo de corrida com visão por trás do carro em que um Lotus corre por oito fases de terreno variado, clima e tráfego em sentido contrário.",
-    "ru": "Гонка с видом сзади машины, в которой Lotus проходит восемь этапов с разнообразным рельефом, погодой и встречным движением."
+    "ru": "Гонка с видом сзади машины, в которой Лотус проходит восемь этапов с разнообразным рельефом, погодой и встречным движением."
    },
    "developer": "Magnetic Fields",
    "diskSets": {
@@ -34061,7 +34061,7 @@
    ],
    "description": "A Space Invaders update with varied alien formations, bosses, power-ups and changing backgrounds.",
    "descriptions": {
-    "ar": "تحديث لـ Space Invaders بتشكيلات فضائيين متنوعة ورؤساء وتعزيزات وخلفيات متغيرة.",
+    "ar": "تحديث لسبيس إنفيدرز بتشكيلات فضائيين متنوعة ورؤساء وتعزيزات وخلفيات متغيرة.",
     "de": "Ein Space-Invaders-Update mit abwechslungsreichen Alien-Formationen, Bossen, Power-ups und wechselnden Hintergründen.",
     "es": "Una actualización de Space Invaders con formaciones alienígenas variadas, jefes, potenciadores y fondos cambiantes.",
     "id": "Pembaruan Space Invaders dengan beragam formasi alien, bos, power-up, dan latar yang berubah.",
@@ -34778,7 +34778,7 @@
     "ar": "لعبة سباق فورمولا 1 تتأهل فيها ثم تتسابق مع 19 سيارة أخرى حول شوارع موناكو.",
     "de": "Ein Formel-1-Rennspiel, in dem du dich qualifizierst und dann gegen 19 andere Autos durch die Straßen von Monaco fährst.",
     "es": "Un juego de carreras de Fórmula Uno en el que te clasificas y luego corres contra otros 19 autos por las calles de Mónaco.",
-    "id": "Game balap Formula Satu tempat Anda lolos kualifikasi lalu berpacu melawan 19 mobil lain di jalanan Monaco.",
+    "id": "Game balap Formula Satu tempat Anda lolos kualifikasi lalu berpacu melawan 19 mobil lain di jalanan Monako.",
     "ja": "予選を通過し、モナコの市街地で他の19台と競う、フォーミュラ1レーサー。",
     "ko": "예선을 통과한 뒤 모나코 거리에서 다른 19대의 차와 레이스하는 포뮬러 원 레이서이다.",
     "pt-BR": "Um jogo de corrida de Fórmula 1 em que você se classifica e depois corre contra outros 19 carros pelas ruas de Mônaco.",
@@ -41244,10 +41244,10 @@
     "ar": "لعبة قتال يقاتل فيها سبارتكوس خصومًا في حلبة رومانية بالسيف والدرع والرمح.",
     "de": "Ein Kampfspiel, in dem Spartacus in der römischen Arena mit Schwert, Schild und Speer gegen Gegner kämpft.",
     "es": "Un juego de peleas en el que Espartaco combate a sus oponentes en la arena romana con espada, escudo y lanza.",
-    "id": "Game pertarungan tempat Spartacus melawan lawan di arena Romawi dengan pedang, perisai, dan tombak.",
+    "id": "Game pertarungan tempat Spartakus melawan lawan di arena Romawi dengan pedang, perisai, dan tombak.",
     "ja": "スパルタクスが、剣、盾、槍を使い、ローマの闘技場で対戦相手と戦う、格闘ゲーム。",
     "ko": "스파르타쿠스가 로마 원형 경기장에서 검, 방패, 창으로 상대와 싸우는 격투 게임이다.",
-    "pt-BR": "Um jogo de luta em que Spartacus enfrenta oponentes na arena romana com espada, escudo e lança.",
+    "pt-BR": "Um jogo de luta em que Espártaco enfrenta oponentes na arena romana com espada, escudo e lança.",
     "ru": "Файтинг, в котором Спартак сражается с соперниками на римской арене мечом, щитом и копьем."
    },
    "developer": "Wise Owl Software",
@@ -41552,7 +41552,7 @@
    "descriptions": {
     "ar": "لعبة تقمص أدوار متساوية القياس يجمع فيها الإله الإسكندنافي هايمدال فريقًا لاستعادة أسلحة الآلهة المسروقة.",
     "de": "Ein isometrisches Rollenspiel, in dem der nordische Gott Heimdall eine Gruppe versammelt, um die gestohlenen Waffen der Götter zurückzuholen.",
-    "es": "Un juego de rol isométrico en el que el dios nórdico Heimdall reúne un grupo para recuperar las armas robadas de los dioses.",
+    "es": "Un juego de rol isométrico en el que el dios nórdico Heimdal reúne un grupo para recuperar las armas robadas de los dioses.",
     "id": "RPG isometrik tempat dewa Nordik Heimdall mengumpulkan party untuk merebut kembali senjata para dewa yang dicuri.",
     "ja": "北欧の神ヘイムダルが、盗まれた神々の武器を取り戻すためにパーティーを集める、アイソメトリックのロールプレイングゲーム。",
     "ko": "북유럽 신 헤임달이 파티를 모아 도난당한 신들의 무기를 되찾는 아이소메트릭 롤플레잉 게임이다.",
@@ -44755,7 +44755,7 @@
     "ar": "لعبة تعليمية يعمل فيها البطة دونالد في أعمال متفرقة لكسب المال لمعدات ملعب لأبناء أخيه.",
     "de": "Ein Lernspiel, in dem Donald Duck Gelegenheitsjobs annimmt, um Geld für Spielplatzgeräte für seine Neffen zu verdienen.",
     "es": "Un juego educativo en el que el Pato Donald hace trabajos ocasionales para ganar dinero para el equipo de un parque infantil de sus sobrinos.",
-    "id": "Game edukatif tempat Donald Duck mengerjakan pekerjaan serabutan untuk mencari uang demi peralatan taman bermain keponakannya.",
+    "id": "Game edukatif tempat Donal Bebek mengerjakan pekerjaan serabutan untuk mencari uang demi peralatan taman bermain keponakannya.",
     "ja": "ドナルドダックが、甥たちの遊具を買う資金を稼ぐために雑用をこなす、教育ゲーム。",
     "ko": "도널드 덕이 조카들을 위한 놀이터 장비를 사려고 아르바이트로 돈을 버는 교육용 게임이다.",
     "pt-BR": "Um jogo educativo em que o Pato Donald faz bicos para ganhar dinheiro para equipamentos de playground de seus sobrinhos.",
@@ -44797,7 +44797,7 @@
     "ar": "مغامرة حركة يتسابق فيها العم سكروج ماكدك مع فلينتهارت غلومغولد حول العالم لجمع الثروة الأكبر.",
     "de": "Ein Action-Adventure, in dem Dagobert Duck sich mit Mac Moneysack um die Welt ein Wettrennen liefert, um das größere Vermögen zu sammeln.",
     "es": "Una aventura de acción en la que el Tío Gilito compite con Flintheart Glomgold por todo el mundo para reunir la fortuna más grande.",
-    "id": "Petualangan aksi tempat Scrooge McDuck berpacu dengan Flintheart Glomgold mengelilingi dunia untuk mengumpulkan kekayaan yang lebih besar.",
+    "id": "Petualangan aksi tempat Gober Bebek berpacu dengan Gover Bebek mengelilingi dunia untuk mengumpulkan kekayaan yang lebih besar.",
     "ja": "スクルージ・マクダックが、より大きな財産を築くため、フリントハート・グロムゴールドと世界を競う、アクションアドベンチャー。",
     "ko": "스크루지 맥덕이 Flintheart Glomgold와 세계를 돌며 더 큰 재산을 모으려 경쟁하는 액션 어드벤처이다.",
     "pt-BR": "Uma aventura de ação em que o Tio Patinhas corre com Flintheart Glomgold pelo mundo para juntar a maior fortuna.",
@@ -45021,7 +45021,7 @@
     "ar": "لعبة استراتيجية بمعارك أركيد يطرد فيها شارل، بمساعدة جان دارك، الإنجليز من فرنسا.",
     "de": "Ein Strategiespiel mit Arcade-Schlachten, in dem Karl mit Hilfe von Jeanne d'Arc die Engländer aus Frankreich vertreibt.",
     "es": "Un juego de estrategia con batallas arcade en el que Carlos, ayudado por Juana de Arco, expulsa a los ingleses de Francia.",
-    "id": "Game strategi dengan pertempuran arkade tempat Charles, dibantu Joan of Arc, mengusir Inggris dari Prancis.",
+    "id": "Game strategi dengan pertempuran arkade tempat Charles, dibantu Jeanne d'Arc, mengusir Inggris dari Prancis.",
     "ja": "ジャンヌ・ダルクの助けを借りて、シャルルがイングランド軍をフランスから追い出す、アーケードの戦いを伴うストラテジーゲーム。",
     "ko": "잔 다르크의 도움을 받은 샤를이 영국군을 프랑스에서 몰아내는, 아케이드 전투가 있는 전략 게임이다.",
     "pt-BR": "Um jogo de estratégia com batalhas arcade em que Carlos, ajudado por Joana d'Arc, expulsa os ingleses da França.",
@@ -46531,7 +46531,7 @@
     "ar": "مغامرة تعليمية يستكشف فيها العم سكروج ماكدك جزر المحيط الهادئ في رحلة بحث عن كنز تعلّم الرياضيات والمال.",
     "de": "Ein Lern-Adventure, in dem Dagobert Duck auf einer Schatzsuche Pazifikinseln erkundet, die Mathematik und den Umgang mit Geld vermittelt.",
     "es": "Una aventura educativa en la que el Tío Gilito explora islas del Pacífico en una búsqueda del tesoro que enseña matemáticas y dinero.",
-    "id": "Petualangan edukatif tempat Scrooge McDuck menjelajahi pulau-pulau Pasifik dalam perburuan harta yang mengajarkan matematika dan uang.",
+    "id": "Petualangan edukatif tempat Gober Bebek menjelajahi pulau-pulau Pasifik dalam perburuan harta yang mengajarkan matematika dan uang.",
     "ja": "スクルージ・マクダックが太平洋の島々を宝探しで巡り、算数とお金を学べる、教育アドベンチャー。",
     "ko": "스크루지 맥덕이 수학과 돈에 관해 가르쳐 주는 보물찾기를 위해 태평양의 섬을 탐험하는 교육용 어드벤처이다.",
     "pt-BR": "Uma aventura educativa em que o Tio Patinhas explora ilhas do Pacífico numa caça ao tesouro que ensina matemática e dinheiro.",
@@ -47933,7 +47933,7 @@
     "ar": "لعبة حركة يتسلق فيها ميكي ماوس أبراج قلعة ديزني لاستعادتها من ملك الغيلان.",
     "de": "Ein Actionspiel, in dem Micky Maus die Türme von Disney Castle erklimmt, um es dem Ogerkönig wieder abzunehmen.",
     "es": "Un juego de acción en el que Mickey Mouse escala las torres del castillo de Disney para recuperarlo del Rey Ogro.",
-    "id": "Game aksi tempat Mickey Mouse memanjat menara Kastil Disney untuk merebutnya kembali dari Ogre King.",
+    "id": "Game aksi tempat Miki Tikus memanjat menara Kastil Disney untuk merebutnya kembali dari Ogre King.",
     "ja": "ミッキーマウスが、オーガ王からディズニー城を取り戻すため、塔を登る、アクションゲーム。",
     "ko": "미키 마우스가 Disney Castle의 탑을 올라 Ogre King에게서 성을 되찾는 액션 게임이다.",
     "pt-BR": "Um jogo de ação em que o Mickey Mouse sobe as torres do Castelo Disney para retomá-lo do Rei Ogro.",
@@ -51014,7 +51014,7 @@
     "id": "Game platform tempat Scrappy-Doo meninju jalannya melewati empat level untuk menyelamatkan Scooby dan Shaggy.",
     "ja": "スクラッピー・ドゥーが4つのレベルをパンチで突き進み、スクービーとシャギーを救う、プラットフォームゲーム。",
     "ko": "Scrappy-Doo가 네 레벨을 주먹으로 돌파해 스쿠비와 섀기를 구하는 플랫폼 게임이다.",
-    "pt-BR": "Um jogo de plataforma em que Scrappy-Doo abre caminho a socos por quatro fases para resgatar Scooby e Salsicha.",
+    "pt-BR": "Um jogo de plataforma em que Scooby-Loo abre caminho a socos por quatro fases para resgatar Scooby e Salsicha.",
     "ru": "Платформер, в котором Скрэппи-Ду пробивает себе путь кулаками через четыре уровня, чтобы спасти Скуби и Шэгги."
    },
    "developer": "PAL Developments",
@@ -51728,14 +51728,14 @@
    ],
    "description": "A computer version of the word game Scrabble, played by the official rules against opponents at eight skill levels.",
    "descriptions": {
-    "ar": "نسخة حاسوبية من لعبة الكلمات Scrabble، تُلعب بالقواعد الرسمية ضد خصوم بثمانية مستويات مهارة.",
+    "ar": "نسخة حاسوبية من لعبة الكلمات سكرابل، تُلعب بالقواعد الرسمية ضد خصوم بثمانية مستويات مهارة.",
     "de": "Eine Computerversion des Wortspiels Scrabble, gespielt nach den offiziellen Regeln gegen Gegner in acht Spielstärken.",
     "es": "Una versión por computadora del juego de palabras Scrabble, jugada con las reglas oficiales contra oponentes de ocho niveles de habilidad.",
     "id": "Versi komputer dari permainan kata Scrabble, dimainkan menurut aturan resmi melawan lawan di delapan tingkat keterampilan.",
     "ja": "公式ルールで、8段階の強さの対戦相手と遊ぶ、言葉のゲーム、スクラブルのコンピューター版。",
     "ko": "공식 규칙에 따라 여덟 단계의 상대와 즐기는 단어 게임 스크래블의 컴퓨터판이다.",
     "pt-BR": "Uma versão para computador do jogo de palavras Scrabble, jogada pelas regras oficiais contra oponentes em oito níveis de habilidade.",
-    "ru": "Компьютерная версия словесной игры Scrabble по официальным правилам против соперников на восьми уровнях мастерства."
+    "ru": "Компьютерная версия словесной игры Скрэббл по официальным правилам против соперников на восьми уровнях мастерства."
    },
    "developer": "Sentient Software",
    "launchbox": "193594",
@@ -52911,7 +52911,7 @@
    "description": "An educational game for children based on The Shoe People, with a drawing program and five reading and math mini games.",
    "descriptions": {
     "ar": "لعبة تعليمية للأطفال مبنية على The Shoe People، ببرنامج رسم وخمس ألعاب صغيرة للقراءة والرياضيات.",
-    "de": "Ein Lernspiel für Kinder nach The Shoe People, mit einem Zeichenprogramm und fünf Lese- und Mathe-Minispielen.",
+    "de": "Ein Lernspiel für Kinder nach Abenteuer in Shoetown, mit einem Zeichenprogramm und fünf Lese- und Mathe-Minispielen.",
     "es": "Un juego educativo para niños basado en The Shoe People, con un programa de dibujo y cinco minijuegos de lectura y matemáticas.",
     "id": "Game edukatif untuk anak berdasarkan The Shoe People, dengan program menggambar dan lima mini-game membaca dan matematika.",
     "ja": "The Shoe Peopleを元にした、お絵描きプログラムと5つの読み書き・算数ミニゲームを備えた、子供向けの教育ゲーム。",
@@ -55248,7 +55248,7 @@
     "id": "Game aksi tempat Mowgli bergerak melewati adegan hutan, mengambil benda untuk menangkis binatang.",
     "ja": "モーグリが、ジャングルの場面を進み、物を拾って動物を撃退する、アクションゲーム。",
     "ko": "모글리가 정글 장면을 지나며 물건을 주워 동물을 물리치는 액션 게임이다.",
-    "pt-BR": "Um jogo de ação em que Mowgli percorre cenas da selva, pegando objetos para se defender de animais.",
+    "pt-BR": "Um jogo de ação em que Mogli percorre cenas da selva, pegando objetos para se defender de animais.",
     "ru": "Экшен, в котором Маугли проходит сцены джунглей, подбирая предметы, чтобы отгонять животных."
    },
    "developer": "Nathan Logiciels",
@@ -55280,11 +55280,11 @@
    "descriptions": {
     "ar": "مغامرة نصية من ثلاثة أجزاء تتبع لانسلوت عبر ملحمة آرثر حتى السعي وراء الكأس المقدسة.",
     "de": "Ein dreiteiliges Text-Adventure, das Lancelot durch die Artussage bis zur Suche nach dem Heiligen Gral begleitet.",
-    "es": "Una aventura de texto en tres partes que sigue a Lancelot por la saga artúrica hasta la búsqueda del Santo Grial.",
-    "id": "Petualangan teks tiga bagian yang mengikuti Lancelot melewati saga Arthur hingga pencarian Holy Grail.",
+    "es": "Una aventura de texto en tres partes que sigue a Lanzarote del Lago por la saga artúrica hasta la búsqueda del Santo Grial.",
+    "id": "Petualangan teks tiga bagian yang mengikuti Lancelot melewati saga Arthur hingga pencarian Cawan Suci.",
     "ja": "聖杯探求までのアーサー王伝説を通してランスロットを追う、3部構成のテキストアドベンチャー。",
     "ko": "아서 왕 전설을 따라 성배 탐색에 이르기까지 랜슬롯을 따라가는 3부작 텍스트 어드벤처이다.",
-    "pt-BR": "Uma aventura de texto em três partes que acompanha Lancelot pela saga arturiana até a busca pelo Santo Graal.",
+    "pt-BR": "Uma aventura de texto em três partes que acompanha Lancelote pela saga arturiana até a busca pelo Santo Graal.",
     "ru": "Текстовое приключение из трех частей о Ланселоте в артуровской саге вплоть до поисков Святого Грааля."
    },
    "developer": "Level 9 Computing",
@@ -55729,7 +55729,7 @@
     "ar": "مغامرة يتجهز فيها مستكشف ويتوجه إلى غابة اليوكاتان بحثًا عن تميمة مايا، سيرًا وبالجيب.",
     "de": "Ein Adventure, in dem ein Forscher sich ausrüstet und zu Fuß und im Jeep in den Dschungel von Yucatan aufbricht, einem Maya-Fetisch nach.",
     "es": "Una aventura en la que un explorador se equipa y se adentra en la jungla de Yucatán tras un fetiche maya, a pie y en jeep.",
-    "id": "Petualangan tempat penjelajah bersiap dan memasuki hutan Yucatan mengejar fetish Maya, dengan berjalan kaki dan jip.",
+    "id": "Petualangan tempat penjelajah bersiap dan memasuki hutan Yucatán mengejar fetish Maya, dengan berjalan kaki dan jip.",
     "ja": "探検家が装備を整え、徒歩とジープでユカタンのジャングルに入り、マヤの呪物を追うアドベンチャー。",
     "ko": "탐험가가 장비를 갖추고 도보와 지프로 유카탄 정글에 들어가 마야의 주물을 쫓는 어드벤처이다.",
     "pt-BR": "Uma aventura em que um explorador se equipa e parte para a selva de Iucatã atrás de um fetiche maia, a pé e de jipe.",
@@ -56964,7 +56964,7 @@
     "ar": "مغامرة نصية بالإسبانية يبحث فيها مستكشف في أطلال المايا القديمة في اليوكاتان عن معابد مقدسة.",
     "de": "Ein spanischsprachiges Text-Adventure, in dem ein Forscher in den antiken Maya-Ruinen von Yucatan nach heiligen Tempeln sucht.",
     "es": "Una aventura de texto en español en la que un explorador busca templos sagrados en las antiguas ruinas mayas de Yucatán.",
-    "id": "Petualangan teks berbahasa Spanyol tempat penjelajah menelusuri reruntuhan Maya kuno di Yucatan mencari kuil suci.",
+    "id": "Petualangan teks berbahasa Spanyol tempat penjelajah menelusuri reruntuhan Maya kuno di Yucatán mencari kuil suci.",
     "ja": "探検家が、ユカタンの古代マヤ遺跡で聖なる神殿を探す、スペイン語のテキストアドベンチャー。",
     "ko": "탐험가가 유카탄의 고대 마야 유적에서 신성한 신전을 찾는 스페인어 텍스트 어드벤처이다.",
     "pt-BR": "Uma aventura de texto em espanhol em que um explorador vasculha antigas ruínas maias em Iucatã atrás de templos sagrados.",
@@ -57908,7 +57908,7 @@
     "ar": "لعبة تعرف على الأرقام للأطفال الصغار يجمع فيها ميكي وغوفي حيوانات حديقة الحيوان الهاربة.",
     "de": "Ein Zahlenerkennungsspiel für kleine Kinder, in dem Micky und Goofy ausgebrochene Zootiere einfangen.",
     "es": "Un juego de reconocimiento de números para niños pequeños en el que Mickey y Goofy reúnen a animales escapados del zoológico.",
-    "id": "Game pengenalan angka untuk anak kecil tempat Mickey dan Goofy mengumpulkan hewan kebun binatang yang kabur.",
+    "id": "Game pengenalan angka untuk anak kecil tempat Mickey dan Gufi mengumpulkan hewan kebun binatang yang kabur.",
     "ja": "ミッキーとグーフィーが、動物園から脱走した動物たちを集める、幼児向けの数字認識ゲーム。",
     "ko": "미키와 구피가 탈출한 동물원 동물들을 모는 어린이용 숫자 인식 게임이다.",
     "pt-BR": "Um jogo de reconhecimento de números para crianças pequenas em que Mickey e Pateta recolhem animais fugitivos do zoológico.",
@@ -61311,7 +61311,7 @@
    ],
    "description": "An add-on for SimCity that lets you reshape city terrain with rivers, lakes, islands and forests, plus new starting cities.",
    "descriptions": {
-    "ar": "إضافة للعبة SimCity تتيح لك إعادة تشكيل تضاريس المدينة بالأنهار والبحيرات والجزر والغابات، مع مدن بداية جديدة.",
+    "ar": "إضافة للعبة سيم سيتي تتيح لك إعادة تشكيل تضاريس المدينة بالأنهار والبحيرات والجزر والغابات، مع مدن بداية جديدة.",
     "de": "Ein Add-on für SimCity, mit dem du das Stadtgelände mit Flüssen, Seen, Inseln und Wäldern umgestalten kannst, plus neue Ausgangsstädte.",
     "es": "Un complemento para SimCity que permite remodelar el terreno de la ciudad con ríos, lagos, islas y bosques, además de nuevas ciudades iniciales.",
     "id": "Add-on untuk SimCity yang memungkinkan Anda membentuk ulang medan kota dengan sungai, danau, pulau, dan hutan, plus kota awal baru.",
@@ -62896,7 +62896,7 @@
     "ar": "لعبة تنس من خلف اللاعب برياضيين يُنشَؤون ولعب كأس ديفيس وبطولات الغراند سلام.",
     "de": "Ein Tennisspiel von hinter dem Spieler mit selbst erstellten Sportlern, Davis-Cup-Spiel und Grand-Slam-Turnieren.",
     "es": "Un juego de tenis con vista desde detrás del jugador con atletas creados, Copa Davis y torneos de Grand Slam.",
-    "id": "Game tenis dari belakang pemain dengan atlet buatan sendiri, permainan Davis Cup, dan turnamen Grand Slam.",
+    "id": "Game tenis dari belakang pemain dengan atlet buatan sendiri, permainan Piala Davis, dan turnamen Grand Slam.",
     "ja": "作成した選手、デビスカップ、グランドスラム大会を備えた、選手の後方視点のテニスゲーム。",
     "ko": "선수를 직접 만들고 데이비스컵과 그랜드 슬램 대회를 치르는 선수 후방 시점 테니스 게임이다.",
     "pt-BR": "Um jogo de tênis com visão por trás do jogador, com atletas criados, Copa Davis e torneios de Grand Slam.",
@@ -63657,7 +63657,7 @@
     "ar": "مغامرة نصية مصورة تبحث فيها في ترانسيلفانيا لإنقاذ أميرة من إنسان ذئب ومصاص دماء.",
     "de": "Ein illustriertes Text-Adventure, in dem du Transsilvanien durchsuchst, um eine Prinzessin vor einem Werwolf und einem Vampir zu retten.",
     "es": "Una aventura de texto ilustrada en la que recorres Transilvania para rescatar a una princesa de un hombre lobo y un vampiro.",
-    "id": "Petualangan teks bergambar tempat Anda menjelajahi Transylvania untuk menyelamatkan putri dari manusia serigala dan vampir.",
+    "id": "Petualangan teks bergambar tempat Anda menjelajahi Transilvania untuk menyelamatkan putri dari manusia serigala dan vampir.",
     "ja": "トランシルバニアを探索して、人狼と吸血鬼から姫を救う、イラスト付きのテキストアドベンチャー。",
     "ko": "트란실바니아를 뒤져 늑대인간과 흡혈귀에게서 공주를 구하는 일러스트 텍스트 어드벤처이다.",
     "pt-BR": "Uma aventura de texto ilustrada em que você percorre a Transilvânia para resgatar uma princesa de um lobisomem e um vampiro.",
@@ -72269,7 +72269,7 @@
    ],
    "description": "A side-scrolling platform game inspired by Super Mario Land, with coin collecting, stomped enemies and generated levels.",
    "descriptions": {
-    "ar": "لعبة منصات بتمرير جانبي مستوحاة من Super Mario Land، بجمع العملات ودوس الأعداء ومستويات مولدة.",
+    "ar": "لعبة منصات بتمرير جانبي مستوحاة من سوبر ماريو لاند، بجمع العملات ودوس الأعداء ومستويات مولدة.",
     "de": "Ein Side-Scrolling-Plattformspiel, inspiriert von Super Mario Land, mit Münzensammeln, zertretenen Gegnern und erzeugten Levels.",
     "es": "Un juego de plataformas de desplazamiento lateral inspirado en Super Mario Land, con monedas que recoger, enemigos que pisotear y niveles generados.",
     "id": "Game platform side-scrolling yang terinspirasi Super Mario Land, dengan pengumpulan koin, musuh yang diinjak, dan level yang dihasilkan.",
@@ -75255,7 +75255,7 @@
     "ar": "لعبة حركة بعناصر ألغاز يستكشف فيها ويليام تل ويتحدث إلى الناس ويجمع أغراضًا للإطاحة بطاغية.",
     "de": "Ein Actionspiel mit Puzzleelementen, in dem Wilhelm Tell erkundet, mit Leuten spricht und Gegenstände sammelt, um einen Tyrannen zu stürzen.",
     "es": "Un juego de acción con elementos de rompecabezas en el que Guillermo Tell explora, habla con la gente y reúne objetos para derrocar a un tirano.",
-    "id": "Game aksi dengan unsur teka-teki tempat William Tell menjelajah, berbicara dengan orang, dan mengumpulkan item untuk menggulingkan tiran.",
+    "id": "Game aksi dengan unsur teka-teki tempat Wilhelm Tell menjelajah, berbicara dengan orang, dan mengumpulkan item untuk menggulingkan tiran.",
     "ja": "ウィリアム・テルが、探索し、人々と話し、アイテムを集めて、暴君を打倒する、パズル要素のあるアクションゲーム。",
     "ko": "빌헬름 텔이 탐험하고, 사람들과 대화하고, 아이템을 모아 폭군을 무너뜨리는 퍼즐 요소가 있는 액션 게임이다.",
     "pt-BR": "Um jogo de ação com elementos de quebra-cabeça em que Guilherme Tell explora, conversa com pessoas e reúne itens para derrubar um tirano.",
@@ -92448,7 +92448,7 @@
    "descriptions": {
     "ar": "لعبة طيران بزر واحد يوجه فيها سانتا مزلجته فوق التلال المتموجة لاستعادة أغراض عيد الميلاد المسروقة.",
     "de": "Ein Flugspiel mit einer Taste, in dem der Weihnachtsmann seinen Schlitten über sanfte Hügel steuert, um gestohlene Weihnachtsgegenstände zurückzuholen.",
-    "es": "Un juego de vuelo de un solo botón en el que Santa guía su trineo sobre colinas ondulantes para recuperar objetos navideños robados.",
+    "es": "Un juego de vuelo de un solo botón en el que Papá Noel guía su trineo sobre colinas ondulantes para recuperar objetos navideños robados.",
     "id": "Game terbang satu tombol tempat Sinterklas mengarahkan kereta saljunya di atas perbukitan untuk memulihkan barang Natal yang dicuri.",
     "ja": "サンタが、盗まれたクリスマスの品を取り戻すため、起伏のある丘の上をそりで進む、1ボタンの飛行ゲーム。",
     "ko": "산타가 완만한 언덕 위를 썰매로 날아 도난당한 크리스마스 물건을 되찾는 한 버튼 비행 게임이다.",
@@ -96385,7 +96385,7 @@
     "ar": "محاكاة بحرية ترافق فيها مدمرة تابعة للبحرية الملكية قافلة قطبية من الحرب العالمية الثانية من آيسلندا إلى مورمانسك.",
     "de": "Eine Marinesimulation, in der ein Zerstörer der Royal Navy einen arktischen Konvoi des Zweiten Weltkriegs von Island nach Murmansk eskortiert.",
     "es": "Una simulación naval en la que un destructor de la Marina Real escolta un convoy ártico de la Segunda Guerra Mundial de Islandia a Múrmansk.",
-    "id": "Simulasi angkatan laut tempat kapal perusak Royal Navy mengawal konvoi Arktik Perang Dunia II dari Islandia ke Murmansk.",
+    "id": "Simulasi angkatan laut tempat kapal perusak Angkatan Laut Britania Raya mengawal konvoi Arktik Perang Dunia II dari Islandia ke Murmansk.",
     "ja": "イギリス海軍の駆逐艦が、アイスランドからムルマンスクまで第二次世界大戦の北極船団を護衛する、海戦シミュレーション。",
     "ko": "영국 왕립 해군 구축함이 아이슬란드에서 무르만스크까지 제2차 세계 대전 북극 호송대를 호위하는 해전 시뮬레이션이다.",
     "pt-BR": "Uma simulação naval em que um contratorpedeiro da Marinha Real escolta um comboio ártico da Segunda Guerra Mundial da Islândia a Murmansk.",
