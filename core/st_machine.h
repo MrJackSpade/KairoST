@@ -106,6 +106,8 @@ public:
     bool guest_crashed() const;
     // 1 when TOS runs its GEM desktop, 0 when not, -1 when the TOS cannot tell (kairo_st.h).
     int on_desktop() const;
+    // The lock keys on: bit 0 Caps Lock, as TOS keeps it.
+    int locks() const;
     // For host diagnostics: the CPU's D0-D7 and A0-A7, PC and SR, and the guest's memory as the
     // CPU sees it.
     void cpu_state(uint32_t registers[16], uint32_t &pc, uint16_t &sr) const;

@@ -195,6 +195,8 @@ bool StMachine::run_frame(std::string &error) {
 
 bool StMachine::booting() const { return impl_->hatari->booting(); }
 
+int StMachine::locks() const { return impl_->hatari->caps_lock() ? 1 : 0; }
+
 double StMachine::frame_seconds() const { return impl_->hatari->frame_seconds(); }
 
 const uint8_t *StMachine::frame(uint32_t &width, uint32_t &height) {

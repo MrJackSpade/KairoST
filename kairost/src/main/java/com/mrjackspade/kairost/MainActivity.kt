@@ -37,7 +37,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     // The core's picture is low resolution with its borders, doubled (832 x 552); mouse motion is
     // counted in ST low-resolution pixels.
     override val machine = Machine(320, 200, 4.0 / 3.0, "state.sts")
-    override val bridge by lazy { NativeMachine("kairost") }
+    override val bridge by lazy { NativeMachine("kairost", listOf(StKeys.CAPS)) }
     override val keyboard = StKeys.layout
     override val maxKeyCode = StKeys.MAX_CODE
     override fun guestKey(androidKey: Int) = StKeys.fromAndroid(androidKey)

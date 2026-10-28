@@ -17,7 +17,8 @@
 // crashes (a TOS bomb or EmuTOS panic, StMachine::guest_crashed), and the sound's peak over the
 // whole
 // run, before the first press ("early peak": a press makes TOS click) and over its last ten
-// seconds ("late peak"), and whether the machine ends on the GEM desktop (StMachine::on_desktop).
+// seconds ("late peak"), whether the machine ends on the GEM desktop (StMachine::on_desktop) and
+// with Caps Lock on (StMachine::locks).
 // For debugging, each run's last CPU state goes to <work folder>/cpu-<run>.txt and its ST RAM to
 // <work folder>/ram-<run>.bin.
 
@@ -213,10 +214,10 @@ int main(int argc, char **argv) {
             std::ofstream(config.home + "/ram-" + std::to_string(run) + ".bin", std::ios::binary)
                 .write(reinterpret_cast<const char *>(ram.data()), std::streamsize(ram.size()));
         }
-        std::printf("run %d: %ld frames (%.4f s each), %ux%u, %llu sound frames at %d Hz, peak %lld, early peak %lld, late peak %lld, desktop %s, %s%s\n", run,
+        std::printf("run %d: %ld frames (%.4f s each), %ux%u, %llu sound frames at %d Hz, peak %lld, early peak %lld, late peak %lld, desktop %s, caps %s, %s%s\n", run,
                     frames, machine->frame_seconds(), width, height, (unsigned long long) samples,
                     machine->sample_rate(), (long long) loudest, (long long) early_loudest, (long long) late_loudest,
-                    machine->on_desktop() < 0 ? "unknown" : machine->on_desktop() ? "yes" : "no", bmp.c_str(), booting ? ", still booting" : "");
+                    machine->on_desktop() < 0 ? "unknown" : machine->on_desktop() ? "yes" : "no", machine->locks() & 1 ? "on" : "off", bmp.c_str(), booting ? ", still booting" : "");
     }
     return status;
 }

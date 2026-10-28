@@ -668,6 +668,14 @@ static int KairoSt_OnDesktop(void)
 	return text >= TosAddress && text < TosAddress + TosSize;
 }
 
+/* Bit 4 of TOS's kbshift, which TOS 1.02 on and EmuTOS point to from their header (os_kbshift,
+ * TosAddress + 0x24) and TOS 1.00 keeps at 0xE1B. Before TOS has run, kbshift is 0: off. */
+static bool KairoSt_CapsLock(void)
+{
+	uint32_t kbshift = (!bIsEmuTOS && TosVersion < 0x0102) ? 0xE1B : STMemory_ReadLong(TosAddress + 0x24);
+	return kbshift && (STMemory_ReadByte(kbshift) & 0x10);
+}
+
 static void KairoSt_CpuState(uint32_t registers[16], uint32_t *pc, uint16_t *sr)
 {
 	for (int i = 0; i < 16; i++)
@@ -705,6 +713,7 @@ const struct KairoStApi *KairoSt_Api(void)
 		.floppy = KairoSt_Floppy,
 		.guest_crashed = KairoSt_GuestCrashed,
 		.on_desktop = KairoSt_OnDesktop,
+		.caps_lock = KairoSt_CapsLock,
 		.cpu_state = KairoSt_CpuState,
 		.read_memory = KairoSt_ReadMemory,
 	};

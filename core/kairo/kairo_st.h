@@ -105,6 +105,8 @@ struct KairoStApi {
 	/* 1 when TOS runs its GEM desktop (no game program runs), 0 when not, -1 when the TOS cannot
 	 * tell (TOS 1.00). */
 	int (*on_desktop)(void);
+	/* Whether Caps Lock is on, as TOS keeps it: the ST keyboard has no lamp, TOS its kbshift. */
+	bool (*caps_lock)(void);
 	/* For host diagnostics: the CPU's registers (D0-D7, A0-A7), PC and SR, and a copy of the
 	 * guest's memory as the CPU sees it (0 where nothing is mapped). */
 	void (*cpu_state)(uint32_t registers[16], uint32_t *pc, uint16_t *sr);

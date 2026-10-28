@@ -28,6 +28,8 @@ public:
 
     bool run_frame() override { return machine_->run_frame(error_); }
     bool booting() override { return machine_->booting(); }
+    // Bit 0 Caps, as NativeMachine lists it (MainActivity).
+    int locks() override { return machine_->locks(); }
     std::string error() override { return error_; }
     // The emulator's reason, which save_state and load_state leave in error_.
     std::string state_error() override { return error_; }

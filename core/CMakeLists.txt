@@ -155,8 +155,9 @@ endif()
 
 # The frame-driven machine (st_machine.h), which loads the Hatari library by its file name.
 add_library(kairost_core STATIC st_machine.cpp hatari_library.cpp)
-target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}" PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo"
-    "${CMAKE_CURRENT_LIST_DIR}/../shared/frontend/src/main/cpp")
+# The shared frontend's native sources are public: the host executables compile its state paths too.
+target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}" "${CMAKE_CURRENT_LIST_DIR}/../shared/frontend/src/main/cpp"
+    PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo")
 # The app has the shared state paths in its machine library; these executables compile them.
 set(KAIRO_STATE_PATHS "${CMAKE_CURRENT_LIST_DIR}/../shared/frontend/src/main/cpp/kairo/state_paths.cpp")
 target_compile_definitions(kairost_core PRIVATE KAIROST_HATARI_FILE="$<TARGET_FILE_NAME:kairost_hatari>")
