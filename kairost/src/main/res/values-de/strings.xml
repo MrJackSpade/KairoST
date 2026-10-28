@@ -4,114 +4,114 @@
     <!-- %1$s is the app's name, KairoST; %2$s the emulator it runs, Hatari; %3$s the machine, Atari ST;
          %4$s the bundled system software, EmuTOS; %5$s its GitHub repository. -->
     <!-- EN: %1$s uses %2$s\'s %3$s emulation and the %4$s system software. Source and provenance: github.com/%5$s. -->
-    <string name="credits">%1$s uses %2$s\'s %3$s emulation and the %4$s system software. Source and provenance: github.com/%5$s.</string>
+    <string name="credits">%1$s verwendet die %3$s-Emulation von %2$s und die Systemsoftware %4$s. Quellcode und Herkunft: github.com/%5$s.</string>
     <!-- EN: Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them -->
-    <string name="library_empty">Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them</string>
+    <string name="library_empty">Wählen Sie einen Spieleordner, um Diskettenabbilder, Spielprogramme und die ZIP- und 7z-Archive mit ihnen zu finden</string>
     <!-- EN: Folder access expired. Select the games folder again. -->
-    <string name="library_expired">Folder access expired. Select the games folder again.</string>
+    <string name="library_expired">Der Ordnerzugriff ist abgelaufen. Wählen Sie den Spieleordner erneut aus.</string>
     <!-- EN: Choose a games folder -->
-    <string name="folder_title">Choose a games folder</string>
+    <string name="folder_title">Spieleordner auswählen</string>
     <!-- %1$s is the machine's name, Atari ST; %2$s the app's name, KairoST. -->
     <!-- EN: Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them. -->
-    <string name="folder_description">Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them.</string>
+    <string name="folder_description">Wählen Sie den Ordner mit Ihren %1$s-Spielen. %2$s durchsucht seine Diskettenabbilder, Spielprogramme und die ZIP- und 7z-Archive mit ihnen.</string>
     <!-- EN: Choose games folder… -->
-    <string name="folder_button">Choose games folder…</string>
+    <string name="folder_button">Spieleordner auswählen…</string>
     <!-- EN: SAVE STATES -->
-    <string name="saves_group">SAVE STATES</string>
+    <string name="saves_group">SPEICHERSTÄNDE</string>
     <!-- EN: The joystick in port 1. -->
-    <string name="joystick_help">The joystick in port 1.</string>
+    <string name="joystick_help">Der Joystick an Port 1.</string>
     <!-- EN: Fire -->
-    <string name="joystick_fire">Fire</string>
+    <string name="joystick_fire">Feuer</string>
     <!-- EN: Fire 2 (unused) -->
-    <string name="joystick_fire_2">Fire 2 (unused)</string>
+    <string name="joystick_fire_2">Feuer 2 (unbenutzt)</string>
     <!-- EN: Symbols -->
-    <string name="keyboard_symbols">Symbols</string>
+    <string name="keyboard_symbols">Symbole</string>
     <!-- EN: Floppy disk -->
-    <string name="floppy_disk">Floppy disk</string>
+    <string name="floppy_disk">Diskette</string>
     <!-- EN: Program -->
-    <string name="program">Program</string>
+    <string name="program">Programm</string>
     <!-- EN: Drive A -->
-    <string name="drive_a">Drive A</string>
+    <string name="drive_a">Laufwerk A</string>
     <!-- EN: Drive B -->
-    <string name="drive_b">Drive B</string>
+    <string name="drive_b">Laufwerk B</string>
     <!-- A firmware file's description: %1$s is its file name; %2$s what it does. -->
     <!-- EN: %1$s · %2$s -->
     <string name="firmware_part">%1$s · %2$s</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
-    <string name="tos_for_model">TOS for the %1$s</string>
+    <string name="tos_for_model">TOS für den %1$s</string>
     <!-- EN: TOS 1.00 to 1.04, for games on the ST and Mega ST -->
-    <string name="tos_st_description">TOS 1.00 to 1.04, for games on the ST and Mega ST</string>
+    <string name="tos_st_description">TOS 1.00 bis 1.04, für Spiele auf ST und Mega ST</string>
     <!-- EN: TOS 1.06, 1.62 or 2.0x, for games on the STE and Mega STE -->
-    <string name="tos_ste_description">TOS 1.06, 1.62 or 2.0x, for games on the STE and Mega STE</string>
+    <string name="tos_ste_description">TOS 1.06, 1.62 oder 2.0x, für Spiele auf STE und Mega STE</string>
     <!-- EN: TOS 3.0x, for games on the TT -->
-    <string name="tos_tt_description">TOS 3.0x, for games on the TT</string>
+    <string name="tos_tt_description">TOS 3.0x, für Spiele auf dem TT</string>
     <!-- EN: TOS 4.0x, for games on the Falcon -->
-    <string name="tos_falcon_description">TOS 4.0x, for games on the Falcon</string>
+    <string name="tos_falcon_description">TOS 4.0x, für Spiele auf dem Falcon</string>
     <!-- EN: Import a TOS image… -->
-    <string name="tos_import">Import a TOS image…</string>
+    <string name="tos_import">TOS-Abbild importieren…</string>
     <!-- EN: A TOS image is at most 1 MB; that file is larger -->
-    <string name="tos_too_large">A TOS image is at most 1 MB; that file is larger</string>
+    <string name="tos_too_large">Ein TOS-Abbild ist höchstens 1 MB groß; diese Datei ist größer</string>
     <!-- EN: Unknown image -->
-    <string name="tos_unknown_image">Unknown image</string>
+    <string name="tos_unknown_image">Unbekanntes Abbild</string>
     <!-- A TOS image's name: %1$s is its version, such as TOS 1.04; %2$s the country its header names. -->
     <!-- EN: %1$s (%2$s) -->
     <string name="tos_with_country">%1$s (%2$s)</string>
     <!-- The countries a TOS image's header names. -->
     <!-- EN: US -->
-    <string name="country_us">US</string>
+    <string name="country_us">USA</string>
     <!-- EN: Germany -->
-    <string name="country_germany">Germany</string>
+    <string name="country_germany">Deutschland</string>
     <!-- EN: France -->
-    <string name="country_france">France</string>
+    <string name="country_france">Frankreich</string>
     <!-- EN: UK -->
-    <string name="country_uk">UK</string>
+    <string name="country_uk">Großbritannien</string>
     <!-- EN: Spain -->
-    <string name="country_spain">Spain</string>
+    <string name="country_spain">Spanien</string>
     <!-- EN: Italy -->
-    <string name="country_italy">Italy</string>
+    <string name="country_italy">Italien</string>
     <!-- EN: Sweden -->
-    <string name="country_sweden">Sweden</string>
+    <string name="country_sweden">Schweden</string>
     <!-- EN: Switzerland, French -->
-    <string name="country_switzerland_french">Switzerland, French</string>
+    <string name="country_switzerland_french">Schweiz, Französisch</string>
     <!-- EN: Switzerland, German -->
-    <string name="country_switzerland_german">Switzerland, German</string>
+    <string name="country_switzerland_german">Schweiz, Deutsch</string>
     <!-- EN: Turkey -->
-    <string name="country_turkey">Turkey</string>
+    <string name="country_turkey">Türkei</string>
     <!-- EN: Finland -->
-    <string name="country_finland">Finland</string>
+    <string name="country_finland">Finnland</string>
     <!-- EN: Norway -->
-    <string name="country_norway">Norway</string>
+    <string name="country_norway">Norwegen</string>
     <!-- EN: Denmark -->
-    <string name="country_denmark">Denmark</string>
+    <string name="country_denmark">Dänemark</string>
     <!-- EN: Saudi Arabia -->
-    <string name="country_saudi_arabia">Saudi Arabia</string>
+    <string name="country_saudi_arabia">Saudi-Arabien</string>
     <!-- EN: Netherlands -->
-    <string name="country_netherlands">Netherlands</string>
+    <string name="country_netherlands">Niederlande</string>
     <!-- EN: Czech Republic -->
-    <string name="country_czech_republic">Czech Republic</string>
+    <string name="country_czech_republic">Tschechien</string>
     <!-- EN: Hungary -->
-    <string name="country_hungary">Hungary</string>
+    <string name="country_hungary">Ungarn</string>
     <!-- %1$s is the TOS file to import, such as TOS for the STE. -->
     <!-- EN: This game starts on your own TOS: import %1$s in Menu › Machine -->
-    <string name="own_tos_missing">This game starts on your own TOS: import %1$s in Menu › Machine</string>
+    <string name="own_tos_missing">Dieses Spiel startet mit Ihrem eigenen TOS: Importieren Sie %1$s unter Menü › Maschine</string>
     <!-- EN: This game\'s TOS image is no longer in the app: choose or import another in Game settings › System -->
-    <string name="tos_image_missing">This game\'s TOS image is no longer in the app: choose or import another in Game settings › System</string>
+    <string name="tos_image_missing">Das TOS-Abbild dieses Spiels ist nicht mehr in der App: Wählen oder importieren Sie unter Spieleinstellungen › System ein anderes</string>
     <!-- EN: The second disk this game needs is not in the library -->
-    <string name="second_disk_missing">The second disk this game needs is not in the library</string>
+    <string name="second_disk_missing">Der zweite Datenträger, den dieses Spiel benötigt, ist nicht in der Bibliothek</string>
     <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">Preparing the emulator</string>
+    <string name="preparing_emulator">Emulator wird vorbereitet</string>
     <!-- EN: the emulator could not read or write the state -->
-    <string name="state_error_io">the emulator could not read or write the state</string>
+    <string name="state_error_io">Der Emulator konnte den Speicherstand nicht lesen oder schreiben</string>
     <!-- EN: the emulator refused the disk image -->
-    <string name="state_error_refused">the emulator refused the disk image</string>
+    <string name="state_error_refused">Der Emulator hat das Datenträgerabbild abgelehnt</string>
     <!-- %1$d is the emulator's error code. -->
     <!-- EN: code %1$d -->
-    <string name="state_error_code">code %1$d</string>
+    <string name="state_error_code">Code %1$d</string>
     <!-- EN: Machine -->
-    <string name="option_machine">Machine</string>
+    <string name="option_machine">Maschine</string>
     <!-- EN: Memory -->
-    <string name="option_memory">Memory</string>
+    <string name="option_memory">Arbeitsspeicher</string>
     <!-- %1$d is a size in kilobytes. -->
     <!-- EN: %1$d KB -->
     <string name="memory_kb">%1$d KB</string>
@@ -121,23 +121,23 @@
     <!-- EN: Monitor -->
     <string name="option_monitor">Monitor</string>
     <!-- EN: Color -->
-    <string name="monitor_color">Color</string>
+    <string name="monitor_color">Farbe</string>
     <!-- EN: Monochrome -->
-    <string name="monitor_mono">Monochrome</string>
+    <string name="monitor_mono">Monochrom</string>
     <!-- EN: Region -->
     <string name="option_region">Region</string>
     <!-- EN: Europe (50 Hz) -->
-    <string name="region_europe">Europe (50 Hz)</string>
+    <string name="region_europe">Europa (50 Hz)</string>
     <!-- EN: USA (60 Hz) -->
     <string name="region_usa">USA (60 Hz)</string>
     <!-- EN: System -->
     <string name="option_system">System</string>
     <!-- EN: Your TOS for its model -->
-    <string name="system_own_tos">Your TOS for its model</string>
+    <string name="system_own_tos">Ihr TOS für sein Modell</string>
     <!-- EN: Startup program -->
-    <string name="startup_program">Startup program</string>
+    <string name="startup_program">Startprogramm</string>
     <!-- EN: Program on drive A, such as GAME.PRG -->
-    <string name="startup_program_hint">Program on drive A, such as GAME.PRG</string>
+    <string name="startup_program_hint">Programm auf Laufwerk A, etwa GAME.PRG</string>
     <!-- EN: Automatic -->
-    <string name="startup_program_automatic">Automatic</string>
+    <string name="startup_program_automatic">Automatisch</string>
 </resources>

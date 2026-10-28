@@ -4,30 +4,30 @@
     <!-- %1$s is the app's name, KairoST; %2$s the emulator it runs, Hatari; %3$s the machine, Atari ST;
          %4$s the bundled system software, EmuTOS; %5$s its GitHub repository. -->
     <!-- EN: %1$s uses %2$s\'s %3$s emulation and the %4$s system software. Source and provenance: github.com/%5$s. -->
-    <string name="credits">%1$s uses %2$s\'s %3$s emulation and the %4$s system software. Source and provenance: github.com/%5$s.</string>
+    <string name="credits">%1$s menggunakan emulasi %3$s dari %2$s dan perangkat lunak sistem %4$s. Sumber dan asal-usul: github.com/%5$s.</string>
     <!-- EN: Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them -->
-    <string name="library_empty">Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them</string>
+    <string name="library_empty">Pilih folder game untuk menemukan image disket, program game, serta arsip ZIP dan 7z yang berisi semua itu</string>
     <!-- EN: Folder access expired. Select the games folder again. -->
-    <string name="library_expired">Folder access expired. Select the games folder again.</string>
+    <string name="library_expired">Akses folder kedaluwarsa. Pilih folder game lagi.</string>
     <!-- EN: Choose a games folder -->
-    <string name="folder_title">Choose a games folder</string>
+    <string name="folder_title">Pilih folder game</string>
     <!-- %1$s is the machine's name, Atari ST; %2$s the app's name, KairoST. -->
     <!-- EN: Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them. -->
-    <string name="folder_description">Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them.</string>
+    <string name="folder_description">Pilih folder yang berisi game %1$s Anda. %2$s akan memindai image disket, program game, serta arsip ZIP dan 7z yang berisi semua itu.</string>
     <!-- EN: Choose games folder… -->
-    <string name="folder_button">Choose games folder…</string>
+    <string name="folder_button">Pilih folder game…</string>
     <!-- EN: SAVE STATES -->
-    <string name="saves_group">SAVE STATES</string>
+    <string name="saves_group">STATUS TERSIMPAN</string>
     <!-- EN: The joystick in port 1. -->
-    <string name="joystick_help">The joystick in port 1.</string>
+    <string name="joystick_help">Joystick di port 1.</string>
     <!-- EN: Fire -->
-    <string name="joystick_fire">Fire</string>
+    <string name="joystick_fire">Tembak</string>
     <!-- EN: Fire 2 (unused) -->
-    <string name="joystick_fire_2">Fire 2 (unused)</string>
+    <string name="joystick_fire_2">Tembak 2 (tidak digunakan)</string>
     <!-- EN: Symbols -->
-    <string name="keyboard_symbols">Symbols</string>
+    <string name="keyboard_symbols">Simbol</string>
     <!-- EN: Floppy disk -->
-    <string name="floppy_disk">Floppy disk</string>
+    <string name="floppy_disk">Disket</string>
     <!-- EN: Program -->
     <string name="program">Program</string>
     <!-- EN: Drive A -->
@@ -39,79 +39,79 @@
     <string name="firmware_part">%1$s · %2$s</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
-    <string name="tos_for_model">TOS for the %1$s</string>
+    <string name="tos_for_model">TOS untuk %1$s</string>
     <!-- EN: TOS 1.00 to 1.04, for games on the ST and Mega ST -->
-    <string name="tos_st_description">TOS 1.00 to 1.04, for games on the ST and Mega ST</string>
+    <string name="tos_st_description">TOS 1.00 hingga 1.04, untuk game di ST dan Mega ST</string>
     <!-- EN: TOS 1.06, 1.62 or 2.0x, for games on the STE and Mega STE -->
-    <string name="tos_ste_description">TOS 1.06, 1.62 or 2.0x, for games on the STE and Mega STE</string>
+    <string name="tos_ste_description">TOS 1.06, 1.62, atau 2.0x, untuk game di STE dan Mega STE</string>
     <!-- EN: TOS 3.0x, for games on the TT -->
-    <string name="tos_tt_description">TOS 3.0x, for games on the TT</string>
+    <string name="tos_tt_description">TOS 3.0x, untuk game di TT</string>
     <!-- EN: TOS 4.0x, for games on the Falcon -->
-    <string name="tos_falcon_description">TOS 4.0x, for games on the Falcon</string>
+    <string name="tos_falcon_description">TOS 4.0x, untuk game di Falcon</string>
     <!-- EN: Import a TOS image… -->
-    <string name="tos_import">Import a TOS image…</string>
+    <string name="tos_import">Impor image TOS…</string>
     <!-- EN: A TOS image is at most 1 MB; that file is larger -->
-    <string name="tos_too_large">A TOS image is at most 1 MB; that file is larger</string>
+    <string name="tos_too_large">Ukuran image TOS maksimal 1 MB; file tersebut lebih besar</string>
     <!-- EN: Unknown image -->
-    <string name="tos_unknown_image">Unknown image</string>
+    <string name="tos_unknown_image">Image tidak dikenal</string>
     <!-- A TOS image's name: %1$s is its version, such as TOS 1.04; %2$s the country its header names. -->
     <!-- EN: %1$s (%2$s) -->
     <string name="tos_with_country">%1$s (%2$s)</string>
     <!-- The countries a TOS image's header names. -->
     <!-- EN: US -->
-    <string name="country_us">US</string>
+    <string name="country_us">AS</string>
     <!-- EN: Germany -->
-    <string name="country_germany">Germany</string>
+    <string name="country_germany">Jerman</string>
     <!-- EN: France -->
-    <string name="country_france">France</string>
+    <string name="country_france">Prancis</string>
     <!-- EN: UK -->
-    <string name="country_uk">UK</string>
+    <string name="country_uk">Inggris</string>
     <!-- EN: Spain -->
-    <string name="country_spain">Spain</string>
+    <string name="country_spain">Spanyol</string>
     <!-- EN: Italy -->
-    <string name="country_italy">Italy</string>
+    <string name="country_italy">Italia</string>
     <!-- EN: Sweden -->
-    <string name="country_sweden">Sweden</string>
+    <string name="country_sweden">Swedia</string>
     <!-- EN: Switzerland, French -->
-    <string name="country_switzerland_french">Switzerland, French</string>
+    <string name="country_switzerland_french">Swiss, Prancis</string>
     <!-- EN: Switzerland, German -->
-    <string name="country_switzerland_german">Switzerland, German</string>
+    <string name="country_switzerland_german">Swiss, Jerman</string>
     <!-- EN: Turkey -->
-    <string name="country_turkey">Turkey</string>
+    <string name="country_turkey">Turki</string>
     <!-- EN: Finland -->
-    <string name="country_finland">Finland</string>
+    <string name="country_finland">Finlandia</string>
     <!-- EN: Norway -->
-    <string name="country_norway">Norway</string>
+    <string name="country_norway">Norwegia</string>
     <!-- EN: Denmark -->
     <string name="country_denmark">Denmark</string>
     <!-- EN: Saudi Arabia -->
-    <string name="country_saudi_arabia">Saudi Arabia</string>
+    <string name="country_saudi_arabia">Arab Saudi</string>
     <!-- EN: Netherlands -->
-    <string name="country_netherlands">Netherlands</string>
+    <string name="country_netherlands">Belanda</string>
     <!-- EN: Czech Republic -->
-    <string name="country_czech_republic">Czech Republic</string>
+    <string name="country_czech_republic">Republik Ceko</string>
     <!-- EN: Hungary -->
-    <string name="country_hungary">Hungary</string>
+    <string name="country_hungary">Hungaria</string>
     <!-- %1$s is the TOS file to import, such as TOS for the STE. -->
     <!-- EN: This game starts on your own TOS: import %1$s in Menu › Machine -->
-    <string name="own_tos_missing">This game starts on your own TOS: import %1$s in Menu › Machine</string>
+    <string name="own_tos_missing">Game ini dimulai dengan TOS milik Anda: impor %1$s di Menu › Mesin</string>
     <!-- EN: This game\'s TOS image is no longer in the app: choose or import another in Game settings › System -->
-    <string name="tos_image_missing">This game\'s TOS image is no longer in the app: choose or import another in Game settings › System</string>
+    <string name="tos_image_missing">Image TOS game ini tidak lagi ada di aplikasi: pilih atau impor image lain di Setelan game › Sistem</string>
     <!-- EN: The second disk this game needs is not in the library -->
-    <string name="second_disk_missing">The second disk this game needs is not in the library</string>
+    <string name="second_disk_missing">Disk kedua yang diperlukan game ini tidak ada di pustaka</string>
     <!-- EN: Preparing the emulator -->
-    <string name="preparing_emulator">Preparing the emulator</string>
+    <string name="preparing_emulator">Menyiapkan emulator</string>
     <!-- EN: the emulator could not read or write the state -->
-    <string name="state_error_io">the emulator could not read or write the state</string>
+    <string name="state_error_io">emulator tidak dapat membaca atau menulis status</string>
     <!-- EN: the emulator refused the disk image -->
-    <string name="state_error_refused">the emulator refused the disk image</string>
+    <string name="state_error_refused">emulator menolak image disk</string>
     <!-- %1$d is the emulator's error code. -->
     <!-- EN: code %1$d -->
-    <string name="state_error_code">code %1$d</string>
+    <string name="state_error_code">kode %1$d</string>
     <!-- EN: Machine -->
-    <string name="option_machine">Machine</string>
+    <string name="option_machine">Mesin</string>
     <!-- EN: Memory -->
-    <string name="option_memory">Memory</string>
+    <string name="option_memory">Memori</string>
     <!-- %1$d is a size in kilobytes. -->
     <!-- EN: %1$d KB -->
     <string name="memory_kb">%1$d KB</string>
@@ -121,23 +121,23 @@
     <!-- EN: Monitor -->
     <string name="option_monitor">Monitor</string>
     <!-- EN: Color -->
-    <string name="monitor_color">Color</string>
+    <string name="monitor_color">Berwarna</string>
     <!-- EN: Monochrome -->
-    <string name="monitor_mono">Monochrome</string>
+    <string name="monitor_mono">Monokrom</string>
     <!-- EN: Region -->
-    <string name="option_region">Region</string>
+    <string name="option_region">Wilayah</string>
     <!-- EN: Europe (50 Hz) -->
-    <string name="region_europe">Europe (50 Hz)</string>
+    <string name="region_europe">Eropa (50 Hz)</string>
     <!-- EN: USA (60 Hz) -->
-    <string name="region_usa">USA (60 Hz)</string>
+    <string name="region_usa">AS (60 Hz)</string>
     <!-- EN: System -->
-    <string name="option_system">System</string>
+    <string name="option_system">Sistem</string>
     <!-- EN: Your TOS for its model -->
-    <string name="system_own_tos">Your TOS for its model</string>
+    <string name="system_own_tos">TOS Anda untuk modelnya</string>
     <!-- EN: Startup program -->
-    <string name="startup_program">Startup program</string>
+    <string name="startup_program">Program startup</string>
     <!-- EN: Program on drive A, such as GAME.PRG -->
-    <string name="startup_program_hint">Program on drive A, such as GAME.PRG</string>
+    <string name="startup_program_hint">Program di drive A, seperti GAME.PRG</string>
     <!-- EN: Automatic -->
-    <string name="startup_program_automatic">Automatic</string>
+    <string name="startup_program_automatic">Otomatis</string>
 </resources>
