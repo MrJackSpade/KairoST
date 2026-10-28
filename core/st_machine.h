@@ -30,6 +30,8 @@ struct Config {
     std::string tos;
     // The machine, by Hatari's name for it: st, megast, ste, megaste, tt or falcon.
     std::string machine = "st";
+    // The CPU's clock in MHz, 8, 16 or 32 (Hatari's --cpuclock); 0 for the model's own.
+    int cpu_clock = 0;
     // ST RAM in KiB: 512, 1024, 2048 or 4096 on an ST (Hatari's --memsize takes KiB above 14).
     int memory_kib = 1024;
     // The monitor, by Hatari's name for it: mono, rgb, vga or tv.

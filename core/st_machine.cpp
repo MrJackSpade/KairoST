@@ -142,6 +142,8 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
         "--log-level", "warn",
         "--alert-level", "error",
     };
+    // Hatari runs each model at its own clock unless told another; it must come after --machine.
+    if (config.cpu_clock) args.insert(args.end(), {"--cpuclock", std::to_string(config.cpu_clock)});
     if (!config.floppy[kDriveA].empty()) args.insert(args.end(), {"--disk-a", config.floppy[kDriveA]});
     if (!config.floppy[kDriveB].empty()) args.insert(args.end(), {"--disk-b", config.floppy[kDriveB]});
     if (!config.floppy_program.empty()) {

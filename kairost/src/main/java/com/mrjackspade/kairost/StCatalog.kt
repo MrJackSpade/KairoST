@@ -30,6 +30,14 @@ object StCatalog : LayeredGameCatalog.Schema {
         ChoiceOption("tt", "Atari TT"),
         ChoiceOption("falcon", "Atari Falcon")), "st")
 
+    /** Automatic [clock]: each model at its own clock, as Hatari sets it for the model. */
+    const val MODEL_CLOCK = "auto"
+
+    /** The CPU's clock in MHz: 8 is an ST's, the Mega STE and Falcon run at 16 and the TT at 32. */
+    val clock = MachineOption("clock", UiText.res(FrontendR.string.kairo_option_clock),
+        listOf(ChoiceOption(MODEL_CLOCK, UiText.res(FrontendR.string.kairo_automatic))) +
+            listOf(8, 16, 32).map { ChoiceOption("$it", UiText.res(FrontendR.string.kairo_clock_mhz, "$it")) }, MODEL_CLOCK)
+
     /** ST RAM in KiB. */
     val memory = MachineOption("memory", UiText.res(FrontendR.string.kairo_option_memory), listOf(
         ChoiceOption("512", UiText.res(FrontendR.string.kairo_memory_kb, 512)),
@@ -72,7 +80,7 @@ object StCatalog : LayeredGameCatalog.Schema {
     val system = system()
 
     val skipMemoryCheck = MachineOption.skipMemoryCheck()
-    val options = listOf(machine, memory, monitor, region, system, skipMemoryCheck)
+    val options = listOf(machine, clock, memory, monitor, region, system, skipMemoryCheck)
 
     /** The program setting's catalog place: `launch.program`. */
     const val PROGRAM = "program"

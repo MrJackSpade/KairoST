@@ -103,6 +103,8 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     const std::string &tos = launch.settings.at("tos");
     config.tos = tos == "emutos" ? launch.home + "/emutos/etos1024k.img" : launch.firmware + "/" + tos;
     config.machine = launch.settings.at("machine");
+    const std::string &clock = launch.settings.at("clock");
+    config.cpu_clock = clock == "auto" ? 0 : std::stoi(clock);
     config.memory_kib = std::stoi(launch.settings.at("memory"));
     config.monitor = launch.settings.at("monitor");
     config.country = launch.settings.at("region");
