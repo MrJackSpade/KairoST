@@ -1,16 +1,6 @@
-#!/usr/bin/env python3
-"""Applies KairoST's local changes to the third-party snapshots in third_party/.
-
-Usage: local_patches.py [--check]
-
-Each change replaces text that must occur exactly once in its file. A change already applied is
-skipped, so the script can run on a fresh import or on the committed tree; --check fails unless
-every change is applied. docs/source-import.md describes each change.
-"""
-import sys
+"""KairoST's local changes to the third-party snapshots in third_party/, which
+shared/tools/local_patches.py applies and checks. docs/source-import.md describes each change."""
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1] / 'third_party'
 
 # Hatari saves and restores the machine at the end of a CPU instruction, after the request
 # (MemorySnapShot_Capture/Restore), and keeps whether it failed to itself. KairoST asks for it.
@@ -289,29 +279,3 @@ PATCHES = {
     'sdl-dummy-rgba': SDL_DUMMY_RGBA,
     'sdl-no-java': SDL_NO_JAVA,
 }
-
-
-def main():
-    check = sys.argv[1:] == ['--check']
-    missing = []
-    for name, changes in PATCHES.items():
-        for rel, old, new in changes:
-            path = ROOT / rel
-            with open(path, encoding='utf-8', newline='') as f:
-                text = f.read()
-            if text.count(new) == 1:
-                continue
-            if check:
-                missing.append(f'{name}: {rel}')
-                continue
-            if text.count(old) != 1:
-                raise SystemExit(f'patch {name}: {rel} does not contain the text to replace exactly once')
-            with open(path, 'w', encoding='utf-8', newline='') as f:
-                f.write(text.replace(old, new))
-            print(f'applied {name} to {rel}')
-    if missing:
-        raise SystemExit('not applied: ' + ', '.join(missing))
-
-
-if __name__ == '__main__':
-    main()

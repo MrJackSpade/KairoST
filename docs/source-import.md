@@ -51,7 +51,7 @@ Both were imported on 2026-10-22, from the same archives as KairoMSX's (the hash
 
 ## Local changes
 
-`tools/local_patches.py` makes these changes to the snapshots and checks they are in place (`--check`). Each replaces text that occurs exactly once.
+`shared/tools/local_patches.py .` makes these changes, listed in `tools/patches.py`, to the snapshots, and checks they are in place (`--check`, in CI for every app). Each replaces text that occurs exactly once.
 
 | Change | File | What and why |
 | --- | --- | --- |
