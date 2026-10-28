@@ -7,36 +7,15 @@
     <string name="credits">%1$s usa a emulação do %3$s do %2$s e o software de sistema %4$s. Código-fonte e procedência: github.com/%5$s.</string>
     <!-- EN: Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them -->
     <string name="library_empty">Escolha uma pasta de jogos para encontrar imagens de disquete, programas de jogos e os arquivos ZIP e 7z que os contêm</string>
-    <!-- EN: Folder access expired. Select the games folder again. -->
-    <string name="library_expired">O acesso à pasta expirou. Selecione a pasta de jogos de novo.</string>
-    <!-- EN: Choose a games folder -->
-    <string name="folder_title">Escolha uma pasta de jogos</string>
     <!-- %1$s is the machine's name, Atari ST; %2$s the app's name, KairoST. -->
     <!-- EN: Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them. -->
     <string name="folder_description">Selecione a pasta com seus jogos de %1$s. O %2$s vai verificar as imagens de disquete, os programas de jogos dela e os arquivos ZIP e 7z que os contêm.</string>
-    <!-- EN: Choose games folder… -->
-    <string name="folder_button">Escolher pasta de jogos…</string>
-    <!-- EN: SAVE STATES -->
-    <string name="saves_group">ESTADOS SALVOS</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">O joystick na porta 1.</string>
-    <!-- EN: Fire -->
-    <string name="joystick_fire">Disparo</string>
-    <!-- EN: Fire 2 (unused) -->
-    <string name="joystick_fire_2">Disparo 2 (sem uso)</string>
-    <!-- EN: Symbols -->
-    <string name="keyboard_symbols">Símbolos</string>
-    <!-- EN: Floppy disk -->
-    <string name="floppy_disk">Disquete</string>
-    <!-- EN: Program -->
-    <string name="program">Programa</string>
     <!-- EN: Drive A -->
     <string name="drive_a">Unidade A</string>
     <!-- EN: Drive B -->
     <string name="drive_b">Unidade B</string>
-    <!-- A firmware file's description: %1$s is its file name; %2$s what it does. -->
-    <!-- EN: %1$s · %2$s -->
-    <string name="firmware_part">%1$s · %2$s</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">TOS para o %1$s</string>
@@ -97,18 +76,6 @@
     <string name="own_tos_missing">Este jogo inicia com o seu próprio TOS: importe %1$s em Menu › Máquina</string>
     <!-- EN: This game\'s TOS image is no longer in the app: choose or import another in Game settings › System -->
     <string name="tos_image_missing">A imagem de TOS deste jogo não está mais no app: escolha ou importe outra em Configurações do jogo › Sistema</string>
-    <!-- EN: The second disk this game needs is not in the library -->
-    <string name="second_disk_missing">O segundo disco de que este jogo precisa não está na biblioteca</string>
-    <!-- EN: Machine -->
-    <string name="option_machine">Máquina</string>
-    <!-- EN: Memory -->
-    <string name="option_memory">Memória</string>
-    <!-- %1$d is a size in kilobytes. -->
-    <!-- EN: %1$d KB -->
-    <string name="memory_kb">%1$d KB</string>
-    <!-- %1$d is a size in megabytes. -->
-    <!-- EN: %1$d MB -->
-    <string name="memory_mb">%1$d MB</string>
     <!-- EN: Monitor -->
     <string name="option_monitor">Monitor</string>
     <!-- EN: Color -->
@@ -121,8 +88,6 @@
     <string name="region_europe">Europa (50 Hz)</string>
     <!-- EN: USA (60 Hz) -->
     <string name="region_usa">EUA (60 Hz)</string>
-    <!-- EN: System -->
-    <string name="option_system">Sistema</string>
     <!-- EN: Your TOS for its model -->
     <string name="system_own_tos">Seu TOS para o modelo dele</string>
     <!-- EN: Startup program -->

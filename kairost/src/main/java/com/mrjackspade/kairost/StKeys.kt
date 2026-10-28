@@ -75,7 +75,7 @@ object StKeys {
         brand = "KAIROST",
         pages = listOf(
             GuestKeyboardPage("ABC", alphabetRows()),
-            GuestKeyboardPage("?123", symbolRows(), pickerLabel = UiText.res(R.string.keyboard_symbols)),
+            GuestKeyboardPage("?123", symbolRows(), pickerLabel = UiText.res(FrontendR.string.kairo_keyboard_symbols)),
             GuestKeyboardPage("ST", stRows())
         ),
         modifiers = setOf(LEFT_SHIFT, RIGHT_SHIFT, CONTROL, ALTERNATE, CAPS),
@@ -239,7 +239,7 @@ object StKeys {
      */
     val joystick = JoystickInputRouter.DEFAULT_CONTROLS
     val joystickLabels = listOf(FrontendR.string.kairo_up, FrontendR.string.kairo_down, FrontendR.string.kairo_left,
-        FrontendR.string.kairo_right, R.string.joystick_fire, R.string.joystick_fire_2).map { UiText.res(it) }
+        FrontendR.string.kairo_right, FrontendR.string.kairo_joystick_fire, FrontendR.string.kairo_joystick_fire_2).map { UiText.res(it) }
 
     val bindings = ControllerBindingsCodec({ it in bindableCodes }, joystick,
         setOf("menu", "pause", "restart", "exit", "fastForward"))

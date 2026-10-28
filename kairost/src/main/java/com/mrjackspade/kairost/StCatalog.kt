@@ -1,5 +1,6 @@
 package com.mrjackspade.kairost
 
+import com.mrjackspade.kairo.frontend.R as FrontendR
 import com.mrjackspade.kairo.frontend.CatalogSetting
 import com.mrjackspade.kairo.frontend.ChoiceOption
 import com.mrjackspade.kairo.frontend.LayeredGameCatalog
@@ -21,7 +22,7 @@ object StCatalog : LayeredGameCatalog.Schema {
     override val mediaExtensions = Regex("\\.(?:zip|7z|st|msa|stx|dim|prg|tos|ttp|app|gtp)$", RegexOption.IGNORE_CASE)
 
     /** The model, by Hatari's name for it. Each later model runs most of the earlier ones' games. */
-    val machine = MachineOption("machine", UiText.res(R.string.option_machine), listOf(
+    val machine = MachineOption("machine", UiText.res(FrontendR.string.kairo_option_machine), listOf(
         ChoiceOption("st", "Atari ST"),
         ChoiceOption("megast", "Atari Mega ST"),
         ChoiceOption("ste", "Atari STE"),
@@ -30,11 +31,11 @@ object StCatalog : LayeredGameCatalog.Schema {
         ChoiceOption("falcon", "Atari Falcon")), "st")
 
     /** ST RAM in KiB. */
-    val memory = MachineOption("memory", UiText.res(R.string.option_memory), listOf(
-        ChoiceOption("512", UiText.res(R.string.memory_kb, 512)),
-        ChoiceOption("1024", UiText.res(R.string.memory_mb, 1)),
-        ChoiceOption("2048", UiText.res(R.string.memory_mb, 2)),
-        ChoiceOption("4096", UiText.res(R.string.memory_mb, 4))), "1024", numeric = true)
+    val memory = MachineOption("memory", UiText.res(FrontendR.string.kairo_option_memory), listOf(
+        ChoiceOption("512", UiText.res(FrontendR.string.kairo_memory_kb, 512)),
+        ChoiceOption("1024", UiText.res(FrontendR.string.kairo_memory_mb, 1)),
+        ChoiceOption("2048", UiText.res(FrontendR.string.kairo_memory_mb, 2)),
+        ChoiceOption("4096", UiText.res(FrontendR.string.kairo_memory_mb, 4))), "1024", numeric = true)
 
     /** The monitor, by Hatari's name for it: color games need RGB, high resolution ones mono. */
     val monitor = MachineOption("monitor", UiText.res(R.string.option_monitor), listOf(
@@ -63,7 +64,7 @@ object StCatalog : LayeredGameCatalog.Schema {
      */
     fun system(images: () -> List<ChoiceOption> = { emptyList() },
                actions: (select: (String) -> Unit) -> List<com.mrjackspade.kairo.frontend.SettingsRow> = { emptyList() }) =
-        MachineOption("tos", UiText.res(R.string.option_system), { fixedSystems + images() }, EMUTOS,
+        MachineOption("tos", UiText.res(FrontendR.string.kairo_option_system), { fixedSystems + images() }, EMUTOS,
             accepts = { value -> value == EMUTOS || value == OWN_TOS || TosLibrary.ID.matches(value) }, actions = actions,
             ownFirmware = OWN_TOS)
 

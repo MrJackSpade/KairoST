@@ -5,25 +5,14 @@
          %4$s the bundled system software, EmuTOS; %5$s its GitHub repository. -->
     <string name="credits">%1$s uses %2$s\'s %3$s emulation and the %4$s system software. Source and provenance: github.com/%5$s.</string>
     <string name="library_empty">Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them</string>
-    <string name="library_expired">Folder access expired. Select the games folder again.</string>
-    <string name="folder_title">Choose a games folder</string>
     <!-- %1$s is the machine's name, Atari ST; %2$s the app's name, KairoST. -->
     <string name="folder_description">Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them.</string>
-    <string name="folder_button">Choose games folder…</string>
-    <string name="saves_group">SAVE STATES</string>
 
     <string name="joystick_help">The joystick in port 1.</string>
-    <string name="joystick_fire">Fire</string>
-    <string name="joystick_fire_2">Fire 2 (unused)</string>
-    <string name="keyboard_symbols">Symbols</string>
 
-    <string name="floppy_disk">Floppy disk</string>
-    <string name="program">Program</string>
     <string name="drive_a">Drive A</string>
     <string name="drive_b">Drive B</string>
 
-    <!-- A firmware file's description: %1$s is its file name; %2$s what it does. -->
-    <string name="firmware_part">%1$s · %2$s</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <string name="tos_for_model">TOS for the %1$s</string>
     <string name="tos_st_description">TOS 1.00 to 1.04, for games on the ST and Mega ST</string>
@@ -57,21 +46,13 @@
     <!-- %1$s is the TOS file to import, such as TOS for the STE. -->
     <string name="own_tos_missing">This game starts on your own TOS: import %1$s in Menu › Machine</string>
     <string name="tos_image_missing">This game\'s TOS image is no longer in the app: choose or import another in Game settings › System</string>
-    <string name="second_disk_missing">The second disk this game needs is not in the library</string>
 
-    <string name="option_machine">Machine</string>
-    <string name="option_memory">Memory</string>
-    <!-- %1$d is a size in kilobytes. -->
-    <string name="memory_kb">%1$d KB</string>
-    <!-- %1$d is a size in megabytes. -->
-    <string name="memory_mb">%1$d MB</string>
     <string name="option_monitor">Monitor</string>
     <string name="monitor_color">Color</string>
     <string name="monitor_mono">Monochrome</string>
     <string name="option_region">Region</string>
     <string name="region_europe">Europe (50 Hz)</string>
     <string name="region_usa">USA (60 Hz)</string>
-    <string name="option_system">System</string>
     <string name="system_own_tos">Your TOS for its model</string>
     <string name="startup_program">Startup program</string>
     <string name="startup_program_hint">Program on drive A, such as GAME.PRG</string>

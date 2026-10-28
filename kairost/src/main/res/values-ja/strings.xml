@@ -7,36 +7,15 @@
     <string name="credits">%1$s は %2$s の %3$s エミュレーションと %4$s システムソフトウェアを使用しています。ソースと出典: github.com/%5$s</string>
     <!-- EN: Choose a games folder to find floppy disk images, game programs and the ZIP and 7z archives holding them -->
     <string name="library_empty">ゲームフォルダを選択して、フロッピーディスクイメージ、ゲームプログラム、それらを含む ZIP・7z アーカイブを探します</string>
-    <!-- EN: Folder access expired. Select the games folder again. -->
-    <string name="library_expired">フォルダへのアクセス期限が切れました。ゲームフォルダを選択し直してください。</string>
-    <!-- EN: Choose a games folder -->
-    <string name="folder_title">ゲームフォルダを選択</string>
     <!-- %1$s is the machine's name, Atari ST; %2$s the app's name, KairoST. -->
     <!-- EN: Select the folder containing your %1$s games. %2$s will scan its floppy disk images, game programs and the ZIP and 7z archives holding them. -->
     <string name="folder_description">%1$s のゲームが入っているフォルダを選択してください。%2$s がフロッピーディスクイメージ、ゲームプログラム、それらを含む ZIP・7z アーカイブをスキャンします。</string>
-    <!-- EN: Choose games folder… -->
-    <string name="folder_button">ゲームフォルダを選択…</string>
-    <!-- EN: SAVE STATES -->
-    <string name="saves_group">ステートセーブ</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">ポート1のジョイスティック。</string>
-    <!-- EN: Fire -->
-    <string name="joystick_fire">ファイア</string>
-    <!-- EN: Fire 2 (unused) -->
-    <string name="joystick_fire_2">ファイア2（未使用）</string>
-    <!-- EN: Symbols -->
-    <string name="keyboard_symbols">記号</string>
-    <!-- EN: Floppy disk -->
-    <string name="floppy_disk">フロッピーディスク</string>
-    <!-- EN: Program -->
-    <string name="program">プログラム</string>
     <!-- EN: Drive A -->
     <string name="drive_a">ドライブ A</string>
     <!-- EN: Drive B -->
     <string name="drive_b">ドライブ B</string>
-    <!-- A firmware file's description: %1$s is its file name; %2$s what it does. -->
-    <!-- EN: %1$s · %2$s -->
-    <string name="firmware_part">%1$s · %2$s</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">%1$s 用 TOS</string>
@@ -97,18 +76,6 @@
     <string name="own_tos_missing">このゲームは自分の TOS で起動します。メニュー › マシン で %1$s をインポートしてください</string>
     <!-- EN: This game\'s TOS image is no longer in the app: choose or import another in Game settings › System -->
     <string name="tos_image_missing">このゲームの TOS イメージはアプリ内にありません。ゲーム設定 › システム で別のイメージを選択またはインポートしてください</string>
-    <!-- EN: The second disk this game needs is not in the library -->
-    <string name="second_disk_missing">このゲームに必要な2枚目のディスクがライブラリにありません</string>
-    <!-- EN: Machine -->
-    <string name="option_machine">マシン</string>
-    <!-- EN: Memory -->
-    <string name="option_memory">メモリ</string>
-    <!-- %1$d is a size in kilobytes. -->
-    <!-- EN: %1$d KB -->
-    <string name="memory_kb">%1$d KB</string>
-    <!-- %1$d is a size in megabytes. -->
-    <!-- EN: %1$d MB -->
-    <string name="memory_mb">%1$d MB</string>
     <!-- EN: Monitor -->
     <string name="option_monitor">モニター</string>
     <!-- EN: Color -->
@@ -121,8 +88,6 @@
     <string name="region_europe">ヨーロッパ（50 Hz）</string>
     <!-- EN: USA (60 Hz) -->
     <string name="region_usa">米国（60 Hz）</string>
-    <!-- EN: System -->
-    <string name="option_system">システム</string>
     <!-- EN: Your TOS for its model -->
     <string name="system_own_tos">その機種用の自分の TOS</string>
     <!-- EN: Startup program -->

@@ -1,5 +1,6 @@
 package com.mrjackspade.kairost
 
+import com.mrjackspade.kairo.frontend.R as FrontendR
 import android.content.Intent
 import android.os.Bundle
 import com.mrjackspade.kairo.frontend.CatalogGame
@@ -29,10 +30,10 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override val identity = Identity("KAIROST", 0xffFEE902.toInt(), "KairoST", "Atari ST", "kairost",
         LibraryStrings("KAIROST", "KairoST"),
         UiText.res(R.string.credits, "KairoST", "Hatari", "Atari ST", "EmuTOS", "MrJackSpade/KairoST"),
-        UiText.res(R.string.library_empty), UiText.res(R.string.library_expired),
-        MachineFirstRun.Folder(UiText.res(R.string.folder_title), UiText.res(R.string.folder_description, "Atari ST", "KairoST"),
-            UiText.res(R.string.folder_button)),
-        UiText.res(R.string.saves_group), "MrJackSpade/KairoST")
+        UiText.res(R.string.library_empty), UiText.res(FrontendR.string.kairo_library_expired),
+        MachineFirstRun.Folder(UiText.res(FrontendR.string.kairo_folder_title), UiText.res(R.string.folder_description, "Atari ST", "KairoST"),
+            UiText.res(FrontendR.string.kairo_folder_button)),
+        UiText.res(FrontendR.string.kairo_saves_group), "MrJackSpade/KairoST")
     // The core's picture is low resolution with its borders, doubled (832 x 552); mouse motion is
     // counted in ST low-resolution pixels.
     override val machine = Machine(320, 200, 4.0 / 3.0, "state.sts")
@@ -54,7 +55,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     private val format = DiskImageLibrary.Format(
         kinds = listOf("st", "msa", "stx", "dim").associateWith { "fd" } +
             listOf("prg", "tos", "ttp", "app", "gtp").associateWith { "prg" },
-        labels = mapOf("fd" to UiText.res(R.string.floppy_disk), "prg" to UiText.res(R.string.program)),
+        labels = mapOf("fd" to UiText.res(FrontendR.string.kairo_floppy_disk), "prg" to UiText.res(FrontendR.string.kairo_program)),
         maxBytes = mapOf("fd" to 16L * 1024 * 1024, "prg" to 16L * 1024 * 1024),
         guestName = "Atari ST",
         programs = setOf("prg"))
@@ -80,7 +81,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     /** The player's TOS for each model, by the version its header names (StTos). */
     private val tosParts = StTos.Model.entries.associateWith { model ->
         FirmwareSet.Part(model.file, UiText.res(R.string.tos_for_model, model.label),
-            UiText.res(R.string.firmware_part, model.file, UiText.res(model.description)), setOf(model.file), false, sizes = setOf(model.bytes), identifies = { header -> StTos.rank(header, model) })
+            UiText.res(FrontendR.string.kairo_firmware_part, model.file, UiText.res(model.description)), setOf(model.file), false, sizes = setOf(model.bytes), identifies = { header -> StTos.rank(header, model) })
     }
     override val firmwareSets by lazy { listOf(UiText.fixed("TOS") to FirmwareSet(tosDirectory, tosParts.values.toList())) }
 
@@ -138,7 +139,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         // A program runs from its folder, as drive C, with the drives empty.
         val program = entry.takeUnless(::isFloppy)?.let { this.images.prepare(it, cancelled, progress).absolutePath }
         val second = if (program != null) null else game.mediaId("floppyB")?.let { id ->
-            mediaFor(id, entry, libraryEntries) ?: error(getString(R.string.second_disk_missing))
+            mediaFor(id, entry, libraryEntries) ?: error(getString(FrontendR.string.kairo_second_disk_missing))
         }
         // The program on drive A that TOS starts, "" for the automatic choice (st_core.cpp).
         options[StCatalog.PROGRAM] = if (program == null) StCatalog.program(game) else ""
