@@ -104,6 +104,12 @@ struct KairoStApi {
 	/* Inserts a floppy image in drive 0 (A) or 1 (B), or ejects it for ""; false when Hatari
 	 * refused it. */
 	bool (*insert_floppy)(int drive, const char *path);
+	/* Puts a hard disk image on the machine's own bus (ACSI on an ST or STE, SCSI on a TT, IDE on a
+	 * Falcon), or takes it off for "", and restarts the machine, as Hatari's own dialog changes one;
+	 * false when Hatari could not open the image. */
+	bool (*hard_disk)(const char *path);
+	/* The hard disk image on the machine's bus, "" for none. */
+	const char *(*hard_disk_path)(void);
 	/* The image in a drive, "" when it is empty. */
 	const char *(*floppy)(int drive);
 	/* Whether the guest crashed since the machine started: TOS (bombs) and EmuTOS (its panic

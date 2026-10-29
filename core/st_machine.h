@@ -42,6 +42,9 @@ struct Config {
     std::string country = "uk";
     // The image in each drive; "" for an empty one.
     std::string floppy[kDrives];
+    // A hard disk image on the machine's own bus (ACSI on an ST or STE, SCSI on a TT, IDE on a Falcon),
+    // "" for none. The machine boots from it with drive A empty.
+    std::string hard_disk;
     // A program to start, "" for none: its folder becomes drive C (Hatari's GEMDOS hard disk),
     // the machine boots from it, and TOS starts the program (Hatari's autostart).
     std::string program;
@@ -106,6 +109,10 @@ public:
     bool insert(Drive drive, const std::string &path, std::string &error);
     // The image in a drive, as it was inserted; "" when it is empty.
     std::string media_path(Drive drive);
+    // Puts a hard disk image on the machine's bus, or takes it off for "", restarting the machine.
+    bool insert_hard_disk(const std::string &path, std::string &error);
+    // The hard disk image on the machine's bus, "" for none.
+    std::string hard_disk_path();
     // Whether the guest crashed (a TOS bomb or EmuTOS panic, kairo_st.h).
     bool guest_crashed() const;
     // 1 when TOS runs its GEM desktop, 0 when not, -1 when the TOS cannot tell (kairo_st.h).

@@ -17,11 +17,13 @@
  */
 
 #include <setjmp.h>
+#include <string.h>
 #include <time.h>
 #include <SDL.h>
 
 #include "main.h"
 #include "kairo_st.h"
+#include "change.h"
 #include "configuration.h"
 #include "options.h"
 #include "audio.h"
@@ -660,6 +662,48 @@ static bool KairoSt_InsertFloppy(int drive, const char *path)
 	return Floppy_InsertDiskIntoDrive(drive);
 }
 
+/* The hard disk on the machine's own bus, in a set of parameters. */
+static bool *hard_disk_used(CNF_PARAMS *params, char **file, size_t *size)
+{
+	if (Config_IsMachineTT())
+	{
+		*file = params->Scsi[0].sDeviceFile;
+		*size = sizeof(params->Scsi[0].sDeviceFile);
+		return &params->Scsi[0].bUseDevice;
+	}
+	if (Config_IsMachineFalcon())
+	{
+		*file = params->Ide[0].sDeviceFile;
+		*size = sizeof(params->Ide[0].sDeviceFile);
+		return &params->Ide[0].bUseDevice;
+	}
+	*file = params->Acsi[0].sDeviceFile;
+	*size = sizeof(params->Acsi[0].sDeviceFile);
+	return &params->Acsi[0].bUseDevice;
+}
+
+static bool KairoSt_HardDisk(const char *path)
+{
+	CNF_PARAMS changed = ConfigureParams;
+	char *file;
+	size_t size;
+	bool *used = hard_disk_used(&changed, &file, &size);
+	if (strlen(path) >= size)
+		return false;
+	strcpy(file, path);
+	*used = *path != '\0';
+	Change_CopyChangedParamsToConfiguration(&ConfigureParams, &changed, true);
+	/* Hatari stops using a device it could not open. */
+	return *hard_disk_used(&ConfigureParams, &file, &size) == (*path != '\0');
+}
+
+static const char *KairoSt_HardDiskPath(void)
+{
+	char *file;
+	size_t size;
+	return *hard_disk_used(&ConfigureParams, &file, &size) ? file : "";
+}
+
 static const char *KairoSt_Floppy(int drive)
 {
 	return ConfigureParams.DiskImage.szDiskFileName[drive];
@@ -744,6 +788,8 @@ const struct KairoStApi *KairoSt_Api(void)
 		.request_restore = KairoSt_RequestRestore,
 		.state_failed = KairoSt_StateFailed,
 		.insert_floppy = KairoSt_InsertFloppy,
+		.hard_disk = KairoSt_HardDisk,
+		.hard_disk_path = KairoSt_HardDiskPath,
 		.floppy = KairoSt_Floppy,
 		.guest_crashed = KairoSt_GuestCrashed,
 		.on_desktop = KairoSt_OnDesktop,

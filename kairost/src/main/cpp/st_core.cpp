@@ -16,6 +16,8 @@ using kairost::StMachine;
 
 // Media slots, as MainActivity numbers them: the core's drives.
 static_assert(kairost::kDriveA == 0 && kairost::kDriveB == 1);
+// The hard disk's media slot, after the two drives.
+constexpr int kHardDiskSlot = kairost::kDrives;
 // MainActivity.machine.stateFile.
 constexpr const char *kStateFile = "/state.sts";
 // MainActivity.stateError reads these.
@@ -81,7 +83,9 @@ public:
         return machine_->load_state(directory + kStateFile, error_) ? 0 : kFailed;
     }
 
+    // Slots (MainActivity.mediaSlots): drive A, drive B, then the hard disk, whose change restarts the machine.
     int media(int slot, const std::string &path) override {
+        if (slot == kHardDiskSlot) return machine_->insert_hard_disk(path, error_) ? 0 : kFailed;
         if (slot < 0 || slot >= kairost::kDrives) return kUnsupported;
         return machine_->insert(kairost::Drive(slot), path, error_) ? 0 : kFailed;
     }
@@ -89,6 +93,7 @@ public:
     std::vector<std::string> media_paths() override {
         std::vector<std::string> paths;
         for (int drive = 0; drive < kairost::kDrives; ++drive) paths.push_back(machine_->media_path(kairost::Drive(drive)));
+        paths.push_back(machine_->hard_disk_path());
         return paths;
     }
 
@@ -107,8 +112,9 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     config.home = launch.home + "/hatari";
     for (int drive = 0; drive < kairost::kDrives; ++drive)
         if (int(launch.media.size()) > drive) config.floppy[drive] = launch.media[drive];
-    // After the drives: a program, which runs from its folder (MainActivity.startGame).
-    if (int(launch.media.size()) > kairost::kDrives) config.program = launch.media[kairost::kDrives];
+    // After the drives: the hard disk, then a program, which runs from its folder (MainActivity.startGame).
+    if (int(launch.media.size()) > kHardDiskSlot) config.hard_disk = launch.media[kHardDiskSlot];
+    if (int(launch.media.size()) > kHardDiskSlot + 1) config.program = launch.media[kHardDiskSlot + 1];
     // The settings StCatalog's options name; every launch passes them.
     // "emutos", or the file of the player's TOS for the game's model (MainActivity.startGame).
     const std::string &tos = launch.settings.at("tos");

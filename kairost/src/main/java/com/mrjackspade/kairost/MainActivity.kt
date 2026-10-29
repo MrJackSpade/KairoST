@@ -49,19 +49,21 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override val artworkDownloadsEnabled: Boolean get() = resources.getBoolean(R.bool.catalog_art_download_enabled)
 
     /**
-     * Floppy disk images in the formats Hatari reads, and programs, which run from their folder as
-     * drive C (st_machine.h Config.program).
+     * Floppy disk images in the formats Hatari reads, hard disk images (st_machine.h Config.hard_disk),
+     * and programs, which run from their folder as drive C (Config.program).
      */
     private val format = DiskImageLibrary.Format(
         kinds = listOf("st", "msa", "stx", "dim").associateWith { "fd" } +
+            listOf("img", "hd").associateWith { "hd" } +
             listOf("prg", "tos", "ttp", "app", "gtp").associateWith { "prg" },
-        labels = mapOf("fd" to UiText.res(FrontendR.string.kairo_floppy_disk), "prg" to UiText.res(FrontendR.string.kairo_program)),
-        maxBytes = mapOf("fd" to 16L * 1024 * 1024, "prg" to 16L * 1024 * 1024),
+        labels = mapOf("fd" to UiText.res(FrontendR.string.kairo_floppy_disk),
+            "hd" to UiText.res(FrontendR.string.kairo_hard_disk), "prg" to UiText.res(FrontendR.string.kairo_program)),
+        maxBytes = mapOf("fd" to 16L * 1024 * 1024, "hd" to 4L * 1024 * 1024 * 1024, "prg" to 16L * 1024 * 1024),
         guestName = "Atari ST",
         programs = setOf("prg"))
     private val images by lazy {
-        // 2: archives are read again for the programs in them.
-        DiskImageLibrary(this, format, DiskImageLibrary.Cache(mediaFormatsVersion = 2))
+        // 3: archives are read again for the hard disks in them (2: for the programs).
+        DiskImageLibrary(this, format, DiskImageLibrary.Cache(mediaFormatsVersion = 3))
     }
     override fun createCatalog() = LayeredGameCatalog(this, StCatalog)
     override fun createLibrary(catalog: LayeredGameCatalog) = images
@@ -71,10 +73,12 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         if (option.id == StCatalog.system.id) StCatalog.system(::tosChoices, ::tosActions) else option
     }
     private fun isFloppy(entry: DiskImageEntry) = format.kind(entry.displayName) == "fd"
+    private fun isHardDisk(entry: DiskImageEntry) = format.kind(entry.displayName) == "hd"
 
-    // In the core's drive order (st_machine.h Drive).
+    // In the core's slot order (st_core.cpp): drive A, drive B, then the hard disk, whose change restarts the machine.
     override val mediaSlots = listOf(MediaSlot<DiskImageEntry>(UiText.res(R.string.drive_a), ::isFloppy),
-        MediaSlot(UiText.res(FrontendR.string.kairo_drive_b), ::isFloppy))
+        MediaSlot(UiText.res(FrontendR.string.kairo_drive_b), ::isFloppy),
+        MediaSlot(UiText.res(FrontendR.string.kairo_hard_disk), ::isHardDisk))
 
     private val tosDirectory by lazy { File(filesDir, "tos") }
 
@@ -136,14 +140,15 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
             }
             options[StCatalog.system.id] = file.relativeTo(tosDirectory).path
         }
-        // A program runs from its folder, as drive C, with the drives empty.
-        val program = entry.takeUnless(::isFloppy)?.let { this.images.prepare(it, cancelled, progress).absolutePath }
-        val second = if (program != null) null else companionFor(game.mediaId("floppyB"), entry, launchEntries,
+        // A program runs from its folder, as drive C, with the drives empty; a hard disk boots with them empty.
+        val program = entry.takeUnless { isFloppy(it) || isHardDisk(it) }
+            ?.let { this.images.prepare(it, cancelled, progress).absolutePath }
+        val second = if (!isFloppy(entry)) null else companionFor(game.mediaId("floppyB"), entry, launchEntries,
             UiText.res(FrontendR.string.kairo_second_disk_missing), ::isFloppy)
         // The program on drive A that TOS starts, "" for the automatic choice (st_core.cpp).
-        options[StCatalog.PROGRAM] = if (program == null) StCatalog.program(game) else ""
-        // In the core's order (st_core.cpp): drive A, drive B, then the program.
-        val media = listOf(entry.takeIf(::isFloppy), second)
+        options[StCatalog.PROGRAM] = if (isFloppy(entry)) StCatalog.program(game) else ""
+        // In the core's order (st_core.cpp): drive A, drive B, the hard disk, then the program.
+        val media = listOf(entry.takeIf(::isFloppy), second, entry.takeIf(::isHardDisk))
         val images = media.map { image -> image?.let { this.images.prepare(it, cancelled, progress).absolutePath } } + program
         check(bridge.start(tosDirectory.absolutePath, home.absolutePath, images, options)) { "Another machine is still running" }
         awaitRunning()

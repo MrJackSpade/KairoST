@@ -18,7 +18,7 @@ object StCatalog : LayeredGameCatalog.Schema {
     override val platform = "atarist"
     override val catalogUrl = "https://raw.githubusercontent.com/MrJackSpade/KairoST/main/catalog/"
     override val selfHostedArt = "/MrJackSpade/KairoST/main/catalog/artwork/art/catalog/"
-    override val contentId = Regex("sha256-(?:fd|prg)-v1:[0-9a-f]{64}")
+    override val contentId = Regex("sha256-(?:fd|hd|prg)-v1:[0-9a-f]{64}")
     override val mediaExtensions = Regex("\\.(?:zip|7z|st|msa|stx|dim|prg|tos|ttp|app|gtp)$", RegexOption.IGNORE_CASE)
 
     /** The model, by Hatari's name for it. Each later model runs most of the earlier ones' games. */

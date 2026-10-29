@@ -47,6 +47,8 @@ struct Session {
     // picture(): frame() with its rows repeated.
     std::vector<uint8_t> picture;
     std::string floppy[kDrives];
+    // The hard disk the machine started with, until its first frame shows Hatari took it.
+    std::string hard_disk;
     // Direct touch (StMachine::mouse_warp).
     kairo::RelativeWarp warp;
 
@@ -149,6 +151,12 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     if (config.cpu_clock) args.insert(args.end(), {"--cpuclock", std::to_string(config.cpu_clock)});
     if (!config.floppy[kDriveA].empty()) args.insert(args.end(), {"--disk-a", config.floppy[kDriveA]});
     if (!config.floppy[kDriveB].empty()) args.insert(args.end(), {"--disk-b", config.floppy[kDriveB]});
+    // The hard disk on the model's own bus, as its unit 0.
+    if (!config.hard_disk.empty()) {
+        if (config.machine == "tt") args.insert(args.end(), {"--scsi", "0=" + config.hard_disk});
+        else if (config.machine == "falcon") args.insert(args.end(), {"--ide-master", config.hard_disk});
+        else args.insert(args.end(), {"--acsi", "0=" + config.hard_disk});
+    }
     if (!config.floppy_program.empty()) {
         if (config.floppy[kDriveA].empty()) {
             error = "The startup program " + config.floppy_program + " needs a disk in drive A";
@@ -162,6 +170,7 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
 
     auto impl = std::make_unique<Impl>();
     for (int drive = 0; drive < kDrives; ++drive) impl->floppy[drive] = config.floppy[drive];
+    impl->hard_disk = config.hard_disk;
     Session *state = impl.get();
     state->hatari = &library->api();
     state->library = std::move(library);
@@ -199,6 +208,14 @@ bool StMachine::run_frame(std::string &error) {
     if (impl_->ended || !impl_->run_hatari()) {
         error = impl_->error();
         return false;
+    }
+    // Hatari stops using a hard disk it cannot open, and boots without it.
+    if (!impl_->hard_disk.empty()) {
+        if (impl_->hatari->hard_disk_path() != impl_->hard_disk) {
+            error = "Hatari could not open the hard disk image " + impl_->hard_disk;
+            return false;
+        }
+        impl_->hard_disk.clear();
     }
     return true;
 }
@@ -303,6 +320,16 @@ bool StMachine::insert(Drive drive, const std::string &path, std::string &error)
 }
 
 std::string StMachine::media_path(Drive drive) { return impl_->floppy[drive]; }
+
+bool StMachine::insert_hard_disk(const std::string &path, std::string &error) {
+    if (!impl_->hatari->hard_disk(path.c_str())) {
+        error = "Hatari could not open the hard disk image " + path;
+        return false;
+    }
+    return true;
+}
+
+std::string StMachine::hard_disk_path() { return impl_->hatari->hard_disk_path(); }
 
 bool StMachine::guest_crashed() const { return impl_->hatari->guest_crashed(); }
 

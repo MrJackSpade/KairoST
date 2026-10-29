@@ -101,7 +101,13 @@ int main(int argc, char **argv) {
     const double seconds = std::atof(argv[3]);
     if (argc > 4) base.machine = argv[4];
     std::vector<kairost::Config> configs;
-    if (argc > 5 && *argv[5]) {
+    // late:<image> as the media: the hard disk goes on the bus after the run, which restarts the
+    // machine (the Disks page's change), with late-<run>.bmp of the desktop it boots to.
+    std::string late_hard_disk;
+    if (argc > 5 && std::string(argv[5]).rfind("late:", 0) == 0) {
+        late_hard_disk = argv[5] + 5;
+        configs.push_back(base);
+    } else if (argc > 5 && *argv[5]) {
         std::stringstream list(argv[5]);
         std::string media;
         while (std::getline(list, media, '|')) {
@@ -110,6 +116,8 @@ int main(int argc, char **argv) {
             for (char &c : extension) c = char(std::tolower(static_cast<unsigned char>(c)));
             if (extension == "prg" || extension == "tos" || extension == "ttp" || extension == "app" || extension == "gtp")
                 config.program = media;
+            else if (extension == "img" || extension == "hd")
+                config.hard_disk = media;
             else
                 config.floppy[kairost::kDriveA] = media;
             // Hatari ends the process without a word when it cannot open the disk (on Windows, a
@@ -227,6 +235,23 @@ int main(int argc, char **argv) {
         unsigned long console_reads = 0, aes_calls = 0;
         machine->guest_input(console_reads, aes_calls);
         std::printf("run %d: keys taken from the console %lu, AES calls %lu\n", run, console_reads, aes_calls);
+        if (!late_hard_disk.empty()) {
+            std::string late_error;
+            if (!machine->insert_hard_disk(late_hard_disk, late_error)) {
+                std::fprintf(stderr, "run %d: %s\n", run, late_error.c_str());
+                return 1;
+            }
+            for (int frame = 0; frame < 25 * 50; ++frame)
+                if (!machine->run_frame(late_error)) {
+                    std::fprintf(stderr, "run %d: after the hard disk went in: %s\n", run, late_error.c_str());
+                    return 1;
+                }
+            uint32_t late_width, late_height;
+            const uint8_t *late_rgba = machine->frame(late_width, late_height);
+            write_bmp(config.home + "/late-" + std::to_string(run) + ".bmp", late_rgba, late_width, late_height);
+            std::printf("run %d: hard disk %s after the change, desktop %s\n", run, machine->hard_disk_path().c_str(),
+                        machine->on_desktop() > 0 ? "yes" : "no");
+        }
         if (warp_x >= 0) {
             machine->mouse_warp(warp_x, warp_y);
             int warp_frames = 0;
