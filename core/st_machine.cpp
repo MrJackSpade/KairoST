@@ -1,13 +1,11 @@
 #include "st_machine.h"
 
-#include <condition_variable>
 #include <cstring>
 #include <ctime>
-#include <mutex>
-#include <thread>
 #include <utility>
 
 #include "hatari_library.h"
+#include "kairo/emulator_turns.h"
 #include "kairo/relative_warp.h"
 #include "kairo/state_paths.h"
 
@@ -21,27 +19,18 @@ namespace kairost {
 
 namespace {
 
-// Hatari runs on its own thread (Hatari's) and the host on the caller's. Exactly one of them
-// runs at a time: the host lets Hatari run until its next VBL, and Hatari waits there until the
-// host lets it run again. The mutex hand-off orders every access to Hatari's state.
+// Hatari runs on its own thread (Hatari's) and the host on the caller's, taking turns
+// (kairo/emulator_turns.h): the host lets Hatari run until its next VBL, and Hatari waits there
+// until the host lets it run again.
 struct Session {
-    enum class Turn { kHatari, kHost };
-
     // This machine's own copy of Hatari, unloaded after its thread ends.
     std::unique_ptr<HatariLibrary> library;
     const KairoStApi *hatari = nullptr;
     KairoStHost host{};
 
-    std::mutex mutex;
-    std::condition_variable changed;
-    Turn turn = Turn::kHatari;
-    // Hatari's thread has returned from its run.
-    bool ended = false;
-    // The run's result, once ended.
-    bool quit_cleanly = false;
+    kairo::EmulatorTurns turns;
     // The error Hatari reported (host_fatal), on Hatari's thread before its turn ends.
     std::string fatal;
-    std::thread thread;
 
     std::vector<uint8_t> rgba;
     // picture(): frame() with its rows repeated.
@@ -52,40 +41,19 @@ struct Session {
     // Direct touch (StMachine::mouse_warp).
     kairo::RelativeWarp warp;
 
-    // Lets Hatari run until its next VBL or until it ends; false when it ended.
-    bool run_hatari() {
-        std::unique_lock lock(mutex);
-        turn = Turn::kHatari;
-        changed.notify_all();
-        changed.wait(lock, [&] { return turn == Turn::kHost || ended; });
-        return !ended;
-    }
-
-    // On Hatari's thread, at its VBL.
-    void at_vbl() {
-        std::unique_lock lock(mutex);
-        turn = Turn::kHost;
-        changed.notify_all();
-        changed.wait(lock, [&] { return turn == Turn::kHatari; });
-    }
-
     std::string error() const {
         return fatal.empty() ? std::string("The machine stopped") : fatal;
     }
 
     // Ends Hatari's thread: asks it to quit and lets it run to the end.
     void stop() {
-        if (!thread.joinable()) return;
-        if (!ended) {
-            hatari->quit();
-            run_hatari();
-        }
-        thread.join();
+        if (!turns.ended()) hatari->quit();
+        turns.finish();
     }
 };
 
 // Hatari's thread's calls (KairoStHost), with the session as their context.
-void host_vbl(void *context) { static_cast<Session *>(context)->at_vbl(); }
+void host_vbl(void *context) { static_cast<Session *>(context)->turns.frame_end(); }
 
 void host_fatal(void *context, const char *message) {
     auto *session = static_cast<Session *>(context);
@@ -176,24 +144,16 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     state->library = std::move(library);
     state->host = {state, host_vbl, host_fatal, host_notice, host_state_path,
                    config.seed ? config.seed : static_cast<unsigned int>(std::time(nullptr))};
-    state->thread = std::thread([state, args = std::move(args), home = config.home, start = config.on_thread_start] {
+    // Hatari's first VBL: the machine is up.
+    const bool up = state->turns.start([state, args = std::move(args), home = config.home, start = config.on_thread_start] {
         if (start) start();
         std::vector<const char *> argv;
         for (const auto &arg : args) argv.push_back(arg.c_str());
-        bool clean = state->hatari->run(int(argv.size()), argv.data(), home.c_str(), &state->host);
-        std::lock_guard lock(state->mutex);
-        state->quit_cleanly = clean;
-        state->ended = true;
-        state->changed.notify_all();
+        state->hatari->run(int(argv.size()), argv.data(), home.c_str(), &state->host);
     });
-    // Hatari's first VBL: the machine is up.
-    {
-        std::unique_lock lock(state->mutex);
-        state->changed.wait(lock, [&] { return state->turn == Session::Turn::kHost || state->ended; });
-    }
-    if (state->ended) {
+    if (!up) {
         error = state->error();
-        state->thread.join();
+        state->turns.finish();
         return nullptr;
     }
     return std::unique_ptr<StMachine>(new StMachine(std::move(impl)));
@@ -205,7 +165,7 @@ bool StMachine::run_frame(std::string &error) {
         impl_->warp.step(impl_->hatari->mouse_idle(), dx, dy);
         if (dx || dy) impl_->hatari->mouse_move(dx, dy);
     }
-    if (impl_->ended || !impl_->run_hatari()) {
+    if (!impl_->turns.run_frame()) {
         error = impl_->error();
         return false;
     }
