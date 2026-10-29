@@ -144,6 +144,7 @@ int main(int argc, char **argv) {
         double elapsed = 0;
         long frames = 0;
         bool booting = machine->booting();
+        long loading_frames = 0;
         uint64_t samples = 0;
         int64_t loudest = 0, early_loudest = 0, late_loudest = 0;
         bool crashed = false;
@@ -167,6 +168,7 @@ int main(int argc, char **argv) {
                 crashed = true;
                 std::printf("run %d: the guest crashed after %ld frames (%.1f s)\n", run, frames, elapsed);
             }
+            if (machine->loading()) ++loading_frames;
             if (booting && !machine->booting()) {
                 booting = false;
                 std::printf("run %d: boot over after %ld frames (%.1f s)\n", run, frames, elapsed);
@@ -214,6 +216,7 @@ int main(int argc, char **argv) {
             std::ofstream(config.home + "/ram-" + std::to_string(run) + ".bin", std::ios::binary)
                 .write(reinterpret_cast<const char *>(ram.data()), std::streamsize(ram.size()));
         }
+        std::printf("run %d: loading (boot or floppy motor) in %ld frames\n", run, loading_frames);
         std::printf("run %d: %ld frames (%.4f s each), %ux%u, %llu sound frames at %d Hz, peak %lld, early peak %lld, late peak %lld, desktop %s, caps %s, %s%s\n", run,
                     frames, machine->frame_seconds(), width, height, (unsigned long long) samples,
                     machine->sample_rate(), (long long) loudest, (long long) early_loudest, (long long) late_loudest,

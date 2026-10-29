@@ -27,7 +27,7 @@ public:
     explicit StCore(std::unique_ptr<StMachine> machine) : machine_(std::move(machine)) {}
 
     bool run_frame() override { return machine_->run_frame(error_); }
-    bool loading() override { return machine_->booting(); }
+    bool loading() override { return machine_->loading(); }
     // Bit 0 Caps, as NativeMachine lists it (MainActivity).
     int locks() override { return machine_->locks(); }
     std::string error() override { return error_; }

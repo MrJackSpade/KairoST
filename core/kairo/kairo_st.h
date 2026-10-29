@@ -75,6 +75,9 @@ struct KairoStApi {
 	 * until the player presses a key, joystick control or mouse button. The host runs it at full
 	 * speed. */
 	bool (*booting)(void);
+	/* Whether the machine boots or loads from a floppy (its motor runs), which the host runs at full
+	 * speed (Kairo#82). */
+	bool (*loading)(void);
 
 	/* A key by its ST keyboard scan code (1 to 0x72). */
 	void (*key)(int scancode, bool down);

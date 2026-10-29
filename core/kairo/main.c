@@ -560,6 +560,11 @@ static bool KairoSt_Booting(void)
 	return boot != BOOT_OVER;
 }
 
+static bool KairoSt_Loading(void)
+{
+	return boot != BOOT_OVER || FDC_MotorIsOn();
+}
+
 static void KairoSt_Key(int scancode, bool down)
 {
 	if (down)
@@ -701,6 +706,7 @@ const struct KairoStApi *KairoSt_Api(void)
 		.sample_rate = KairoSt_SampleRate,
 		.read_audio = KairoSt_ReadAudio,
 		.booting = KairoSt_Booting,
+		.loading = KairoSt_Loading,
 		.key = KairoSt_Key,
 		.joystick = KairoSt_Joystick,
 		.mouse_move = KairoSt_MouseMove,

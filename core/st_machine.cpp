@@ -196,6 +196,7 @@ bool StMachine::run_frame(std::string &error) {
 }
 
 bool StMachine::booting() const { return impl_->hatari->booting(); }
+bool StMachine::loading() const { return impl_->hatari->loading(); }
 
 int StMachine::locks() const { return impl_->hatari->caps_lock() ? 1 : 0; }
 
