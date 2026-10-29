@@ -37,8 +37,10 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "shared/tools"))
 sys.path.insert(0, str(ROOT / "tools"))
 import catalog_config
+import catalog_files
 
 EMUTOS = ROOT / "third_party/emutos-1024k/etos1024k.img"
 TOS = {"st": "tos104uk.img", "megast": "tos104uk.img", "ste": "tos162uk.img", "megaste": "tos206uk.img",
@@ -73,7 +75,7 @@ def presses(seconds):
 def boot_disks(results):
     """{content ID: (disk path, machine, why it cannot be tested or None)} for every disk the library lists,
     and the disks behind a set entry that [results] show broken, which may start the set instead."""
-    research = json.loads((ROOT / "catalog/research/games-v1.json").read_text(encoding="utf-8"))
+    research = catalog_files.read(ROOT / "catalog/research/games-v1.json.gz")
     where = {}
     for set_name, (index_path, _) in catalog_config.SCANS.items():
         index = json.loads((ROOT / index_path).read_text(encoding="utf-8"))
