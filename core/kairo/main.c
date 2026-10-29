@@ -593,6 +593,24 @@ static void KairoSt_MouseMove(int dx, int dy)
 	KeyboardProcessor.Mouse.dy += dy;
 }
 
+static void KairoSt_GuestPoint(int x, int y, int *guest_x, int *guest_y, int *width, int *height)
+{
+	/* The picture is the screen with its borders, nZoom picture pixels to a low-resolution pixel
+	 * across (Screen_SetSTResolution), one row per ST line. */
+	const int zoom = STRes == ST_LOW_RES && nScreenZoomX == 1 ? 1 : 2;
+	*guest_x = (x - nBorderPixelsLeft * zoom) / nScreenZoomX;
+	*guest_y = y - Screen_KairoBorderTop();
+	*width = STRes == ST_LOW_RES ? 320 : 640;
+	*height = STRes == ST_HIGH_RES ? 400 : 200;
+}
+
+static bool KairoSt_MouseIdle(void)
+{
+	return KeyboardProcessor.Mouse.dx == 0 && KeyboardProcessor.Mouse.dy == 0 &&
+	       KeyboardProcessor.Mouse.DeltaX == 0 && KeyboardProcessor.Mouse.DeltaY == 0 &&
+	       Keyboard.BufferHead == Keyboard.BufferTail;
+}
+
 static void KairoSt_MouseButton(int button, bool down)
 {
 	int *state = button == 1 ? &Keyboard.bLButtonDown : &Keyboard.bRButtonDown;
@@ -719,6 +737,8 @@ const struct KairoStApi *KairoSt_Api(void)
 		.joystick = KairoSt_Joystick,
 		.mouse_move = KairoSt_MouseMove,
 		.mouse_button = KairoSt_MouseButton,
+		.guest_point = KairoSt_GuestPoint,
+		.mouse_idle = KairoSt_MouseIdle,
 		.reset = KairoSt_Reset,
 		.request_save = KairoSt_RequestSave,
 		.request_restore = KairoSt_RequestRestore,

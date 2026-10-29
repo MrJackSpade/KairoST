@@ -553,6 +553,12 @@ static bool Screen_SetSDLVideoSize(int width, int height, bool bForceChange)
 /**
  * Initialize ST/STE screen resolution.
  */
+/* KairoST: the top border's height in ST lines (KairoSt_GuestPoint) */
+int Screen_KairoBorderTop(void)
+{
+	return nBorderPixelsTop;
+}
+
 static void Screen_SetSTResolution(bool bForceChange)
 {
 	int Width, Height, nZoom, SBarHeight, maxW, maxH;

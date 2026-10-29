@@ -8,6 +8,7 @@
 #include <utility>
 
 #include "hatari_library.h"
+#include "kairo/relative_warp.h"
 #include "kairo/state_paths.h"
 
 #ifdef __ANDROID__
@@ -46,6 +47,8 @@ struct Session {
     // picture(): frame() with its rows repeated.
     std::vector<uint8_t> picture;
     std::string floppy[kDrives];
+    // Direct touch (StMachine::mouse_warp).
+    kairo::RelativeWarp warp;
 
     // Lets Hatari run until its next VBL or until it ends; false when it ended.
     bool run_hatari() {
@@ -188,6 +191,11 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
 }
 
 bool StMachine::run_frame(std::string &error) {
+    if (impl_->warp.running()) {
+        int dx, dy;
+        impl_->warp.step(impl_->hatari->mouse_idle(), dx, dy);
+        if (dx || dy) impl_->hatari->mouse_move(dx, dy);
+    }
     if (impl_->ended || !impl_->run_hatari()) {
         error = impl_->error();
         return false;
@@ -246,7 +254,17 @@ void StMachine::joystick(int control, bool down) {
     if (control >= 0 && control < kJoystickControls) impl_->hatari->joystick(control, down);
 }
 
-void StMachine::mouse_move(int dx, int dy) { impl_->hatari->mouse_move(dx, dy); }
+void StMachine::mouse_move(int dx, int dy) {
+    if (!impl_->warp.hold(dx, dy)) impl_->hatari->mouse_move(dx, dy);
+}
+
+void StMachine::mouse_warp(int x, int y) {
+    int guest_x, guest_y, width, height;
+    impl_->hatari->guest_point(x, y, &guest_x, &guest_y, &width, &height);
+    impl_->warp.start(guest_x, guest_y, width, height);
+}
+
+bool StMachine::mouse_warp_done() const { return impl_->warp.done(); }
 
 void StMachine::mouse_button(int button, bool down) {
     if (button == 1 || button == 2) impl_->hatari->mouse_button(button, down);

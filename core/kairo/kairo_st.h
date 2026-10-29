@@ -86,6 +86,12 @@ struct KairoStApi {
 	/* The mouse in port 0: motion in ST pixels, and button 1 (left) or 2 (right). */
 	void (*mouse_move)(int dx, int dy);
 	void (*mouse_button)(int button, bool down);
+	/* A point of the picture (screen) in the ST screen's own pixels, inside its borders, and that
+	 * screen's size: 320 by 200, 640 by 200 or 640 by 400. */
+	void (*guest_point)(int x, int y, int *guest_x, int *guest_y, int *width, int *height);
+	/* Whether the mouse motion given so far has all gone to the ST: none waits to be sent, and
+	 * the keyboard processor has passed on every byte. */
+	bool (*mouse_idle)(void);
 
 	/* Resets the machine: a cold reset clears memory, as switching the ST off and on does. */
 	void (*reset)(bool cold);

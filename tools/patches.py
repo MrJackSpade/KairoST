@@ -292,6 +292,19 @@ HATARI_GUEST_INPUT = [
      '// address = format $2 stack frame address field\nstatic void ExceptionX (int nr, uaecptr address, uaecptr oldpc)\n'),
 ]
 
+# Direct touch (Kairo#79) maps a point of the picture to the ST screen, inside its borders; the top
+# border's height is screen.c's own (KairoSt_GuestPoint).
+HATARI_BORDER_TOP = [
+    ('hatari/src/screen.c',
+     'static void Screen_SetSTResolution(bool bForceChange)\n{\n',
+     '/* KairoST: the top border\'s height in ST lines (KairoSt_GuestPoint) */\n'
+     'int Screen_KairoBorderTop(void)\n{\n\treturn nBorderPixelsTop;\n}\n\n'
+     'static void Screen_SetSTResolution(bool bForceChange)\n{\n'),
+    ('hatari/src/includes/screen.h',
+     'extern void Screen_ModeChanged(bool bForceChange);\n',
+     'extern void Screen_ModeChanged(bool bForceChange);\nextern int Screen_KairoBorderTop(void); /* KairoST */\n'),
+]
+
 PATCHES = {
     'hatari-emutos-welcome': HATARI_EMUTOS_WELCOME,
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
@@ -305,4 +318,5 @@ PATCHES = {
     'sdl-dummy-rgba': SDL_DUMMY_RGBA,
     'sdl-no-java': SDL_NO_JAVA,
     'hatari-guest-input': HATARI_GUEST_INPUT,
+    'hatari-border-top': HATARI_BORDER_TOP,
 }

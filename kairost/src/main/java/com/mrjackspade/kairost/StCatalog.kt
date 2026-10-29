@@ -104,6 +104,8 @@ object StCatalog : LayeredGameCatalog.Schema {
     override val settings: List<CatalogSetting> = options.map(CatalogSetting::Choice) +
         CatalogSetting.Drive("floppyB", UiText.res(FrontendR.string.kairo_drive_b)) + program
     override val fields = CatalogSetting.fields(settings)
+    /** TOS moves its pointer a pixel a count and stops it at the edges (StMachine::mouse_warp). */
+    override val directTouch = true
 
     override fun validMedia(role: String, contentId: String) = role == "floppyB" && contentId.startsWith("sha256-fd-v1:")
 

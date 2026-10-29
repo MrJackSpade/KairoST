@@ -92,7 +92,7 @@ std::vector<Press> parse_keys(const std::string &text) {
 
 int main(int argc, char **argv) {
     if (argc < 4) {
-        std::fprintf(stderr, "usage: boot_test <tos image> <work folder> <seconds> [machine [floppy [runs [keys [country [memory KiB [startup program]]]]]]]\n");
+        std::fprintf(stderr, "usage: boot_test <tos image> <work folder> <seconds> [machine [floppy [runs [keys [country [memory KiB [startup program [warp:<x>,<y>]]]]]]]]\n");
         return 2;
     }
     kairost::Config base;
@@ -130,6 +130,13 @@ int main(int argc, char **argv) {
         for (auto &config : configs) config.memory_kib = std::atoi(argv[9]);
     if (argc > 10)
         for (auto &config : configs) config.floppy_program = argv[10];
+    // A direct-touch warp to this point of the picture after each run, with warp-<run>.bmp of where
+    // it ends.
+    int warp_x = -1, warp_y = -1;
+    if (argc > 11 && std::sscanf(argv[11], "warp:%d,%d", &warp_x, &warp_y) != 2) {
+        std::fprintf(stderr, "not warp:<x>,<y>: %s\n", argv[11]);
+        return 2;
+    }
 
     std::vector<int16_t> audio(48000 * 2);
     int status = 0;
@@ -220,6 +227,24 @@ int main(int argc, char **argv) {
         unsigned long console_reads = 0, aes_calls = 0;
         machine->guest_input(console_reads, aes_calls);
         std::printf("run %d: keys taken from the console %lu, AES calls %lu\n", run, console_reads, aes_calls);
+        if (warp_x >= 0) {
+            machine->mouse_warp(warp_x, warp_y);
+            int warp_frames = 0;
+            std::string warp_error;
+            while (!machine->mouse_warp_done() && warp_frames < 600) {
+                if (!machine->run_frame(warp_error)) {
+                    std::fprintf(stderr, "run %d: while warping: %s\n", run, warp_error.c_str());
+                    return 1;
+                }
+                ++warp_frames;
+            }
+            for (int i = 0; i < 3; ++i) machine->run_frame(warp_error);
+            uint32_t warp_width, warp_height;
+            const uint8_t *warp_rgba = machine->frame(warp_width, warp_height);
+            write_bmp(config.home + "/warp-" + std::to_string(run) + ".bmp", warp_rgba, warp_width, warp_height);
+            std::printf("run %d: warp to %d,%d %s after %d frames\n", run, warp_x, warp_y,
+                        machine->mouse_warp_done() ? "done" : "not done", warp_frames);
+        }
         std::printf("run %d: %ld frames (%.4f s each), %ux%u, %llu sound frames at %d Hz, peak %lld, early peak %lld, late peak %lld, desktop %s, caps %s, %s%s\n", run,
                     frames, machine->frame_seconds(), width, height, (unsigned long long) samples,
                     machine->sample_rate(), (long long) loudest, (long long) early_loudest, (long long) late_loudest,
