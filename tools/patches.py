@@ -174,18 +174,24 @@ HATARI_STX_EMPTY_TRACK = [
      '\t/* KairoST: or empty */\n'),
 ]
 
-# The WD1772's motor-on status bit: set when a command starts and cleared after the drive has
-# idled for nine revolutions. KairoST runs a game's boot at full speed until its first floppy
-# load is over (kairo/main.c), and reads it each frame; Hatari keeps it to itself.
+# Whether the WD1772's motor turns a disk: its motor-on status bit (set when a command starts and
+# cleared after the drive has idled for nine revolutions) with a disk in the selected drive, as an
+# empty drive gives no index pulses and leaves the bit set. KairoST runs a game's boot at full speed
+# until its first floppy load is over, and a load at full speed (kairo/main.c), and reads it each
+# frame; Hatari keeps it to itself.
 HATARI_FDC_MOTOR = [
     ('hatari/src/includes/fdc.h',
      'extern void\tFDC_Drive_Set_BusyLed ( uint8_t SR );\n',
      'extern void\tFDC_Drive_Set_BusyLed ( uint8_t SR );\n'
-     'extern bool\tFDC_MotorIsOn ( void );\t/* KairoST: the motor-on status bit */\n'),
+     'extern bool\tFDC_DiskTurning ( void );\t/* KairoST: the motor turns a disk */\n'),
     ('hatari/src/fdc.c',
      'void\tFDC_Drive_Set_BusyLed ( uint8_t STR )\n{\n',
-     '/* KairoST: whether the motor-on status bit is set. */\n'
-     'bool\tFDC_MotorIsOn ( void )\n{\n\treturn ( FDC.STR & FDC_STR_BIT_MOTOR_ON ) != 0;\n}\n\n\n'
+     '/* KairoST: whether the motor turns a disk: the motor-on status bit is set and the selected\n'
+     ' * drive holds one. An empty drive gives no index pulses, so the bit stays set after an access\n'
+     ' * to it until another command. */\n'
+     'bool\tFDC_DiskTurning ( void )\n{\n'
+     '\treturn ( FDC.STR & FDC_STR_BIT_MOTOR_ON ) != 0 && FDC.DriveSelSignal >= 0\n'
+     '\t\t&& EmulationDrives[ FDC.DriveSelSignal ].bDiskInserted;\n}\n\n\n'
      'void\tFDC_Drive_Set_BusyLed ( uint8_t STR )\n{\n'),
 ]
 

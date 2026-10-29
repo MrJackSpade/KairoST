@@ -75,7 +75,7 @@ extern void	FDC_ClearHdcIRQ(void);
 extern void	FDC_InterruptHandler_Update ( void );
 
 extern void	FDC_Drive_Set_BusyLed ( uint8_t SR );
-extern bool	FDC_MotorIsOn ( void );	/* KairoST: the motor-on status bit */
+extern bool	FDC_DiskTurning ( void );	/* KairoST: the motor turns a disk */
 extern int	FDC_Get_Statusbar_Text ( char *text, size_t maxlen );
 extern void	FDC_Drive_Set_Enable ( int Drive , bool value );
 extern void	FDC_Drive_Set_NumberOfHeads ( int Drive , int NbrHeads );

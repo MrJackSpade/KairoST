@@ -92,7 +92,8 @@ static bool fatal_exit_set;
  * motor has run and stopped, and the screen is no longer the one TOS showed when the load began
  * (a loader that pauses between reads, to unpack what it read, stops the motor while TOS's boot
  * screen still shows: KairoST#5); for a program, until TOS has read the autostart file that starts
- * it (it then loads from drive C at once). */
+ * it (it then loads from drive C at once). A boot still waiting for its first load is over once
+ * TOS's desktop runs: a hard disk's boot, or a drive with nothing that loads. */
 static enum { BOOT_OVER, BOOT_WAITING, BOOT_LOADING } boot;
 static bool boot_program;
 /* The screen when the first load began, while it loads. */
@@ -111,10 +112,17 @@ static void end_boot(void)
 	boot_screen = NULL;
 }
 
+static int KairoSt_OnDesktop(void);
+
 static void update_boot(void)
 {
 	if (boot == BOOT_OVER)
 		return;
+	if (boot == BOOT_WAITING && KairoSt_OnDesktop() == 1)
+	{
+		end_boot();
+		return;
+	}
 	if (boot_program)
 	{
 		/* The virtual DESKTOP.INF is open from TOS's boot until TOS has read it. */
@@ -124,7 +132,7 @@ static void update_boot(void)
 			end_boot();
 		return;
 	}
-	if (FDC_MotorIsOn())
+	if (FDC_DiskTurning())
 	{
 		if (boot == BOOT_WAITING)
 		{
@@ -564,7 +572,7 @@ static bool KairoSt_Booting(void)
 
 static bool KairoSt_Loading(void)
 {
-	return boot != BOOT_OVER || FDC_MotorIsOn();
+	return boot != BOOT_OVER || FDC_DiskTurning();
 }
 
 static void KairoSt_Key(int scancode, bool down)

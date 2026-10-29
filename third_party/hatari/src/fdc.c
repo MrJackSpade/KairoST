@@ -654,10 +654,13 @@ void	FDC_MemorySnapShot_Capture(bool bSave)
  * Change the color of the drive's led color in the statusbar, depending
  * on the state of the busy bit in STR
  */
-/* KairoST: whether the motor-on status bit is set. */
-bool	FDC_MotorIsOn ( void )
+/* KairoST: whether the motor turns a disk: the motor-on status bit is set and the selected
+ * drive holds one. An empty drive gives no index pulses, so the bit stays set after an access
+ * to it until another command. */
+bool	FDC_DiskTurning ( void )
 {
-	return ( FDC.STR & FDC_STR_BIT_MOTOR_ON ) != 0;
+	return ( FDC.STR & FDC_STR_BIT_MOTOR_ON ) != 0 && FDC.DriveSelSignal >= 0
+		&& EmulationDrives[ FDC.DriveSelSignal ].bDiskInserted;
 }
 
 

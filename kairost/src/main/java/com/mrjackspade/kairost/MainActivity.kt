@@ -46,6 +46,8 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         setOf(StKeys.LEFT_SHIFT, StKeys.RIGHT_SHIFT, StKeys.CONTROL, StKeys.ALTERNATE), StKeys.joystick.zip(StKeys.joystickLabels),
         UiText.res(R.string.joystick_help), ControllerGuestSpec.STANDARD_ACTIONS, StKeys.layout)
     override val bindingsCodec = StKeys.bindings
+    /** The IKBD reports the button as an event; GEM takes a longer press on an icon as the start of a drag. */
+    override val tapClickMillis = 100L
     override val artworkDownloadsEnabled: Boolean get() = resources.getBoolean(R.bool.catalog_art_download_enabled)
 
     /**

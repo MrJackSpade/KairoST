@@ -92,7 +92,7 @@ std::vector<Press> parse_keys(const std::string &text) {
 
 int main(int argc, char **argv) {
     if (argc < 4) {
-        std::fprintf(stderr, "usage: boot_test <tos image> <work folder> <seconds> [machine [floppy [runs [keys [country [memory KiB [startup program [warp:<x>,<y>]]]]]]]]\n");
+        std::fprintf(stderr, "usage: boot_test <tos image> <work folder> <seconds> [machine [floppy [runs [keys [country [memory KiB [startup program [warp:<x>,<y> | clock:<MHz>]...]]]]]]]\n");
         return 2;
     }
     kairost::Config base;
@@ -138,11 +138,18 @@ int main(int argc, char **argv) {
         for (auto &config : configs) config.memory_kib = std::atoi(argv[9]);
     if (argc > 10)
         for (auto &config : configs) config.floppy_program = argv[10];
-    // A direct-touch warp to this point of the picture after each run, with warp-<run>.bmp of where
-    // it ends.
+    // After the startup program, in any order: warp:<x>,<y>, a direct-touch warp to this point of the
+    // picture after each run, with warp-<run>.bmp of where it ends; clock:<MHz>, the CPU's clock
+    // (Config::cpu_clock).
     int warp_x = -1, warp_y = -1;
-    if (argc > 11 && std::sscanf(argv[11], "warp:%d,%d", &warp_x, &warp_y) != 2) {
-        std::fprintf(stderr, "not warp:<x>,<y>: %s\n", argv[11]);
+    for (int i = 11; i < argc; ++i) {
+        int clock = 0;
+        if (std::sscanf(argv[i], "warp:%d,%d", &warp_x, &warp_y) == 2) continue;
+        if (std::sscanf(argv[i], "clock:%d", &clock) == 1) {
+            for (auto &config : configs) config.cpu_clock = clock;
+            continue;
+        }
+        std::fprintf(stderr, "neither warp:<x>,<y> nor clock:<MHz>: %s\n", argv[i]);
         return 2;
     }
 
@@ -159,6 +166,7 @@ int main(int argc, char **argv) {
         double elapsed = 0;
         long frames = 0;
         bool booting = machine->booting();
+        bool desktop = false;
         long loading_frames = 0;
         uint64_t samples = 0;
         int64_t loudest = 0, early_loudest = 0, late_loudest = 0;
@@ -184,6 +192,10 @@ int main(int argc, char **argv) {
                 std::printf("run %d: the guest crashed after %ld frames (%.1f s)\n", run, frames, elapsed);
             }
             if (machine->loading()) ++loading_frames;
+            if (!desktop && machine->on_desktop() == 1) {
+                desktop = true;
+                std::printf("run %d: desktop from frame %ld\n", run, frames);
+            }
             if (booting && !machine->booting()) {
                 booting = false;
                 std::printf("run %d: boot over after %ld frames (%.1f s)\n", run, frames, elapsed);
@@ -269,6 +281,15 @@ int main(int argc, char **argv) {
             write_bmp(config.home + "/warp-" + std::to_string(run) + ".bmp", warp_rgba, warp_width, warp_height);
             std::printf("run %d: warp to %d,%d %s after %d frames\n", run, warp_x, warp_y,
                         machine->mouse_warp_done() ? "done" : "not done", warp_frames);
+            // Then a click there, as the app sends a tap (MainActivity.tapClickMillis: the left button
+            // held 100 ms), and two seconds for GEM to take it as a single click, with click-<run>.bmp
+            // of what it did (an icon there is selected).
+            machine->mouse_button(1, true);
+            for (int i = 0; i < 5; ++i) machine->run_frame(warp_error);
+            machine->mouse_button(1, false);
+            for (int i = 0; i < 100; ++i) machine->run_frame(warp_error);
+            const uint8_t *click_rgba = machine->frame(warp_width, warp_height);
+            write_bmp(config.home + "/click-" + std::to_string(run) + ".bmp", click_rgba, warp_width, warp_height);
         }
         std::printf("run %d: %ld frames (%.4f s each), %ux%u, %llu sound frames at %d Hz, peak %lld, early peak %lld, late peak %lld, desktop %s, caps %s, %s%s\n", run,
                     frames, machine->frame_seconds(), width, height, (unsigned long long) samples,
