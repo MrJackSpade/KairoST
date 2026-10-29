@@ -102,7 +102,11 @@ object StCatalog : LayeredGameCatalog.Schema {
         { it.trim().uppercase() }) { it.startsWith("sha256-fd-v1:") }
 
     override val settings: List<CatalogSetting> = options.map(CatalogSetting::Choice) +
-        CatalogSetting.Drive("floppyB", UiText.res(FrontendR.string.kairo_drive_b)) + program
+        CatalogSetting.Drive("floppyB", UiText.res(FrontendR.string.kairo_drive_b)) + program +
+        // A game's startup menus and disk swaps (shared StartupAutomation).
+        listOf(CatalogSetting.StartupChoices,
+        // Drives A and B (MainActivity.mediaSlots).
+        CatalogSetting.DiskSwaps(2) { _, id -> id.startsWith("sha256-fd-v1:") })
     override val fields = CatalogSetting.fields(settings)
     /** TOS moves its pointer a pixel a count and stops it at the edges (StMachine::mouse_warp). */
     override val directTouch = true
@@ -110,7 +114,7 @@ object StCatalog : LayeredGameCatalog.Schema {
     override fun validMedia(role: String, contentId: String) = role == "floppyB" && contentId.startsWith("sha256-fd-v1:")
 
     override fun validField(field: String, value: Any): Boolean =
-        field in fields && CatalogSetting.validSection(settings, field, value)
+        field in fields && CatalogSetting.valid(settings, contentId, field, value)
 
     /** The game's startup program: its own, or "" for the automatic choice. */
     fun program(game: com.mrjackspade.kairo.frontend.CatalogGame): String = program.value(game)

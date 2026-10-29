@@ -140,3 +140,7 @@ def MACHINE(name, set_name, content_id):
 # Disk sets (shared/tools/disk_sets.py): a game boots from its first floppy, with its second in drive B.
 BOOT_KINDS = ["fd"]
 COMPANION = {"fd": ("fd", "floppyB", False)}
+
+# The media slots a disk swap can use and the disks each takes (MainActivity.mediaSlots, the
+# catalog schema's CatalogSetting.DiskSwaps; shared/tools/startup_automation.py).
+DISK_SWAPS = {0: {"fd"}, 1: {"fd"}}
