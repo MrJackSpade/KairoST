@@ -110,6 +110,9 @@ struct KairoStApi {
 	int (*on_desktop)(void);
 	/* Whether Caps Lock is on, as TOS keeps it: the ST keyboard has no lamp, TOS its kbshift. */
 	bool (*caps_lock)(void);
+	/* How the guest reads its input, for Auto touch mode: the keys it took from TOS's console
+	 * (Bconin(2)), and its calls to the AES, which only a GEM program makes. */
+	void (*guest_input)(unsigned long *console_reads, unsigned long *aes_calls);
 	/* For host diagnostics: the CPU's registers (D0-D7, A0-A7), PC and SR, and a copy of the
 	 * guest's memory as the CPU sees it (0 where nothing is mapped). */
 	void (*cpu_state)(uint32_t registers[16], uint32_t *pc, uint16_t *sr);

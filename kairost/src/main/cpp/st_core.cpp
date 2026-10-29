@@ -30,6 +30,15 @@ public:
     bool loading() override { return machine_->loading(); }
     // Bit 0 Caps, as NativeMachine lists it (MainActivity).
     int locks() override { return machine_->locks(); }
+    // Auto touch mode (Kairo#78): a key taken from TOS's console is the keyboard; an AES call, made
+    // only by a GEM program, the mouse.
+    bool guest_input(GuestInput &input) override {
+        unsigned long console_reads = 0, aes_calls = 0;
+        machine_->guest_input(console_reads, aes_calls);
+        input.keyboard_waits = console_reads;
+        input.mouse_reads = aes_calls;
+        return true;
+    }
     std::string error() override { return error_; }
     // The emulator's reason, which save_state and load_state leave in error_.
     std::string state_error() override { return error_; }

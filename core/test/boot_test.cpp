@@ -217,6 +217,9 @@ int main(int argc, char **argv) {
                 .write(reinterpret_cast<const char *>(ram.data()), std::streamsize(ram.size()));
         }
         std::printf("run %d: loading (boot or floppy motor) in %ld frames\n", run, loading_frames);
+        unsigned long console_reads = 0, aes_calls = 0;
+        machine->guest_input(console_reads, aes_calls);
+        std::printf("run %d: keys taken from the console %lu, AES calls %lu\n", run, console_reads, aes_calls);
         std::printf("run %d: %ld frames (%.4f s each), %ux%u, %llu sound frames at %d Hz, peak %lld, early peak %lld, late peak %lld, desktop %s, caps %s, %s%s\n", run,
                     frames, machine->frame_seconds(), width, height, (unsigned long long) samples,
                     machine->sample_rate(), (long long) loudest, (long long) early_loudest, (long long) late_loudest,

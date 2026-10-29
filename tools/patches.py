@@ -266,6 +266,32 @@ SDL_NO_JAVA = [
      '    return SDL_snprintf(path, size, "%s/controller_map.txt", SDL_AndroidGetInternalStoragePath()) < size;\n'),
 ]
 
+# Auto touch mode (Kairo#78): a program taking keys through TOS's console (BIOS Bconin(2)) is a
+# keyboard program; one calling the AES (trap #2, D0 = $C8) is a GEM program, driven by the mouse.
+# Bconstat(2) is not counted: GEM's desktop asks it many times a second (KairoSt_GuestInput).
+HATARI_GUEST_INPUT = [
+    ('hatari/src/bios.c',
+     'bool Bios(void)\n{\n',
+     '/* KairoST: Bconin(2) calls (KairoSt_GuestInput). */\n'
+     'unsigned long kairost_console_reads;\n\n'
+     'bool Bios(void)\n{\n'),
+    ('hatari/src/bios.c',
+     '\t/* Get call */\n\tParams = Regs[REG_A7];\n\tBiosCall = STMemory_ReadWord(Params);\n\tParams += SIZE_WORD;\n',
+     '\t/* Get call */\n\tParams = Regs[REG_A7];\n\tBiosCall = STMemory_ReadWord(Params);\n\tParams += SIZE_WORD;\n\n'
+     '\t/* KairoST: a key taken from the console, for Auto touch mode */\n'
+     '\tif (BiosCall == 0x2 && STMemory_ReadWord(Params) == 2)\n'
+     '\t\tkairost_console_reads++;\n'),
+    ('hatari/src/cpu/newcpu.c',
+     '\t/* Handle Hatari GEM and BIOS traps */\n\tif (nr == 0x22) {\n',
+     '\t/* Handle Hatari GEM and BIOS traps */\n\tif (nr == 0x22) {\n'
+     '\t\t/* KairoST: an AES call, for Auto touch mode (KairoSt_GuestInput) */\n'
+     '\t\tif (m68k_dreg(regs, 0) == 0xC8)\n\t\t\tkairost_aes_calls++;\n'),
+    ('hatari/src/cpu/newcpu.c',
+     '// address = format $2 stack frame address field\nstatic void ExceptionX (int nr, uaecptr address, uaecptr oldpc)\n',
+     '/* KairoST: AES calls (KairoSt_GuestInput). */\nunsigned long kairost_aes_calls;\n\n'
+     '// address = format $2 stack frame address field\nstatic void ExceptionX (int nr, uaecptr address, uaecptr oldpc)\n'),
+]
+
 PATCHES = {
     'hatari-emutos-welcome': HATARI_EMUTOS_WELCOME,
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
@@ -278,4 +304,5 @@ PATCHES = {
     'sdl-android-video': SDL_ANDROID_VIDEO,
     'sdl-dummy-rgba': SDL_DUMMY_RGBA,
     'sdl-no-java': SDL_NO_JAVA,
+    'hatari-guest-input': HATARI_GUEST_INPUT,
 }

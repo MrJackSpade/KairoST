@@ -3771,6 +3771,9 @@ kludge_me_do:
 	exception_check_trace (nr);
 }
 
+/* KairoST: AES calls (KairoSt_GuestInput). */
+unsigned long kairost_aes_calls;
+
 // address = format $2 stack frame address field
 static void ExceptionX (int nr, uaecptr address, uaecptr oldpc)
 {
@@ -3795,6 +3798,9 @@ static void ExceptionX (int nr, uaecptr address, uaecptr oldpc)
 #ifdef WINUAE_FOR_HATARI
 	/* Handle Hatari GEM and BIOS traps */
 	if (nr == 0x22) {
+		/* KairoST: an AES call, for Auto touch mode (KairoSt_GuestInput) */
+		if (m68k_dreg(regs, 0) == 0xC8)
+			kairost_aes_calls++;
 		/* Intercept VDI & AES exceptions (Trap #2) */
 		if (bVdiAesIntercept && VDI_AES_Entry()) {
 			/* Set 'PC' to address of 'VDI_OPCODE' illegal instruction.

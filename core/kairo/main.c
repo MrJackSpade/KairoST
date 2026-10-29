@@ -681,6 +681,14 @@ static bool KairoSt_CapsLock(void)
 	return kbshift && (STMemory_ReadByte(kbshift) & 0x10);
 }
 
+extern unsigned long kairost_console_reads, kairost_aes_calls;
+
+static void KairoSt_GuestInput(unsigned long *console_reads, unsigned long *aes_calls)
+{
+	*console_reads = kairost_console_reads;
+	*aes_calls = kairost_aes_calls;
+}
+
 static void KairoSt_CpuState(uint32_t registers[16], uint32_t *pc, uint16_t *sr)
 {
 	for (int i = 0; i < 16; i++)
@@ -720,6 +728,7 @@ const struct KairoStApi *KairoSt_Api(void)
 		.guest_crashed = KairoSt_GuestCrashed,
 		.on_desktop = KairoSt_OnDesktop,
 		.caps_lock = KairoSt_CapsLock,
+		.guest_input = KairoSt_GuestInput,
 		.cpu_state = KairoSt_CpuState,
 		.read_memory = KairoSt_ReadMemory,
 	};

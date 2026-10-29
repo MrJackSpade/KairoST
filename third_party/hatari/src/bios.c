@@ -128,6 +128,9 @@ void Bios_Info(FILE *fp, uint32_t bShowOpcodes)
  * Return true if we've handled the exception, else return false to let
  * TOS attempt it
  */
+/* KairoST: Bconin(2) calls (KairoSt_GuestInput). */
+unsigned long kairost_console_reads;
+
 bool Bios(void)
 {
 	uint32_t Params;
@@ -137,6 +140,10 @@ bool Bios(void)
 	Params = Regs[REG_A7];
 	BiosCall = STMemory_ReadWord(Params);
 	Params += SIZE_WORD;
+
+	/* KairoST: a key taken from the console, for Auto touch mode */
+	if (BiosCall == 0x2 && STMemory_ReadWord(Params) == 2)
+		kairost_console_reads++;
 
 	/* Intercept? */
 	switch(BiosCall)
