@@ -73,6 +73,7 @@ KairoST comes with [EmuTOS](https://emutos.sourceforge.io/), the free TOS replac
 
 ## Documentation
 
+- [Create a game](docs/create-a-game.md): make a new game on a blank floppy
 - [Licensing and credits](docs/licensing.md): code license and third-party components
 - [Source provenance](docs/source-import.md): where the emulator source came from and what was copied
 
