@@ -12,8 +12,6 @@
     <string name="folder_description">%1$s のゲームが入っているフォルダを選択してください。%2$s がフロッピーディスクイメージ、ゲームプログラム、それらを含む ZIP・7z アーカイブをスキャンします。</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">ポート1のジョイスティック。</string>
-    <!-- EN: Drive A -->
-    <string name="drive_a">ドライブ A</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">%1$s 用 TOS</string>

@@ -12,8 +12,6 @@
     <string name="folder_description">Selecciona la carpeta que contiene tus juegos de %1$s. %2$s analizará sus imágenes de disquete, programas de juegos y los archivos ZIP y 7z que los contienen.</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">El joystick del puerto 1.</string>
-    <!-- EN: Drive A -->
-    <string name="drive_a">Unidad A</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">TOS para el %1$s</string>

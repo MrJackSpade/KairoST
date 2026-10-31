@@ -1,5 +1,6 @@
 #include "st_machine.h"
 
+#include <cstdio>
 #include <cstring>
 #include <ctime>
 #include <utility>
@@ -11,8 +12,6 @@
 
 #ifdef __ANDROID__
 #include <android/log.h>
-#else
-#include <cstdio>
 #endif
 
 namespace kairost {
@@ -81,6 +80,19 @@ struct StMachine::Impl : Session {};
 StMachine::StMachine(std::unique_ptr<Impl> impl) : impl_(std::move(impl)) {}
 
 StMachine::~StMachine() { impl_->stop(); }
+
+bool StMachine::create_blank_floppy(const std::string &path, int tracks, int sectors, int sides,
+                                    std::string &error) {
+    auto library = HatariLibrary::load(error);
+    if (!library) return false;
+    // Hatari asks before writing over a file, and KairoST cannot answer: the file must be new.
+    std::remove(path.c_str());
+    if (!library->api().create_floppy(path.c_str(), tracks, sectors, sides)) {
+        error = "Hatari could not write a blank floppy at " + path;
+        return false;
+    }
+    return true;
+}
 
 std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &error) {
     auto library = HatariLibrary::load(error);

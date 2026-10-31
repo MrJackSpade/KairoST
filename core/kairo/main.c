@@ -24,6 +24,7 @@
 #include "main.h"
 #include "kairo_st.h"
 #include "change.h"
+#include "createBlankImage.h"
 #include "configuration.h"
 #include "options.h"
 #include "audio.h"
@@ -773,6 +774,11 @@ static void KairoSt_ReadMemory(uint32_t address, uint8_t *out, uint32_t length)
 		out[i] = STMemory_ReadByte(address + i);
 }
 
+static bool KairoSt_CreateFloppy(const char *path, int tracks, int sectors, int sides)
+{
+	return CreateBlankImage_CreateFile(path, tracks, sectors, sides, NULL);
+}
+
 const struct KairoStApi *KairoSt_Api(void)
 {
 	static const struct KairoStApi api = {
@@ -805,6 +811,7 @@ const struct KairoStApi *KairoSt_Api(void)
 		.guest_input = KairoSt_GuestInput,
 		.cpu_state = KairoSt_CpuState,
 		.read_memory = KairoSt_ReadMemory,
+		.create_floppy = KairoSt_CreateFloppy,
 	};
 	return &api;
 }

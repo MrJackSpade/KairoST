@@ -12,8 +12,6 @@
     <string name="folder_description">Selecione a pasta com seus jogos de %1$s. O %2$s vai verificar as imagens de disquete, os programas de jogos dela e os arquivos ZIP e 7z que os contêm.</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">O joystick na porta 1.</string>
-    <!-- EN: Drive A -->
-    <string name="drive_a">Unidade A</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">TOS para o %1$s</string>

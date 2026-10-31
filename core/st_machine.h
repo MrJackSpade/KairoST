@@ -69,6 +69,9 @@ class StMachine {
 public:
     // A machine running config's media; null with error set when it cannot start.
     static std::unique_ptr<StMachine> create(const Config &config, std::string &error);
+    // Writes a new blank floppy at path (.st) with Hatari's own blank-image writer, on a copy of the
+    // library of its own: tracks, sectors per track and sides. False with error set when it could not.
+    static bool create_blank_floppy(const std::string &path, int tracks, int sectors, int sides, std::string &error);
     ~StMachine();
 
     // Whether the guest is booting (KairoSt_Booting), which the host runs at full speed.

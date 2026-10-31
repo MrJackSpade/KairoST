@@ -12,8 +12,6 @@
     <string name="folder_description">Pilih folder yang berisi game %1$s Anda. %2$s akan memindai image disket, program game, serta arsip ZIP dan 7z yang berisi semua itu.</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">Joystick di port 1.</string>
-    <!-- EN: Drive A -->
-    <string name="drive_a">Drive A</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">TOS untuk %1$s</string>

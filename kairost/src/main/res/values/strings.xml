@@ -10,7 +10,6 @@
 
     <string name="joystick_help">The joystick in port 1.</string>
 
-    <string name="drive_a">Drive A</string>
 
     <!-- %1$s is an Atari model, such as STE. -->
     <string name="tos_for_model">TOS for the %1$s</string>

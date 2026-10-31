@@ -129,6 +129,10 @@ struct KairoStApi {
 	 * guest's memory as the CPU sees it (0 where nothing is mapped). */
 	void (*cpu_state)(uint32_t registers[16], uint32_t *pc, uint16_t *sr);
 	void (*read_memory)(uint32_t address, uint8_t *out, uint32_t length);
+	/* Writes a new blank floppy image at path (.st), formatted and empty, as Hatari's own "create
+	 * blank image" dialog makes one: tracks, sectors per track and sides. Needs no running machine,
+	 * and path must not exist yet. False when Hatari could not write it. */
+	bool (*create_floppy)(const char *path, int tracks, int sectors, int sides);
 };
 
 #if defined(_WIN32)

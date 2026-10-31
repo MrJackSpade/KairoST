@@ -143,3 +143,16 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     if (!machine) return nullptr;
     return std::make_unique<StCore>(std::move(machine));
 }
+
+// The blank disks MainActivity.blankDisks lists, as Hatari's own dialog makes them: formatted and
+// empty, since Hatari's floppy controller cannot format an .st image from the guest. 80 tracks of
+// 9 sectors on one side (360 KB) or two (720 KB), or of 18 on two (1.44 MB, the TT's and Falcon's).
+std::string kairo::create_blank_disk(const std::string &kind, const std::string &path) {
+    int sectors, sides;
+    if (kind == "floppy-ss") sectors = 9, sides = 1;
+    else if (kind == "floppy-ds") sectors = 9, sides = 2;
+    else if (kind == "floppy-hd") sectors = 18, sides = 2;
+    else return "KairoST makes no blank disk " + kind;
+    std::string error;
+    return StMachine::create_blank_floppy(path, 80, sectors, sides, error) ? "" : error;
+}

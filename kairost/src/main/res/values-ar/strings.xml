@@ -12,8 +12,6 @@
     <string name="folder_description">اختر المجلد الذي يحتوي على ألعاب %1$s. سيفحص %2$s صور الأقراص المرنة وبرامج الألعاب فيه وأرشيفات ZIP و7z التي تحتويها.</string>
     <!-- EN: The joystick in port 1. -->
     <string name="joystick_help">عصا الألعاب في المنفذ 1.</string>
-    <!-- EN: Drive A -->
-    <string name="drive_a">المحرك A</string>
     <!-- %1$s is an Atari model, such as STE. -->
     <!-- EN: TOS for the %1$s -->
     <string name="tos_for_model">TOS لجهاز %1$s</string>

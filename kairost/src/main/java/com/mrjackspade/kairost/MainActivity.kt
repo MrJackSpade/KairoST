@@ -71,6 +71,11 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override fun createLibrary(catalog: LayeredGameCatalog) = images
 
     // System lists the player's TOS images too, and imports more (StCatalog.system).
+    // Formatted and empty, as Hatari makes them (its controller cannot format an .st from the guest).
+    override val blankDisks = listOf(
+        coreBlankDisk("floppy-ss", UiText.res(FrontendR.string.kairo_blank_floppy, "360 KB · SS"), "st"),
+        coreBlankDisk("floppy-ds", UiText.res(FrontendR.string.kairo_blank_floppy, "720 KB · DS"), "st"),
+        coreBlankDisk("floppy-hd", UiText.res(FrontendR.string.kairo_blank_floppy, "1.44 MB · HD"), "st"))
     override val machineOptions = StCatalog.options.map { option ->
         if (option.id == StCatalog.system.id) StCatalog.system(::tosChoices, ::tosActions) else option
     }
@@ -78,7 +83,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     private fun isHardDisk(entry: DiskImageEntry) = format.kind(entry.displayName) == "hd"
 
     // In the core's slot order (st_core.cpp): drive A, drive B, then the hard disk, whose change restarts the machine.
-    override val mediaSlots = listOf(MediaSlot<DiskImageEntry>(UiText.res(R.string.drive_a), ::isFloppy),
+    override val mediaSlots = listOf(MediaSlot<DiskImageEntry>(UiText.res(FrontendR.string.kairo_drive_a), ::isFloppy),
         MediaSlot(UiText.res(FrontendR.string.kairo_drive_b), ::isFloppy),
         MediaSlot(UiText.res(FrontendR.string.kairo_hard_disk), ::isHardDisk))
 
