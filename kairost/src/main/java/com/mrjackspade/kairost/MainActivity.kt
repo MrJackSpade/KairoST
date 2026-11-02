@@ -79,8 +79,8 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override val machineOptions = StCatalog.options.map { option ->
         if (option.id == StCatalog.system.id) StCatalog.system(::tosChoices, ::tosActions) else option
     }
-    private fun isFloppy(entry: DiskImageEntry) = format.kind(entry.displayName) == "fd"
-    private fun isHardDisk(entry: DiskImageEntry) = format.kind(entry.displayName) == "hd"
+    private fun isFloppy(entry: DiskImageEntry) = entry.kind == "fd"
+    private fun isHardDisk(entry: DiskImageEntry) = entry.kind == "hd"
 
     // In the core's slot order (st_core.cpp): drive A, drive B, then the hard disk, whose change restarts the machine.
     override val mediaSlots = listOf(MediaSlot<DiskImageEntry>(UiText.res(FrontendR.string.kairo_drive_a), ::isFloppy),
