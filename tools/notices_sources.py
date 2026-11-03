@@ -31,6 +31,6 @@ SECTIONS = [
      [excerpt('hatari/src/debug/a.out.h', 'a.out.h - Definitions and declarations', 'This file is in the public domain.')]),
     ('EmuTOS 1.4', 'https://emutos.sourceforge.io/, third_party/emutos and third_party/emutos-1024k',
      [EMUTOS_TERMS]),
-    ('zlib 1.3.2', 'https://zlib.net/, third_party/zlib', [text('zlib/LICENSE')]),
+    ('zlib 1.3.2', 'https://zlib.net/, shared/third_party/zlib', [text('../shared/third_party/zlib/LICENSE')]),
     ('SDL2 2.32.10', 'https://www.libsdl.org/, third_party/sdl2', [text('sdl2/LICENSE.txt')]),
 ]

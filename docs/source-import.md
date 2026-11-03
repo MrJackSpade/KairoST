@@ -36,16 +36,14 @@ The app ships `etos1024k.img`, the EmuTOS build for Hatari with every model and 
 
 ## Libraries Hatari needs
 
-Hatari links zlib and SDL2. Each is a pinned release copied into `third_party/`, built by `core/deps.cmake`.
+Hatari links zlib and SDL2. zlib 1.3.2 comes from the shared frontend (`shared/third_party/zlib/`, built by `shared/cmake/KairoLibraries.cmake`). SDL2 is a pinned release copied into `third_party/`, built by `core/deps.cmake`.
 
 | Library | Release | Archive | Archive SHA-256 | Released |
 | --- | --- | --- | --- | --- |
-| zlib (`zlib/`) | 1.3.2 | GitHub release `v1.3.2` of `madler/zlib`, `zlib-1.3.2.tar.gz` | `bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16` | 2026-02-17 |
 | SDL2 (`sdl2/`) | 2.32.10 | GitHub release `release-2.32.10` of `libsdl-org/SDL`, `SDL2-2.32.10.tar.gz` | `5f5993c530f084535c65a6879e9b26ad441169b3e25d789d83287040a9ca5165` | 2025-09-01 |
 
-Both were imported on 2026-10-22, from the same archives as KairoMSX's (the hashes match). Each archive was copied whole except for files no KairoST build uses:
+It was imported on 2026-10-22, from the same archive as KairoMSX's (the hashes match). The archive was copied whole except for files no KairoST build uses:
 
-- zlib: `amiga/`, `contrib/`, `doc/`, `msdos/`, `os400/`, `qnx/`, `test/`, `watcom/` and `win32/`.
 - SDL2: the IDE projects (`VisualC*/`, `Xcode*/`), `acinclude/`, `android-project*/`, `docs/`, `mingw/`, `test/`, `visualtest/` and `wayland-protocols/`.
 - Nested Git files (`.gitignore`, `.git-hash` and similar), so every copied file is tracked.
 

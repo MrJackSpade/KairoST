@@ -1,21 +1,13 @@
-# The libraries Hatari needs, built from the pinned snapshots in third_party/: zlib and SDL2.
+# The libraries Hatari needs: zlib from the shared frontend, and SDL2 built from the pinned snapshot
+# in third_party/.
 # Hatari uses SDL2 for its surfaces, key codes, timing and threads, and draws into the window
 # surface of SDL's dummy video driver (core/kairo/main.c); KairoST supplies sound and input
 # itself.
 
 get_filename_component(THIRD_PARTY "${CMAKE_CURRENT_LIST_DIR}/../third_party" ABSOLUTE)
 
-# zlib
-set(ZLIB_DIR "${THIRD_PARTY}/zlib")
-add_library(kairo_zlib STATIC
-    "${ZLIB_DIR}/adler32.c" "${ZLIB_DIR}/compress.c" "${ZLIB_DIR}/crc32.c" "${ZLIB_DIR}/deflate.c"
-    "${ZLIB_DIR}/gzclose.c" "${ZLIB_DIR}/gzlib.c" "${ZLIB_DIR}/gzread.c" "${ZLIB_DIR}/gzwrite.c"
-    "${ZLIB_DIR}/infback.c" "${ZLIB_DIR}/inffast.c" "${ZLIB_DIR}/inflate.c" "${ZLIB_DIR}/inftrees.c"
-    "${ZLIB_DIR}/trees.c" "${ZLIB_DIR}/uncompr.c" "${ZLIB_DIR}/zutil.c")
-target_include_directories(kairo_zlib PUBLIC "${ZLIB_DIR}")
-if(NOT WIN32)
-    target_compile_definitions(kairo_zlib PRIVATE HAVE_UNISTD_H)
-endif()
+# zlib, from the shared frontend (kairo_zlib).
+include("${CMAKE_CURRENT_LIST_DIR}/../shared/cmake/KairoLibraries.cmake")
 
 # SDL2, statically, with video (the dummy driver only, on Android) and the subsystems Hatari's
 # code calls without starting them. No audio, joystick or other device drivers: Hatari starts

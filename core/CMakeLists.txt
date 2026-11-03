@@ -125,7 +125,7 @@ add_library(kairost_hatari SHARED ${HATARI_SOURCES} ${CPU_SOURCES} ${GENERATED_C
     kairo/main.c kairo/audio.c kairo/dlgHalt.c kairo/alert_hooks.c)
 set_target_properties(kairost_hatari PROPERTIES C_STANDARD 99 C_EXTENSIONS ON C_VISIBILITY_PRESET hidden
     PREFIX "lib")
-set_target_properties(kairo_zlib SDL2-static PROPERTIES POSITION_INDEPENDENT_CODE ON)
+set_target_properties(SDL2-static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 # KairoST's replacements come first: kairo/uae stands in for the uae/ headers left out of the
 # snapshot. config.h is the one generated above. Alerts go to KairoST's hooks (kairo/alert_hooks.c).
 target_include_directories(kairost_hatari PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo"

@@ -446,7 +446,7 @@ KairoST's source, and its authors are listed in doc/authors.txt there.
 
 ========================================================================
 zlib 1.3.2
-Source: https://zlib.net/, third_party/zlib
+Source: https://zlib.net/, shared/third_party/zlib
 ========================================================================
 
 Copyright notice:

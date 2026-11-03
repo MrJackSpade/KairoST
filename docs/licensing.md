@@ -41,7 +41,7 @@ KairoST builds Hatari's emulation code with its own replacements for the parts t
 
 | Library | Location | License |
 | --- | --- | --- |
-| zlib 1.3.2 | `third_party/zlib/` | zlib license (`LICENSE`) |
+| zlib 1.3.2 | `shared/third_party/zlib/` | zlib license (`LICENSE`) |
 | SDL2 2.32.10 | `third_party/sdl2/` | zlib license (`LICENSE.txt`) |
 
 Both permit combination with GPL code.
