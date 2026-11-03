@@ -34,6 +34,13 @@ object KairoStApp : AppUnderTest() {
     override val biosFiles = listOf(BiosFile("tos-st.img", false), BiosFile("tos-ste.img", false),
         BiosFile("tos-tt.img", false), BiosFile("tos-falcon.img", false))
     override val bootGame = "Goal!"
+    // Its catalog record starts it on the player's own TOS, not the bundled EmuTOS; before setup a
+    // launch asks for it with KairoST's own prompt.
+    override val bootGameNeedsFirmware = true
+    override fun isFirmwarePrompt(text: String): Boolean {
+        val context = androidx.test.platform.app.InstrumentationRegistry.getInstrumentation().targetContext
+        return text.startsWith("Launch failed: " + context.getString(com.mrjackspade.kairost.R.string.own_tos_missing, "\u0000").substringBefore('\u0000'))
+    }
     override val bootGameFile = "games/GOAL.MSA"
     override val otherGame = "OOZE"
     override val searchTerm = "Goal"
