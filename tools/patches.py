@@ -290,8 +290,9 @@ HATARI_GUEST_INPUT = [
     ('hatari/src/cpu/newcpu.c',
      '\t/* Handle Hatari GEM and BIOS traps */\n\tif (nr == 0x22) {\n',
      '\t/* Handle Hatari GEM and BIOS traps */\n\tif (nr == 0x22) {\n'
-     '\t\t/* KairoST: an AES call, for Auto touch mode (KairoSt_GuestInput) */\n'
-     '\t\tif (m68k_dreg(regs, 0) == 0xC8)\n\t\t\tkairost_aes_calls++;\n'),
+     '\t\t/* KairoST: an AES call, for Auto touch mode (KairoSt_GuestInput). TOS reads only D0\'s\n'
+     '\t\t * low word (GEMcell leaves other bits in the high word, KairoST#90). */\n'
+     '\t\tif ((m68k_dreg(regs, 0) & 0xFFFF) == 0xC8)\n\t\t\tkairost_aes_calls++;\n'),
     ('hatari/src/cpu/newcpu.c',
      '// address = format $2 stack frame address field\nstatic void ExceptionX (int nr, uaecptr address, uaecptr oldpc)\n',
      '/* KairoST: AES calls (KairoSt_GuestInput). */\nunsigned long kairost_aes_calls;\n\n'
