@@ -134,6 +134,8 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     // The program on drive A that TOS starts, "" for the automatic choice (MainActivity: the game's
     // Startup program setting).
     config.floppy_program = launch.settings.at("program");
+    // A test that compares runs (the shared PC boot test): Hatari's random numbers from a fixed seed.
+    if (launch.repeatable) config.seed = 1;
     // Hatari runs the emulation on a thread of its own, which takes emulation work's priority.
     config.on_thread_start = [] {
         kairo::name_thread("kairost-hatari");

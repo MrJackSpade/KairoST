@@ -1,0 +1,149 @@
+{
+  "tests": [
+    {
+      "name": "Goal!",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "games/GOAL.MSA"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "auto",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "boot": {
+          "frames": 1200
+        },
+        "guestInput": {
+          "frames": 1800,
+          "expect": "keyboard"
+        },
+        "sessions": {
+          "frames": 300
+        },
+        "state": {
+          "at": 200,
+          "frames": 120
+        },
+        "loading": {
+          "startsBy": 120,
+          "doneBy": 1800,
+          "settled": 120,
+          "idle": {
+            "media": [],
+            "frames": 900
+          }
+        }
+      }
+    },
+    {
+      "name": "OOZE",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "games/OOZE.MSA",
+        "games/GOAL.MSA"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "auto",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "boot": {
+          "frames": 1800
+        },
+        "stateDisks": {
+          "drive": 1,
+          "at": 900,
+          "swap": ""
+        }
+      }
+    },
+    {
+      "name": "EmuTOS desktop",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "auto",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "boot": {
+          "frames": 1800
+        },
+        "guestInput": {
+          "frames": 2400,
+          "expect": "mouse"
+        },
+        "locks": {
+          "at": 900,
+          "keys": [
+            {
+              "code": 58,
+              "bit": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Gemcell",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "games/Gemcell v1.00 (19xx)(Weets, Holger)(PD)[monochrome]/Gemcell v1.00 (19xx)(Weets, Holger)(PD)[monochrome].st"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "auto",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "boot": {
+          "frames": 1800
+        },
+        "guestInput": {
+          "frames": 2400,
+          "expect": "mouse"
+        }
+      }
+    }
+  ]
+}
