@@ -22,7 +22,8 @@
       },
       "checks": {
         "boot": {
-          "frames": 1200
+          "frames": 1200,
+          "audio": true
         },
         "guestInput": {
           "frames": 1800,
@@ -33,7 +34,8 @@
         },
         "state": {
           "at": 200,
-          "frames": 120
+          "frames": 120,
+          "sound": true
         },
         "loading": {
           "startsBy": 120,
