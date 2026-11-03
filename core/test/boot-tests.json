@@ -146,6 +146,42 @@
           "expect": "mouse"
         }
       }
+    },
+    {
+      "name": "ST clock",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/timing.st"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": "TIMING.TOS"
+      },
+      "checks": {
+        "clock": {
+          "setting": "clock",
+          "values": [
+            "8",
+            "16"
+          ],
+          "doneBy": 7200,
+          "ratio": 0.65,
+          "margin": 0.03,
+          "screens": [
+            "2b8663e9c93c26e5"
+          ]
+        }
+      }
     }
   ]
 }
