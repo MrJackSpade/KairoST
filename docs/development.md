@@ -10,18 +10,21 @@ shared\tools\build.ps1 -Install <adb serial>
 
 ## Host test
 
-The machine also builds for the host, without Android: build `core/` with CMake for the host, then run, under `shared\tools\run-limited.ps1`:
+The shared PC boot test runs the core on the host from `core/test/boot-tests.json`: run
+`shared\tools\test-core.ps1` (`-Test <name>` for some entries). `tools/make_timing_st.py` and
+`tools/make_hard_disk_test.py` write the test's own media under `core/test/st/`.
+
+`tools/tos_pass.py` boots the catalog's disks on EmuTOS and real TOS to find those that need the
+player's TOS. Its runner, `core/test/tos_pass_run.cpp`, builds for the host with `core/` (CMake,
+into `.build/host`) and runs under `shared\tools\run-limited.ps1`:
 
 ```
-boot_test <TOS image> <work folder> <seconds> [machine [media [runs [keys [country [memory KiB [startup program]]]]]]]
+tos_pass_run <TOS image> <work folder> <seconds> <machine> <floppy image> <keys>
 ```
 
-EmuTOS is in `third_party/emutos-1024k/etos1024k.img`. `media` is a floppy image or a program, or
-several separated by `|`, which the runs start in turn in one process, as the app starts one game
-after another. `keys` is a list of `frame:scancode` (or `frame:fire`) presses. Each run reports when
-its boot ends, a guest crash (a TOS bomb or EmuTOS panic), its sound peaks and whether it ends on the
-GEM desktop, and leaves its last CPU state (`cpu-<run>.txt`) and ST RAM (`ram-<run>.bin`) beside
-its frames.
+`keys` is a list of `frame:scancode` (or `frame:fire`) presses. It prints one JSON line with the
+sound's peaks, whether the guest crashed (a TOS bomb or EmuTOS panic), whether it ends on the GEM
+desktop and why the machine stopped, and leaves its last picture as `frame.bmp`.
 
 Hatari keeps its state in process-wide variables, so the core builds it as a library of its own
 (`kairost_hatari`) and loads a fresh copy of it for every machine (`core/hatari_library.h`): each

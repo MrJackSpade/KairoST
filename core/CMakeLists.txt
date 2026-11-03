@@ -153,7 +153,7 @@ if(ANDROID)
     target_link_options(kairost_hatari PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_LIST_DIR}/kairo/hatari.map")
     set_target_properties(kairost_hatari PROPERTIES LINK_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/kairo/hatari.map")
 elseif(WIN32)
-    # The DLL carries its own runtime, as boot_test does.
+    # The DLL carries its own runtime, as the host executables do.
     target_link_options(kairost_hatari PRIVATE -static)
 endif()
 
@@ -181,10 +181,12 @@ if(NOT ANDROID OR KAIROST_TOOLS)
     endif()
 endif()
 
+# The TOS pass's runner (test/tos_pass_run.cpp, tools/tos_pass.py). The boot tests are the shared
+# PC boot test's (shared/tools/test-core.ps1).
 if(NOT ANDROID)
-    add_executable(boot_test test/boot_test.cpp "${KAIRO_STATE_PATHS}")
-    target_link_libraries(boot_test PRIVATE kairost_core)
+    add_executable(tos_pass_run test/tos_pass_run.cpp "${KAIRO_STATE_PATHS}")
+    target_link_libraries(tos_pass_run PRIVATE kairost_core)
     if(WIN32)
-        target_link_options(boot_test PRIVATE -static)
+        target_link_options(tos_pass_run PRIVATE -static)
     endif()
 endif()

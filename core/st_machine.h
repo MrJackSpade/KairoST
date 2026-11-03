@@ -128,10 +128,6 @@ public:
     bool mouse_warp_done() const;
     // The keys the guest took from TOS's console and its AES calls (KairoSt_GuestInput).
     void guest_input(unsigned long &console_reads, unsigned long &aes_calls) const;
-    // For host diagnostics: the CPU's D0-D7 and A0-A7, PC and SR, and the guest's memory as the
-    // CPU sees it.
-    void cpu_state(uint32_t registers[16], uint32_t &pc, uint16_t &sr) const;
-    std::vector<uint8_t> read_memory(uint32_t address, uint32_t length) const;
 
 private:
     struct Impl;

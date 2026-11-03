@@ -760,20 +760,6 @@ static void KairoSt_GuestInput(unsigned long *console_reads, unsigned long *aes_
 	*aes_calls = kairost_aes_calls;
 }
 
-static void KairoSt_CpuState(uint32_t registers[16], uint32_t *pc, uint16_t *sr)
-{
-	for (int i = 0; i < 16; i++)
-		registers[i] = Regs[i];
-	*pc = M68000_GetPC();
-	*sr = M68000_GetSR();
-}
-
-static void KairoSt_ReadMemory(uint32_t address, uint8_t *out, uint32_t length)
-{
-	for (uint32_t i = 0; i < length; i++)
-		out[i] = STMemory_ReadByte(address + i);
-}
-
 static bool KairoSt_CreateFloppy(const char *path, int tracks, int sectors, int sides)
 {
 	return CreateBlankImage_CreateFile(path, tracks, sectors, sides, NULL);
@@ -809,8 +795,6 @@ const struct KairoStApi *KairoSt_Api(void)
 		.on_desktop = KairoSt_OnDesktop,
 		.caps_lock = KairoSt_CapsLock,
 		.guest_input = KairoSt_GuestInput,
-		.cpu_state = KairoSt_CpuState,
-		.read_memory = KairoSt_ReadMemory,
 		.create_floppy = KairoSt_CreateFloppy,
 	};
 	return &api;

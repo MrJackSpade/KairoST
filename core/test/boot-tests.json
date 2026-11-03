@@ -282,6 +282,11 @@
               "c7ce0247bc14a2e5"
             ]
           }
+        },
+        "stateDisks": {
+          "drive": 2,
+          "at": 900,
+          "swap": ""
         }
       }
     }

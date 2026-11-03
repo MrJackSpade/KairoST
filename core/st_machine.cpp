@@ -307,14 +307,4 @@ bool StMachine::guest_crashed() const { return impl_->hatari->guest_crashed(); }
 
 int StMachine::on_desktop() const { return impl_->hatari->on_desktop(); }
 
-void StMachine::cpu_state(uint32_t registers[16], uint32_t &pc, uint16_t &sr) const {
-    impl_->hatari->cpu_state(registers, &pc, &sr);
-}
-
-std::vector<uint8_t> StMachine::read_memory(uint32_t address, uint32_t length) const {
-    std::vector<uint8_t> bytes(length);
-    impl_->hatari->read_memory(address, bytes.data(), length);
-    return bytes;
-}
-
 } // namespace kairost

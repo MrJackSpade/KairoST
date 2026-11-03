@@ -4,14 +4,15 @@
 Usage: tos_pass.py <seconds> [--workers N]
 
 Boots every disk the library lists (each game's set entries and lone disks) on the host with the
-core's boot_test (.build/host/boot_test.exe, under shared/tools/run-limited.ps1) for <seconds> of
+core's TOS pass runner (core/test/tos_pass_run.cpp, built to .build/host/tos_pass_run.exe; run under
+shared/tools/run-limited.ps1) for <seconds> of
 guest time on EmuTOS, on the machine its catalog record asks for, and plays it the way a player
 starts a game: from 20 s on it presses Space and the joystick's fire button in turn, one every
 5 s, until 15 s before the end (PRESSES). A game that crashes only once it is started (3D Pool,
 KairoST#6) shows then.
 
 A disk fails a boot when the machine stops with an error, when the guest crashes (a TOS bomb or an
-EmuTOS panic, which boot_test reports), when it ends on the GEM desktop (boot_test tells by the
+EmuTOS panic, which the runner reports), when it ends on the GEM desktop (the runner tells by the
 process TOS runs: the game quit, or never started), or when it makes no sound before the first
 press and none in the run's last 10 s (a press makes TOS click, so the sound in between does not
 count).
@@ -45,6 +46,7 @@ import catalog_files
 EMUTOS = ROOT / "third_party/emutos-1024k/etos1024k.img"
 TOS = {"st": "tos104uk.img", "megast": "tos104uk.img", "ste": "tos162uk.img", "megaste": "tos206uk.img",
        "tt": "tos306uk.img", "falcon": "tos404.img"}
+RUNNER = ROOT / ".build/host/tos_pass_run.exe"
 OUT = ROOT / ".downloads/tos-pass"
 LIST = ROOT / "catalog/research/tos-disks-v1.json"
 # Disks that end on the GEM desktop on both systems: catalog_config names the program they start.
@@ -58,14 +60,14 @@ def broken(record):
     """Whether a disk's record shows it stopping or crashing on EmuTOS and on TOS."""
     tos = record.get("tos")
     return bool(tos) and all(result["error"] or result.get("crashed") for result in (record["emutos"], tos))
-# boot_test counts presses in frames; the machines run at 50 Hz (60 Hz for a US machine, whose
+# The runner counts presses in frames; the machines run at 50 Hz (60 Hz for a US machine, whose
 # presses then come a little sooner).
 FRAMES_PER_SECOND = 50
 SPACE = 0x39
 
 
 def presses(seconds):
-    """boot_test's <keys>: Space and fire in turn every 5 s from 20 s until 15 s before the end."""
+    """The runner's <keys>: Space and fire in turn every 5 s from 20 s until 15 s before the end."""
     items = []
     for number, second in enumerate(range(20, seconds - 15 + 1, 5)):
         items.append(f"{second * FRAMES_PER_SECOND}:{SPACE if number % 2 == 0 else 'fire'}")
@@ -109,25 +111,18 @@ def boot(tos, path, machine, seconds, work):
     for frame in work.glob("*.bmp"):
         frame.unlink()
     result = subprocess.run(["pwsh", "-NoProfile", "-File", str(ROOT / "shared/tools/run-limited.ps1"),
-                             str(ROOT / ".build/host/boot_test.exe"), str(tos), str(work), str(seconds), machine,
-                             str(path), "1", presses(seconds)],
+                             str(RUNNER), str(tos), str(work), str(seconds), machine, str(path), presses(seconds)],
                             capture_output=True, text=True, encoding="utf-8", errors="replace")
     lines = result.stdout.splitlines() + result.stderr.splitlines()
-    crashed = any(line.startswith("run 0: the guest crashed") for line in lines)
     for line in lines:
-        if line.startswith("run 0:") and " late peak " in line:
-            return {"earlyPeak": int(line.split(" early peak ")[1].split(",")[0]),
-                    "latePeak": int(line.split(" late peak ")[1].split(",")[0]), "crashed": crashed,
-                    "desktop": line.split(" desktop ")[1].split(",")[0] == "yes", "error": None}
-        if line.startswith("run 0: could not start") or line.startswith("run 0: stopped after"):
-            return {"earlyPeak": 0, "latePeak": 0, "crashed": crashed, "desktop": False,
-                    "error": line.split(": ", 2)[-1]}
+        if line.startswith("{"):
+            return json.loads(line)
     # A crash of the core is that disk's result: it is listed at the end for debugging.
     crash = next((int(line.split()[1].rstrip(",")) for line in lines if line.startswith("exit -")), None)
     if crash is not None:
-        return {"earlyPeak": 0, "latePeak": 0, "crashed": crashed, "desktop": False,
+        return {"earlyPeak": 0, "latePeak": 0, "crashed": False, "desktop": False,
                 "error": f"crashed with 0x{crash & 0xffffffff:08X}"}
-    raise RuntimeError(f"boot_test gave no result for {path} on {tos}:\n" + "\n".join(lines[-20:]))
+    raise RuntimeError(f"tos_pass_run gave no result for {path} on {tos}:\n" + "\n".join(lines[-20:]))
 
 
 def failure(result, seconds):
@@ -172,7 +167,7 @@ def main():
                 tos = ROOT / "bios/retrobios" / TOS[machine]
                 record["tos"] = {"image": tos.name, **boot(tos, path, machine, args.seconds, work)}
                 if not failure(record["tos"], args.seconds):
-                    (work / "frame-0.bmp").replace(OUT / f"{content_id.split(':')[1]}.bmp")
+                    (work / "frame.bmp").replace(OUT / f"{content_id.split(':')[1]}.bmp")
         finally:
             with lock:
                 free.append(work)
