@@ -35,6 +35,11 @@ def code():
 
 
 def floppy(name, data):
+    return floppy_files({name: data})
+
+
+def floppy_files(files):
+    """A 720 KB FAT12 floppy holding the files ({8.3 name: bytes}) in its root, one after another."""
     sector = 512
     image = bytearray(1440 * sector)
     # Boot sector: 512-byte sectors, 2 per cluster, 1 reserved, 2 FATs, 112 root entries,
@@ -52,22 +57,34 @@ def floppy(name, data):
     boot[24:26] = (9).to_bytes(2, "little")
     boot[26:28] = (2).to_bytes(2, "little")
     image[0:sector] = boot
-    clusters = (len(data) + 2 * sector - 1) // (2 * sector)
-    if clusters != 1:
-        raise SystemExit(f"{name} takes {clusters} clusters, not 1")
-    # Both FATs: media, then cluster 2 the file's last.
+    # FAT12 entries: 0 and 1 the media, then each file's clusters chained, its last FFF.
+    entries = [0xFF9, 0xFFF]
+    cluster_bytes = 2 * sector
+    for index, (name, data) in enumerate(files.items()):
+        first = len(entries)
+        count = max(1, (len(data) + cluster_bytes - 1) // cluster_bytes)
+        entries += [first + n + 1 for n in range(count - 1)] + [0xFFF]
+        # Root directory (sector 7).
+        stem, ext = name.split(".")
+        entry = bytearray(32)
+        entry[0:11] = (stem.ljust(8) + ext.ljust(3)).encode("ascii")
+        entry[11] = 0x20
+        entry[26:28] = first.to_bytes(2, "little")
+        entry[28:32] = len(data).to_bytes(4, "little")
+        at = 7 * sector + 32 * index
+        image[at:at + 32] = entry
+        # Data starts at sector 14, cluster 2.
+        start = 14 * sector + (first - 2) * cluster_bytes
+        image[start:start + len(data)] = data
+    if len(entries) * 3 // 2 + 1 > 3 * sector:
+        raise SystemExit(f"{len(entries)} clusters do not fit 3 FAT sectors")
+    fat_bytes = bytearray(3 * sector)
+    for n in range(0, len(entries), 2):
+        low = entries[n]
+        high = entries[n + 1] if n + 1 < len(entries) else 0
+        fat_bytes[n * 3 // 2:n * 3 // 2 + 3] = bytes([low & 0xFF, (low >> 8) | ((high & 0xF) << 4), high >> 4])
     for fat in (1, 4):
-        image[fat * sector:fat * sector + 5] = bytes([0xF9, 0xFF, 0xFF, 0xFF, 0x0F])
-    # Root directory (sector 7): the file at cluster 2.
-    stem, ext = name.split(".")
-    entry = bytearray(32)
-    entry[0:11] = (stem.ljust(8) + ext.ljust(3)).encode("ascii")
-    entry[11] = 0x20
-    entry[26:28] = (2).to_bytes(2, "little")
-    entry[28:32] = len(data).to_bytes(4, "little")
-    image[7 * sector:7 * sector + 32] = entry
-    # Data (sector 14): cluster 2.
-    image[14 * sector:14 * sector + len(data)] = data
+        image[fat * sector:(fat + 3) * sector] = fat_bytes
     return bytes(image)
 
 

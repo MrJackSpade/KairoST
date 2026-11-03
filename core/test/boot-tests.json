@@ -182,6 +182,52 @@
           ]
         }
       }
+    },
+    {
+      "name": "ST hard disk",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/hdtools.st",
+        "",
+        "app:core/test/st/hdtest.img"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "hardDisk": {
+          "settle": 900,
+          "write": {
+            "launch": {
+              "settings": {
+                "program": "WRITE.TOS"
+              }
+            }
+          },
+          "read": {
+            "launch": {
+              "settings": {
+                "program": "READ.TOS"
+              }
+            },
+            "answerBy": 1800,
+            "screens": [
+              "c7ce0247bc14a2e5"
+            ]
+          }
+        }
+      }
     }
   ]
 }
