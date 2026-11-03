@@ -77,7 +77,6 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
 
     private val tosDirectory by lazy { File(filesDir, "tos") }
 
-    private val tosParts = StFirmware.tosParts
     override val firmwareSets by lazy { StFirmware.sets(tosDirectory) }
 
     /** Every TOS image the player has given the app, which a game can start on by name. */
@@ -100,8 +99,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     /** The player's TOS for the game's model, which "Your TOS for its model" starts. */
     override fun ownFirmwareInstalled(option: MachineOption, values: Map<String, String>): Boolean {
         check(option.id == StCatalog.system.id) { "${option.id} has no firmware of the player's" }
-        val model = StTos.forMachine(values[StCatalog.machine.id] ?: StCatalog.machine.default)
-        return File(tosDirectory, tosParts.getValue(model).name).isFile
+        return StFirmware.ownTos(values[StCatalog.machine.id] ?: StCatalog.machine.default, tosDirectory).isFile
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,13 +116,9 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         // or the image the game names.
         tosLibrary.mirrorRows()
         val system = options.getValue(StCatalog.system.id)
+        StFirmware.missingForStart(options, tosDirectory)?.let { error(text(it)) }
         if (system == StCatalog.OWN_TOS) {
-            val model = StTos.forMachine(options.getValue(StCatalog.machine.id))
-            val part = tosParts.getValue(model)
-            check(File(tosDirectory, part.name).isFile) {
-                getString(R.string.own_tos_missing, text(part.label))
-            }
-            options[StCatalog.system.id] = part.name
+            options[StCatalog.system.id] = StFirmware.ownTos(options.getValue(StCatalog.machine.id), tosDirectory).name
         } else if (system != StCatalog.EMUTOS) {
             val file = checkNotNull(tosLibrary.file(system)) {
                 getString(R.string.tos_image_missing)
