@@ -50,19 +50,7 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override val tapClickMillis = 100L
     override val artworkDownloadsEnabled: Boolean get() = resources.getBoolean(R.bool.catalog_art_download_enabled)
 
-    /**
-     * Floppy disk images in the formats Hatari reads, hard disk images (st_machine.h Config.hard_disk),
-     * and programs, which run from their folder as drive C (Config.program).
-     */
-    private val format = DiskImageLibrary.Format(
-        kinds = listOf("st", "msa", "stx", "dim").associateWith { "fd" } +
-            listOf("img", "hd").associateWith { "hd" } +
-            listOf("prg", "tos", "ttp", "app", "gtp").associateWith { "prg" },
-        labels = mapOf("fd" to UiText.res(FrontendR.string.kairo_floppy_disk),
-            "hd" to UiText.res(FrontendR.string.kairo_hard_disk), "prg" to UiText.res(FrontendR.string.kairo_program)),
-        maxBytes = mapOf("fd" to 16L * 1024 * 1024, "hd" to 4L * 1024 * 1024 * 1024, "prg" to 16L * 1024 * 1024),
-        guestName = "Atari ST",
-        programs = setOf("prg"))
+    private val format = StMedia.format
     private val images by lazy {
         // 3: archives are read again for the hard disks in them (2: for the programs).
         DiskImageLibrary(this, format, DiskImageLibrary.Cache(mediaFormatsVersion = 3))
@@ -89,12 +77,8 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
 
     private val tosDirectory by lazy { File(filesDir, "tos") }
 
-    /** The player's TOS for each model, by the version its header names (StTos). */
-    private val tosParts = StTos.Model.entries.associateWith { model ->
-        FirmwareSet.Part(model.file, UiText.res(R.string.tos_for_model, model.label),
-            UiText.res(FrontendR.string.kairo_firmware_part, model.file, UiText.res(model.description)), setOf(model.file), false, sizes = setOf(model.bytes), identifies = { header -> StTos.rank(header, model) })
-    }
-    override val firmwareSets by lazy { listOf(UiText.fixed("TOS") to FirmwareSet(tosDirectory, tosParts.values.toList())) }
+    private val tosParts = StFirmware.tosParts
+    override val firmwareSets by lazy { StFirmware.sets(tosDirectory) }
 
     /** Every TOS image the player has given the app, which a game can start on by name. */
     private val tosLibrary by lazy { TosLibrary(this, tosDirectory) }
