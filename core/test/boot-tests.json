@@ -114,6 +114,62 @@
               "bit": 0
             }
           ]
+        },
+        "directTap": {
+          "frames": 1800,
+          "warpBy": 600,
+          "tolerance": 0,
+          "ownPointer": true,
+          "points": [
+            {
+              "x": 100,
+              "y": 32,
+              "screens": [
+                "b4e282acfd5eb3c5"
+              ],
+              "selectedBy": 60
+            },
+            {
+              "x": 732,
+              "y": 32,
+              "screens": [
+                "8586332078a3d085"
+              ],
+              "selectedBy": 60
+            },
+            {
+              "x": 100,
+              "y": 226,
+              "screens": [
+                "b823c67f8aade1e5"
+              ],
+              "selectedBy": 60
+            },
+            {
+              "x": 732,
+              "y": 226,
+              "screens": [
+                "d58cc2748c67a125"
+              ],
+              "selectedBy": 60
+            },
+            {
+              "x": 416,
+              "y": 128,
+              "screens": [
+                "0e59621eeca36205"
+              ],
+              "selectedBy": 60
+            },
+            {
+              "x": 167,
+              "y": 57,
+              "screens": [
+                "1583e434b331c505"
+              ],
+              "selectedBy": 60
+            }
+          ]
         }
       }
     },
