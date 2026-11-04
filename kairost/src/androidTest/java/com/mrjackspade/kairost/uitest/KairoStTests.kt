@@ -46,6 +46,9 @@ object KairoStApp : AppUnderTest() {
     // Gemcell, a GEM card game, reads the mouse through the AES; Goal! the keyboard and joystick (Kairo#104).
     override val mouseGame = "Gemcell"
     override val keyboardGame = "Goal!"
+    // Goal! runs on from its boot into the CYNIX intro, which moves all over the screen: its picture
+    // never holds for a state to be saved on. Gemcell's table waits for the player.
+    override val stateGame = "Gemcell"
     override val searchTerm = "Goal"
     override val arrowKeys = listOf(StKeys.UP, StKeys.DOWN, StKeys.LEFT, StKeys.RIGHT)
     override val returnKey = StKeys.RETURN
