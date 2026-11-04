@@ -43,6 +43,9 @@ object KairoStApp : AppUnderTest() {
     }
     override val bootGameFile = "games/GOAL.MSA"
     override val otherGame = "OOZE"
+    // Gemcell, a GEM card game, reads the mouse through the AES; Goal! the keyboard and joystick (Kairo#104).
+    override val mouseGame = "Gemcell"
+    override val keyboardGame = "Goal!"
     override val searchTerm = "Goal"
     override val arrowKeys = listOf(StKeys.UP, StKeys.DOWN, StKeys.LEFT, StKeys.RIGHT)
     override val returnKey = StKeys.RETURN

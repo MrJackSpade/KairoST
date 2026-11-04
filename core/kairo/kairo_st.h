@@ -123,8 +123,9 @@ struct KairoStApi {
 	/* Whether Caps Lock is on, as TOS keeps it: the ST keyboard has no lamp, TOS its kbshift. */
 	bool (*caps_lock)(void);
 	/* How the guest reads its input, for Auto touch mode: the keys it took from TOS's console
-	 * (Bconin(2)), and its calls to the AES, which only a GEM program makes. */
-	void (*guest_input)(unsigned long *console_reads, unsigned long *aes_calls);
+	 * (Bconin(2)), its calls to the AES, which only a GEM program makes, and whether it waits in its
+	 * last AES call for the mouse (an evnt_multi with a button or mouse event, KairoST#91). */
+	void (*guest_input)(unsigned long *console_reads, unsigned long *aes_calls, bool *mouse_wait);
 	/* Writes a new blank floppy image at path (.st), formatted and empty, as Hatari's own "create
 	 * blank image" dialog makes one: tracks, sectors per track and sides. Needs no running machine,
 	 * and path must not exist yet. False when Hatari could not write it. */

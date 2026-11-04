@@ -753,11 +753,13 @@ static bool KairoSt_CapsLock(void)
 }
 
 extern unsigned long kairost_console_reads, kairost_aes_calls;
+extern bool kairost_aes_mouse_wait;
 
-static void KairoSt_GuestInput(unsigned long *console_reads, unsigned long *aes_calls)
+static void KairoSt_GuestInput(unsigned long *console_reads, unsigned long *aes_calls, bool *mouse_wait)
 {
 	*console_reads = kairost_console_reads;
 	*aes_calls = kairost_aes_calls;
+	*mouse_wait = kairost_aes_mouse_wait;
 }
 
 static bool KairoSt_CreateFloppy(const char *path, int tracks, int sectors, int sides)

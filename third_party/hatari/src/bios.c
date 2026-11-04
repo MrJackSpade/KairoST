@@ -130,6 +130,8 @@ void Bios_Info(FILE *fp, uint32_t bShowOpcodes)
  */
 /* KairoST: Bconin(2) calls (KairoSt_GuestInput). */
 unsigned long kairost_console_reads;
+/* KairoST: cpu/newcpu.c's: a key taken from the console ends a wait for the mouse (KairoST#91). */
+extern bool kairost_aes_mouse_wait;
 
 bool Bios(void)
 {
@@ -143,7 +145,10 @@ bool Bios(void)
 
 	/* KairoST: a key taken from the console, for Auto touch mode */
 	if (BiosCall == 0x2 && STMemory_ReadWord(Params) == 2)
+	{
 		kairost_console_reads++;
+		kairost_aes_mouse_wait = false;
+	}
 
 	/* Intercept? */
 	switch(BiosCall)

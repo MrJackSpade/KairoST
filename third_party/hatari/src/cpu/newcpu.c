@@ -3773,6 +3773,21 @@ kludge_me_do:
 
 /* KairoST: AES calls (KairoSt_GuestInput). */
 unsigned long kairost_aes_calls;
+/* KairoST: whether the last AES call waits for the mouse (KairoST#91): a GEM program waiting for
+ * input makes one call and stays in it, so its calls alone stop. Cleared when a program starts
+ * (Pexec) and when the guest takes a key from the console (bios.c). */
+bool kairost_aes_mouse_wait;
+
+/* KairoST: evnt_button (21), evnt_mouse (22), or evnt_multi (25) with MU_BUTTON, MU_M1 or MU_M2,
+ * from the AES parameter block at D1: its control array's opcode and its int_in's flags. */
+static bool kairost_aes_waits_for_mouse(uint32_t pb)
+{
+	const uint32_t control = STMemory_ReadLong(pb);
+	const uint16_t op = STMemory_ReadWord(control);
+	if (op == 21 || op == 22)
+		return true;
+	return op == 25 && (STMemory_ReadWord(STMemory_ReadLong(pb + 8)) & (0x2 | 0x4 | 0x8)) != 0;
+}
 
 // address = format $2 stack frame address field
 static void ExceptionX (int nr, uaecptr address, uaecptr oldpc)
@@ -3796,12 +3811,17 @@ static void ExceptionX (int nr, uaecptr address, uaecptr oldpc)
 	}
 
 #ifdef WINUAE_FOR_HATARI
+	/* KairoST: a program starts (GEMDOS Pexec), and waits for nothing yet (KairoST#91). */
+	if (nr == 0x21 && STMemory_ReadWord(m68k_areg(regs, 7)) == 0x4B)
+		kairost_aes_mouse_wait = false;
 	/* Handle Hatari GEM and BIOS traps */
 	if (nr == 0x22) {
 		/* KairoST: an AES call, for Auto touch mode (KairoSt_GuestInput). TOS reads only D0's
 		 * low word (GEMcell leaves other bits in the high word, KairoST#90). */
-		if ((m68k_dreg(regs, 0) & 0xFFFF) == 0xC8)
+		if ((m68k_dreg(regs, 0) & 0xFFFF) == 0xC8) {
 			kairost_aes_calls++;
+			kairost_aes_mouse_wait = kairost_aes_waits_for_mouse(m68k_dreg(regs, 1));
+		}
 		/* Intercept VDI & AES exceptions (Trap #2) */
 		if (bVdiAesIntercept && VDI_AES_Entry()) {
 			/* Set 'PC' to address of 'VDI_OPCODE' illegal instruction.

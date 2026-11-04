@@ -289,6 +289,60 @@
           "swap": ""
         }
       }
+    },
+    {
+      "name": "Gemcell on TOS 1.04, Auto from frame 1800",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "games/Gemcell v1.00 (19xx)(Weets, Holger)(PD)[monochrome]/Gemcell v1.00 (19xx)(Weets, Holger)(PD)[monochrome].st"
+      ],
+      "settings": {
+        "tos": "tos104uk.img",
+        "machine": "st",
+        "clock": "auto",
+        "memory": "1024",
+        "monitor": "mono",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "guestInput": {
+          "from": 1800,
+          "frames": 2400,
+          "expect": "mouse"
+        }
+      }
+    },
+    {
+      "name": "TOS 1.04 desktop, Auto from frame 1800",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [],
+      "settings": {
+        "tos": "tos104uk.img",
+        "machine": "st",
+        "clock": "auto",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": ""
+      },
+      "checks": {
+        "guestInput": {
+          "from": 1800,
+          "frames": 2400,
+          "expect": "mouse"
+        }
+      }
     }
   ]
 }

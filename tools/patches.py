@@ -279,23 +279,42 @@ HATARI_GUEST_INPUT = [
     ('hatari/src/bios.c',
      'bool Bios(void)\n{\n',
      '/* KairoST: Bconin(2) calls (KairoSt_GuestInput). */\n'
-     'unsigned long kairost_console_reads;\n\n'
+     'unsigned long kairost_console_reads;\n'
+     '/* KairoST: cpu/newcpu.c\'s: a key taken from the console ends a wait for the mouse (KairoST#91). */\n'
+     'extern bool kairost_aes_mouse_wait;\n\n'
      'bool Bios(void)\n{\n'),
     ('hatari/src/bios.c',
      '\t/* Get call */\n\tParams = Regs[REG_A7];\n\tBiosCall = STMemory_ReadWord(Params);\n\tParams += SIZE_WORD;\n',
      '\t/* Get call */\n\tParams = Regs[REG_A7];\n\tBiosCall = STMemory_ReadWord(Params);\n\tParams += SIZE_WORD;\n\n'
      '\t/* KairoST: a key taken from the console, for Auto touch mode */\n'
      '\tif (BiosCall == 0x2 && STMemory_ReadWord(Params) == 2)\n'
-     '\t\tkairost_console_reads++;\n'),
+     '\t{\n\t\tkairost_console_reads++;\n\t\tkairost_aes_mouse_wait = false;\n\t}\n'),
     ('hatari/src/cpu/newcpu.c',
      '\t/* Handle Hatari GEM and BIOS traps */\n\tif (nr == 0x22) {\n',
+     '\t/* KairoST: a program starts (GEMDOS Pexec), and waits for nothing yet (KairoST#91). */\n'
+     '\tif (nr == 0x21 && STMemory_ReadWord(m68k_areg(regs, 7)) == 0x4B)\n'
+     '\t\tkairost_aes_mouse_wait = false;\n'
      '\t/* Handle Hatari GEM and BIOS traps */\n\tif (nr == 0x22) {\n'
      '\t\t/* KairoST: an AES call, for Auto touch mode (KairoSt_GuestInput). TOS reads only D0\'s\n'
      '\t\t * low word (GEMcell leaves other bits in the high word, KairoST#90). */\n'
-     '\t\tif ((m68k_dreg(regs, 0) & 0xFFFF) == 0xC8)\n\t\t\tkairost_aes_calls++;\n'),
+     '\t\tif ((m68k_dreg(regs, 0) & 0xFFFF) == 0xC8) {\n'
+     '\t\t\tkairost_aes_calls++;\n'
+     '\t\t\tkairost_aes_mouse_wait = kairost_aes_waits_for_mouse(m68k_dreg(regs, 1));\n'
+     '\t\t}\n'),
     ('hatari/src/cpu/newcpu.c',
      '// address = format $2 stack frame address field\nstatic void ExceptionX (int nr, uaecptr address, uaecptr oldpc)\n',
-     '/* KairoST: AES calls (KairoSt_GuestInput). */\nunsigned long kairost_aes_calls;\n\n'
+     '/* KairoST: AES calls (KairoSt_GuestInput). */\nunsigned long kairost_aes_calls;\n'
+     '/* KairoST: whether the last AES call waits for the mouse (KairoST#91): a GEM program waiting for\n'
+     ' * input makes one call and stays in it, so its calls alone stop. Cleared when a program starts\n'
+     ' * (Pexec) and when the guest takes a key from the console (bios.c). */\n'
+     'bool kairost_aes_mouse_wait;\n\n'
+     '/* KairoST: evnt_button (21), evnt_mouse (22), or evnt_multi (25) with MU_BUTTON, MU_M1 or MU_M2,\n'
+     ' * from the AES parameter block at D1: its control array\'s opcode and its int_in\'s flags. */\n'
+     'static bool kairost_aes_waits_for_mouse(uint32_t pb)\n{\n'
+     '\tconst uint32_t control = STMemory_ReadLong(pb);\n'
+     '\tconst uint16_t op = STMemory_ReadWord(control);\n'
+     '\tif (op == 21 || op == 22)\n\t\treturn true;\n'
+     '\treturn op == 25 && (STMemory_ReadWord(STMemory_ReadLong(pb + 8)) & (0x2 | 0x4 | 0x8)) != 0;\n}\n\n'
      '// address = format $2 stack frame address field\nstatic void ExceptionX (int nr, uaecptr address, uaecptr oldpc)\n'),
 ]
 

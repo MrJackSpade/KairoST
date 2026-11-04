@@ -33,13 +33,26 @@ public:
     // Bit 0 Caps, as NativeMachine lists it (MainActivity).
     int locks() override { return machine_->locks(); }
     // Auto touch mode (Kairo#78): a key taken from TOS's console is the keyboard; an AES call, made
-    // only by a GEM program, the mouse.
+    // only by a GEM program, the mouse. A GEM program waiting in the AES for the mouse makes no more
+    // calls while it waits, and TOS's own desktop calls its AES without the trap: either has its
+    // mouse set up (KairoST#91).
     bool guest_input(GuestInput &input) override {
         unsigned long console_reads = 0, aes_calls = 0;
-        machine_->guest_input(console_reads, aes_calls);
+        bool mouse_wait = false;
+        machine_->guest_input(console_reads, aes_calls, mouse_wait);
         input.keyboard_waits = console_reads;
         input.mouse_reads = aes_calls;
+        // TOS's desktop once the boot is over: a boot sector's loader runs as TOS's own process too.
+        input.mouse_enabled = mouse_wait || (!machine_->booting() && machine_->on_desktop() == 1);
         return true;
+    }
+    // For tests and diagnostics: what Auto touch mode decides from (guest_input).
+    std::string details() override {
+        unsigned long console_reads = 0, aes_calls = 0;
+        bool mouse_wait = false;
+        machine_->guest_input(console_reads, aes_calls, mouse_wait);
+        return "input.console=" + std::to_string(console_reads) + ";input.aes=" + std::to_string(aes_calls) +
+               ";input.mouseWait=" + (mouse_wait ? "1" : "0") + ";input.desktop=" + std::to_string(machine_->on_desktop());
     }
     std::string error() override { return error_; }
     // The emulator's reason, which save_state and load_state leave in error_.

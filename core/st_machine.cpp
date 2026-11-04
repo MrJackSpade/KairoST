@@ -197,8 +197,8 @@ bool StMachine::loading() const { return impl_->hatari->loading(); }
 
 int StMachine::locks() const { return impl_->hatari->caps_lock() ? 1 : 0; }
 
-void StMachine::guest_input(unsigned long &console_reads, unsigned long &aes_calls) const {
-    impl_->hatari->guest_input(&console_reads, &aes_calls);
+void StMachine::guest_input(unsigned long &console_reads, unsigned long &aes_calls, bool &mouse_wait) const {
+    impl_->hatari->guest_input(&console_reads, &aes_calls, &mouse_wait);
 }
 
 double StMachine::frame_seconds() const { return impl_->hatari->frame_seconds(); }

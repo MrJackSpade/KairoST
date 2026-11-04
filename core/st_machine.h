@@ -126,8 +126,9 @@ public:
     // past the top-left corner and the counts from there (kairo::RelativeWarp).
     void mouse_warp(int x, int y);
     bool mouse_warp_done() const;
-    // The keys the guest took from TOS's console and its AES calls (KairoSt_GuestInput).
-    void guest_input(unsigned long &console_reads, unsigned long &aes_calls) const;
+    // The keys the guest took from TOS's console, its AES calls, and whether its last AES call waits
+    // for the mouse (KairoSt_GuestInput).
+    void guest_input(unsigned long &console_reads, unsigned long &aes_calls, bool &mouse_wait) const;
 
 private:
     struct Impl;
