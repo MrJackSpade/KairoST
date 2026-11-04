@@ -16,35 +16,13 @@ from make_timing_st import floppy_files
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "shared/tools"))
 from fat_disk import mbr_fat16  # noqa: E402
+from m68k_assembler import Assembler  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-class Program:
-    """68000 code with labels, assembled into a GEMDOS program (no relocations: PC-relative only)."""
-
-    def __init__(self):
-        self.code = bytearray()
-        self.labels = {}
-        self.fixups = []  # (offset of the displacement word, label): disp = label - offset
-
-    def emit(self, *words):
-        for word in words:
-            self.code += word.to_bytes(2, "big")
-
-    def pea(self, label):
-        self.emit(0x487A)
-        self.fixups.append((len(self.code), label))
-        self.emit(0)
-
-    def label(self, name):
-        self.labels[name] = len(self.code)
-
-    def data(self, name, data):
-        self.label(name)
-        self.code += data
-        if len(self.code) % 2:
-            self.code += b"\0"
+class Program(Assembler):
+    """A GEMDOS program from the shared 68000 assembler (no relocations: PC-relative only)."""
 
     def gemdos(self, function, stack):
         self.emit(0x3F3C, function)  # move.w #function, -(sp)
@@ -56,9 +34,7 @@ class Program:
             self.emit(0x4FEF, stack)                # lea stack(sp), sp
 
     def build(self):
-        for offset, label in self.fixups:
-            self.code[offset:offset + 2] = (self.labels[label] - offset).to_bytes(2, "big", signed=True)
-        text = bytes(self.code)
+        text = super().build()
         header = (0x601A).to_bytes(2, "big") + len(text).to_bytes(4, "big") + bytes(4 * 4) + bytes(4) + bytes(2)
         return header + text + bytes(4)
 
