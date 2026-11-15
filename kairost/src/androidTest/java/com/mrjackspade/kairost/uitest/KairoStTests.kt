@@ -50,7 +50,6 @@ object KairoStApp : AppUnderTest() {
     // never holds for a state to be saved on. Gemcell's table waits for the player.
     override val stateGame = "Gemcell"
     override val searchTerm = "Goal"
-    override val arrowKeys = listOf(StKeys.UP, StKeys.DOWN, StKeys.LEFT, StKeys.RIGHT)
     override val returnKey = StKeys.RETURN
     override val spaceKey = StKeys.SPACE
     override val mediaSwap = MediaSwap("Goal!", "Drive B", "OOZE", filler = "st")
