@@ -7,6 +7,7 @@
 
 #include "hatari_library.h"
 #include "kairo/emulator_turns.h"
+#include "kairo/midi_bytes.h"
 #include "kairo/relative_warp.h"
 #include "kairo/state_paths.h"
 
@@ -44,10 +45,12 @@ struct Session {
         return fatal.empty() ? std::string("The machine stopped") : fatal;
     }
 
-    // Ends Hatari's thread: asks it to quit and lets it run to the end.
+    // Ends Hatari's thread: asks it to quit and lets it run to the end. What the guest left open (a SysEx
+    // without its end) then goes, and the next machine starts with no running status.
     void stop() {
         if (!turns.ended()) hatari->quit();
         turns.finish();
+        if (host.midi_byte) kairo_midi_out_flush();
     }
 };
 
@@ -64,6 +67,9 @@ void host_fatal(void *context, const char *message) {
 // logs are read. Error level, as some devices keep no other.
 // The frontend knows where each of the game's files is now while it loads a state (kairo/state_paths.h).
 const char *host_state_path(void *, const char *recorded) { return kairo_state_path(recorded); }
+
+// The guest's MIDI out (Config::midi_port), on Hatari's thread.
+void host_midi_byte(void *, uint8_t byte) { kairo_midi_out_byte(byte); }
 
 void host_notice(void *, const char *message) {
 #ifdef __ANDROID__
@@ -155,7 +161,8 @@ std::unique_ptr<StMachine> StMachine::create(const Config &config, std::string &
     state->hatari = &library->api();
     state->library = std::move(library);
     state->host = {state, host_vbl, host_fatal, host_notice, host_state_path,
-                   config.seed ? config.seed : static_cast<unsigned int>(std::time(nullptr))};
+                   config.seed ? config.seed : static_cast<unsigned int>(std::time(nullptr)),
+                   config.midi_port ? host_midi_byte : nullptr};
     // Hatari's first VBL: the machine is up.
     const bool up = state->turns.start([state, args = std::move(args), home = config.home, start = config.on_thread_start] {
         if (start) start();

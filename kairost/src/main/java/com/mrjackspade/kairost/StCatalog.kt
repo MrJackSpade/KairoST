@@ -83,7 +83,9 @@ object StCatalog : LayeredGameCatalog.Schema {
     val system = system()
 
     val skipMemoryCheck = MachineOption.skipMemoryCheck()
-    val options = listOf(machine, clock, memory, monitor, region, system, skipMemoryCheck)
+    /** The MIDI port's output: nowhere, or the port picked under Configurations (KairoST#93). */
+    val midiOut = MachineOption.midiOut()
+    val options = listOf(machine, clock, memory, monitor, region, system, skipMemoryCheck, midiOut)
 
     /** The program setting's catalog place: `launch.program`. */
     const val PROGRAM = "program"

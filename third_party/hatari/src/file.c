@@ -27,6 +27,10 @@ const char File_fileid[] = "Hatari file.c";
 
 #include "dialog.h"
 #include "file.h"
+
+#if defined(__ANDROID__)
+extern FILE *Kairo_OpenTempFile(void); /* KairoST */
+#endif
 #include "str.h"
 #include "zip.h"
 
@@ -1105,7 +1109,11 @@ FILE *File_OpenTempFile(char **psFileName)
 	FILE *fh;
 	char *psTmpName = NULL;
 
+#if defined(__ANDROID__)
+	fh = Kairo_OpenTempFile(); /* KairoST: tmpfile() writes /data/local/tmp */
+#else
 	fh = tmpfile();            /* Open temporary file */
+#endif
 
 #if defined(WIN32)
 	if (!fh)

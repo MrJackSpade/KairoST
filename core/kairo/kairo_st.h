@@ -48,6 +48,9 @@ struct KairoStHost {
 	/* The seed of Hatari's random numbers (the floppy's index pulse, keyboard timings): the app
 	 * gives the time, a measurement a fixed seed so that two runs are the same. */
 	unsigned int seed;
+	/* Each byte the guest writes to the MIDI port (the ACIA's data register), on Hatari's thread; NULL when
+	 * the game sends its MIDI nowhere (KairoST#93). */
+	void (*midi_byte)(void *context, uint8_t byte);
 };
 
 struct KairoStApi {

@@ -18,7 +18,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "profile": {
@@ -46,7 +47,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "profile": {
@@ -73,7 +75,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "profile": {

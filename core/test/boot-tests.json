@@ -18,7 +18,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "boot": {
@@ -67,7 +68,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "boot": {
@@ -96,7 +98,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "boot": {
@@ -191,7 +194,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "boot": {
@@ -221,7 +225,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": "TIMING.TOS"
+        "program": "TIMING.TOS",
+        "midiOut": "none"
       },
       "checks": {
         "clock": {
@@ -259,7 +264,8 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "hardDisk": {
@@ -308,7 +314,8 @@
         "monitor": "mono",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "guestInput": {
@@ -334,13 +341,79 @@
         "monitor": "rgb",
         "region": "uk",
         "skipMemoryCheck": "on",
-        "program": ""
+        "program": "",
+        "midiOut": "none"
       },
       "checks": {
         "guestInput": {
           "from": 1800,
           "frames": 2400,
           "expect": "mouse"
+        }
+      }
+    },
+    {
+      "name": "ST MIDI out",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/midi.st"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": "MIDI.TOS",
+        "midiOut": "port"
+      },
+      "checks": {
+        "midiOut": {
+          "frames": 1800,
+          "messages": [
+            "F0 7E 7F 09 01 F7",
+            "C1 05",
+            "91 3C 64",
+            "3C 00",
+            "3E 64",
+            "F8",
+            "B1 07 7F",
+            "81 3E 00"
+          ]
+        }
+      }
+    },
+    {
+      "name": "ST MIDI out off",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/midi.st"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": "MIDI.TOS",
+        "midiOut": "none"
+      },
+      "checks": {
+        "midiOut": {
+          "frames": 1800,
+          "messages": []
         }
       }
     }

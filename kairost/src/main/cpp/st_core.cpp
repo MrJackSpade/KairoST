@@ -144,6 +144,12 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
         return nullptr;
     }
     config.skip_memory_check = skip == "on";
+    const std::string &midi = launch.settings.at("midiOut");
+    if (midi != "none" && midi != "port") {
+        error = "MIDI out is \"" + midi + "\", not none or port";
+        return nullptr;
+    }
+    config.midi_port = midi == "port";
     // The program on drive A that TOS starts, "" for the automatic choice (MainActivity: the game's
     // Startup program setting).
     config.floppy_program = launch.settings.at("program");

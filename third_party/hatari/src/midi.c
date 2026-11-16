@@ -35,6 +35,8 @@ const char Midi_fileid[] = "Hatari midi.c";
 #include "acia.h"
 #include "video.h"
 
+extern void Kairo_MidiOutByte(uint8_t byte); /* KairoST */
+
 
 #define ACIA_SR_INTERRUPT_REQUEST  0x80
 #define ACIA_SR_TX_EMPTY           0x02
@@ -271,6 +273,8 @@ void Midi_Data_WriteByte(void)
 	MidiStatusRegister &= ~ACIA_SR_TX_EMPTY;
 
 	MIDI_UpdateIRQ ();
+
+	Kairo_MidiOutByte(nTxDataByte); /* KairoST */
 
 	if (!ConfigureParams.Midi.bEnableMidi)
 		return;

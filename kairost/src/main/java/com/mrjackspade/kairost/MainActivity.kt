@@ -64,6 +64,8 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
         coreBlankDisk("floppy-ss", UiText.res(FrontendR.string.kairo_blank_floppy, "360 KB · SS"), "st"),
         coreBlankDisk("floppy-ds", UiText.res(FrontendR.string.kairo_blank_floppy, "720 KB · DS"), "st"),
         coreBlankDisk("floppy-hd", UiText.res(FrontendR.string.kairo_blank_floppy, "1.44 MB · HD"), "st"))
+    // A game set to the MIDI port sends its MIDI music to the port picked under Configurations (KairoST#93).
+    override val guestMidiOut = true
     override val machineOptions = StCatalog.options.map { option ->
         if (option.id == StCatalog.system.id) StCatalog.system(::tosChoices, ::tosActions) else option
     }

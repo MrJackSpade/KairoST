@@ -59,6 +59,10 @@ struct Config {
     bool skip_memory_check = true;
     // The seed of Hatari's random numbers; 0 for the time. A measurement fixes it so runs repeat.
     unsigned int seed = 0;
+    // MIDI out (KairoST#93): every byte the guest writes to the MIDI port goes to the port picked under
+    // Configurations, through the shared cutter (kairo/midi_bytes.h). The ST's MIDI ports are always
+    // there, so the guest sees the same machine either way.
+    bool midi_port = false;
     // Called on Hatari's thread before it starts, where the emulation runs: the app names the
     // thread and gives it the priority of emulation work (shared thread_priority.h), which belongs
     // to a thread, not to the threads that start it.

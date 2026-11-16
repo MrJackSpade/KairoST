@@ -17,7 +17,10 @@
  */
 
 #include <setjmp.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <time.h>
 #include <SDL.h>
 
@@ -81,6 +84,37 @@ static int nVBLSlowdown = 1;              /* Hatari's --slowdown factor (likewis
 
 /* The machine's side, for this copy's one run. */
 static const struct KairoStHost *host;
+/* The machine's home (KairoSt_Run), where its temporary files go on Android. */
+static char machine_home[4096];
+
+#if defined(__ANDROID__)
+/* A temporary file for Hatari (hatari-temp-file): in the machine's home, as Bionic's tmpfile() makes them
+ * in /data/local/tmp, where an app cannot write. Unlinked at once, so it is gone once closed, as
+ * tmpfile()'s are; NULL with errno set when it cannot be made, as tmpfile() does. */
+FILE *Kairo_OpenTempFile(void)
+{
+	char path[sizeof(machine_home) + 32];
+	int fd;
+	FILE *fh;
+
+	snprintf(path, sizeof(path), "%s/kairo-tmp-XXXXXX", machine_home);
+	fd = mkstemp(path);
+	if (fd < 0)
+		return NULL;
+	unlink(path);
+	fh = fdopen(fd, "w+b");
+	if (!fh)
+		close(fd);
+	return fh;
+}
+#endif
+
+/* The guest's MIDI out (hatari-midi-out): each byte to the host, when the game sends its MIDI anywhere. */
+void Kairo_MidiOutByte(uint8_t byte)
+{
+	if (host->midi_byte)
+		host->midi_byte(host->context, byte);
+}
 /* The host named the program to start (Hatari's --auto): no program is picked from drive A. */
 static bool autostart_given;
 
@@ -504,6 +538,9 @@ static bool KairoSt_Run(int argc, const char *const argv[], const char *home, co
 	Log_Default();
 	/* Hatari keeps its own files (NVRAM, logs) in $HOME/.config/hatari. */
 	set_env("HOME", home);
+	if (strlen(home) >= sizeof(machine_home))
+		abort();	/* a home no temporary file's path fits */
+	strcpy(machine_home, home);
 	/* Hatari's headless mode: SDL's dummy video driver, whose window surface is an in-memory
 	 * picture (screen.c), drawn without an SDL renderer. */
 	set_env("SDL_VIDEODRIVER", "dummy");

@@ -331,14 +331,42 @@ HATARI_BORDER_TOP = [
      'extern void Screen_ModeChanged(bool bForceChange);\nextern int Screen_KairoBorderTop(void); /* KairoST */\n'),
 ]
 
+# The guest's MIDI out (KairoST#93): every byte the guest writes to the MIDI ACIA's data register goes
+# to the app (Kairo_MidiOutByte, core/kairo/main.c), whatever Hatari's own MIDI output does. The ACIA
+# runs as before either way: the guest sees the same machine whether its MIDI goes to a port or nowhere.
+HATARI_MIDI_OUT = [
+    ('hatari/src/midi.c',
+     '#include "video.h"\n',
+     '#include "video.h"\n\nextern void Kairo_MidiOutByte(uint8_t byte); /* KairoST */\n'),
+    ('hatari/src/midi.c',
+     '\tMIDI_UpdateIRQ ();\n\n\tif (!ConfigureParams.Midi.bEnableMidi)\n\t\treturn;\n',
+     '\tMIDI_UpdateIRQ ();\n\n\tKairo_MidiOutByte(nTxDataByte); /* KairoST */\n\n'
+     '\tif (!ConfigureParams.Midi.bEnableMidi)\n\t\treturn;\n'),
+]
+
+# Hatari's temporary files (File_OpenTempFile: the virtual desktop INF file that starts a game's program,
+# KairoST#96) come from tmpfile(), which Bionic makes in /data/local/tmp, where an app cannot write: on
+# Android they are made in the machine's home instead (Kairo_OpenTempFile, core/kairo/main.c).
+HATARI_TEMP_FILE = [
+    ('hatari/src/file.c',
+     '#include "file.h"\n',
+     '#include "file.h"\n\n#if defined(__ANDROID__)\nextern FILE *Kairo_OpenTempFile(void); /* KairoST */\n#endif\n'),
+    ('hatari/src/file.c',
+     '\tfh = tmpfile();            /* Open temporary file */\n',
+     '#if defined(__ANDROID__)\n\tfh = Kairo_OpenTempFile(); /* KairoST: tmpfile() writes /data/local/tmp */\n#else\n'
+     '\tfh = tmpfile();            /* Open temporary file */\n#endif\n'),
+]
+
 PATCHES = {
     'hatari-emutos-welcome': HATARI_EMUTOS_WELCOME,
     'hatari-fdc-motor': HATARI_FDC_MOTOR,
+    'hatari-midi-out': HATARI_MIDI_OUT,
     'hatari-single-lines': HATARI_SINGLE_LINES,
     'hatari-snapshot-failed': HATARI_SNAPSHOT_FAILED,
     'hatari-state-paths': HATARI_STATE_PATHS,
     'hatari-stop-skip': HATARI_STOP_SKIP,
     'hatari-stx-empty-track': HATARI_STX_EMPTY_TRACK,
+    'hatari-temp-file': HATARI_TEMP_FILE,
     'sdl-android-sources': SDL_ANDROID_SOURCES,
     'sdl-android-video': SDL_ANDROID_VIDEO,
     'sdl-dummy-rgba': SDL_DUMMY_RGBA,
