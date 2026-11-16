@@ -1,6 +1,6 @@
 # Create a game
 
-Make a new game on a blank floppy: a save disk a game asks for, or a disk to copy files to. KairoST makes the floppy formatted and empty, as Hatari's own "create blank image" does. Your game disks can stay wherever they are (for example in Download): the Disks page takes them from anywhere on the device.
+Make a new game on a blank floppy: a save disk a game asks for, or a disk to copy files to. KairoST makes the floppy formatted and empty, as Hatari's own "create blank image" does. For a game that installs to a hard disk, make a [blank hard disk](#a-blank-hard-disk) instead. Your game disks can stay wherever they are (for example in Download): the Disks page takes them from anywhere on the device.
 
 ## 1. Create the blank floppy
 
@@ -43,3 +43,17 @@ The floppy is in your library under the name you gave it.
 After closing and reopening KairoST, drive A still holds what was written.
 
 ![The folder after reopening](screenshots/create-a-game/09-after-reopening.png)
+
+## A blank hard disk
+
+Under **New game**, choose a 20, 40 or 100 MB hard disk. KairoST partitions and formats it as Hatari's `atari-hd-image` script does: one FAT16 partition, which EmuTOS can't make itself.
+
+![Hard disks under New game](screenshots/create-a-game/10-new-hard-disk.png)
+
+Press **Play**: the desktop shows it as drive C.
+
+![Drive C on the desktop](screenshots/create-a-game/11-hard-disk-desktop.png)
+
+Install a game to it, or make folders on it. Like a floppy, it keeps what is written after you close and reopen KairoST.
+
+![A folder on drive C after reopening](screenshots/create-a-game/12-hard-disk-folder.png)

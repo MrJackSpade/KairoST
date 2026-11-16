@@ -8,6 +8,7 @@
 
 #include "kairo/machine_core.h"
 #include "kairo/thread_priority.h"
+#include "atari_hd_image.h"
 #include "st_machine.h"
 
 namespace {
@@ -165,10 +166,15 @@ std::unique_ptr<kairo::MachineCore> kairo::create_core(const kairo::Launch &laun
     return std::make_unique<StCore>(std::move(machine));
 }
 
-// The blank disks MainActivity.blankDisks lists, as Hatari's own dialog makes them: formatted and
-// empty, since Hatari's floppy controller cannot format an .st image from the guest. 80 tracks of
-// 9 sectors on one side (360 KB) or two (720 KB), or of 18 on two (1.44 MB, the TT's and Falcon's).
+// The blank disks MainActivity.blankDisks lists. Floppies as Hatari's own dialog makes them:
+// formatted and empty, since Hatari's floppy controller cannot format an .st image from the guest.
+// 80 tracks of 9 sectors on one side (360 KB) or two (720 KB), or of 18 on two (1.44 MB, the TT's
+// and Falcon's). Hard disks as Hatari's atari-hd-image.sh makes them (KairoST#88): partitioned
+// and formatted, since EmuTOS can do neither, with one partition named DOS.
 std::string kairo::create_blank_disk(const std::string &kind, const std::string &path) {
+    if (kind == "hd-20") return kairo::write_atari_hd_image(path, 20, "DOS");
+    if (kind == "hd-40") return kairo::write_atari_hd_image(path, 40, "DOS");
+    if (kind == "hd-100") return kairo::write_atari_hd_image(path, 100, "DOS");
     int sectors, sides;
     if (kind == "floppy-ss") sectors = 9, sides = 1;
     else if (kind == "floppy-ds") sectors = 9, sides = 2;

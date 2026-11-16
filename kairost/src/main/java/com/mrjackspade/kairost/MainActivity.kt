@@ -63,7 +63,9 @@ class MainActivity : MachineActivity<DiskImageEntry>() {
     override val blankDisks = listOf(
         coreBlankDisk("floppy-ss", UiText.res(FrontendR.string.kairo_blank_floppy, "360 KB · SS"), "st"),
         coreBlankDisk("floppy-ds", UiText.res(FrontendR.string.kairo_blank_floppy, "720 KB · DS"), "st"),
-        coreBlankDisk("floppy-hd", UiText.res(FrontendR.string.kairo_blank_floppy, "1.44 MB · HD"), "st"))
+        coreBlankDisk("floppy-hd", UiText.res(FrontendR.string.kairo_blank_floppy, "1.44 MB · HD"), "st")) +
+        // Partitioned and formatted, as Hatari's atari-hd-image.sh makes them (KairoST#88).
+        listOf(20, 40, 100).map { mb -> coreBlankDisk("hd-$mb", UiText.res(FrontendR.string.kairo_blank_hard_disk, "$mb MB"), "img") }
     // A game set to the MIDI port sends its MIDI music to the port picked under Configurations (KairoST#93).
     override val guestMidiOut = true
     override val machineOptions = StCatalog.options.map { option ->

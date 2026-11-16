@@ -297,6 +297,147 @@
       }
     },
     {
+      "name": "ST blank 20 MB hard disk",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/hdtools.st",
+        "",
+        "blank:hd-20.img"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": "",
+        "midiOut": "none"
+      },
+      "checks": {
+        "hardDisk": {
+          "settle": 900,
+          "write": {
+            "launch": {
+              "settings": {
+                "program": "WRITE.TOS"
+              }
+            }
+          },
+          "read": {
+            "launch": {
+              "settings": {
+                "program": "READ.TOS"
+              }
+            },
+            "answerBy": 1800,
+            "screens": [
+              "c7ce0247bc14a2e5"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "ST blank 40 MB hard disk",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/hdtools.st",
+        "",
+        "blank:hd-40.img"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": "",
+        "midiOut": "none"
+      },
+      "checks": {
+        "hardDisk": {
+          "settle": 900,
+          "write": {
+            "launch": {
+              "settings": {
+                "program": "WRITE.TOS"
+              }
+            }
+          },
+          "read": {
+            "launch": {
+              "settings": {
+                "program": "READ.TOS"
+              }
+            },
+            "answerBy": 1800,
+            "screens": [
+              "c7ce0247bc14a2e5"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "ST blank 100 MB hard disk",
+      "firmware": "bios",
+      "home": {
+        "emutos/etos1024k.img": "app:third_party/emutos-1024k/etos1024k.img",
+        "hatari": "folder:"
+      },
+      "media": [
+        "app:core/test/st/hdtools.st",
+        "",
+        "blank:hd-100.img"
+      ],
+      "settings": {
+        "tos": "emutos",
+        "machine": "st",
+        "clock": "8",
+        "memory": "1024",
+        "monitor": "rgb",
+        "region": "uk",
+        "skipMemoryCheck": "on",
+        "program": "",
+        "midiOut": "none"
+      },
+      "checks": {
+        "hardDisk": {
+          "settle": 900,
+          "write": {
+            "launch": {
+              "settings": {
+                "program": "WRITE.TOS"
+              }
+            }
+          },
+          "read": {
+            "launch": {
+              "settings": {
+                "program": "READ.TOS"
+              }
+            },
+            "answerBy": 1800,
+            "screens": [
+              "c7ce0247bc14a2e5"
+            ]
+          }
+        }
+      }
+    },
+    {
       "name": "Gemcell on TOS 1.04, Auto from frame 1800",
       "firmware": "bios",
       "home": {

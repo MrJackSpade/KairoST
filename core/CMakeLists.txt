@@ -158,7 +158,7 @@ elseif(WIN32)
 endif()
 
 # The frame-driven machine (st_machine.h), which loads the Hatari library by its file name.
-add_library(kairost_core STATIC st_machine.cpp hatari_library.cpp)
+add_library(kairost_core STATIC st_machine.cpp hatari_library.cpp atari_hd_image.cpp)
 # The shared frontend's native sources are public: the host executables compile its state paths too.
 target_include_directories(kairost_core PUBLIC "${CMAKE_CURRENT_LIST_DIR}" "${CMAKE_CURRENT_LIST_DIR}/../shared/frontend/src/main/cpp"
     PRIVATE "${CMAKE_CURRENT_LIST_DIR}/kairo")
